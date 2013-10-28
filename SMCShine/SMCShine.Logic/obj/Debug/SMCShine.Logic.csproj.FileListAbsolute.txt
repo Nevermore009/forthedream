@@ -1,0 +1,5 @@
+G:\source\SMCShine v1.0\SMCShine.Logic\bin\Debug\SMCShine.Logic.dll
+G:\source\SMCShine v1.0\SMCShine.Logic\bin\Debug\SMCShine.Logic.pdb
+G:\source\SMCShine v1.0\SMCShine.Logic\obj\Debug\ResolveAssemblyReference.cache
+G:\source\SMCShine v1.0\SMCShine.Logic\obj\Debug\SMCShine.Logic.dll
+G:\source\SMCShine v1.0\SMCShine.Logic\obj\Debug\SMCShine.Logic.pdb

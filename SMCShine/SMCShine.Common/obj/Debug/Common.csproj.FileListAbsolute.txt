@@ -1,0 +1,5 @@
+G:\vs解决方案\巡检\2013-05-06\Common\bin\Debug\Common.dll
+G:\vs解决方案\巡检\2013-05-06\Common\bin\Debug\Common.pdb
+G:\vs解决方案\巡检\2013-05-06\Common\obj\Debug\ResolveAssemblyReference.cache
+G:\vs解决方案\巡检\2013-05-06\Common\obj\Debug\Common.dll
+G:\vs解决方案\巡检\2013-05-06\Common\obj\Debug\Common.pdb

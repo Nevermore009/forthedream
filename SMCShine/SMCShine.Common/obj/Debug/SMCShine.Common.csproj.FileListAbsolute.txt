@@ -1,0 +1,10 @@
+G:\source\SMCShine v1.0\Common\obj\Debug\ResolveAssemblyReference.cache
+G:\source\SMCShine v1.0\Common\bin\Debug\SMCShine.Common.dll
+G:\source\SMCShine v1.0\Common\bin\Debug\SMCShine.Common.pdb
+G:\source\SMCShine v1.0\Common\obj\Debug\SMCShine.Common.dll
+G:\source\SMCShine v1.0\Common\obj\Debug\SMCShine.Common.pdb
+G:\source\SMCShine v1.0\SMCShine.Common\bin\Debug\SMCShine.Common.dll
+G:\source\SMCShine v1.0\SMCShine.Common\bin\Debug\SMCShine.Common.pdb
+G:\source\SMCShine v1.0\SMCShine.Common\obj\Debug\ResolveAssemblyReference.cache
+G:\source\SMCShine v1.0\SMCShine.Common\obj\Debug\SMCShine.Common.dll
+G:\source\SMCShine v1.0\SMCShine.Common\obj\Debug\SMCShine.Common.pdb

@@ -1,0 +1,96 @@
+html
+{
+	overflow: hidden;
+}
+body
+{
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	height: 100%;
+	border: 0;
+	text-align: left;
+	background-color: #1c6fbf; /*主体背景色*/
+}
+form
+{
+	margin: 0;
+	padding: 0;
+}
+.clear
+{
+	clear: both;
+	line-height: 1px;
+}
+.login_main
+{
+	width: 996px; /*登录面板宽度*/
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+}
+.login_top
+{
+	width: 100%;
+	height: 228px; /*登录面板头部高度*/
+	background-image: url(../images/login/login_top.jpg);
+	background-repeat: no-repeat;
+}
+.login_middle
+{
+	width: 100%;
+	height: 265px; /*登录面板中部高度*/
+}
+.login_middleleft
+{
+	float: left;
+	width: 551px; /*登录面板中部左侧宽度*/
+	height: 100%;
+	background-image: url(../images/login/login_centerleft.jpg);
+	background-repeat: no-repeat;
+}
+.login_middlecenter
+{
+	float: left;
+	width: 445px; /*登录面板中部右侧宽度*/
+	height: 100%;
+	background-image: url(../images/login/login_centerright.jpg);
+	background-repeat: no-repeat;
+	text-align: left;
+}
+.login_frame
+{
+	float: left;
+	width: 60%;
+	height: 80%;
+}
+.login_bottom
+{
+	width: 100%;
+	height: 102px; /*登录面板底部高度*/
+	background-image: url(../images/login/login_bottom.jpg);
+	background-repeat: no-repeat;
+}
+.login_title
+{
+	position: absolute;
+	left: 190px; /*标题x坐标*/
+	top: 165px; /*标题y坐标*/
+	width: 610px; /*标题宽度*/
+	height: 100px; /*标题高度*/
+	background-image: url(../images/login/title.png);
+	background-repeat: no-repeat;
+	background-position:right top;
+}
+.letter_space
+{
+	letter-spacing: 1em;
+}
+.login_copyright
+{
+	color: #ffffff; /*版权声明文字颜色*/
+	text-align: center;
+	padding: 70px 0 0 0px; /*版权声明位置*/
+}
+

@@ -1,0 +1,33 @@
+﻿.gridview
+{
+	font-size:12px;
+	table-layout: auto;
+	text-align: center;
+	font-weight: normal;
+	border-style: solid;
+	border-left-width:1px;
+	border-top-width:1px;
+	border-right-width:1px;
+	border-bottom: solid 2px gray;
+}
+.gridview th
+{
+	background-color: skyblue;
+	border-style: solid;
+	border-color: gray;
+	border-width:1px;
+	height: 25px;
+	font-size:14px;
+	font-weight: bold;
+	
+}
+.gridview td
+{
+	font-size:12px;
+	border-width:0px 0px 1px 0px;	
+	border-style:solid;
+	border-color: #CFCFCF;
+	width: 130px;
+	height: 25px;
+	text-align: center;
+}

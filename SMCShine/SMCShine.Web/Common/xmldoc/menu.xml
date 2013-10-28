@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"  ?>
+<root>
+  <menunode1 name="学籍管理"  visibable="1" cssclass="normal_icon1">
+    <menunode1_1 name="信息添加" visibable="1">
+      <menunode1_1_1 name="校区录入" visibable="1" target="frmright" url="../Module/CampusManager/AddCampus.aspx"></menunode1_1_1>
+      <menunode1_1_2 name="学校录入" visibable="1" target="frmright" url="../Module/CampusManager/AddSchool.aspx"></menunode1_1_2>
+      <menunode1_1_3 name="年级录入" visibable="1" target="frmright" url="../Module/CampusManager/AddGrade.aspx"></menunode1_1_3>
+      <menunode1_1_4 name="专业录入" visibable="1" target="frmright" url="../Module/CampusManager/AddProfession.aspx"></menunode1_1_4>
+    </menunode1_1>
+    <menunode1_2 name="校区管理" visibable="1" target="frmright" url="../Module/CampusManager/CampusTreeManage.aspx"></menunode1_2>
+    <menunode1_3 name="学员录入" visibable="1" target="frmright" url="../Module/StudentManager/AddStudent.aspx"></menunode1_3>
+    <menunode1_4 name="学员管理" visibable="1" target="frmright" url="../Module/StudentManager/StudentManage.aspx"></menunode1_4>
+  </menunode1>
+  <menunode2 name="缴费项目" visibable="1" cssclass="normal_icon2">
+    <menunode2_1 name="添加缴费项目" visibable="1" target="frmright" url="../Module/GoodsManager/AddGoods.aspx"></menunode2_1>
+    <menunode2_2 name="管理缴费项目" visibable="1" target="frmright" url="../Module/GoodsManager/GoodsManage.aspx"></menunode2_2>
+  </menunode2>
+  <menunode3 name="财务中心" visibable="1" cssclass="normal_icon3">
+    <menunode3_1 name="缴费收银" visibable="1" target="frmright" url="../Module/ChargeManager/GeneralCharge.aspx"></menunode3_1>
+    <menunode3_2 name="缴费记录" visibable="1" target="frmright" url="../Module/ChargeManager/ChargeManage.aspx"></menunode3_2>
+    <menunode3_3 name="补交学费" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode3_3>
+    <menunode3_4 name="补交记录" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode3_4>
+    <menunode3_5 name="退费管理" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode3_5>
+  </menunode3>
+  <menunode4 name="教学管理" visibable="1" cssclass="normal_icon4">
+    <menunode4_1 name="正在建设" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode4_1>
+  </menunode4>
+  <menunode5 name="文件管理" visibable="1" cssclass="normal_icon5">
+    <menunode5_1 name="正在建设" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode5_1>
+  </menunode5>
+  <menunode6 name="公告管理" visibable="1" cssclass="normal_icon6">
+    <menunode6_1 name="添加公告" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode6_1>
+    <menunode6_2 name="管理公告" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode6_2>
+  </menunode6>
+  <menunode7 name="用户管理" visibable="1" cssclass="normal_icon7">
+    <menunode7_1 name="添加用户类别" visibable="1" target="frmright" url="../Module/UserManager/AddUserGroup.aspx"></menunode7_1>
+    <menunode7_1 name="添加用户" visibable="1" target="frmright" url="../Module/UserManager/AddUser.aspx"></menunode7_1>
+    <menunode7_2 name="管理用户" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode7_2>
+  </menunode7>
+  <menunode8 name="系统管理" visibable="1" cssclass="normal_icon8">
+    <menunode8_1 name="密码修改" visibable="1" target="frmright" url="../Module/SystemManager/PasswordModify.aspx"></menunode8_1>
+    <menunode8_2 name="查看系统日志" visibable="1" target="frmright" url="../Common/MaintainPage.htm"></menunode8_2>
+  </menunode8>
+</root>

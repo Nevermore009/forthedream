@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Advanced_Encryption_Standard</name>
+    </assembly>
+    <members>
+        <member name="T:Advanced_Encryption_Standard.AES">
+            <summary>
+            128位密钥高级加密标准
+            </summary>
+        </member>
+        <member name="M:Advanced_Encryption_Standard.AES.Encrypt(System.String)">
+            <summary>
+            AES加密明文plaintext
+            </summary>
+            <param name="plaintext">明文</param>
+            <returns>返回密文字符串,空字符串和null则返回空字符串</returns>
+        </member>
+        <member name="M:Advanced_Encryption_Standard.AES.Decrypt(System.String)">
+            <summary>
+            AES解密密文ciphertext
+            </summary>
+            <param name="ciphertext">密文</param>
+            <returns>返回明文字符串,空字符串和null则返回空字符串</returns>
+        </member>
+        <member name="M:Advanced_Encryption_Standard.AES.codeEncrypt(System.String)">
+            <summary>
+            加密明文并以16进制编码表示
+            </summary>
+            <param name="plaintext">明文</param>
+            <return>返回密文的16进制编码字符串,空字符串和null则返回空字符串</return>
+        </member>
+        <member name="M:Advanced_Encryption_Standard.AES.codeDecrypt(System.String)">
+            <summary>
+            解密16进制编码表示的密文
+            </summary>
+            <param name="ciphertext">密文</param>
+            <returns>返回明文,空字符串和null则返回空字符串</returns>
+        </member>
+    </members>
+</doc>

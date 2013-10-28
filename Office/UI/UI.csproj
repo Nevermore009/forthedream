@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97A3A312-C8CB-460A-9E6D-D81CA02DB286}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>办公室节能管理系统</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ApplicationIcon>logo_128.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/UI/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Advanced_Encryption_Standard, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BLL\bin\Debug\Advanced_Encryption_Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\下载\IrisSkin2.dll</HintPath>
+    </Reference>
+    <Reference Include="LoginUI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BatchManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchManagerForm.Designer.cs">
+      <DependentUpon>BatchManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="DBConnectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBConnectForm.Designer.cs">
+      <DependentUpon>DBConnectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditIPAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditIPAddress.Designer.cs">
+      <DependentUpon>EditIPAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnergyConservationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnergyConservationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupForm.Designer.cs">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IPSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPSetting.Designer.cs">
+      <DependentUpon>IPSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthReportForm.Designer.cs">
+      <DependentUpon>MonthReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentAndChild.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuarterReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuarterReportForm.Designer.cs">
+      <DependentUpon>QuarterReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServerIPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerIPForm.Designer.cs">
+      <DependentUpon>ServerIPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerminalAlarmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminalAlarmForm.Designer.cs">
+      <DependentUpon>TerminalAlarmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeEditForm.Designer.cs">
+      <DependentUpon>TimeEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAddForm.Designer.cs">
+      <DependentUpon>UserAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMsgForm.Designer.cs">
+      <DependentUpon>UserMsgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YearReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YearReportForm.Designer.cs">
+      <DependentUpon>YearReportForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BatchManagerForm.resx">
+      <DependentUpon>BatchManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthReportForm.resx">
+      <DependentUpon>MonthReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuarterReportForm.resx">
+      <DependentUpon>QuarterReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLC\DailyReport.rdlc" />
+    <EmbeddedResource Include="DBConnectForm.resx">
+      <DependentUpon>DBConnectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditIPAddress.resx">
+      <DependentUpon>EditIPAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupForm.resx">
+      <DependentUpon>GroupForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IPSetting.resx">
+      <DependentUpon>IPSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLC\MonthReport.rdlc" />
+    <EmbeddedResource Include="RDLC\QuarterReport.rdlc" />
+    <EmbeddedResource Include="RDLC\YearReport.rdlc" />
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerIPForm.resx">
+      <DependentUpon>ServerIPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminalAlarmForm.resx">
+      <DependentUpon>TerminalAlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeEditForm.resx">
+      <DependentUpon>TimeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimersForm.resx">
+      <DependentUpon>TimersForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserAddForm.resx">
+      <DependentUpon>UserAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMsgForm.resx">
+      <DependentUpon>UserMsgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearReportForm.resx">
+      <DependentUpon>YearReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\办公室节能管理系统.exe.config" />
+    <None Include="EnergyConservationDataSet.xsc">
+      <DependentUpon>EnergyConservationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EnergyConservationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnergyConservationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EnergyConservationDataSet.xss">
+      <DependentUpon>EnergyConservationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="skin\CalmnessColor2.ssk" />
+    <None Include="skin\DeepOrange.ssk" />
+    <None Include="skin\PageColor1.ssk" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimersForm.Designer.cs">
+      <DependentUpon>TimersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimerTask.cs" />
+    <None Include="skin\WarmColor1.ssk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Advanced_Encryption_Standard.dll" />
+    <Content Include="bin\Debug\Advanced_Encryption_Standard.xml" />
+    <Content Include="bin\Debug\BLL.dll" />
+    <Content Include="bin\Debug\BLL.pdb" />
+    <Content Include="bin\Debug\DAL.dll" />
+    <Content Include="bin\Debug\DAL.pdb" />
+    <Content Include="bin\Debug\ErrLog.txt" />
+    <Content Include="bin\Debug\images\background.jpg" />
+    <Content Include="bin\Debug\images\logo.png" />
+    <Content Include="bin\Debug\IrisSkin2.dll" />
+    <Content Include="bin\Debug\LoginUI.dll" />
+    <Content Include="bin\Debug\LoginUI.xml" />
+    <Content Include="bin\Debug\办公室节能管理系统.exe" />
+    <Content Include="bin\Debug\办公室节能管理系统.pdb" />
+    <Content Include="images\light.gif" />
+    <Content Include="images\lightOn.gif" />
+    <None Include="images\png\add_user.png" />
+    <None Include="images\png\aircondition.png" />
+    <Content Include="images\png\alarm.png" />
+    <None Include="images\png\AllEquipment.png" />
+    <Content Include="images\png\black.png" />
+    <None Include="images\png\CheckUsres.png" />
+    <None Include="images\png\close1.png" />
+    <Content Include="images\png\exit.png" />
+    <Content Include="images\png\green.png" />
+    <Content Include="images\png\group.png" />
+    <None Include="images\png\light.png" />
+    <None Include="images\png\open1.png" />
+    <Content Include="images\png\orange.png" />
+    <Content Include="images\png\server.png" />
+    <Content Include="images\png\Settings.png" />
+    <Content Include="images\png\skin.png" />
+    <Content Include="images\png\Sqlserver.png" />
+    <Content Include="images\png\temperature.png" />
+    <Content Include="images\png\Terminal.png" />
+    <Content Include="images\png\User.png" />
+    <Content Include="images\png\view.png" />
+    <Content Include="images\png\warm.png" />
+    <Content Include="images\room.png" />
+    <Content Include="images\unknow.png" />
+    <Content Include="images\恋空.jpg" />
+    <Content Include="logo_128.ico" />
+    <Content Include="logo_16.ico" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\Logo.gif" />
+    <None Include="Resources\未标题-1.png" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\warm.png" />
+    <Content Include="users.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{FFF8AE37-7AF7-4246-962B-9C2DFA5E1C92}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\skin\" />
+    <Folder Include="xsd\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

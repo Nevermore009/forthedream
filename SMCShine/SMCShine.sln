@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMCShine.Logic", "SMCShine.Logic\SMCShine.Logic.csproj", "{EA605E59-15A0-4A65-8517-FD2D28A0EA18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMCShine.Data", "SMCShine.Data\SMCShine.Data.csproj", "{74333089-E26E-4C57-8E64-3F8D67BF4A97}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SMCShine.Web", "SMCShine.Web\", "{A484E082-800D-4620-9D53-B8CE504C5F17}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{74333089-E26E-4C57-8E64-3F8D67BF4A97}|SMCShine.Data.dll;{EA605E59-15A0-4A65-8517-FD2D28A0EA18}|SMCShine.Logic.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/SMCShine.Web"
+		Debug.AspNetCompiler.PhysicalPath = "SMCShine.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SMCShine.Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SMCShine.Web"
+		Release.AspNetCompiler.PhysicalPath = "SMCShine.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SMCShine.Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4896"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMCShine.Common", "SMCShine.Common\SMCShine.Common.csproj", "{BEDFBC14-C7F0-47B5-975E-5E239CD784F0}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA605E59-15A0-4A65-8517-FD2D28A0EA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA605E59-15A0-4A65-8517-FD2D28A0EA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA605E59-15A0-4A65-8517-FD2D28A0EA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA605E59-15A0-4A65-8517-FD2D28A0EA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74333089-E26E-4C57-8E64-3F8D67BF4A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74333089-E26E-4C57-8E64-3F8D67BF4A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74333089-E26E-4C57-8E64-3F8D67BF4A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74333089-E26E-4C57-8E64-3F8D67BF4A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A484E082-800D-4620-9D53-B8CE504C5F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A484E082-800D-4620-9D53-B8CE504C5F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A484E082-800D-4620-9D53-B8CE504C5F17}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A484E082-800D-4620-9D53-B8CE504C5F17}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BEDFBC14-C7F0-47B5-975E-5E239CD784F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDFBC14-C7F0-47B5-975E-5E239CD784F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDFBC14-C7F0-47B5-975E-5E239CD784F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDFBC14-C7F0-47B5-975E-5E239CD784F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

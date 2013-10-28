@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <patrol planinfoid="" planid="" routename="">
+    <patrolinfo id="" staffname="" lat="" lon="" locatetime="" standingtime="" remark="" auto="" photo="" />
+    <patrolinfo id="" staffname="" lat="" lon="" locatetime="" standingtime="" remark="" auto="" photo="" />
+  </patrol>
+  <patrol planinfoid="" planid="" routename="">
+    <patrolinfo id="" staffname="" lat="" lon="" locatetime="" standingtime="" remark="" auto="" photo="" />
+    <patrolinfo id="" staffname="" lat="" lon="" locatetime="" standingtime="" remark="" auto="" photo="" />
+  </patrol>
+</root>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <route routeid="" routename="" description="">
+    <routeinfo id="" orderno="" lat="" lon="" title="" description="" />
+    <routeinfo id="" orderno="" lat="" lon="" title="" description="" />
+  </route>
+  <route>
+    <routeinfo id="" orderno="" lat="" lon="" title="" description="" />
+    <routeinfo id="" orderno="" lat="" lon="" title="" description="" />
+  </route>
+</root>

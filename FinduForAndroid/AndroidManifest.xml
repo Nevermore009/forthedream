@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.findu"
+    android:persistent="true"
+    android:versionCode="1"
+    android:versionName="1.9" >
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-sdk
+        android:maxSdkVersion="20"
+        android:minSdkVersion="8"
+        android:targetSdkVersion="8" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.findu.MainActivity" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.findu.ActivationActivity"
+            android:label="@string/activationlabel" >
+        </activity>
+
+        <service
+            android:name="com.findu.ControlService"
+            android:enabled="true" >
+        </service>
+
+        <receiver
+            android:name="com.findu.MyRecever"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.findu.ServerSettingActivity"
+            android:label="@string/title_activity_server_setting" >
+        </activity>
+        <activity
+            android:name="com.findu.Remark"
+            android:label="@string/title_activity_remark" >
+        </activity>
+        <activity
+            android:name="com.findu.WelComeActivity"
+            android:label="@string/title_activity_wel_come" >
+        </activity>
+    </application>
+
+</manifest>

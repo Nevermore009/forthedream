@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/sky"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btngetphoto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#7EC0EE"
+            android:text="@string/btngetphototext"
+            android:textSize="50sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnmain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#7EC0EE"
+            android:text="@string/btnlocatetext"
+            android:textSize="50sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnstart"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#98FB98"
+            android:text="@string/btnstart"
+            android:textSize="50sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnstop"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#F08080"
+            android:text="@string/btnstop"
+            android:textSize="50sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnbind"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#F0E68C"
+            android:text="@string/btnbindtext"
+            android:textSize="50sp" >
+        </Button>
+
+        <TextView
+            android:id="@+id/txtwarning"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:minHeight="0px"
+            android:text=""
+            android:textSize="32sp" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/sky"
+    android:orientation="vertical"
+    tools:context=".WelComeActivity" >
+
+    <Button
+        android:id="@+id/btnviewmode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#7EC0EE"
+        android:text="@string/btnviewmode_text"
+        android:textSize="50sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/btnpatrolmode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#7EC0EE"
+        android:text="@string/btnpatrolmode_text"
+        android:textSize="50sp" >
+    </Button>
+
+</LinearLayout>

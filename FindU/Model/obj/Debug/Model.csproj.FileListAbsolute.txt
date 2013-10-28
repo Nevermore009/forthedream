@@ -1,0 +1,65 @@
+D:\temp\FindU\Model\bin\Debug\Model.dll
+D:\temp\FindU\Model\bin\Debug\Model.pdb
+D:\temp\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+D:\temp\FindU\Model\obj\Debug\Model.dll
+D:\temp\FindU\Model\obj\Debug\Model.pdb
+D:\石门移动\FindU\Model\bin\Debug\Model.dll
+D:\石门移动\FindU\Model\bin\Debug\Model.pdb
+D:\石门移动\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+D:\石门移动\FindU\Model\obj\Debug\Model.dll
+D:\石门移动\FindU\Model\obj\Debug\Model.pdb
+G:\vs解决方案\FindU\FindU\Model\bin\Debug\Model.dll
+G:\vs解决方案\FindU\FindU\Model\bin\Debug\Model.pdb
+G:\vs解决方案\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+G:\vs解决方案\FindU\FindU\Model\obj\Debug\Model.dll
+G:\vs解决方案\FindU\FindU\Model\obj\Debug\Model.pdb
+G:\项目\石门移动\FindU\FindU\Model\bin\Debug\Model.dll
+G:\项目\石门移动\FindU\FindU\Model\bin\Debug\Model.pdb
+G:\项目\石门移动\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\FindU\FindU\Model\obj\Debug\Model.dll
+G:\项目\石门移动\FindU\FindU\Model\obj\Debug\Model.pdb
+G:\项目\石门移动\新建文件夹\FindU\FindU\Model\bin\Debug\Model.dll
+G:\项目\石门移动\新建文件夹\FindU\FindU\Model\bin\Debug\Model.pdb
+G:\项目\石门移动\新建文件夹\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\新建文件夹\FindU\FindU\Model\obj\Debug\Model.dll
+G:\项目\石门移动\新建文件夹\FindU\FindU\Model\obj\Debug\Model.pdb
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\Model\bin\Debug\Model.dll
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\Model\bin\Debug\Model.pdb
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\Model\obj\Debug\Model.dll
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\Model\obj\Debug\Model.pdb
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\Model\bin\Debug\Model.dll
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\Model\bin\Debug\Model.pdb
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\Model\obj\Debug\Model.dll
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\Model\obj\Debug\Model.pdb
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\Model\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\Model\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\Model\obj\Debug\Model.dll
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\Model\obj\Debug\Model.pdb
+F:\移动基站\FindU03-14\FindU\Model\bin\Debug\Model.dll
+F:\移动基站\FindU03-14\FindU\Model\bin\Debug\Model.pdb
+F:\移动基站\FindU03-14\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+F:\移动基站\FindU03-14\FindU\Model\obj\Debug\Model.dll
+F:\移动基站\FindU03-14\FindU\Model\obj\Debug\Model.pdb
+G:\项目\石门移动\FindU\FindU\FindU\Model\bin\Debug\Model.dll
+G:\项目\石门移动\FindU\FindU\FindU\Model\bin\Debug\Model.pdb
+G:\项目\石门移动\FindU\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\FindU\FindU\FindU\Model\obj\Debug\Model.dll
+G:\项目\石门移动\FindU\FindU\FindU\Model\obj\Debug\Model.pdb
+E:\移动定位\FindU\FindU\Model\bin\Debug\Model.dll
+E:\移动定位\FindU\FindU\Model\bin\Debug\Model.pdb
+E:\移动定位\FindU\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+E:\移动定位\FindU\FindU\Model\obj\Debug\Model.dll
+E:\移动定位\FindU\FindU\Model\obj\Debug\Model.pdb
+G:\项目\石门移动\源代码管理器中版本\FindU\Model\bin\Debug\Model.dll
+G:\项目\石门移动\源代码管理器中版本\FindU\Model\bin\Debug\Model.pdb
+G:\项目\石门移动\源代码管理器中版本\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\源代码管理器中版本\FindU\Model\obj\Debug\Model.dll
+G:\项目\石门移动\源代码管理器中版本\FindU\Model\obj\Debug\Model.pdb
+G:\vs解决方案\巡检\2013-05-06\FindU\Model\bin\Debug\Model.dll
+G:\vs解决方案\巡检\2013-05-06\FindU\Model\bin\Debug\Model.pdb
+G:\vs解决方案\巡检\2013-05-06\FindU\Model\obj\Debug\ResolveAssemblyReference.cache
+G:\vs解决方案\巡检\2013-05-06\FindU\Model\obj\Debug\Model.dll
+G:\vs解决方案\巡检\2013-05-06\FindU\Model\obj\Debug\Model.pdb

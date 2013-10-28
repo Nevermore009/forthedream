@@ -1,0 +1,91 @@
+D:\temp\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\temp\FindU\DAL\bin\Debug\DAL.dll
+D:\temp\FindU\DAL\bin\Debug\DAL.pdb
+D:\temp\FindU\DAL\bin\Debug\Model.dll
+D:\temp\FindU\DAL\bin\Debug\Model.pdb
+D:\temp\FindU\DAL\obj\Debug\DAL.dll
+D:\temp\FindU\DAL\obj\Debug\DAL.pdb
+D:\石门移动\FindU\DAL\bin\Debug\DAL.dll
+D:\石门移动\FindU\DAL\bin\Debug\DAL.pdb
+D:\石门移动\FindU\DAL\bin\Debug\Model.dll
+D:\石门移动\FindU\DAL\bin\Debug\Model.pdb
+D:\石门移动\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\石门移动\FindU\DAL\obj\Debug\DAL.dll
+D:\石门移动\FindU\DAL\obj\Debug\DAL.pdb
+G:\vs解决方案\FindU\FindU\DAL\bin\Debug\DAL.dll
+G:\vs解决方案\FindU\FindU\DAL\bin\Debug\DAL.pdb
+G:\vs解决方案\FindU\FindU\DAL\bin\Debug\Model.dll
+G:\vs解决方案\FindU\FindU\DAL\bin\Debug\Model.pdb
+G:\vs解决方案\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+G:\vs解决方案\FindU\FindU\DAL\obj\Debug\DAL.dll
+G:\vs解决方案\FindU\FindU\DAL\obj\Debug\DAL.pdb
+G:\项目\石门移动\FindU\FindU\DAL\bin\Debug\DAL.dll
+G:\项目\石门移动\FindU\FindU\DAL\bin\Debug\DAL.pdb
+G:\项目\石门移动\FindU\FindU\DAL\bin\Debug\Model.dll
+G:\项目\石门移动\FindU\FindU\DAL\bin\Debug\Model.pdb
+G:\项目\石门移动\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\FindU\FindU\DAL\obj\Debug\DAL.dll
+G:\项目\石门移动\FindU\FindU\DAL\obj\Debug\DAL.pdb
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\bin\Debug\DAL.dll
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\bin\Debug\DAL.pdb
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\bin\Debug\Model.dll
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\bin\Debug\Model.pdb
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\obj\Debug\DAL.dll
+G:\项目\石门移动\新建文件夹\FindU\FindU\DAL\obj\Debug\DAL.pdb
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\bin\Debug\DAL.dll
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\bin\Debug\DAL.pdb
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\bin\Debug\Model.dll
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\bin\Debug\Model.pdb
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\obj\Debug\DAL.dll
+C:\Documents and Settings\Administrator\桌面\2\FindU\FindU\DAL\obj\Debug\DAL.pdb
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\bin\Debug\DAL.dll
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\bin\Debug\DAL.pdb
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\bin\Debug\Model.dll
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\bin\Debug\Model.pdb
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\obj\Debug\DAL.dll
+C:\Documents and Settings\Administrator\桌面\FindU\FindU\FindU\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\bin\Debug\DAL.dll
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\bin\Debug\DAL.pdb
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\obj\Debug\DAL.dll
+C:\Users\Administrator\Desktop\FindU\FindU\FindU\DAL\obj\Debug\DAL.pdb
+F:\移动基站\FindU03-14\FindU\DAL\bin\Debug\DAL.dll
+F:\移动基站\FindU03-14\FindU\DAL\bin\Debug\DAL.pdb
+F:\移动基站\FindU03-14\FindU\DAL\bin\Debug\Model.dll
+F:\移动基站\FindU03-14\FindU\DAL\bin\Debug\Model.pdb
+F:\移动基站\FindU03-14\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\移动基站\FindU03-14\FindU\DAL\obj\Debug\DAL.dll
+F:\移动基站\FindU03-14\FindU\DAL\obj\Debug\DAL.pdb
+G:\项目\石门移动\FindU\FindU\FindU\DAL\bin\Debug\DAL.dll
+G:\项目\石门移动\FindU\FindU\FindU\DAL\bin\Debug\DAL.pdb
+G:\项目\石门移动\FindU\FindU\FindU\DAL\bin\Debug\Model.dll
+G:\项目\石门移动\FindU\FindU\FindU\DAL\bin\Debug\Model.pdb
+G:\项目\石门移动\FindU\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\FindU\FindU\FindU\DAL\obj\Debug\DAL.dll
+G:\项目\石门移动\FindU\FindU\FindU\DAL\obj\Debug\DAL.pdb
+E:\移动定位\FindU\FindU\DAL\bin\Debug\DAL.dll
+E:\移动定位\FindU\FindU\DAL\bin\Debug\DAL.pdb
+E:\移动定位\FindU\FindU\DAL\bin\Debug\Model.dll
+E:\移动定位\FindU\FindU\DAL\bin\Debug\Model.pdb
+E:\移动定位\FindU\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\移动定位\FindU\FindU\DAL\obj\Debug\DAL.dll
+E:\移动定位\FindU\FindU\DAL\obj\Debug\DAL.pdb
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\bin\Debug\DAL.dll
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\bin\Debug\DAL.pdb
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\bin\Debug\Model.dll
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\bin\Debug\Model.pdb
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\obj\Debug\DAL.dll
+G:\项目\石门移动\源代码管理器中版本\FindU\DAL\obj\Debug\DAL.pdb
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\bin\Debug\DAL.dll
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\bin\Debug\DAL.pdb
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\bin\Debug\Model.dll
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\bin\Debug\Model.pdb
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\obj\Debug\ResolveAssemblyReference.cache
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\obj\Debug\DAL.dll
+G:\vs解决方案\巡检\2013-05-06\FindU\DAL\obj\Debug\DAL.pdb

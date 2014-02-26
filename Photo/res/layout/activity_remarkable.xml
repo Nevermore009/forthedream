@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Remark" >
+
+    <EditText
+        android:id="@+id/remark"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/remark"
+        android:minLines="3" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/remark" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="fill_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#7EC0EE"
+        android:text="@string/btnSave"
+        android:textSize="50sp" />
+
+</LinearLayout>

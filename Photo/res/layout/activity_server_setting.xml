@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/sky"
+    tools:context=".ServerSetting" >
+
+    <EditText
+        android:id="@+id/server_setting_txtip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:ems="12"
+        android:hint="@string/server_setting_hint"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/server_setting_btnsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/server_setting_txtip"
+        android:layout_below="@+id/server_setting_txtip"
+        android:text="@string/server_setting_savetext"
+        android:visibility="invisible" />
+
+</RelativeLayout>

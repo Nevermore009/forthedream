@@ -50,9 +50,9 @@ namespace Bll
         /// <param name="journey">行程安排</param>
         /// <param name="contact">预订流程</param>
         /// <returns></returns>
-        public static int add(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int traveltypeid)
+        public static int add(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int traveltypeid, int journeydays, string transportation)
         {
-            return new DLL.TravelDetail().add(title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, traveltypeid);
+            return new DLL.TravelDetail().add(title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, traveltypeid, journeydays, transportation);
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace Bll
         /// <param name="sort">排序号</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        public static int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int id)
+        public static int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int journeydays, string transportation, int id)
         {
-            return new DLL.TravelDetail().update(title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, id);
+            return new DLL.TravelDetail().update(title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, journeydays, transportation, id);
         }
 
         public static int ChangeState(int id, int state)

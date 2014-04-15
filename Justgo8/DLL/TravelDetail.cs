@@ -62,11 +62,11 @@ namespace DLL
         /// <param name="journey">行程安排</param>
         /// <param name="contact">预订流程</param>
         /// <returns></returns>
-        public int add(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int traveltypeid)
+        public int add(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int traveltypeid, int journeydays, string transportation)
         {
             int res = 0;
-            string sql = string.Format(@"insert into [tb_detail] ([title],[description],[generalprice],[adultprice],[childprice],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid])
-            values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}',{15}) select @@identity", title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, traveltypeid);
+            string sql = string.Format(@"insert into [tb_detail] ([title],[description],[generalprice],[adultprice],[childprice],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid],[journeydays],[transportation])
+            values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}',{15},'{16}','{17}') select @@identity", title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, traveltypeid, journeydays, transportation);
             res = int.Parse(help.RunSqlReturn(sql));
             return res;
         }
@@ -79,11 +79,11 @@ namespace DLL
         /// <param name="sort">排序号</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        public int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int id)
+        public int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int journeydays, string transportation, int id)
         {
             int res = 0;
-            string sql = string.Format(" update [tb_detail] set [title]='{0}',[description]='{1}',[generalprice]='{2}',[adultprice]='{3}',[childprice]='{4}',[startdate]='{5}',[enddate]='{6}',[departuretime]='{7}',[features]='{8}',[billinclude]='{9}',[billbeside]='{10}',[servicestandard]='{11}',[presentation]='{12}',[journey]='{13}',[contact]='{14}' where id={15}",
-                 title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, id);
+            string sql = string.Format(" update [tb_detail] set [title]='{0}',[description]='{1}',[generalprice]='{2}',[adultprice]='{3}',[childprice]='{4}',[startdate]='{5}',[enddate]='{6}',[departuretime]='{7}',[features]='{8}',[billinclude]='{9}',[billbeside]='{10}',[servicestandard]='{11}',[presentation]='{12}',[journey]='{13}',[contact]='{14}',[journeydays]='{15}',[transportation]='{16}' where id={17}",
+                 title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, journeydays, transportation, id);
             res = help.GetNum(sql);
             return res;
         }

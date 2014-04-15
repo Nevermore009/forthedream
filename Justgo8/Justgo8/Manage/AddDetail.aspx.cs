@@ -12,6 +12,7 @@ namespace Justgo8.Manage
     public partial class AddDetail : System.Web.UI.Page
     {
         private static DataTable cityinfo = new DataTable();
+        private static DataTable picdt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -27,6 +28,7 @@ namespace Justgo8.Manage
                         {
                             txttitle.Text = dt.Rows[0]["title"].ToString();
                             txtdescription.Text = dt.Rows[0]["description"].ToString();
+                            txttransportation.Text = dt.Rows[0]["transportation"].ToString();
                             txtgeneralprice.Text = dt.Rows[0]["generalprice"].ToString();
                             txtadultprice.Text = dt.Rows[0]["adultprice"].ToString();
                             txtchildprice.Text = dt.Rows[0]["childprice"].ToString();
@@ -40,6 +42,7 @@ namespace Justgo8.Manage
                             fckpresentation.Value = dt.Rows[0]["presentation"].ToString();
                             fckservicestandard.Value = dt.Rows[0]["servicestandard"].ToString();
                             fckcontact.Value = dt.Rows[0]["contact"].ToString();
+                            dropjourneydays.SelectedValue = dt.Rows[0]["journeydays"].ToString();
                             droptraveltype.SelectedValue = dt.Rows[0]["traveltypeid"].ToString();
                         }
                         else
@@ -64,6 +67,11 @@ namespace Justgo8.Manage
                         cityinfo.Columns.Add("cityid");
                         cityinfo.Columns.Add("cityname");
                     }
+                    if (picdt.Columns.Count <= 0)
+                    {
+                        picdt.Columns.Add("pic");
+                    }
+                    picdt.Rows.Clear();
                     cityinfo.Rows.Clear();
                 }
             }
@@ -107,6 +115,20 @@ namespace Justgo8.Manage
             {
                 repeaterdestination.DataSource = null;
                 repeaterdestination.DataBind();
+            }
+        }
+
+        protected void BindPic(DataTable dt)
+        {
+            if (dt.Rows.Count > 0)
+            {
+                repeaterpic.DataSource = dt;
+                repeaterpic.DataBind();
+            }
+            else
+            {
+                repeaterpic.DataSource = null;
+                repeaterpic.DataBind();
             }
         }
 
@@ -229,13 +251,39 @@ namespace Justgo8.Manage
             }
         }
 
+        protected void Repeaterpic_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("del"))
+            {
+                if (String.IsNullOrEmpty(lbid.Text))
+                {
+                    cityinfo.Rows.RemoveAt(e.Item.ItemIndex);
+                    BindDestination(cityinfo);
+                }
+                else
+                {
+                    int id = Convert.ToInt32(e.CommandArgument);
+                    int res = Bll.BTravelPicture.del(id);
+                    if (res == 1)
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "", "alert('删除成功')", true);
+                        BindPic(Bll.BTravelPicture.PictureInfo(int.Parse(lbid.Text)));
+                    }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "", "alert('删除失败')", true);
+                    }
+                }
+            }
+        }
+
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
             try
             {
                 if (String.IsNullOrEmpty(lbid.Text))
                 {
-                    int detailid = Bll.BTravelDetail.add(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue));
+                    int detailid = Bll.BTravelDetail.add(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue), int.Parse(dropjourneydays.SelectedValue), txttransportation.Text);
                     try
                     {
                         for (int i = 0; i < cityinfo.Rows.Count; i++)
@@ -252,7 +300,7 @@ namespace Justgo8.Manage
                 }
                 else
                 {
-                    if (Bll.BTravelDetail.update(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(lbid.Text)) > 0)
+                    if (Bll.BTravelDetail.update(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(lbid.Text)) > 0)
                     {
                         MessageBox.ResponseScript(this.Page, "alert('修改成功!');window.location.href='TravelManager.aspx'");
                     }

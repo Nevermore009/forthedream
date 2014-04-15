@@ -23,7 +23,7 @@
         .contentfield .textbox
         {
             border: 1px solid gray;
-            font-size: 25px;
+            font-size: 22px;
         }
     </style>
 </asp:Content>
@@ -56,9 +56,22 @@
                     <td style="text-align: right">
                         类型:
                     </td>
-                    <td colspan="5" style="text-align: left">
+                    <td style="text-align: left">
                         <asp:DropDownList runat="server" ID="droptraveltype" Height="28px" Width="200px">
                         </asp:DropDownList>
+                    </td>
+                    <td style="text-align: right">
+                        行程:
+                    </td>
+                    <td style="text-align: left">
+                        <asp:DropDownList runat="server" ID="dropjourneydays" Height="28px" Width="200px">
+                        </asp:DropDownList>
+                    </td>
+                    <td style="text-align: right">
+                        交通:
+                    </td>
+                    <td style="text-align: left">
+                        <asp:TextBox runat="server" ID="txttransportation" CssClass="textbox"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +84,7 @@
                             SetFocusOnError="true" ValidationGroup="sss"></asp:RequiredFieldValidator>
                     </td>
                     <td style="text-align: right">
-                        成人起始价
+                        成人价
                     </td>
                     <td style="text-align: left">
                         <asp:TextBox ID="txtadultprice" runat="server" CssClass="textbox"></asp:TextBox><asp:RequiredFieldValidator
@@ -79,7 +92,7 @@
                             SetFocusOnError="true" ValidationGroup="sss"></asp:RequiredFieldValidator>
                     </td>
                     <td style="text-align: right">
-                        儿童起始价
+                        儿童价
                     </td>
                     <td style="text-align: left">
                         <asp:TextBox ID="txtchildprice" runat="server" CssClass="textbox"></asp:TextBox><asp:RequiredFieldValidator
@@ -143,6 +156,32 @@
                                                 <%#(Eval("cityName") == null ||String.IsNullOrEmpty(Eval("cityName").ToString()))? Eval("areaname").ToString() :Eval("cityName").ToString()%></font>
                                                 <br />
                                                 <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%# Eval("id")%>'
+                                                    OnClientClick="javascript:return confirm('确认是否删除？')">删除</asp:LinkButton></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </div>
+                        </center>
+                    </td>
+                </tr>
+                <tr style="margin-top: 10px;">
+                    <td style="text-align: right;">
+                        图片
+                    </td>
+                    <td colspan="5" style="text-align: right; border: 1px solid gray">
+                        <div style="text-align: left; padding-left: 30px;">
+                            <asp:FileUpload ID="fileuploadpic" runat="server" Height="20px" Width="100px" />
+                            <asp:Button runat="server" ID="btnaddpic" Text="上传" Height="28px" Width="100px" OnClick="btnadddestination_Click" />
+                        </div>
+                        <center>
+                            <div class="pro_list">
+                                <ul class="pro_show" style="margin-top: 5px">
+                                    <asp:Repeater ID="repeaterpic" runat="server" OnItemCommand="Repeaterpic_ItemCommand">
+                                        <ItemTemplate>
+                                            <li style="height: 165px">
+                                                <img src='<%#Eval("pic")%>' alt="" width="100px" height="100px" />
+                                                <br />
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%# Eval("picid")%>'
                                                     OnClientClick="javascript:return confirm('确认是否删除？')">删除</asp:LinkButton></li>
                                         </ItemTemplate>
                                     </asp:Repeater>

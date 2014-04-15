@@ -49,6 +49,24 @@ namespace Justgo8.Manage {
         protected global::System.Web.UI.WebControls.DropDownList droptraveltype;
         
         /// <summary>
+        /// dropjourneydays 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropjourneydays;
+        
+        /// <summary>
+        /// txttransportation 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txttransportation;
+        
+        /// <summary>
         /// txtgeneralprice 控件。
         /// </summary>
         /// <remarks>
@@ -200,6 +218,33 @@ namespace Justgo8.Manage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater repeaterdestination;
+        
+        /// <summary>
+        /// fileuploadpic 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileuploadpic;
+        
+        /// <summary>
+        /// btnaddpic 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnaddpic;
+        
+        /// <summary>
+        /// repeaterpic 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterpic;
         
         /// <summary>
         /// fckfeature 控件。

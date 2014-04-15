@@ -1,0 +1,11 @@
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\Bll.dll
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\Bll.pdb
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\DLL.dll
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\DBUtility.dll
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\Common.dll
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\DLL.pdb
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\DBUtility.pdb
+E:\工作\qshb\qshb\Bll\bin\x86\Debug\Common.pdb
+E:\工作\qshb\qshb\Bll\obj\x86\Debug\Bll.csprojResolveAssemblyReference.cache
+E:\工作\qshb\qshb\Bll\obj\x86\Debug\Bll.dll
+E:\工作\qshb\qshb\Bll\obj\x86\Debug\Bll.pdb

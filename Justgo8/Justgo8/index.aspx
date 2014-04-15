@@ -700,10 +700,12 @@
                                 </div>
                                 <div class="mb_10">
                                     <ol>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="【长城品质纯玩1日B】八达岭长城-定陵-鸟巢水立外景"
-                                            rel="nofollow"><span class="f_0053aa">【长城品质纯玩1日B】八达岭长城-定陵-鸟巢水立外景</span></a><em class="hs_p"><b>260</b>元起</em></li>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="【故宫品质纯玩1日A】故宫-天坛-颐和园" rel="nofollow">
-                                            <span class="f_0053aa">【故宫品质纯玩1日A】故宫-天坛-颐和园</span></a><em class="hs_p"><b>260</b>元起</em></li>
+                                        <asp:Repeater ID="repeaterperipheryshow" runat="server">
+                                            <ItemTemplate>
+                                                <li class="hs_item"><a class="hs_name" href='detail.aspx?id=<%#Eval("id") %>' title='<%#Eval("title") %>'
+                                                    rel="nofollow"><span class="f_0053aa">
+                                                        <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                        </asp:Repeater>
                                     </ol>
                                 </div>
                             </div>
@@ -717,10 +719,12 @@
                                 </div>
                                 <div class="mb_10">
                                     <ol>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="【长城品质纯玩1日B】八达岭长城-定陵-鸟巢水立外景"
-                                            rel="nofollow"><span class="f_0053aa">【长城品质纯玩1日B】八达岭长城-定陵-鸟巢水立外景</span></a><em class="hs_p"><b>260</b>元起</em></li>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="【故宫品质纯玩1日A】故宫-天坛-颐和园" rel="nofollow">
-                                            <span class="f_0053aa">【故宫品质纯玩1日A】故宫-天坛-颐和园</span></a><em class="hs_p"><b>260</b>元起</em></li>
+                                        <asp:Repeater ID="repeaterinlandshow" runat="server">
+                                            <ItemTemplate>
+                                                <li class="hs_item"><a class="hs_name" href='detail.aspx?id=<%#Eval("id") %>' title='<%#Eval("title") %>'
+                                                    rel="nofollow"><span class="f_0053aa">
+                                                        <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                        </asp:Repeater>
                                     </ol>
                                 </div>
                             </div>
@@ -744,12 +748,12 @@
                                 </div>
                                 <div class="mb_10">
                                     <ol>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                            rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="爱自游--【丽江自由行】双飞四晚五日（古城天雨上院）"
-                                            rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四晚五日（古城天雨上院）</span></a><em class="hs_p"><b>3360</b>元起</em></li>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="爱自游--【丽江自由行】双飞四晚五日（古城竹苑）"
-                                            rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四晚五日（古城竹苑）</span></a><em class="hs_p"><b>3020</b>元起</em></li>
+                                        <asp:Repeater ID="repeateroutlandshow" runat="server">
+                                            <ItemTemplate>
+                                                <li class="hs_item"><a class="hs_name" href='detail.aspx?id=<%#Eval("id") %>' title='<%#Eval("title") %>'
+                                                    rel="nofollow"><span class="f_0053aa">
+                                                        <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                        </asp:Repeater>
                                     </ol>
                                 </div>
                             </div>
@@ -758,18 +762,18 @@
                             <div class="hs_con">
                                 <div class="hs_top">
                                     <h2>
-                                        私人定制
+                                        团队定制
                                     </h2>
                                     <a class="hs_more" href="#">更多<span style="font-family: 宋体">&gt;&gt;</span></a>
                                 </div>
                                 <div class="mb_10">
                                     <ol>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                            rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="爱自游--【丽江自由行】双飞四晚五日（古城天雨上院）"
-                                            rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四晚五日（古城天雨上院）</span></a><em class="hs_p"><b>3360</b>元起</em></li>
-                                        <li class="hs_item"><a class="hs_name" href="#" title="爱自游--【丽江自由行】双飞四晚五日（古城竹苑）"
-                                            rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四晚五日（古城竹苑）</span></a><em class="hs_p"><b>3020</b>元起</em></li>
+                                        <asp:Repeater ID="repeatercustomize" runat="server">
+                                            <ItemTemplate>
+                                                <li class="hs_item"><a class="hs_name" href='detail.aspx?id=<%#Eval("id") %>' title='<%#Eval("title") %>'
+                                                    rel="nofollow"><span class="f_0053aa">
+                                                        <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                        </asp:Repeater>
                                     </ol>
                                 </div>
                             </div>

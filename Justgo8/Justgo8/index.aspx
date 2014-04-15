@@ -445,30 +445,30 @@
                     <div class="hot_sort">
                         <div class="hs_wrap">
                             <div class="hs_w710 clearfix">
-                                <div class="hs_con" style="width: 370px;margin-left:15px;">
-                                        <div class="mb_10" >
-                                            <ol>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四lasdkjflasdfasdf）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四sdfsdfsdfsdfsd）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                    <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四sdsdfsdfsdfdf）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                            </ol>
-                                        </div>
+                                <div class="hs_con" style="width: 370px; margin-left: 15px;">
+                                    <div class="mb_10">
+                                        <ol>
+                                            <asp:Repeater ID="repeaterinlandshow1" runat="server">
+                                                <ItemTemplate>
+                                                    <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
+                                                        title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
+                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                            </asp:Repeater>
+                                        </ol>
                                     </div>
-                                    <div class="hs_con" style="width: 370px;margin-left:30px;">
-                                        <div class="mb_10" >
-                                            <ol>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四sdsdfsdfsdf）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四sdsdsdfsdfsdfsdf）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                    <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四sdfsdfsdfsdfsdfsdsdfsd）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                            </ol>
-                                        </div>
+                                </div>
+                                <div class="hs_con" style="width: 370px; margin-left: 30px;">
+                                    <div class="mb_10">
+                                        <ol>
+                                            <asp:Repeater ID="repeaterinlandshow2" runat="server">
+                                                <ItemTemplate>
+                                                    <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
+                                                        title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
+                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                            </asp:Repeater>
+                                        </ol>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -578,28 +578,28 @@
                     <div style="width: 815px; float: left;" id="outlandcontent">
                         <div class="hot_sort">
                             <div class="hs_wrap">
-                                <div class="hs_w710 clearfix">                                   
-                                    <div class="hs_con" style="width: 370px;margin-left:15px;">
-                                        <div class="mb_10" >
+                                <div class="hs_w710 clearfix">
+                                    <div class="hs_con" style="width: 370px; margin-left: 15px;">
+                                        <div class="mb_10">
                                             <ol>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                    <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
+                                                <asp:Repeater ID="repeateroutlandshow1" runat="server">
+                                                    <ItemTemplate>
+                                                        <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
+                                                            title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
+                                                                <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                </asp:Repeater>
                                             </ol>
                                         </div>
                                     </div>
-                                    <div class="hs_con" style="width: 370px;margin-left:30px;">
-                                        <div class="mb_10" >
+                                    <div class="hs_con" style="width: 370px; margin-left: 30px;">
+                                        <div class="mb_10">
                                             <ol>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
-                                                    <li class="hs_item"><a class="hs_name"  style="width: 280px;" href="#" title="爱自游--【丽江自由行】双飞四晚五日（德鑫酒店）"
-                                                    rel="nofollow"><span class="f_0053aa">爱自游--【丽江自由行】双飞四）</span></a><em class="hs_p"><b>2920</b>元起</em></li>
+                                                <asp:Repeater ID="repeateroutlandshow2" runat="server">
+                                                    <ItemTemplate>
+                                                        <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
+                                                            title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
+                                                                <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                </asp:Repeater>
                                             </ol>
                                         </div>
                                     </div>

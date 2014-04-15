@@ -164,14 +164,14 @@
                         </center>
                     </td>
                 </tr>
-                <tr style="margin-top: 10px;">
+                <tr>
                     <td style="text-align: right;">
                         图片
                     </td>
-                    <td colspan="5" style="text-align: right; border: 1px solid gray">
+                    <td colspan="5" style="margin-top: 10px;text-align: right; border: 1px solid gray">
                         <div style="text-align: left; padding-left: 30px;">
                             <asp:FileUpload ID="fileuploadpic" runat="server" Height="20px" Width="100px" />
-                            <asp:Button runat="server" ID="btnaddpic" Text="上传" Height="28px" Width="100px" OnClick="btnadddestination_Click" />
+                            <asp:Button runat="server" ID="btnaddpic" Text="上传" Height="28px" Width="100px" OnClick="btnaddpic_Click" />
                         </div>
                         <center>
                             <div class="pro_list">

@@ -104,5 +104,49 @@ namespace Justgo8
             RepeaterOutland.DataSource = Bll.BArea.AreaOfTravelType(Bll.BTravelType.Outland);
             RepeaterOutland.DataBind();
         }
+
+        protected void BindInlandshow()
+        {
+            repeaterinlandshow.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 10);
+            repeaterinlandshow.DataBind();
+        }
+        protected void BindInlandshow1()
+        {
+            repeaterinlandshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 10);
+            repeaterinlandshow1.DataBind();
+        }
+        protected void BindInlandshow2()
+        {
+            repeaterinlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 10);
+            repeaterinlandshow2.DataBind();
+        }
+
+        protected void BindOutlandshow()
+        {
+            repeateroutlandshow.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 10);
+            repeateroutlandshow.DataBind();
+        }
+        protected void BindOutlandshow1()
+        {
+            repeateroutlandshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 10);
+            repeateroutlandshow1.DataBind();
+        }
+        protected void BindOutlandshow2()
+        {
+            repeateroutlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 10);
+            repeateroutlandshow2.DataBind();
+        }
+
+        protected void BindPeripheryshow()
+        {
+            repeaterperipheryshow.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 10);
+            repeaterperipheryshow.DataBind();
+        }
+
+        protected void BindCustomize()
+        {
+            
+        }
+
     }
 }

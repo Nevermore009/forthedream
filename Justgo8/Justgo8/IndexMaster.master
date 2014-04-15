@@ -56,7 +56,7 @@
                 <ul>
                     <li id="hello">您好！欢迎您来到马上游！</li>
                     <li id="in"><a href="/Manage/Login.aspx" target="_blank">后台登录 </a></li>
-                    <li id="login"><a href="login.aspx">登录</a> | <a href="register.aspx">注册</a></li>
+                    <li id="login"><%=(Session["username"] == null ? "<a href='login.aspx'>登录</a> " : "<a href='vip.aspx'>" + Session["username"].ToString() + "</a> ")%>| <a href="register.aspx">注册</a></li>
                 </ul>
             </div>
         </div>

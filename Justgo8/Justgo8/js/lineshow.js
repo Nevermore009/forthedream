@@ -173,7 +173,7 @@ $(function () {
     });
 
     if ($('#linePrice>span').length == 0) {
-        alert('近期暂无价格');
+        
     } else {
         $('#linePrice>span:first').click();
     }

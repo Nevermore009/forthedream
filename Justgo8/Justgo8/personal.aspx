@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="height:400px"></div>
+<div id="main" style="height:400px;padding-top:30px;font-size:20px;color:Green;padding-left:100px;">敬请期待...</div>
 </asp:Content>

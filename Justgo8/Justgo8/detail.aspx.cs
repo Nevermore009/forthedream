@@ -13,17 +13,19 @@ namespace Justgo8
 {
     public partial class detail : System.Web.UI.Page
     {
-
+        public string pic = "";
+        public string title = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(Request["id"]))
             {
                 Response.Redirect("index.aspx");
+                return;
             }
             if (!IsPostBack)
             {
-              
-            }            
+                BindDetail();
+            }
         }
 
         protected void BindDetail()
@@ -33,25 +35,25 @@ namespace Justgo8
                 DataTable dt = Bll.BTravelDetail.DetailInfo(int.Parse(Request["id"]));
                 if (dt.Rows.Count > 0)
                 {
+                    pic = dt.Rows[0]["pic"].ToString();
+                    title = dt.Rows[0]["title"].ToString();
                     lbtitle.Text = dt.Rows[0]["title"].ToString();
+                    lbtitle2.Text = dt.Rows[0]["title"].ToString();
                     lbadultprice.Text = dt.Rows[0]["adultprice"].ToString();
                     lbchildprice.Text = dt.Rows[0]["childprice"].ToString();
                     lbgeneralprice.Text = dt.Rows[0]["generalprice"].ToString();
-                    lbgeneralprice.Text = dt.Rows[0]["generalprice"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
-                    lbfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
+                    lbdeparturetime.Text = dt.Rows[0]["departuretime"].ToString();
+                    divfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
+                    divjourney.InnerHtml = dt.Rows[0]["journey"].ToString();
+                    divbillinclude.InnerHtml = dt.Rows[0]["billinclude"].ToString();
+                    divbillbeside.InnerHtml = dt.Rows[0]["billbeside"].ToString();
+                    divservicestandard.InnerHtml = dt.Rows[0]["servicestandard"].ToString();
+                    divpresentation.InnerHtml = dt.Rows[0]["presentation"].ToString();
+                    divcontact.InnerHtml = dt.Rows[0]["contact"].ToString();
                 }
                 else
                 {
-                    throw new Exception() ;
+                    throw new Exception();
                 }
             }
             catch (Exception ex)
@@ -112,7 +114,7 @@ namespace Justgo8
                         }
                         catch (Exception ex)
                         {
-                            ErrorLog.AddErrorLog("邮件发送失败:"+ex.ToString());
+                            ErrorLog.AddErrorLog("邮件发送失败:" + ex.ToString());
                         }
 
                         MessageBox.ResponseScript(this.Page, "alert('预订成功');window.reload();");

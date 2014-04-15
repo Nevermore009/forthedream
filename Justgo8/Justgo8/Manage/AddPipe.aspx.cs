@@ -26,7 +26,7 @@ namespace justgo.Manage
                         //品名
                         Name.Text = dt.Rows[0]["Name"].ToString();
                         //图片地址
-                        Url.Text = dt.Rows[0]["url"].ToString();
+                        txtdetailid.Text = dt.Rows[0]["detailid"].ToString();
                         Session["Pic"] = dt.Rows[0]["Pic"].ToString();
 
                         sort.Text = dt.Rows[0]["sort"].ToString();
@@ -61,6 +61,12 @@ namespace justgo.Manage
                     prompt("请输入正确的排序号");
                     return;
                 }
+                int detailid;
+                if (!int.TryParse(txtdetailid.Text, out detailid))
+                {
+                    prompt("请输入正确的线路ID");
+                    return;
+                }
 
                 if (FileUpload1.FileName != "")
                 {
@@ -70,7 +76,7 @@ namespace justgo.Manage
                 {
                     url = Session["Pic"].ToString();
                 }
-                int res = Bll.BPatent.update(Name.Text, url, Url.Text, Convert.ToInt32(sort.Text), Convert.ToInt32(Request.QueryString["mdy"]));
+                int res = Bll.BPatent.update(Name.Text, url, detailid, Convert.ToInt32(sort.Text), Convert.ToInt32(Request.QueryString["mdy"]));
                 if (res == 1)
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "", "alert('修改成功');parent.ReloadPage();", true);
@@ -95,13 +101,19 @@ namespace justgo.Manage
                     prompt("请输入正确的排序号");
                     return;
                 }
+                int detailid;
+                if (!int.TryParse(txtdetailid.Text, out detailid))
+                {
+                    prompt("请输入正确的线路ID");
+                    return;
+                }
 
                 string url = "";
                 if (FileUpload1.FileName != "")
                 {
                     url = FileUpLoad.Upload(Request.Files);
                 }
-                int res = Bll.BPatent.add(Name.Text, url,Url.Text, Convert.ToInt32(sort.Text));
+                int res = Bll.BPatent.add(Name.Text, url, detailid, Convert.ToInt32(sort.Text));
                 if (res == 1)
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "", "alert('添加成功成功');parent.ReloadPage();", true);

@@ -71,7 +71,7 @@
         <div id="outland_bottom">
             <div id="outland_bottomTop">
                 <div class="outland_bottomTop_left">
-                    <img src="images/outland/outland_bottomTop_title.png" width="200px" height="30px"
+                    <img src="images/index/periphery.png" width="200px" height="30px"
                         alt="" /></div>
                 <div class="outland_bottomTop_right">
                     <a href="#" target="_blank" class="more">更多>></a></div>
@@ -99,9 +99,9 @@
                             <asp:Repeater runat="server" ID="repeateritem">
                                 <ItemTemplate>
                                     <li><a href='detail.aspx?id=<%#Eval("id") %>' target="_blank"><span>
-                                        <img src='<%#Eval("pic") %>' width="167px" height="105px" alt='<%#Eval("discription") %>'
-                                            title="<%#Eval("discription") %>" /></span><span><%#Eval("discription") %></span><span
-                                                class="outland_bottom_Right_ul1_price"><%#Eval("price") %>元</span></a></li>
+                                        <img src='<%#Eval("pic") %>' width="167px" height="105px" alt='<%#Eval("title") %>'
+                                            title="<%#Eval("title") %>" /></span><span style="text-align: center;"><%#Eval("title") %>(<%#Eval("description") %>)</span><span
+                                                class="outland_bottom_Right_ul1_price"><%#Eval("adultprice") %>元</span></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>

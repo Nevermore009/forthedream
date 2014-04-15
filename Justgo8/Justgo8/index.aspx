@@ -392,7 +392,7 @@
                                     <!--图片加上图片上方的图片名字-->
                                     <asp:Repeater ID="RepeaterWelcomePic" runat="server">
                                         <ItemTemplate>
-                                            <a href="<%# Eval("url")%>" <%# Container.ItemIndex+1<=1?"style='display:block;'":"style='display:none;'"%>>
+                                            <a href="detail.aspx?id=<%#Eval("detailid") %>" <%# Container.ItemIndex+1<=1?"style='display:block;'":"style='display:none;'"%>>
                                                 <img border="0" width="810px" height="352px" src='<%# Eval("pic")%>' alt="<%# Eval("name")%>"
                                                     title='<%# Eval("name")%>' /></a>
                                         </ItemTemplate>
@@ -418,7 +418,7 @@
         <!--INLAND AREA STARTS-->
         <div id="inland">
             <div style="width: 185px; height: 30px; float: left; padding-top: 10px;">
-                <img src="images/index/inland.jpg" alt="" width="185" height="30" /></div>
+                <img src="images/index/inland.png" alt="" width="185" height="30" /></div>
             <div class="selectarea">
                 <asp:Repeater runat="server" ID="RepeaterHotInland">
                     <ItemTemplate>
@@ -551,12 +551,12 @@
         <!--OUTLAND AREA STARTS-->
         <div id="outland">
             <div style="width: 185px; height: 30px; float: left; padding-top: 10px;">
-                <img alt="" src="images/index/outland.jpg" width="185" height="30" /></div>
+                <img alt="" src="images/index/outland.png" width="185" height="30" /></div>
             <div class="selectarea">
                 <asp:Repeater runat="server" ID="RepeaterHotOutland">
                     <ItemTemplate>
-                        <li><a href="#" target="_blank" <%# Container.ItemIndex==0?"class='first'":""%>>
-                            <%#Eval("areaname") %></a></li>
+                        <a href="#" target="_blank" <%# Container.ItemIndex==0?"class='first'":""%>>
+                            <%#Eval("areaname") %></a>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>

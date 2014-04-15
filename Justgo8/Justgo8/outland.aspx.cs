@@ -15,6 +15,7 @@ namespace Justgo8
             if (!IsPostBack)
             {
                 BindArea();
+                BindOutlandshow();
             }
         }
 
@@ -31,6 +32,22 @@ namespace Justgo8
             {
                 RepeaterOutland.DataSource = null;
                 RepeaterOutland.DataBind();
+            }
+        }
+
+        protected void BindOutlandshow()
+        {
+            DataTable dt = new DataTable();
+            dt = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 30);
+            if (dt.Rows.Count > 0)
+            {
+                repeateritem.DataSource = dt;
+                repeateritem.DataBind();
+            }
+            else
+            {
+                repeateritem.DataSource = null;
+                repeateritem.DataBind();
             }
         }
     }

@@ -91,6 +91,9 @@
     <Content Include="images\index\b.png" />
     <Content Include="images\index\bg_line_t2.png" />
     <Content Include="images\index\bg_line_t3.png" />
+    <Content Include="images\index\inland.png" />
+    <Content Include="images\index\outland.png" />
+    <Content Include="images\index\periphery.png" />
     <Content Include="images\index\qq.gif" />
     <Content Include="images\index\cct-chujing.gif" />
     <Content Include="images\index\feature_left.gif" />

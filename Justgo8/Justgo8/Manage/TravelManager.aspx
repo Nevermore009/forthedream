@@ -13,8 +13,8 @@
         <ul class="pro_show" style="margin-top: 5px">
             <asp:Repeater ID="repeaterdestination" runat="server" OnItemCommand="RPlank_ItemCommand">
                 <ItemTemplate>
-                    <li>
-                        <img src="" height="100px" width="100px" title="" alt="" />
+                    <li><a href="../detail.aspx?id=<%#Eval("id") %>" target="_blank">
+                        <img src="<%#Eval("pic") %>" height="100px" width="100px" title="" alt="" /></a>
                         <br />
                         <font style="font-weight: bold; font-size: 18px">
                             <%#Eval("title") %></font>

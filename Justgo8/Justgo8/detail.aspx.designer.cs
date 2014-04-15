@@ -22,6 +22,15 @@ namespace Justgo8 {
         protected global::System.Web.UI.WebControls.Label lbtitle;
         
         /// <summary>
+        /// lbtitle2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbtitle2;
+        
+        /// <summary>
         /// lbgeneralprice 控件。
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Justgo8 {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbgeneralprice;
+        
+        /// <summary>
+        /// lbdeparturetime 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbdeparturetime;
         
         /// <summary>
         /// lbadultprice 控件。
@@ -94,12 +112,66 @@ namespace Justgo8 {
         protected global::System.Web.UI.WebControls.Button btnadd;
         
         /// <summary>
-        /// lbfeatures 控件。
+        /// divfeatures 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbfeatures;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divfeatures;
+        
+        /// <summary>
+        /// divjourney 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divjourney;
+        
+        /// <summary>
+        /// divbillinclude 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divbillinclude;
+        
+        /// <summary>
+        /// divbillbeside 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divbillbeside;
+        
+        /// <summary>
+        /// divservicestandard 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divservicestandard;
+        
+        /// <summary>
+        /// divpresentation 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divpresentation;
+        
+        /// <summary>
+        /// divcontact 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divcontact;
     }
 }

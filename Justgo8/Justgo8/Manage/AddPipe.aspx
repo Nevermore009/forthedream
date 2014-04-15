@@ -16,10 +16,10 @@
                 <asp:TextBox ID="Name" runat="server"></asp:TextBox>
             </td>
             <td>
-                网址:
+                线路ID:
             </td>
             <td>
-                <asp:TextBox ID="Url" runat="server" Text="#"></asp:TextBox>
+                <asp:TextBox ID="txtdetailid" runat="server" Text=""></asp:TextBox>
             </td>
         </tr>
         <tr>

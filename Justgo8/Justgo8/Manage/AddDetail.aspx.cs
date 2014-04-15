@@ -18,6 +18,7 @@ namespace Justgo8.Manage
             if (!IsPostBack)
             {
                 BindTravelType();
+                BindJourneydays();
                 if (!String.IsNullOrEmpty(Request["travelid"]))
                 {
                     try
@@ -70,6 +71,7 @@ namespace Justgo8.Manage
                     if (picdt.Columns.Count <= 0)
                     {
                         picdt.Columns.Add("pic");
+                        picdt.Columns.Add("picid");
                     }
                     picdt.Rows.Clear();
                     cityinfo.Rows.Clear();
@@ -101,6 +103,15 @@ namespace Justgo8.Manage
 
                 dropdestinationtraveltype.DataSource = null;
                 dropdestinationtraveltype.DataBind();
+            }
+        }
+
+        protected void BindJourneydays()
+        {
+            dropjourneydays.Items.Clear();
+            for (int i = 1; i <= 30; i++)
+            {
+                dropjourneydays.Items.Add(new ListItem(i + "天", i.ToString()));
             }
         }
 
@@ -251,14 +262,51 @@ namespace Justgo8.Manage
             }
         }
 
+        protected void btnaddpic_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!fileuploadpic.HasFile)
+                {
+                    MessageBox.Show(this.Page, "请选择要上传的文件!");
+                    return;
+                }
+                string url = FileUpLoad.Upload(Request.Files);
+                if (String.IsNullOrEmpty(lbid.Text))
+                {
+                    DataRow row = picdt.NewRow();
+                    row["pic"] = url;
+                    picdt.Rows.Add(row);
+                    BindPic(picdt);
+                }
+                else
+                {
+                    if (Bll.BTravelPicture.add(int.Parse(lbid.Text), url) > 0)
+                    {
+                        BindPic(Bll.BTravelPicture.PictureInfo(int.Parse(lbid.Text)));
+                    }
+                    else
+                    {
+                        MessageBox.Show(this.Page, "添加失败!");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.AddErrorLog(ex.ToString());
+                MessageBox.Show(this.Page, "添加失败!");
+            }
+        }
+
         protected void Repeaterpic_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName.Equals("del"))
             {
                 if (String.IsNullOrEmpty(lbid.Text))
                 {
-                    cityinfo.Rows.RemoveAt(e.Item.ItemIndex);
-                    BindDestination(cityinfo);
+                    picdt.Rows.RemoveAt(e.Item.ItemIndex);
+                    BindPic(picdt);
                 }
                 else
                 {
@@ -289,6 +337,17 @@ namespace Justgo8.Manage
                         for (int i = 0; i < cityinfo.Rows.Count; i++)
                         {
                             Bll.BDestination.add(detailid, int.Parse(cityinfo.Rows[i]["areaid"].ToString()), int.Parse(cityinfo.Rows[i]["cityid"].ToString()));
+                        }
+                    }
+                    catch (Exception x)
+                    {
+                        ErrorLog.AddErrorLog(x.ToString());
+                    }
+                    try
+                    {
+                        for (int i = 0; i < cityinfo.Rows.Count; i++)
+                        {
+                            Bll.BTravelPicture.add(detailid, picdt.Rows[i]["pic"].ToString());
                         }
                     }
                     catch (Exception x)

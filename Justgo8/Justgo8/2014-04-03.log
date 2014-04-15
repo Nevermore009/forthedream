@@ -1,0 +1,55 @@
+﻿2014-4-3 22:46:46-
+The ConnectionString property has not been initialized.
+   at System.Data.SqlClient.SqlConnection.PermissionDemand()
+   at System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DBUtility.MsSqlHelper.SeeResults(String sql)
+
+2014-4-3 22:46:48-
+The ConnectionString property has not been initialized.
+   at System.Data.SqlClient.SqlConnection.PermissionDemand()
+   at System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DBUtility.MsSqlHelper.SeeResults(String sql)
+
+2014-4-3 22:46:56-
+The ConnectionString property has not been initialized.
+   at System.Data.SqlClient.SqlConnection.PermissionDemand()
+   at System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DBUtility.MsSqlHelper.SeeResults(String sql)
+
+2014-4-3 22:47:00-
+The ConnectionString property has not been initialized.
+   at System.Data.SqlClient.SqlConnection.PermissionDemand()
+   at System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DBUtility.MsSqlHelper.SeeResults(String sql)
+
+2014-4-3 22:47:05-
+The ConnectionString property has not been initialized.
+   at System.Data.SqlClient.SqlConnection.PermissionDemand()
+   at System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DBUtility.MsSqlHelper.SeeResults(String sql)
+

@@ -1,0 +1,246 @@
+﻿2014/4/13 12:31:50-
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, TimeoutTimer timeout)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, TimeoutTimer timeout, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 DBUtility.MsSqlHelper.SeeResults(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 35
+
+2014/4/13 19:29:28-
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 192
+
+2014/4/13 19:31:32-
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e)
+
+2014/4/13 19:32:43-
+System.ArgumentException: 列“areaid”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 191
+
+2014/4/13 19:33:42-
+System.Web.HttpException (0x80004005): DataBinding:“System.Data.DataRowView”不包含名为“id”的属性。
+   在 System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   在 System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   在 System.Web.UI.DataBinder.Eval(Object container, String expression)
+   在 System.Web.UI.TemplateControl.Eval(String expression)
+   在 ASP.manage_adddetail_aspx.__DataBinding__control3(Object sender, EventArgs e) 位置 c:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx:行号 145
+   在 System.Web.UI.Control.OnDataBinding(EventArgs e)
+   在 System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   在 System.Web.UI.Control.DataBind()
+   在 System.Web.UI.Control.DataBindChildren()
+   在 System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   在 System.Web.UI.Control.DataBind()
+   在 System.Web.UI.WebControls.Repeater.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   在 System.Web.UI.WebControls.Repeater.CreateControlHierarchy(Boolean useDataSource)
+   在 System.Web.UI.WebControls.Repeater.OnDataBinding(EventArgs e)
+   在 System.Web.UI.WebControls.Repeater.DataBind()
+   在 Justgo8.Manage.AddDetail.BindDestination(DataTable dt) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 98
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 196
+
+2014/4/13 19:46:43-
+System.ArgumentException: 列“areaid”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 196
+
+2014/4/13 20:44:48-
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, SqlConnection owningObject)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, TimeoutTimer timeout)
+   在 System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, TimeoutTimer timeout, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 DBUtility.MsSqlHelper.RunSqlReturn(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 83
+
+2014/4/13 20:44:48-
+System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 DLL.TravelDetail.add(String title, String description, Single generalprice, Single adultprice, Single childprice, String startdate, String enddate, String departuretime, String features, String billinclude, String billbeside, String servicestandard, String presentation, String journey, String contact, Int32 traveltypeid) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DLL\TravelDetail.cs:行号 61
+   在 Bll.BTravelDetail.add(String title, String description, Single generalprice, Single adultprice, Single childprice, String startdate, String enddate, String departuretime, String features, String billinclude, String billbeside, String servicestandard, String presentation, String journey, String contact, Int32 traveltypeid) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Bll\BTravelDetail.cs:行号 50
+   在 Justgo8.Manage.AddDetail.btnsubmit_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 231
+
+2014/4/13 20:51:47-
+System.ArgumentException: 列“areaid”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 196
+
+2014/4/13 20:51:52-
+System.ArgumentException: 列“areaid”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 Justgo8.Manage.AddDetail.btnadddestination_Click(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 196
+
+2014/4/13 20:53:38-
+不能将值 NULL 插入列 'ID'，表 'a0321173731.a0321173731.Tb_Destination'；列不允许有空值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 20:53:38-
+不能将值 NULL 插入列 'ID'，表 'a0321173731.a0321173731.Tb_Destination'；列不允许有空值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 20:56:04-
+System.ArgumentException: 列“feature”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Justgo8.Manage.AddDetail.Page_Load(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 37
+
+2014/4/13 20:56:43-
+System.ArgumentException: 列“feature”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Justgo8.Manage.AddDetail.Page_Load(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 37
+
+2014/4/13 20:57:56-
+System.ArgumentException: 列“feature”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Justgo8.Manage.AddDetail.Page_Load(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 37
+
+2014/4/13 20:58:06-
+System.ArgumentException: 列“feature”不属于表 。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 Justgo8.Manage.AddDetail.Page_Load(Object sender, EventArgs e) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\Justgo8\Manage\AddDetail.aspx.cs:行号 37
+
+2014/4/13 21:00:18-
+不能将值 NULL 插入列 'ID'，表 'a0321173731.a0321173731.Tb_Destination'；列不允许有空值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 21:00:23-
+不能将值 NULL 插入列 'ID'，表 'a0321173731.a0321173731.Tb_Destination'；列不允许有空值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 21:01:15-
+不能将值 NULL 插入列 'ID'，表 'a0321173731.a0321173731.Tb_Destination'；列不允许有空值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 21:03:15-
+不能将值 NULL 插入列 'ID'，表 'a0321173731.a0321173731.Tb_Destination'；列不允许有空值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 21:04:48-
+'<' 附近有语法错误。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 21:07:58-
+'<' 附近有语法错误。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+
+2014/4/13 21:08:26-
+'<' 附近有语法错误。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+以 'color: rgb(64, 64, 64); font-family: 宋体; font-size: 18px; font-weight: bold; line-height: 27px; background-color: rgb(247, 248, ' 开头的 标识符 太长。最大长度为 128。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 DBUtility.MsSqlHelper.GetNum(String sql) 位置 C:\Users\Administrator\Desktop\网站\Justgo8\DBUtility\MsSqlHelper.cs:行号 58
+

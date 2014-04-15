@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+/*---------------------首页 Index--------------------*/
+.index_box{width:326px; float:left; height:250px; margin-right:10px; font-size:12px; margin-top:10px}
+.index_boxr{width:326px; float:right; height:250px; font-size:12px; margin-top:10px}
+.index_boxb{ width:1000px;_width:996px;float:left;font-size:12px; margin-top:10px}
+/*标题*/
+.index_tit{font-weight:bolder; border-bottom:1px solid #0588ee; line-height:26px; position:relative; height:30px}
+.index_tit .tit_font_cn{ float:left;border-bottom:2px solid #1c3450;line-height:29px;height:29px; padding-left:3px; padding-right:3px; font-size:14px}
+.index_tit .tit_font_cn a{color:#ff6600; text-decoration:none;}
+.index_tit .tit_font_en{ font-family:Arial;font-weight:lighter; color:#999999; float:left;line-height:30px;height:30px; margin-left:10px}
+.index_tit .tit_more{ float:right; font-weight:lighter; color:#999999;font-family:Arial; font-size:10px; line-height:33px}
+.index_tit .tit_more a{color:#999999}
+/*公司简介*/
+.index_companyIntro{ padding-top:15px; line-height:24px; height:192px; overflow:hidden; width:315px}
+.index_companyIntro img{ width:143px; height:70px; float:left; margin-right:10px;}
+/*企业荣誉*/
+.index_honor{ padding-top:15px;}
+.index_honor .slider{width:324px;height:190px;border:1px solid #e9e9e9;position:relative;overflow:hidden;}
+.index_honor .conbox{position:absolute;/*必要元素*/}
+.index_honor .conbox div{position: absolute; z-index: 1; opacity: 0;}
+.index_honor .conbox div img{ width:318px; height:184px; padding:3px; border:none}
+.index_honor .switcher_cur{position:absolute;bottom:10px;right:10px;float:right;z-index:99;opacity:0.7;filter:alpha(opacity=70); width:318px; height:18px;background:#c4c4c4; left:3px; top:169px;}
+.index_honor .switcher{float:right; width:140px; position:absolute; left:222px; top:169px; z-index:999}
+.index_honor .switcher a{background:#535353;cursor:pointer;float:left;font-family:arial;height:18px;line-height:18px;width:18px;margin:1px; margin-top:0px;text-align:center;color:#ffffff; }
+.index_honor .switcher a.cur,.switcher_cur a:hover{background:#D00000;text-decoration:none}
+/*服务热线*/
+.index_contact{padding-top:20px;}
+.index_contact div{ height:45px; border-bottom:1px dotted #e8e8e8; padding-left:60px; font-size:14px; font-family:"微软雅黑", "宋体", "Arial Unicode MS", Verdana; line-height:45px;}
+.index_contact div span{ float:left; display:block; width:80px; color:#999999}
+.index_contact div label{ color:#29a0fd; font-size:20px; float:left; display:block; *width:150px !important; width:150px; font-family:Arial,"微软雅黑"; font-weight:bolder}
+.index_contact .icon_phone1{ background:url(../images/icon_indexp1.gif) no-repeat 15px 0px;}
+.index_contact .icon_phone2{ background:url(../images/icon_indexp2.gif) no-repeat 15px 0px;}
+.index_contact .icon_phone3{ background:url(../images/icon_indexp3.gif) no-repeat 15px 0px;}
+.index_contact .icon_phone4{ background:url(../images/icon_indexp4.gif) no-repeat 15px 0px;}
+/*工程案例*/
+.index_project{height:160px;width:980px;position: relative; margin-left:10px}
+.index_project .wrapper {width:900px;overflow: auto;position: absolute;height:160px;top:20px;margin-left:45px}
+.index_project ul img {border:2px solid #efefef;height: 123px; width: 123px;}
+.index_project .wrapper ul {width: 9999px;list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:0;position: absolute;top: 0;}
+.index_project ul li {display:block;	float:left;	height: 180px;width: 150px;text-align:center}
+.index_project .arrow {display: block;height: 36px;width: 33px;background:url(../images/arrow.jpg) no-repeat 0 0;text-indent: -999px;position: absolute;top: 75px;cursor: pointer;}
+.index_project .forward {background-position: 0 0;right: 0;}
+.index_project .back {background-position: 0 -72px;left: 0;}
+.index_project .forward:hover {background-position: 0 -36px;}
+.index_project .back:hover {background-position: 0 -108px;}
+/*产品展示*/
+.index_show{}
+.index_show ul{ float:left; width:320px; margin-right:12px; margin-top:15px; margin-bottom:5px}
+.index_show .show_right{ margin-right:0px; float:right}
+.index_show ul .show_img{ float:left; width:141px; height:121px; background:url(../images/show_bg.jpg); text-align:center; color:#ffffff; font-weight:bolder; line-height:16px}
+.index_show ul .show_img img{ width:135px; height:90px; margin-top:2px}
+.index_show ul .show_font{ float:left; margin-left:10px; width:165px; line-height:22px; color:#606060}
+.index_show ul .show_font p{  font-size:12px; margin:0px; padding:0px; margin-bottom:10px; color:#646263}
+.index_show ul .show_font a{ color:#ff6200}
+
+/*----------公司概况 CompanyIntro----------*/
+/*集团简介*/
+.company_group{}
+.company_group .swf{width:580px; height:270px; margin:auto; margin-bottom:35px; margin-top:35px}
+.company_group .font{line-height:36px;}
+
+
+/*----------资讯中心 News----------*/
+/*新闻列表*/
+.news_list{}
+.news_list ul{ margin-bottom:10px; }
+.news_list li{ line-height:36px; border-bottom:1px dotted #e4e4e4;  margin:auto; background:url(../images/icon_dian.gif) no-repeat 8px 15px; padding-left:20px;position:relative;}
+.news_list li a{ color:#333333;}
+.news_list li a span{ color:#999999; position:absolute; right:0px; top:0px; font-size:12px}
+
+/*----------产品列表 ProList----------*/
+.pro_list .sidebar_tit{ width:100%; float:left}
+.pro_list .pro_show{ float:left; width:100%}
+.pro_list .pro_show{ margin-left:10px; margin-top:20px}
+.pro_list .pro_show li{ float:left; width:168px; height:150px; margin-right:11px; text-align:center; font-size:12px; line-height:18px}
+.pro_list .pro_show li img{ width:164px; height:112px; padding:2px; border:1px solid #d2d2d2}
+.pro_list .pro_show li a{ color:#524a3f}
+.pro_detail { line-height:36px; margin-top:15px}
+.pro_detail img{width:285px; height:215px; margin-left:15px; margin-bottom:15px; float:right; margin-top:10px}
+
+
+/*----------子公司 Child----------*/
+.child_list{}
+.child_list li{ float:left; width:345px; padding-left:20px; border-bottom:1px dotted #cdcdcd; height:36px; line-height:36px}
+.child_list li a{color:#333333}
+
+/*----------人力资源 Human----------*/
+.human_list  .data_list td{ text-align:left; padding-left:10px}
+.human_list  .data_list td span{ cursor:pointer}
+
+
+/*----------联系我们 Contact----------*/
+#dituContent{width:570px;height:366px; float:left;}
+.contact_phone{float:right; width:400px; margin-top:20px}
+.contact_phone .phone{ margin-bottom:40px}
+.contact_phone .phone li{ float:left; height:36px; border-bottom:1px dotted #cdcdcd; line-height:36px;}
+.contact_phone .phone .list01{ width:80px; padding-left:20px}
+.contact_phone .phone .list02{ width:150px}
+.contact_phone .phone .list03{ width:150px}
+.contact_phone p{ border-bottom:1px dotted #cdcdcd; margin:0px; padding:0px; line-height:36px; float:left; width:380px; padding-left:20px}
+
+
+/*----------公用----------*/
+/*分页*/
+.div_pagination {padding: 8px;margin-top:20px;text-align:center; font-size:12px;}
+.div_pagination a {border:1px solid #cccccc ; padding: 5px 10px; color: #010101; margin-right:5px;text-decoration: none;}
+.div_pagination a:hover {color: #8b8b8b;  background-color:#e4e4e4}
+.div_pagination a:active {color: #8b8b8b;  background-color: #e4e4e4}
+.div_pagination a.current {padding:5px  10px;font-weight: bold;color: #19a1db; margin-right:5px;}
+.div_pagination span.current {padding:5px  10px;font-weight: bold;color: #ff0101; margin-right:5px;}
+.div_pagination a.disabled {border:1px solid #dee3e7 ; padding: 5px 10px;color: #929292; margin-right: 5px; }
+.div_pagination span.disabled {border:1px solid #dee3e7 ; padding: 5px 10px;color: #929292; margin-right: 5px; }
+/*弹出框*/
+#dialog1,#dialog2,#dialog3{ display:none; border:2px solid #535353;border-radius:3px; position:absolute;top:650px; background-color:#ffffff; text-align:center; padding:20px; z-index:9999}
+#dialog1 .btn_link,#dialog2 .btn_link{ padding-top:20px;}
+#dialog1 .btn_link a,#dialog2 .btn_link a{ color:#029801; font-weight:bolder}
+#dialog1 .btn_link a,#dialog2 .btn_link a,#dialog3 .btn_link{ color:#029801; font-weight:bolder}
+/*表格*/
+.data_list{ border-top:1px solid #e8e8e8; border-left:1px solid #e8e8e8; font-size:12px}
+.data_list td{border-bottom:1px solid #e8e8e8; border-right:1px solid #e8e8e8; line-height:36px; height:36px; text-align:center}
+.data_list .list_tit td{ font-weight:bolder}
+.data_list td a{ color:#006796}

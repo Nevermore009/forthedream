@@ -1,0 +1,640 @@
+﻿/*旅游线路样式*/
+#main{/**/}
+
+/*团购、新品、热卖、特价、推荐图标*/
+.lineIco{background: url(../images/line/linelabel.gif) no-repeat -103px 1px;display: inline-block;height: 21px;margin-left: 5px;width: 46px;text-indent: -9999px;}
+.lineIco.tuanGou{background-position: -103px 1px;}
+.lineIco.xinPin{background-position: -103px -39px;}
+.lineIco.reMai{background-position: -103px -79px;}
+.lineIco.teJia{background-position: -103px -119px;}
+.lineIco.tuiJian{background-position: -103px -159px;}
+
+/*参团游、自由行、团队游、自驾游图标*/
+.tuanIco{background: url(../images/line/linelabel.gif) no-repeat 0 0;display: block;height: 73px;position: absolute;top: 0;right: 0;_right: -1px;width: 73px;text-indent: -9999px;}
+.tuanIco.bIco0{background-position: 0 0;}
+.tuanIco.bIco1{background-position: 0 -73px;}
+.tuanIco.bIco2{background-position: 0 -146px;}
+.tuanIco.bIco3{background-position: 0 -219px;}
+.tuanIco.sIco0{background-position: -14px -292px;height: 59px;width: 59px;}
+.tuanIco.sIco1{background-position: -14px -351px;height: 59px;width: 59px;}
+.tuanIco.sIco2{background-position: -14px -410px;height: 59px;width: 59px;}
+.tuanIco.sIco3{background-position: -14px -469px;height: 59px;width: 59px;}
+
+/*列表页*/
+.lineLists{/**/}
+.lineLists em{color: #C00;font-family: Arial;font-weight: bold;}
+.topCrumb{background: #FFF;color: #888;height: 18px;line-height: 18px;overflow: hidden;width: 100%;}
+.topCrumb b{font-weight: normal;}
+.topCrumb a{margin: 0 2px;}
+
+.listsBox{margin-top: 10px;}
+.listsBox .left{float: left;width: 250px;}
+.listsBox .right{float: left;margin-left: 10px;width: 700px;}
+
+/*列表页左边*/
+.listsBox .left .boxes{background: #FFF;border: 1px solid #CCC;border-top: 2px solid #D21E45;margin-top: 10px;}
+.listsBox .left .boxes h2.hd{background: #FFF;border-bottom: 1px solid #CCC;height: 32px;line-height: 32px;overflow: hidden;padding: 0 10px;}
+.listsBox .left .boxes h2.hd b{color: #C00;font: bold 12px/30px "微软雅黑","宋体",Arial;}
+.listsBox .left .boxes h2.hd span{background: url(../images/arrowbg.gif) no-repeat 0 -514px;float: right;padding-left: 10px;}
+.listsBox .left .boxes .content{padding: 5px 10px;height: auto;}
+.listsBox .left .category dl{background: #FFF;}
+.listsBox .left .category dt{display: block;height: 23px;line-height: 23px;overflow: hidden;width: 228px;}
+.listsBox .left .category dt a{color: #D21E45;}
+.listsBox .left .category dd{display: inline;float: left;height: 23px;line-height: 23px;overflow: hidden;width: 76px;}
+
+/*列表页旅游推荐滚动*/
+.listsBox .left .lineScroll .content{padding: 10px;}
+.lineScroll .scroll{width: 228px;height: 171px;overflow: hidden;position: relative;}
+.lineScroll .scroll .outerBox{width: 228px;height: 171px;overflow: hidden;position: relative;}
+.lineScroll .scroll ul{left: 0;position: absolute;top: 0;width: 9999px;}
+.lineScroll .scroll li{float: left;}
+.lineScroll .scroll li a{display: block;height: 171px;overflow: hidden;position: relative;width: 228px;}
+.lineScroll .scroll li a div{color: #FFF;font-size: 12px;height: 26px;left: 0;line-height: 26px;overflow: hidden;padding: 0 5px;position: absolute;top: 145px;width: 218px;}
+.lineScroll .scroll li a div span{color: #FF0;float: right;}
+.lineScroll .scroll li a div span em{color: #FF0;}
+.lineScroll .scroll li a div.bg{background: #000;filter: alpha(opacity=70);opacity: 0.7;}
+.lineScroll .scroll li a:hover div.bg{background: #C00;}
+.lineScroll .scroll .btn{height: 40px;position: absolute;top: 65px;width: 19px;}
+.lineScroll .scroll .plus{left: 0;}
+.lineScroll .scroll .minus{right: 0;}
+.lineScroll .scroll .btn a{background: url(../images/line/arrow.png) no-repeat 0 0;display: block;height: 40px;width: 19px;}
+.lineScroll .scroll .plus a{background-position: 0 0;}
+.lineScroll .scroll .plus a:hover{background-position: -40px 0;}
+.lineScroll .scroll .minus a{background-position: -20px 0;}
+.lineScroll .scroll .minus a:hover{background-position: -60px 0;}
+
+/*列表页点评滚动*/
+.listsBox .left .dianping .content{padding: 0 10px 5px;}
+.listsBox .left .dianping .content,.listsBox .left .dianping .comments{height: 228px;overflow: hidden;}
+.listsBox .left .dianping li{border-bottom: 1px solid #E5E5E5;height: 75px;line-height: 18px;overflow: hidden;}
+.listsBox .left .dianping em.user{color: #222;}
+.listsBox .left .dianping dl{width: 228px;}
+.listsBox .left .dianping dt{height: 30px;line-height: 30px;_line-height: 32px;overflow: hidden;}
+.listsBox .left .dianping dt a{color: #30A0D3;}
+.listsBox .left .dianping dd{height: 20px;line-height: 20px;overflow: hidden;}
+.listsBox .left .dianping dd.sub{color: #666;}
+
+/*列表页旅游攻略*/
+.listsBox .left .gonglue li{background: url(../images/dot.gif) no-repeat 0 10px #FFF;border-bottom: 1px solid #F0F0F0;height: 25px;line-height: 25px;overflow: hidden;padding-left: 10px;}
+.listsBox .left .banner a{display: block;margin-top: 10px;}
+
+/*列表页右边*/
+.listsBox .right .sliderBox{background: #FFF;height: 260px;width: 700px;overflow: hidden;}
+.listsBox .right .activeBox{background: #FFF;border: 1px solid #CCC;border-top: 2px solid #C00;position: relative;height: auto;margin-top: 10px;overflow: hidden;width: 698px;}
+.listsBox .right .activeBox .hd{background: url(../images/line/linebg.gif) repeat-x 0 -37px;border-bottom: 1px solid #E5E5E5;font-weight: bold;height: 32px;line-height: 32px;overflow: hidden;padding: 0 10px;}
+.listsBox .right .activeBox .hd span{color: #AAA;display: inline-block;font-size: 12px;font-weight: normal;float: right;padding-left: 7px;}
+.listsBox .right .activeBox .hd b{color: #C00;font: bold 14px/30px "微软雅黑","宋体",Arial;}
+.listsBox .right .activeBox .content{height: 196px;overflow: hidden;padding: 10px 0 0;width: 698px;}
+.listsBox .right .activeBox dl{display: inline;float: left;margin-left: 10px;width: 162px;}
+.listsBox .right .activeBox dt a{background: #CCC;display: block;height: 122px;position: relative;width: 162px;}
+.listsBox .right .activeBox dt a b{background: url(../images/line/linelabel.gif) no-repeat -92px -471px;display: block;height: 57px;width: 57px;position: absolute;top: -2px;left: -2px;}
+.listsBox .right .activeBox dd.title{height: 36px;line-height: 18px;overflow: hidden;margin: 5px 0;text-align: justify;}
+.listsBox .right .activeBox dd.price{color: #888;height: 18px;line-height: 18px;overflow: hidden;}
+.listsBox .right .activeBox dd.price em{color: #C00;font: bold 16px/18px Arial,Helvetica,sans-serif;}
+.listsBox .right .lists,.listsBox .right .scenery{background: #FFF;margin-top: 10px;}
+.listsBox .right .lists h3.title,.listsBox .right .scenery h3.title{border-bottom: 2px solid #C00;height: 18px;line-height: 18px;overflow: hidden;padding-bottom: 10px;}
+.listsBox .right .lists h3.title b,.listsBox .right .scenery h3.title b{color: #000;font: bold 14px/18px "微软雅黑","宋体",Arial;}
+.listsBox .right .boxes{background: #FFF;border: 1px solid #CCC;border-top: 0;}
+.listsBox .right .boxes .hd{background: url(../images/line/linebg.gif) repeat-x 0 -37px;border-top: 1px solid #E5E5E5;height: 32px;line-height: 32px;padding: 0 10px;}
+.listsBox .right .boxes .hd span.more{background: url(../images/arrowbg.gif) no-repeat 0 -514px;padding-left: 10px;float: right;}
+.listsBox .right .boxes .hd b{color: #C00;font: bold 12px/30px "微软雅黑","宋体",Arial;}
+.listsBox .right .boxes .content{padding: 10px 0;}
+.listsBox .right .boxes .pics{float: left;height: 182px;margin-right: 11px;padding-left: 10px;width: 243px;}
+.listsBox .right .boxes .pics a{background: #CCC;display: block;height: 182px;overflow: hidden;position: relative;width: 243px;}
+.listsBox .right .boxes .pics a div{color: #FFF;font-size: 12px;height: 26px;line-height: 26px;position: absolute;left: 0;bottom: 0;overflow: hidden;padding: 0 5px;width: 233px;}
+.listsBox .right .boxes .pics a div.bg{background: #000;filter:alpha(opacity=70);opacity:0.7;}
+.listsBox .right .boxes .pics a:hover div.bg{background: #C00;}
+.listsBox .right .boxes .texts{height: 182px;float: left;width: 425px;}
+.listsBox .right .boxes .texts li{background: url(../images/dot.gif) no-repeat 0 10px #FFF;border-bottom: 1px solid #F0F0F0;height: 25px;padding-left: 10px;position: relative;width: 415px;}
+.listsBox .right .boxes .texts li a{display: block;height: 25px;line-height: 25px;overflow: hidden;width: 415px;}
+.listsBox .right .boxes .texts li a:hover{background: #F5F5F5;}
+.listsBox .right .boxes .texts li a span{color: #888;float: right;}
+.listsBox .right .boxes .texts li a em{font-size: 14px;}
+.listsBox .right .scenery h3.title span{background: url(../images/arrowbg.gif) no-repeat 0 -521px;float: right;padding: 0 11px 0 10px;}
+.listsBox .right .scenery .content{height: 399px;width: 700px;overflow: hidden;position: relative;}
+.listsBox .right .scenery li{background: #CCC;display: block;height: 130px;overflow: hidden;position: absolute;width: 173px;}
+.listsBox .right .scenery li.big{height: 263px;width: 349px;}
+.listsBox .right .scenery li.p1{left: 0;top: 3px;}
+.listsBox .right .scenery li.p2{left: 176px;top: 3px;}
+.listsBox .right .scenery li.p3{left: 352px;top: 3px;}
+.listsBox .right .scenery li.p4{left: 0;top: 136px;}
+.listsBox .right .scenery li.p5{left: 352px;top: 269px;}
+.listsBox .right .scenery li.p6{left: 528px;top: 269px;}
+.listsBox .right .scenery li a{display: block;height: 130px;position: relative;width: 173px;}
+.listsBox .right .scenery li.big a{height: 263px;width: 349px;}
+.listsBox .right .scenery li .num{background: url(../images/line/linelabel.gif) no-repeat -116px -567px;color: #FFF;display: block;font-family: Arial;font-weight: bold;height: 31px;padding: 2px 0 0 1px;position: absolute;top: 0;left: 0;width: 32px;z-index: 40;}
+.listsBox .right .scenery li .proName{background: url(../images/transparent.png) repeat-x 0 0;color: #FFF;display: block;height: 24px;line-height: 24px;padding: 0 5px;overflow: hidden;position: absolute;bottom: 0;left: 0;z-index: 20;width: 163px;}
+.listsBox .right .scenery li.big .proName{width: 339px;}
+.listsBox .right .scenery li div{color: #FFF;cursor: pointer;display: none;font-size: 12px;height: 100%;position: absolute;left: 0;top: 0;overflow: hidden;width: 100%;z-index: 30;}
+.listsBox .right .scenery li div.bg{background: #C11B3E;filter: alpha(opacity=85);opacity: 0.85;z-index: 25;}
+.listsBox .right .scenery li div.text{text-align: left;}
+.listsBox .right .scenery li div h6{display: none;font-family: "微软雅黑";font-size: 16px;font-weight: bold;height: 32px;line-height: 32px;overflow: hidden;padding-top: 30px;}
+.listsBox .right .scenery li div.text p{height: 36px;line-height: 18px;overflow: hidden;padding: 47px 5px 0;}
+.listsBox .right .scenery li.big div.text p{padding-top: 114px;}
+.listsBox .right .scenery li .cur div{display: block;}
+.listsBox .right .scenery li .cur .proName{display: none;}
+
+/*二级列表页右边*/
+.listsBox .right .categorys{background: #FFF;border: 1px solid #CCC;border-top: 2px solid #D21E45;}
+.listsBox .right .categorys h2.hd{border-bottom: 1px solid #CCC;height: 32px;line-height: 32px;overflow: hidden;padding: 0 10px;}
+.listsBox .right .categorys h2.hd b{color: #C00;font: bold 12px/30px "微软雅黑","宋体",Arial;}
+.listsBox .right .categorys h2.hd span{float: right;}
+.listsBox .right .categorys .content{padding: 5px 10px 0;}
+.listsBox .right .categorys dl{border-bottom: 1px solid #E5E5E5;margin-bottom: 5px;padding-bottom: 5px;}
+.listsBox .right .categorys dl.end{border-bottom: 0;}
+.listsBox .right .categorys dt{color: #C00;float: left;height: 24px;line-height: 24px;text-align: right;padding-right: 10px;width: 48px;}
+.listsBox .right .categorys dd{float: left;line-height: 24px;width: 620px;}
+.listsBox .right .categorys dd li{float: left;margin-right: 5px;}
+.listsBox .right .categorys dd li a{display: inline-block;padding: 0 8px;white-space: nowrap;}
+.listsBox .right .categorys dd li a.cur{background: #F60;border-radius: 3px;color: #FFF !important;}
+.listsBox .right .categorys dd li a:hover{text-decoration: underline;}
+.listsBox .right .categorys dd .sub{background: #F0F0F0;display: block;margin-top: 5px;padding: 5px 0;}
+.listsBox .right .categorys dd .sub li a.cur{background: #FF6600;color: #fff !important;}
+.listsBox .cityIntro{background: #FFF;border: 1px solid #CCC;border-top: 2px solid #D21E45;margin-bottom: 10px;}
+.listsBox .cityIntro .ui-tabs-nav{background: url(../images/line/linebg.gif) repeat-x 0 -37px;padding: 0;}
+.listsBox .cityIntro .ui-tabs-nav li{background: url(../images/line/linebg.gif) repeat-x 0 -37px;border-right: 1px solid #CCC;height: 32px;line-height: 32px;overflow: hidden;padding: 0;width: auto;}
+.listsBox .cityIntro .ui-tabs-nav li a{color: #222;font-size: 12px;padding: 0 10px;}
+.listsBox .cityIntro .ui-tabs-nav li.ui-tabs-selected{background: #FFF;}
+.listsBox .cityIntro .ui-tabs-nav li.ui-tabs-selected a{color: #C00 !important;}
+.listsBox .cityIntro .ui-tabs-panel{overflow: hidden;padding: 0;width: 698px;}
+.listsBox .cityIntro .texts{line-height: 21px;text-align: justify;text-indent: 2em;padding: 10px;}
+.listsBox .cityIntro .pics{overflow: hidden;padding: 0 0 10px 10px;width: 698px;}
+.listsBox .cityIntro .pics li{display: inline-block;float: left;height: 123px;margin: 10px 10px 0 0;width: 162px;}
+.listsBox .cityIntro .pics li a{background: #FFF;border: 1px solid #E5E5E5;display: block;height: 119px;overflow: hidden;padding: 1px;width: 158px;}
+.listsBox .cityIntro .pics li a:hover{border: 1px solid #C00;}
+
+/*排序方式*/
+.listsBox .right .sort{background: url(../images/line/linebg.gif) repeat-x 0 -37px;border: 1px solid #CCC;padding: 0;margin-top: 10px;}
+.listsBox .right .sort span{float: right;height: 26px;line-height: 26px;_line-height: 28px;overflow: hidden;padding: 3px 10px 3px 0;}
+.listsBox .right .sort span a{display: inline-block;margin-left: 10px;height: 26px;}
+.listsBox .right .sort span b{background: url(../images/line/linebg.gif) no-repeat 0 -441px;cursor: pointer;display: inline-block;font-weight: normal;padding-left: 20px;}
+.listsBox .right .sort span b.text{background-position: 0 -441px;}
+.listsBox .right .sort span b.thumb{background-position: 0 -487px;}
+.listsBox .right .sort span a.cur{color: #C00 !important;}
+.listsBox .right .sort span a.cur .text{background-position: 0 -532px;}
+.listsBox .right .sort span a.cur .thumb{background-position: 0 -578px;}
+.listsBox .right .sort dl,.listsBox .right .sort dt,.listsBox .right .sort dd{float: left;}
+.listsBox .right .sort dt{background: #E5E5E5;border-right: 1px solid #CCC;padding: 7px 10px;}
+.listsBox .right .sort dd{border-right: 1px solid #CCC;padding-right: 10px;}
+.listsBox .right .sort dd a{background: url(../images/arrowbg.gif) no-repeat right 11px;display: block;padding: 7px 12px;}
+.listsBox .right .sort dd a.asc.cur{background-position: right -69px !important;}
+.listsBox .right .sort dd a.desc.cur{background-position: right -29px !important;}
+.listsBox .right .sort dd a.cur,.listsBox .right .sort dd a:hover{color: #C00 !important;}
+.listsBox .right .sort dd.default{padding-right: 0;}
+.listsBox .right .sort dd.default a{background: none;}
+
+.listsBox .itemLists{background: #FFF;margin-top: 10px;width: 700px;overflow: hidden;}
+.listsBox .itemLists .outer{width: 720px;overflow: hidden;}
+/*列表显示*/
+.listsBox .itemLists .text{width: 700px;overflow: hidden;}
+.listsBox .itemLists .text dl{border-bottom: 1px solid #CCC;margin-bottom: 10px;padding-bottom: 10px;}
+.listsBox .itemLists .text dt{float: left;}
+.listsBox .itemLists .text dt a{border: 1px solid #E5E5E5;display: block;height: 100px;width: 133px;overflow: hidden;padding: 1px;position: relative;}
+.listsBox .itemLists .text dt a:hover{border-color: #D5D5D5;}
+.listsBox .itemLists .text dt .tuanIco{top: 1px;right: 1px;_right: 0;}
+.listsBox .itemLists .text dd{float: left;height: 104px;margin-left: 8px;overflow: hidden;}
+.listsBox .itemLists .text dd.info{width: 437px;}
+.listsBox .itemLists .text dd.price{color: #888;width: 110px;text-align: right;}
+.listsBox .itemLists .text dd.info li{height: 21px;line-height: 21px;overflow: hidden;}
+.listsBox .itemLists .text dd.info li.title a{color: #30A0D3;font: bold 14px/21px "微软雅黑","宋体",Arial;}
+.listsBox .itemLists .text dd.info li.date{margin: 4px 0;}
+.listsBox .itemLists .text dd.info li.date span{float: right;}
+.listsBox .itemLists .text dd.info li.date b{background: url(../images/line/linelabel.gif) no-repeat -78px -410px;display: inline-block;margin-left: 3px;padding-left: 22px;}
+.listsBox .itemLists .text dd.info li.date b.diyong{background-position: -78px -389px;}
+.listsBox .itemLists .text dd.info li.date i{background: url(../images/line/linelabel.gif) no-repeat right -431px;color: #FD7F19;display: inline-block;height: 20px;padding-right: 7px;}
+.listsBox .itemLists .text dd.info li.date em{font-weight: normal;}
+.listsBox .itemLists .text dd.info li.brief{color: #888;height: 54px;line-height: 18px;text-align: justify;text-justify:inter-ideograph;}
+.listsBox .itemLists .text dd.price li{height: 26px;line-height: 26px;overflow: hidden;}
+.listsBox .itemLists .text dd.price em{font-size: 24px;font-weight: normal;}
+.listsBox .itemLists .text dd.price a.go{background: url(../images/line/linebg.gif) repeat-x 0 -2px;color: #FFF;display: inline-block;height: 26px;line-height: 26px;_line-height: 28px;padding: 0 14px;}
+.listsBox .itemLists .text dd.price a.go:hover{color: #FFF !important;}
+
+/*大图显示*/
+.listsBox .itemLists .thumb{display: none;}
+.listsBox .itemLists .thumb dl{border: 1px solid #E5E5E5;float: left;margin: 0 10px 10px 0;padding: 2px;width: 339px;}
+.listsBox .itemLists .thumb dl:hover{border-color: #D5D5D5;}
+.listsBox .itemLists .thumb dt a{background: #CCC;display: block;height: 253px;overflow: hidden;position: relative;width: 339px;}
+.listsBox .itemLists .thumb dt div{color: #FFF;cursor: pointer;font-size: 12px;height: 28px;line-height: 28px;position: absolute;left: 0;top: 225px;overflow: hidden;padding: 0 5px;width: 329px;}
+.listsBox .itemLists .thumb dt div span{float: right;}
+.listsBox .itemLists .thumb dt div.bg{background: #000;filter: alpha(opacity=70);opacity: 0.7;}
+.listsBox .itemLists .thumb dt a:hover div.bg{background: #C00;}
+.listsBox .itemLists .thumb dd{height: 26px;line-height: 26px;margin-top: 2px;overflow: hidden;padding: 0 3px;}
+.listsBox .itemLists .thumb dd span{color: #888;float: right;}
+.listsBox .itemLists .thumb dd em{font-size: 24px;font-weight: normal;}
+.listsBox .itemLists .thumb dd em.startdate{font-size: 12px;}
+
+/*详情页顶部广告*/
+.lineBanner{margin-bottom: 10px;}
+
+/*当前导航*/
+.crumbs{border-bottom: 1px solid #CCC;margin-bottom: 10px;line-height: 18px;overflow: hidden;padding-bottom: 5px;}
+.crumbs b{color: #666;font-weight: normal;}
+
+/*线路详情基本信息*/
+.show{background: #FFF;}
+.show .hd h1.title{line-height: 21px;padding: 5px 0;}
+.show .hd h1.title b{color: #C00;font: bold 18px/21px "微软雅黑","宋体",Arial;text-shadow: 1px 1px 1px #CCC;}
+.show .hd h2.title{color: #333;line-height: 21px;margin-top: 3px;text-align: justify;}
+.show .hd h2.title .from{color: #C00;font-weight: normal;margin-left: 5px;}
+.show .hd h2.title i{background: url(../images/line/linelabel.gif) no-repeat 0 -546px;display: inline-block;height: 21px;margin-left: 5px;width: 106px;text-indent: -9999px;}
+.show .hd h2.title i.i1{background-position: 0 -546px;}
+.show .hd h2.title i.i2{background-position: 0 -579px;}
+.show .baseView{margin: 10px 0 0;}
+.show .baseView .picShow{float: left;width: 418px;}
+.show .baseView .sliderBox{box-shadow: 0 3px 5px #CCC;height: 404px;overflow: hidden;width: 418px;}
+.show .baseView .mF_games_tb{height: 386px !important;width: 400px !important;overflow: hidden !important;}
+.show .baseView .benefit{background: #FFF;height: 75px;margin-top: 10px;}
+.show .baseView .benefit .hd{border-bottom: 1px solid #DDD;color: #000;margin-bottom: 5px;padding-bottom: 5px;}
+.show .baseView .benefit ul{height: 44px;overflow: hidden;}
+.show .baseView .benefit li{background: url(../images/dot.gif) no-repeat 0 8px;color: #888;height: 23px;line-height: 23px;overflow: hidden;padding-left: 9px !important;}
+.show .info{float: left;margin-left: 20px;position: relative;width: 522px;}
+.show .info .profile{box-shadow: 0 1px 5px #DDD;background: #F7F7F7;border-radius: 3px;padding: 3px 10px;}
+.show .info .profile li{color: #666;height: 28px;line-height: 28px;}
+.show .info .profile li label{color: #333;display: inline-block;padding-right: 5px;width: 60px;}
+.show .info .profile li em{font-family: Arial;line-height: 1.231;}
+.show .info .profile li em.price{color: #C00;font-weight: bold;font-size: 16px;}
+.show .info .profile li em.del{color: #888;text-decoration: line-through;}
+.show .info .profile li.pay a{background: url(../images/line/linebg.gif) no-repeat 0 -773px;display: inline-block;margin-right: 6px;padding-left: 18px;}
+.show .info .profile li.pay a.alipay{background-position: 0 -773px;}
+.show .info .profile li.pay a.tenpay{background-position: 0 -839px;}
+.show .info .profile li.pay a.credit{background-position: 0 -807px;}
+.show .info .profile li.pay a.epay{background-position: 0 -874px;}
+.show .info .choose{background: #FFF8EF;border: 1px solid #FDC9C9;border-radius: 3px;box-shadow: 0 1px 5px #CCC;margin-top: 10px;}
+.show .info .choose dl{border-bottom: 1px solid #FDC9C9;padding: 10px 9px 5px;_padding-bottom: 10px;}
+.show .info .choose dt{color: #333;display: inline-block;float: left;line-height: 32px;padding-right: 5px;width: 60px;}
+.show .info .choose dd{float: left;width: 437px;}
+.show .info .choose dd span{background: #FFF;border: 1px solid #CCC;border-radius: 3px;cursor: pointer;color: #666;display: inline-block;float: left;height: 28px;line-height: 28px;_line-height: 30px;margin: 0 5px 5px 0;overflow: hidden;padding: 0 6px;white-space: nowrap;}
+.show .info .choose dd span.cur,.show .info .choose dd span:hover{background: url(../images/line/linebg.gif) no-repeat right -910px #FFF;border: 2px solid #C00;color: #333;height: 26px;line-height: 26px;padding: 0 5px;}
+.show .info .choose .btns{height: 44px;line-height: 44px;padding: 10px 10px 10px 10px;}
+.show .info .choose .btns input{background: url(../images/line/linebtn.gif) no-repeat 0 0;border: none;cursor: pointer;height: 44px;overflow: hidden;}
+.show .info .choose .btns input.booking{background-position: 0 0;width: 188px;}
+.show .info .choose .btns input.collection{background-position: 0 -49px;width: 124px;}
+.show .info .choose .person{border-bottom: 1px solid #FDC9C9;width: 520px;}
+.show .info .choose .person table th{background: #FFD8D8;border-right: 1px solid #FFF8EF;line-height: 22px;padding: 5px 0;text-align: center;}
+.show .info .choose .person table .end{border-right: 0;padding-left: 10px;text-align: left;}
+.show .info .choose .person table td{border: 1px solid #FFF8EF;border-width: 0 1px 0 0;line-height: 28px;padding: 5px 0;text-align: center;}
+.show .info .choose .person table em{color: #C00;font-weight: bold;font-size: 14px;font-family: Arial;line-height: 1.231;}
+.show .info .choose .person .cPrice{color: #C00;font-weight: bold;font-size: 14px;font-family: Arial;line-height: 1.231;}
+.show .info .choose .person .num{height: 28px;padding: 0 10px;position: relative;text-align: left;width: 70px;}
+.show .info .choose .person .number{border: 1px solid #CCC;font-size: 12px;font-family: Arial;height: 26px;line-height: 26px;overflow: hidden;padding:  0;text-align: center;width: 51px;}
+.show .info .choose .person .num strong{background: url(../images/line/linebg.gif) no-repeat right -731px;display: block;height: 28px;line-height: 13px;position: absolute;top: 0;_top: 1px;left: 63px;width: 17px;}
+.show .info .choose .person .num strong a{display: block;height: 14px;width: 17px;}
+.show .info .choose .person .quan{height: 20px;line-height: 20px;overflow: hidden;padding: 4px 0;}
+.show .info .choose .person .quan li{background: url(../images/line/linelabel.gif) no-repeat -78px -410px;float: left;margin-right: 5px;padding-left: 22px;}
+.show .info .choose .person .quan li.diyong{background-position: -78px -389px;}
+.show .info .choose .person .quan li span{background: url(../images/line/linelabel.gif) no-repeat right -431px;color: #FD7F19;display: inline-block;height: 20px;padding-right: 7px;}
+.show .info .choose .person .help{background: url(../images/line/linebg.gif) no-repeat right -691px;display: inline-block;height: 28px;padding: 0 17px;}
+.show .info .choose .person .tips{position: relative;width: 100%;z-index: 100;}
+.show .info .choose .person .tipsCon{background: #FFF8D9;border: 1px solid #FEBE8F;border-radius: 3px;box-shadow: 3px 3px 5px #CCC;display: none;height: auto;left: 0;padding: 6px 8px;position: absolute;top: 32px;width: 320px;z-index: 200;}
+.show .info .choose .person .tipsInner{height: auto;position: relative;text-align: left;width: 100%;}
+.show .info .choose .person .tipsInner small{background: url(../images/line/linelabel.gif) no-repeat -135px -451px;display: block;height: 8px;position: absolute;top: -14px;left: 20px;width: 13px;overflow: hidden;}
+.show .info .choose .person .tipsText{color: #630;line-height: 20px;text-align: justify;}
+.show .info .choose .person .tipsText p{padding: 2px 0;}
+.show .info .choose .person .tipsText em{color: #C00;font-weight: bold;font-size: 12px;font-family: Arial;line-height: 1.231;}
+.show .info .choose .person .tipsText b{background: url(../images/line/linelabel.gif) no-repeat -78px -410px;border-radius: 3px;display: inline-block;height: 20px;margin-right: 4px;width: 17px;}
+.show .info .choose .person .tipsText b.diyong{background-position: -78px -389px;}
+
+.show .showBox{border: 1px solid #CCC;border-top: 2px solid #C00;border-radius: 3px;margin-top: 10px;}
+.show .showBox h2.hd{background: url(../images/line/linebg.gif) repeat-x 0 -37px;border-bottom: 1px solid #CCC;height: 32px;line-height: 32px;overflow: hidden;padding: 0 10px;}
+.show .showBox h2.hd b{color: #C00;font: bold 14px/30px "微软雅黑","宋体",Arial;}
+.show .showBox .content{padding: 10px;line-height: 22px;text-align: justify;}
+
+/*线路详情页Tab切换*/
+.show .mainCon{margin-top: 10px;}
+.show .mainCon .ui-tabs-nav{background: #FFF;border-bottom: 2px solid #C00;height: 33px;z-index:10;width: 960px;}
+.show .mainCon .ui-tabs-nav li{border: 1px solid #CCC;border-width: 1px 1px 0 0;height: 32px;line-height: 32px;font-size: 12px;overflow: hidden;}
+.show .mainCon .ui-tabs-nav li.first{border-width: 1px 1px 0 1px;}
+.show .mainCon .ui-tabs-nav li a{background: url(../images/line/linebg.gif) repeat-x 0 -37px;display: block;color: #333;font: bold 14px/32px "微软雅黑","宋体",Arial;padding: 0 18px;}
+.show .mainCon .ui-tabs-nav li.ui-tabs-selected{border-color: #C00;}
+.show .mainCon .ui-tabs-nav li.ui-tabs-selected a{background-position: 0 0;color: #FFF !important;}
+.show .mainCon .ui-tabs-panel{padding: 10px 0 0;}
+
+.show .mainCon h2.hd{background: url(../images/line/linebg.gif) repeat-x 0 -37px;border: 1px solid #CCC;border-radius: 3px 3px 0 0;height: 32px;line-height: 32px;_line-height: 34px;overflow: hidden;padding: 0 10px;}
+.show .mainCon h2.hd span{float: right;}
+.show .mainCon h2.hd span a{display: inline-block;color: #333 !important;margin-left: 5px;padding-left: 19px;}
+.show .mainCon h2.hd span a:hover{color: #C00 !important;}
+.show .mainCon h2.hd span a.print{background: url(../images/line/linebg.gif) no-repeat 0 -368px;}
+.show .mainCon h2.hd span a.download{background: url(../images/line/linebg.gif) no-repeat 0 -402px;}
+.show .mainCon h2.hd b{background: url(../images/line/linebg.gif) no-repeat 0 -92px;color: #222;font: bold 14px/32px "微软雅黑","宋体",Arial;padding-left: 19px;}
+.show .mainCon h2.hd b.route{background-position: 0 -92px;}
+.show .mainCon h2.hd b.fare{background-position: 0 -128px;}
+.show .mainCon h2.hd b.note{background-position: 0 -162px;}
+.show .mainCon h2.hd b.tips{background-position: 0 -197px;}
+.show .mainCon h2.hd b.process{background-position: 0 -233px;}
+.show .mainCon h2.hd b.comment{background-position: 0 -269px;}
+.show .mainCon h2.hd b.consult{background-position: 0 -304px;}
+.show .mainCon h2.hd b.travel{background-position: 0 -340px;}
+.show .mainCon .content{border: 1px solid #CCC;border-top: 0;border-radius: 0 0 3px 3px;line-height: 21px;padding: 10px;}
+.show .mainCon .theme{height: 26px;margin: 3px 0;overflow: hidden;}
+.show .mainCon .theme b{background: #FCCB8E;border-radius: 3px;color: #630;font-weight: normal;display: inline-block;height: 26px;line-height: 26px;_line-height: 28px;overflow: hidden;padding: 0 10px;}
+
+/*详情页参考线路*/
+.show .mainCon .routes{padding-top: 0;position: relative;}
+.show .mainCon .routes dl{border-bottom: 1px dotted #BBB;padding: 12px 0 12px 23px;}
+.show .mainCon .routes dt{background: url(../images/line/linelabel.gif) no-repeat -85px -305px;float: left;height: 64px;line-height: 64px;margin-right: 24px;width: 64px;text-align: center;}
+.show .mainCon .routes dt em{color: #C00;font: bold 18px/60px Arial,Helvetica,sans-serif;}
+.show .mainCon .routes dd{border-left: 1px dotted #BBB;float: left;overflow: hidden;padding-left: 10px;width: 816px;}
+.show .mainCon .routes dd .dayInfo li{height: 24px;line-height: 24px;_line-height: 26px;margin-bottom: 2px;overflow: hidden;}
+.show .mainCon .routes dd .dayInfo li.scenery{color: #C00;}
+.show .mainCon .routes dd .dayInfo li.scenery span{background: url(../images/line/vehicle.gif) no-repeat right 5px #FFF;color: #333;display: inline-block;margin-right: 10px;padding: 0 18px 0 0;}
+.show .mainCon .routes dd .dayInfo li.scenery span.plane{background-position: right 5px;padding-right: 20px;}
+.show .mainCon .routes dd .dayInfo li.scenery span.ship{background-position: right -36px;}
+.show .mainCon .routes dd .dayInfo li.scenery span.car{background-position: right -75px;}
+.show .mainCon .routes dd .dayInfo li.scenery span.train{background-position: right -116px;}
+.show .mainCon .routes dd .dayInfo li b{background: #C00;border-radius: 3px;color: #FFF;font-weight: normal;display: inline-block;margin-right: 10px;padding: 0 10px;}
+.show .mainCon .routes dd .dayInfo li b.go{background: #C00;}
+.show .mainCon .routes dd .dayInfo li b.food{background: #369;}
+.show .mainCon .routes dd .dayInfo li b.stay{background: #963;}
+.show .mainCon .routes dd .dayDesc{border-top: 1px dotted #BBB;padding-top: 10px;line-height: 21px;margin-top: 10px;text-align: justify;overflow: hidden;width: 816px;}
+.show .mainCon .routes dd .dayWays li div.bg{background: #000;filter:alpha(opacity=70);opacity:0.7;}
+.show .mainCon .routes dd .dayWays li a:hover div.bg{background: #C00;}
+.show .mainCon .routes dd .dayWays{background: #F60;border-radius: 3px;overflow: hidden;padding: 3px;width: 810px;}
+.show .mainCon .routes dd .dayWays:hover{background: #C00;}
+.show .mainCon .routes dd .dayWays .hd{height: 32px;line-height: 32px;padding: 0 10px 3px;}
+.show .mainCon .routes dd .dayWays .hd b{color: #FFF;font: bold 12px/32px "微软雅黑","宋体",Arial;}
+.show .mainCon .routes dd .dayWays .wrap{background: #FFF;overflow: hidden;padding: 0 0 10px 10px;width: 800px;}
+.show .mainCon .routes dd .dayWays ul{overflow: hidden;width: 900px;}
+.show .mainCon .routes dd .dayWays li{display: inline;float: left;margin: 10px 10px 0 0;width: 150px;}
+.show .mainCon .routes dd .dayWays li a{background: #CCC;display: block;height: 113px;position: relative;width: 150px;}
+.show .mainCon .routes dd .dayWays li img{border-radius: 5px;}
+.show .mainCon .routes dd .dayWays li div{color: #FFF;height: 18px;line-height: 18px;padding: 3px 10px;position: absolute;left: 0;top: 89px;width: 130px;text-align: center;}
+.show .mainCon .routes dd .shop{margin-top: 10px;overflow: hidden;width: 816px;}
+.show .mainCon .routes dd .shop table{border: 1px solid #FCCB8E;border-width: 1px 0 0 1px;}
+.show .mainCon .routes dd .shop .wrap th,.show .mainCon .routes dd .shop .wrap td{border: 1px solid #FCCB8E;border-width: 0 1px 1px 0;color: #666;line-height: 21px;padding: 5px 7px;text-align: center;}
+.show .mainCon .routes dd .shop .wrap th{background: #FEE0BB;color: #630;font-weight: bold;}
+.show .mainCon .routes dd .shop .wrap td.left{text-align: left;}
+
+/*详情页参考线路日期悬浮*/
+.show .daysNav{background: #C00;border-radius: 3px;left: 961px;top: 0;position: absolute; width: 60px;overflow: hidden;padding: 2px;z-index: 100;}
+.show .daysNav .box{background: #FFF;border-radius: 3px;height: auto;width: 60px;}
+.show .daysNav li{overflow: hidden;text-align: center;}
+.show .daysNav li a{border-bottom: 1px solid #F3F3F3;display: block;font: bold 12px/24px "微软雅黑","宋体",Arial;height: 24px;overflow: hidden;}
+.show .daysNav li a em{font-family: Arial;font-weight: bold;}
+.show .daysNav li a:hover,.show .daysNav li a.cur{background-color: #C00;border-color: #C00;color: #FFF !important;}
+
+/*线路详情页行程日历*/
+.show .calendar{border: 1px solid #CCC;border-radius: 3px;margin: 0;overflow: hidden;padding: 10px 12px;width: 934px;}
+.show .calendar .outer{width: 960px;overflow: hidden;}
+.show .calendar table{background: #FFF;border-collapse: separate;border-spacing: 3px;display: inline;float: left;margin-right: 10px;width: 462px;}
+.show .calendar .week th{background: #B1B1B1;color: #FFF;height: 26px;line-height: 26px;overflow: hidden;width: 63px;text-align: center;}
+.show .calendar .week th.weekEnd{background: #F60;}
+.show .calendar .month th div{background: #FFF;border-bottom: 1px solid #D5D5D5;box-shadow: 0 1px 2px #DDD;color: #999;font: bold 16px/22px "微软雅黑","宋体",Arial;height: 22px;margin-bottom: 6px;overflow: hidden;padding-bottom: 5px;}
+.show .calendar .month th .prevMonth,.show .calendar .month th .nextMonth{float: left;width: 63px;}
+.show .calendar .month th .dates{float: left;width: 330px;text-align: center;}
+.show .calendar .month th .dates em{font: bold 16px/22px Arial,Helvetica,sans-serif;}
+.show .calendar .month th a{background: url(../images/line/calendarbg.gif) no-repeat 0 0;display: inline-block;height: 22px;width: 63px;overflow: hidden;}
+.show .calendar .month th a.prev{background-position: 0 0;}
+.show .calendar .month th a.prev:hover{background-position: 0 -22px;}
+.show .calendar .month th a.prev0{background-position: 0 -44px;cursor: not-allowed;}
+.show .calendar .month th a.next{background-position: 0 -66px;}
+.show .calendar .month th a.next:hover{background-position: 0 -88px;}
+.show .calendar .month th a.next0{background-position: 0 -110px;cursor: not-allowed;}
+.show .calendar td{background: url(../images/line/calendarbg.gif) no-repeat right -136px;border-radius: 3px 3px 0 3px;height: 63px;line-height: 18px;width: 63px;text-align: center;vertical-align: middle;overflow: hidden;position: relative;}
+.show .calendar td.cur{background-position: right -269px;}
+.show .calendar td.hover{background-position: right -202px;cursor: pointer;}
+.show .calendar td em{font-family: Arial;font-size: 14px;}
+.show .calendar td em.money{color: #C00;font-weight: bold;font-size: 14px;}
+
+/*线路详情页费用说明*/
+.show .mainCon .fees .ui-tabs-nav{background: #FFF;border-bottom: 2px solid #EDEDED;margin-bottom: 10px;padding-bottom: 10px;height: 30px;width: auto;}
+.show .mainCon .fees .ui-tabs-nav li{border: 0;height: 30px;font-size: 12px;margin-right: 10px;overflow: hidden;}
+.show .mainCon .fees .ui-tabs-nav li a{background: #F6F6F6;border: 1px solid #EDEDED;border-radius: 3px;display: inline-block;color: #666 !important;font: 12px/24px "宋体",Arial;height: 24px;_line-height: 26px;overflow: hidden;padding: 2px 10px;}
+.show .mainCon .fees .ui-tabs-nav li.ui-tabs-selected{border-color: #C00;}
+.show .mainCon .fees .ui-tabs-nav li.ui-tabs-selected a{background: #C00;border-color: #C00;color: #FFF !important;}
+.show .mainCon .fees .ui-tabs-panel{padding: 0;}
+
+/*线路详情页预订流程*/
+.show .mainCon .process .processPic{background: url(../images/line/booking.gif) no-repeat 0 0 #F0F0F0;height: 48px;margin-bottom: 5px;}
+.show .mainCon .process .notes li{border-bottom: 1px solid #F0F0F0;line-height: 21px;margin-bottom: 4px;padding: 4px 0;}
+.show .mainCon .process .notes li span{color: #C00;margin-right: 5px;}
+.show .mainCon .process .notes li a{color: #F60 !important;}
+
+/*线路详情页线路点评*/
+.show .mainCon .comments .markInfo{background: url(../images/line/shadowbg.png) no-repeat 0 bottom;height: 91px;overflow: hidden;padding-bottom: 30px;}
+.show .mainCon .comments .mark1{background: url(../images/line/commentbg.gif) no-repeat 0 -79px;color: #000;float: left;height: 91px;margin-right: 20px;width: 93px;text-align: center;}
+.show .mainCon .comments .mark1 .hd{padding: 7px 0 0;}
+.show .mainCon .comments .mark1 em{color: #C00;font-family: Arial;font-weight: bold;}
+.show .mainCon .comments .mark1 h2{height: 26px;overflow: hidden;padding: 5px 0 4px;}
+.show .mainCon .comments .mark1 h2 em{color: #FFF;font: bold 26px/26px Arial,Helvetica,sans-serif;text-shadow: 1px 1px 1px #666;}
+.show .mainCon .comments .mark2{float: left;width: 300px;}
+.show .mainCon .comments .mark2 dl{height: 20px;line-height: 20px;margin-bottom: 3px;overflow: hidden;}
+.show .mainCon .comments .mark2 dt,.show .mainCon .comments .mark2 dd{display: inline-block;float: left;}
+.show .mainCon .comments .mark2 dt{color: #000;width: 42px;text-align: right;}
+.show .mainCon .comments .mark2 dd.d1{background: url(../images/line/commentbg.gif) no-repeat 0 0;height: 13px;line-height: 13px;margin: 3px 10px 3px 5px;overflow: hidden;width: 210px;}
+.show .mainCon .comments .mark2 dd.d1 div{background: url(../images/line/commentbg.gif) no-repeat 0 -14px;height: 13px;overflow: hidden;}
+.show .mainCon .comments .mark2 dd.d1 div.red{background-position: 0 -14px;}
+.show .mainCon .comments .mark2 dd.d1 div.green{background-position: 0 -28px;}
+.show .mainCon .comments .mark2 dd.d1 div.blue{background-position: 0 -42px;}
+.show .mainCon .comments .mark2 dd.d1 div.pink{background-position: 0 -56px;}
+.show .mainCon .comments .mark2 dd.d2{color: #C00;font-weight: bold;font-size: 12px;font-family: Arial;line-height: 20px;width: 30px;padding-right: 3px;}
+.show .mainCon .comments .mark3{color: #888;float: right;width: 204px;text-align: center;padding: 10px 10px 10px 20px;}
+.show .mainCon .comments .mark3 p{padding: 6px 0;}
+.show .mainCon .comments .mark3 .btn{background: url(../images/line/commentbg.gif) no-repeat 0 -180px;display: inline-block;height: 25px;width: 94px;}
+.show .mainCon .comments .lists .noRecord{color: #888;line-height: 18px;}
+.show .mainCon .comments .item{border-top: 1px solid #C00;margin-top: 10px;padding-top: 10px;}
+.show .mainCon .comments .item .desc{float: left;width: 938px;}
+.show .mainCon .comments .item .desc dl{border-bottom: 1px dotted #D5D5D5;color: #000;height: 21px;overflow: hidden;padding-bottom: 6px;}
+.show .mainCon .comments .item .desc dl span{color: #C00;}
+.show .mainCon .comments .item .desc dl em{font-family: Arial;}
+.show .mainCon .comments .item .desc dt{color: #888;float: right;font-family: Arial;}
+.show .mainCon .comments .item .desc dt span{font-family: Arial;font-weight: bold;margin-right: 10px;text-transform: uppercase;}
+.show .mainCon .comments .item .desc dd{float: left;padding-right: 12px;}
+.show .mainCon .comments .item .text{border-bottom: 1px dotted #D5D5D5;margin-bottom: 10px;padding: 6px 0;text-align: justify;}
+.show .mainCon .comments .picture{border-bottom: 1px dotted #D5D5D5;margin-bottom: 10px;overflow: hidden;padding: 0;}
+.show .mainCon .comments .picture ul{width: 960px;overflow: hidden;}
+.show .mainCon .comments .picture li{background: #FFF;display: inline;float: left;height: 83px;padding: 0 8px 6px 0;width: 110px;}
+.show .mainCon .comments .picture li a{display: block;background: #CCC;height: 83px;width: 110px;overflow: hidden;position: relative;z-index: 10;}
+.show .mainCon .comments .picture li a div.bg{border: 3px solid #C00;display: none;height: 77px;width: 104px;position: absolute;top: 0;left: 0;z-index: 20;}
+.show .mainCon .comments .picture li a:hover div.bg{display: block;}
+.show .mainCon .comments .impression li{background: #009FD6;color: #FFF;display: inline-block;float: left;height: 18px;line-height: 18px;_line-height: 20px;margin-right: 3px;overflow: hidden;padding: 3px 10px;}
+.show .mainCon .comments .impression li.t0{background: #555;color: #FFF;}
+.show .mainCon .comments .impression li.t1{background: #6CC;}
+.show .mainCon .comments .impression li.t2{background: #F90;}
+.show .mainCon .comments .impression li.t3{background: #F9C;}
+.show .mainCon .comments .impression li.t4{background: #F99;}
+.show .mainCon .comments .impression li.t5{background: #F96;}
+.show .mainCon .comments .impression li.t6{background: #F66;}
+.show .mainCon .comments .impression li.t7{background: #9C6;}
+.show .mainCon .comments .impression li.t8{background: #6CF;}
+.show .mainCon .comments .impression li.t9{background: #69C;}
+
+/*线路详情页在线咨询*/
+.show .mainCon .consults{/**/}
+.show .mainCon .consults .lists .noRecord{color: #888;line-height: 18px;margin-bottom: 10px;}
+.show .mainCon .consults .lists .item{border-bottom: 1px solid #C00;margin-bottom: 10px;line-height: 20px;padding-bottom: 10px;}
+.show .mainCon .consults .lists .item dl.answer{background: #F3F3F3;margin-top: 3px;}
+.show .mainCon .consults .lists .item dl.answer pre{white-space: pre-wrap;word-wrap: break-word;}
+.show .mainCon .consults .lists .item dt{float: left;height: 20px;line-height: 20px;width: 68px;}
+.show .mainCon .consults .lists .item dt b{background: url(../images/line/commentbg.gif) no-repeat -194px -121px;display: inline-block;font-weight: normal;padding: 0 0 0 20px;}
+.show .mainCon .consults .lists .item dd{float: left;line-height: 20px;padding: 0 10px;text-align: justify;width: 850px;}
+.show .mainCon .consults .lists .item dd span{color: #888;float: right;font-family: Arial;margin-left: 10px;}
+.show .mainCon .consults .lists .item .question dt b{background-position: -194px -121px;}
+.show .mainCon .consults .lists .item .answer dt b{background-position: -194px -87px;}
+.show .mainCon .consults .lists .item .answer dd{color: #666;}
+.show .mainCon .consults .lists .item .wait{color: #C00;}
+.show .mainCon .faqBox{padding-top: 10px;}
+.show .mainCon .faqBox h3{background: #F0F0F0;color: #000;height: 18px;line-height: 18px;padding: 7px 10px;}
+.show .mainCon .faqBox dl{margin-top: 10px;}
+.show .mainCon .faqBox dt{display: inline;float: left;font: bold 12px/30px "微软雅黑","宋体",Arial;width: 68px;text-align: right;}
+.show .mainCon .faqBox dd{display: inline;float: left;line-height: 30px;margin-left: 10px;width: 860px;position: relative;}
+.show .mainCon .faqBox dd span{display: inline-block;margin-left: 10px;vertical-align: top;}
+.show .mainCon .faqBox dd span.tip{color: #C00;}
+.show .mainCon .faqBox .inputArea{border: 1px solid #E0E0E0;border-color: #AAA #E0E0E0 #E0E0E0 #999;border-radius: 3px;box-shadow: 0 2px 5px #CCC;color: #666;height: 120px;line-height: 18px;padding: 5px;width: 560px;resize: none;}
+.show .mainCon .faqBox .inputText{border: 1px solid #E0E0E0;border-color: #AAA #E0E0E0 #E0E0E0 #999;border-radius: 3px;box-shadow: 0 2px 5px #CCC;height: 18px;line-height: 18px;padding: 5px;width: 80px;}
+.show .mainCon .faqBox .inputBtn{background: url(../images/line/commentbg.gif) no-repeat -116px -180px;border: 0;cursor: pointer;height: 24px;left: 519px;position: absolute;top: 1px;width: 94px;}
+
+/*线路详情页旅游攻略*/
+.show .mainCon .travels .profile p{line-height: 21px;text-align: justify;text-indent: 2em;}
+.show .mainCon .travels .profile ul{margin-top: 5px;}
+.show .mainCon .travels .profile li{float: left;height: 24px;margin-right: 10px;overflow: hidden;}
+.show .mainCon .travels .profile li a{background: #AAA;border-radius: 3px;color: #FFF !important;display: inline-block;height: 24px;line-height: 24px;_line-height: 26px;overflow: hidden;padding: 0 10px;}
+.show .mainCon .travels .profile li a:hover{background: #C00;}
+.show .mainCon .travels .lists{border-top: 1px solid #C00;margin-top: 10px;}
+.show .mainCon .travels .item{margin-top: 10px;}
+.show .mainCon .travels dl{border-bottom: 1px solid #E0E0E0;padding-bottom: 10px;}
+.show .mainCon .travels dt{float: left;height: 120px;overflow: hidden;width: 160px;}
+.show .mainCon .travels dt a{background: #CCC;display: block;height: 120px;position: relative;width: 160px;z-index: 10;}
+.show .mainCon .travels dt a div.bg{border: 3px solid #C00;display: none;height: 114px;width: 154px;position: absolute;top: 0;left: 0;z-index: 20;}
+.show .mainCon .travels dt a:hover div.bg{display: block;}
+.show .mainCon .travels dd{float: left;margin-left: 15px;width: 763px;}
+.show .mainCon .travels .title{border-bottom: 1px solid #F0F0F0;height: 21px;line-height: 21px;margin-bottom: 7px;overflow: hidden;padding-bottom: 7px;}
+.show .mainCon .travels .title a{color: #C00;font: bold 14px/21px "微软雅黑","宋体",Arial;}
+.show .mainCon .travels .title span{color: #888;float: right;font-family: Arial;padding-left: 10px;}
+.show .mainCon .travels .title b{color: #C00;font-family: Arial;margin-right: 10px;text-transform: uppercase;}
+.show .mainCon .travels .desc{color: #666;line-height: 21px;height: 84px;overflow: hidden;text-align: justify;}
+
+/*详情页相关线路无缝滚动*/
+.show .relative .content{padding: 0;}
+.show .marquee{padding: 10px 24px;position: relative;width: 910px;height: 198px;overflow: hidden;}
+.show .marquee .outerBox{overflow: hidden;position: relative;width: 910px;height: 198px;margin: 0 auto;}
+.show .marquee ul{position:absolute;top:0;left:0;width:9999px;}
+.show .marquee li{display: inline;float: left;height: auto;padding: 0 6px;width: 170px;}
+.show .marquee dt a{background: #CCC;display: block;height: 128px;overflow: hidden;width: 170px;}
+.show .marquee dd.title{height: 36px;line-height: 18px;overflow: hidden;margin: 5px 0;text-align: justify;}
+.show .marquee dd.price{height: 24px;line-height: 24px;overflow: hidden;}
+.show .marquee dd.price span{float: right;}
+.show .marquee dd.price em{color: #C00;font: bold 18px/24px Arial,Helvetica,sans-serif;}
+.show .marquee .btn{display: block;height: 60px;position: absolute;top: 70px;text-align: center;width: 20px;}
+.show .marquee .plus{background: #FFF;left: 4px;}
+.show .marquee .minus{background: #FFF;right: 4px;}
+.show .marquee .btn a{background: url(../images/line/arrow.gif) no-repeat -42px 0;cursor: pointer;display: block;height: 60px;margin: 0;width:20px;}
+.show .marquee .btn a:hover{background-position: 0 0;}
+.show .marquee .minus a{background-position: -20px 0;}
+.show .marquee .minus a:hover{background-position: -63px 0;}
+
+/*Scrollbar 模拟滚动条总样式*/
+.myScroll{position: relative;}
+.myScroll .viewport{width: 938px; height: 300px; overflow: hidden; position: relative;}
+.myScroll .overview{list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0;}
+.myScroll .scrollbar{background: url(../images/scrollbar/tracky.png) no-repeat 0 0; position: relative;float: right; width: 15px;}
+.myScroll .track{background: url(../images/scrollbar/trackendy.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px;}
+.myScroll .thumb{background: url(../images/scrollbar/thumby.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px;}
+.myScroll .thumb .end{background: url(../images/scrollbar/thumby.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px;}
+.myScroll .disable{display: none;}
+.noSelect{user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none;}
+
+/*线路点评滚动条、在线咨询滚动条重写样式*/
+#scrollComment,#scrollConsult{width: 938px;}
+#scrollComment.myScroll .viewport{width: 938px; height: 600px;}
+#scrollConsult.myScroll .viewport{width: 938px; height: 360px;}
+#scrollComment.myScroll .scrollbar,#scrollConsult.myScroll .scrollbar{position: absolute;top: 0;right: -18px;}
+
+/*myfocus幻灯片样式重写*/
+.mF_dleung .txt li.current b{background:#C9022C !important;}
+.mF_games_tb .thumb ul li.current{background:url(../images/line/myfocusar.gif) center 5px no-repeat !important;}
+.mF_games_tb .thumb ul li.current a{border-color:#D21E45 !important;}
+.mF_games_tb .prev a:hover,.mF_games_tb .next a:hover{color:#D21E45 !important;}
+
+/*线路搜索页*/
+.soso{background: #FFF;}
+.soso .destNav{border-bottom: 2px solid #D72856;}
+.soso .destNav li{float: left;}
+.soso .destNav li a{background: url(../images/line/destbg.gif) no-repeat 0 0;float: left;margin-right: 4px;padding-left: 3px;}
+.soso .destNav li span{background: url(../images/line/destbg.gif) no-repeat right -37px;display: block;line-height: 14px;padding: 11px 12px 11px 9px;}
+.soso .destNav li a:hover{color: #C11B3E;background-position: 0 -150px;}
+.soso .destNav li a:hover span{background-position: right -187px;}
+.soso .destNav li.hd{color: #888;height: 36px;line-height: 36px;float: right;overflow: hidden;}
+.soso .destNav li.hd em{color: #C11B3E;font-family: Arial;font-weight: bold;}
+.soso .destNav .cur, .soso .destNav .cur:hover{background-position: 0 -76px;}
+.soso .destNav .cur span, .soso .destNav .cur:hover span{background-position: right -112px;color: #FFF;font: bold 12px/14px "微软雅黑","宋体",Arial;}
+.soso .destCon{background: #F7F7F7;border: 1px solid #EBEBEB;padding: 10px 10px 7px;}
+.soso .destCon dl{margin-bottom: 2px;position: relative;width: 938px;}
+.soso .destCon dt{color: #444;float: left;font: bold 12px/18px "微软雅黑","宋体",Arial;padding: 3px 0 0;text-align: right;width: 65px;}
+.soso .destCon dd{float: right;margin-left: 15px;width: 853px;}
+.soso .destCon dd li{float: left;padding: 0 10px 1px 0;}
+.soso .destCon dd li a{display: inline-block;float: left;height: 18px;line-height: 18px;padding: 3px 7px 3px 0;white-space: nowrap;}
+.soso .destCon dd li a.cur{background: #C11B3E;border-radius: 3px;color: #FFF;padding: 3px 7px;}
+
+.soso .lists{border: 1px solid #E0E0E0;border-bottom: 0;margin-top: 10px;}
+.soso .lists dl{background: #FFF;border-bottom: 1px solid #E0E0E0;padding: 0 10px;}
+.soso .lists dt, .soso .lists dd{float: left;padding: 10px 0;}
+.soso .lists dt{height: 94px;width: 124px;}
+.soso .lists dt a{background: #CCC;border: 1px solid #EBEBEB;display: block;height: 90px;width: 120px;padding: 1px;}
+.soso .lists dt a:hover{border: 1px solid #C11B3E;}
+.soso .lists dd.info{border-right: 1px solid #E0E0E0;height: 94px;margin: 0 10px;padding-right: 10px;width: 633px;}
+.soso .lists dd.info li{color: #999;line-height: 21px;margin-top: 6px;overflow: hidden;}
+.soso .lists dd.info li.title{height: 18px;line-height: 18px;margin-top: 0;overflow: hidden;}
+.soso .lists dd.info li.title span{float: left;}
+.soso .lists dd.info li.title span.lineId{float: right;}
+.soso .lists dd.info li.title a{color: #C11B3E;font: bold 14px/18px "微软雅黑","宋体",Arial;}
+.soso .lists dd.info li.title a:hover{text-decoration: underline;}
+.soso .lists dd.info li.brief{height: 42px;text-align: justify;}
+.soso .lists dd.info li b{color: #666;font-weight: bold;margin-right: 3px;}
+.soso .lists dd.price{color: #666;width: 150px;}
+.soso .lists dd.price em.yen{color: #C11B3E;font: bold 24px/24px Arial,Helvetica,sans-serif;}
+.soso .lists dd.price li{height: 28px;line-height: 28px;overflow: hidden;}
+.soso .lists dd.price li span{float: right;font: 12px/28px Arial,Helvetica,sans-serif;}
+.soso .lists dd.price li a.btn{background: url(../images/line/searchbg.gif) no-repeat 0 0;cursor: pointer;color: #FFF;display: block;height: 28px;width: 90px;}
+.soso .lists dd.price li a.btn:hover{background-position: 0 -29px;}
+.soso span.lineIcon{background: url(../images/line/linelabel.gif) no-repeat right 2px;display: inline-block;height: 18px;margin: 0 1px 0 5px;width: 46px;vertical-align: middle;}
+.soso span.s1{background-position: right 3px;}
+.soso span.s2{background-position: right -37px;}
+.soso span.s3{background-position: right -77px;}
+.soso span.s4{background-position: right -117px;}
+.soso span.s5{background-position: right -157px;}
+
+/*悬浮对比栏*/
+#comparison{position: absolute;right: 10px;top: 218px;z-index: 500;padding-left: 30px;overflow: hidden;}
+#comparison .mt{margin-top: 5px;}
+#comparison .outerBox{position: relative;}
+#comparison .innerBox{background: #C11B3E;border: 1px solid #D72856;border-radius: 0 5px 5px 5px;padding: 4px;width: 186px;overflow: hidden;position: relative;}
+#comparison .contain{background: #FFF;border-radius: 5px;height: auto;padding: 10px 5px;width: 176px;}
+#comparison .contain p{color: #2B1200;/*display: none;*/height: 180px;width: 170px;text-align: center;font: 14px/180px "微软雅黑","宋体",Arial;}
+#comparison .contain dl{border: 1px solid #E0E0E0;border-radius: 3px;margin: 3px 0 5px;padding: 5px;position: relative;}
+#comparison .contain dt{padding-right: 18px;margin-bottom: 3px;}
+#comparison .contain dt a{color: #C11B3E;font: bold 12px/18px "微软雅黑","宋体",Arial;}
+#comparison .contain dd{height: 25px;line-height: 25px;overflow: hidden;}
+#comparison .contain dd em{font: bold 12px/25px Arial,Helvetica,sans-serif;}
+#comparison .contain dd em.yen{color: #C11B3E;}
+#comparison .contain .close{background: url(../images/line/remove.png) no-repeat 0 0;cursor: pointer;height: 17px;position: absolute;top: 0;right: 0;width: 16px;}
+#comparison .switchBtn{background: url(../images/line/sosoico.gif) no-repeat -49px bottom #C11B3E;border: 1px solid #D72856;border-width: 1px 0 1px 1px;border-radius: 5px 0 0 5px;color: #FFF;cursor: pointer;font: bold 12px/18px "微软雅黑","宋体",Arial;height: auto;left: -30px;position: absolute;top: 0;width: 18px;padding: 10px 6px 22px;text-align: center;}
+#comparison .switchBtn.on{background-position: 10px bottom;}
+#comparison .switchBtn em{color: #2B1200;display: block;font: bold 14px/18px Arial,Helvetica,sans-serif;}
+#comparison .btn a{background: url(../images/line/searchbg.gif) no-repeat 0 -58px;color: #C11B3E;cursor: pointer;display: block;height: 28px;margin: 8px auto 3px;width: 90px;}
+#comparison .btn a:hover{background-position: 0 -87px;}
+
+/*产品对比页*/
+.compare{border: 1px solid #EBEBEB;border-width: 1px 0 0 1px;}
+.compare h2.hd{background: url(../../../images/search/searchbg.gif) repeat-x 0 -174px;border: 1px solid #EBEBEB;border-width: 0 1px 1px 0;color: #C11B3E;height: 38px;font: bold 14px/38px "微软雅黑","宋体",Arial;padding: 0 10px;}
+.compare dl{float: left;line-height: 18px;width: 275px;overflow: hidden;}
+.compare dd{border: 1px solid #EBEBEB;border-width: 0 1px 1px 0;overflow: hidden;padding: 15px 10px;position: relative;}
+.compare dl.capital{width: 135px;}
+.compare dl.capital dd{background: #F7F7F7;color: #C11B3E;font-weight: bold;font-size: 14px;line-height: 23px;font-family: "微软雅黑","宋体",Arial;text-align: left;}
+.compare dd.d1{height: 69px;}
+.compare dd.d1 h1{height: 36px;overflow: hidden;}
+.compare dd.d1 h1 a{font: bold 12px/18px "微软雅黑","宋体",Arial;}
+.compare dd.d1 .btn a{background: url(../images/search/searchbg.gif) no-repeat 0 -116px;cursor: pointer;color: #FFF;display: block;height: 28px;margin: 5px auto 0;width: 90px;}
+.compare dd.d1 .btn a:hover{background-position: 0 -145px;}
+.compare dd.d1 .close{background: url(../../../images/search/remove.png) no-repeat 0 0;cursor: pointer;height: 17px;position: absolute;top: 0;right: 0;width: 16px;}
+.compare dd.d2{color: #777;height: 23px;text-align: center;}
+.compare dd.d2 em{color: #C11B3E;font: bold 21px/23px Arial,Helvetica,sans-serif;}
+.compare dd.d2 b{color: #C11B3E;font-weight: normal;}
+.compare dd.d3{height: 90px;text-align: justify;}
+.compare dd.d4{height: 23px;}
+.compare dd.d4 em{font: 12px/23px Arial,Helvetica,sans-serif;}
+.compare dd.d5{height: 144px;}
+.compare dd.d6{color: #777;height: 23px;text-align: center;}
+.compare dd.d6 em{color: #C11B3E;font: bold 21px/23px Arial,Helvetica,sans-serif;}
+.compare dd.d7{height: 54px;}
+.compare dd.d8{height: 90px;}
+.compare dd.d9{height: 108px;}

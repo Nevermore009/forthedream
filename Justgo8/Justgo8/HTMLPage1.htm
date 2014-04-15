@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://www.cct.cn/bj/Login.aspx?ReturnUrl=MCZiLiao.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <title>欢迎访问中国康辉旅行社集团 </title>
+    <style type="text/css">
+        .table1 td
+        {
+            border: #ccc solid 1px;
+            padding: 5px;
+        }
+        .table2 td
+        {
+            border: #ccc solid 1px;
+            padding: 5px;
+        }
+        .table3 td
+        {
+            border: #ccc solid 1px;
+            padding: 5px;
+        }
+        .table4 td
+        {
+            border: #ccc solid 1px;
+            padding: 5px;
+        }
+        .table5 td
+        {
+            border: #ccc solid 1px;
+            padding: 5px;
+        }
+        .table6 td
+        {
+            border: #ccc solid 1px;
+            padding: 5px;
+        }
+        .table2 .col1
+        {
+            width: 74px;
+        }
+        .table4 .col1
+        {
+            width: 74px;
+        }
+        .clause table
+        {
+            width: 100%;
+        }
+        .table3 td
+        {
+            width: 50%;
+            text-align: center;
+        }
+        .table5 td
+        {
+            width: 50%;
+            text-align: center;
+        }
+        .table6 td
+        {
+            width: 50%;
+            text-align: center;
+        }
+        .jd_btn2
+        {
+            background-image: url("images/login/jinr.gif");
+            background-repeat: no-repeat;
+            color: #FFFFFF;
+            display: block;
+            font-weight: bold;
+            height: 22px;
+            line-height: 22px;
+            margin-left: 180px;
+            width: 104px;
+        }
+        .pubDiv_bg
+        {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: fixed;
+            _position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1999;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=40)";
+            filter: alpha(opacity=30);
+            -moz-opacity: 0.3;
+            -khtml-opacity: 0.3;
+            opacity: 0.3;
+        }
+        .pubDiv
+        {
+            display: none;
+            z-index: 2000;
+            height: auto;
+            position: fixed;
+            top: 200px;
+            left: 50%;
+            border: 1px solid #CCCCCC;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background: #FFF;
+            padding: 5px 5px;
+            overflow: hidden;
+        }
+        .pubDiv_title
+        {
+            background: url("images/login/pub_tbg.gif") repeat-x scroll left -40px;
+            clear: both;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .pubDiv_title h2
+        {
+            background: url("images/login/pub_tbg.gif") no-repeat scroll left top;
+            float: left;
+            font-weight: bold;
+            height: 30px;
+            text-indent: 10px;
+        }
+        .pubDiv_title span
+        {
+            background: url("images/login/pub_tbg.gif") no-repeat scroll right bottom;
+            display: block;
+            float: right;
+            height: 30px;
+            padding-right: 10px;
+            width: 20px;
+        }
+        .pubDiv_content
+        {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            clear: both;
+        }
+        .ww
+        {
+            background: none repeat scroll 0 0 #FFFFFF;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: auto;
+            overflow: hidden;
+            padding: 5px;
+            position: fixed;
+            z-index: 2000;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#hide").hide();
+            $("#code").hover(function () {
+                $("#hide").show(500);
+            });
+            $("#code").mouseout(function () {
+                $("#hide").hide(1000);
+            })
+        });
+        function CreatPubdiv(w, t) {
+            var l = -(w / 2);
+            $(".pubDiv .pubDiv_title h2").text(t);
+            $(".pubDiv").css({ top: '60px', "width": w + "px", "margin-left": l + "px" });
+        }
+        function ClosePubdiv() {
+            $(".pubDiv_bg").hide();
+            $(".pubDiv").hide();
+            $(".pubDiv_content").html("");
+        }
+    </script>
+    <style type="text/css">
+        #main
+        {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .green
+        {
+            color: #007434;
+        }
+        #content
+        {
+            background-image: url('images/login/login_bg.png');
+            background-repeat: no-repeat;
+            width: 1000px;
+            height: 510px;
+        }
+        #logincon
+        {
+            position: absolute;
+            top: 85px;
+            right: 9px;
+            width: 346px;
+        }
+        #logincon ul.tabs
+        {
+        }
+        #logincon ul.tabs li.tab
+        {
+            background-image: url('images/login/login_tab_bg.png');
+            height: 46px;
+            background-repeat: repeat-x;
+        }
+        #logincon ul.tabs li.tab a
+        {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #333333;
+            font-size: 14px;
+            line-height: 44px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        #logincon ul.tabs li.cur a
+        {
+            color: #007434;
+        }
+        #tab1
+        {
+            padding-left: 45px;
+        }
+        #LoginUser
+        {
+            width: 100%;
+        }
+        .login p
+        {
+            height: 25px;
+            line-height: 25px;
+            vertical-align: middle;
+            margin-bottom: 10px;
+        }
+        .login p label
+        {
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 12px;
+            display: inline-block;
+            width: 45px;
+        }
+        #rm
+        {
+            margin-left: 61px;
+            line-height: 14px;
+            vertical-align: middle;
+            height: 14px;
+        }
+        #rm input
+        {
+            display: inline;
+            vertical-align: middle;
+        }
+        #rm label
+        {
+            font-size: 12px;
+            display: inline;
+            font-weight: normal;
+            margin: 0;
+        }
+        #rm a
+        {
+            margin: 0;
+            padding: 0;
+        }
+        #UserName, #Password
+        {
+            width: 189px;
+            padding-left: 3px;
+            font-size: 12px;
+            height: 25px;
+            line-height: 25px;
+            border: 1px solid #c4c4c4;
+        }
+        .submitButton
+        {
+            line-height: 29px;
+            height: 29px;
+            margin-left: 61px;
+        }
+        #LoginButton
+        {
+            background-image: url('images/login/login_lgbtn_bg.png');
+            background-repeat: no-repeat;
+            width: 82px;
+            height: 29px;
+            cursor: hand;
+        }
+        .submitButton a
+        {
+            background-position: right center;
+            display: inline-block;
+            margin-left: 12px;
+            background-image: url('images/login/login_questionmark.png');
+            background-repeat: no-repeat;
+            padding-right: 24px;
+        }
+        .failureNotificationWrapper
+        {
+            margin: 10px 0;
+            display: block;
+            margin-left: 61px;
+            line-height: 20px;
+            min-height: 60px;
+        }
+        .failureNotification
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="content" style="position: relative">
+            <div id="logincon">
+                <ul class="tabs clearfix">
+                    <li class="tab"><a>会员登录</a></li>
+                </ul>
+                <div id="tab1">
+                    <div class="failureNotificationWrapper">
+                        <span class="failureNotification"></span>
+                        <div id="LoginUserValidationSummary" class="failureNotification" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="accountInfo">
+                        <fieldset class="login">
+                            <p>
+                                <label for="UserName" id="UserNameLabel">
+                                    用户名</label>
+                                <input name="ctl00$ContentPlaceHolder1$LoginUser$UserName" type="text" id="UserName"
+                                    class="textEntry">
+                                <span id="UserNameRequired" title="必须填写“用户名”。" class="failureNotification" style="visibility: hidden;">
+                                    *</span>
+                            </p>
+                            <p>
+                                <label for="Password" id="PasswordLabel">
+                                    密 码</label>
+                                <input name="ctl00$ContentPlaceHolder1$LoginUser$Password" type="password" id="Password"
+                                    class="passwordEntry">
+                                <span id="PasswordRequired" title="必须填写“密码”。" class="failureNotification" style="visibility: hidden;">
+                                    *</span>
+                            </p>
+                            <p id="rm">
+                                <input id="RememberMe" type="checkbox" name="ctl00$ContentPlaceHolder1$LoginUser$RememberMe">
+                                <label for="RememberMe" id="RememberMeLabel" class="inline">
+                                    记住登录状态 /
+                                </label>
+                                <a href="http://www.cct.cn/bj/mregister.aspx" class="green">免费注册</a>
+                            </p>
+                        </fieldset>
+                        <p class="submitButton">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$LoginUser$LoginButton" value=""
+                                onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LoginUser$LoginButton&quot;, &quot;&quot;, true, &quot;LoginUserValidationGroup&quot;, &quot;&quot;, false, false))"
+                                id="LoginButton">
+                            <a href="http://www.cct.cn/bj/Login.aspx?ReturnUrl=MCZiLiao.aspx#" class="green">忘记密码</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+//<![CDATA[
+        var Page_ValidationSummaries = new Array(document.getElementById("LoginUserValidationSummary"));
+        var Page_Validators = new Array(document.getElementById("UserNameRequired"), document.getElementById("PasswordRequired"));
+//]]>
+</script>
+    <script type="text/javascript">
+//<![CDATA[
+        var LoginUserValidationSummary = document.all ? document.all["LoginUserValidationSummary"] : document.getElementById("LoginUserValidationSummary");
+        LoginUserValidationSummary.validationGroup = "LoginUserValidationGroup";
+        var UserNameRequired = document.all ? document.all["UserNameRequired"] : document.getElementById("UserNameRequired");
+        UserNameRequired.controltovalidate = "UserName";
+        UserNameRequired.errormessage = "必须填写“用户名”。";
+        UserNameRequired.validationGroup = "LoginUserValidationGroup";
+        UserNameRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+        UserNameRequired.initialvalue = "";
+        var PasswordRequired = document.all ? document.all["PasswordRequired"] : document.getElementById("PasswordRequired");
+        PasswordRequired.controltovalidate = "Password";
+        PasswordRequired.errormessage = "必须填写“密码”。";
+        PasswordRequired.validationGroup = "LoginUserValidationGroup";
+        PasswordRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+        PasswordRequired.initialvalue = "";
+//]]>
+</script>
+    <script type="text/javascript">
+//<![CDATA[
+
+        var Page_ValidationActive = false;
+        if (typeof (ValidatorOnLoad) == "function") {
+            ValidatorOnLoad();
+        }
+
+        function ValidatorOnSubmit() {
+            if (Page_ValidationActive) {
+                return ValidatorCommonOnSubmit();
+            }
+            else {
+                return true;
+            }
+        }
+        //]]>
+</script>
+</body>
+</html>

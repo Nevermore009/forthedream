@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs"
+    Inherits="SSD.Manage.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>马上游后台管理</title>
+    <link href="../css/master.css" rel="stylesheet" type="text/css" />
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+    <link href="css/dialog.css" type="text/css" rel="stylesheet" />
+    <link href="css/skin.css" type="text/css" rel="stylesheet" />
+    <link href="css/table.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/Manage/JS/com/DialogMessage.js"></script>
+    <script type="text/javascript" src="/Manage/JS/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/Manage/JS/com/NewsManage.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var curl = window.location.href.toLowerCase();
+            var pas = getUrlParas();
+            $(".MM a").each(function () {
+                var v = $(this).attr("href").toLowerCase();
+                if (curl.indexOf(v) > 0) {
+                    if ($(this).attr("p") && $(this).attr("v") && pas[$(this).attr("p")] != $(this).attr("v")) {
+                        return;
+                    }
+                    //$(this).parent().parent().parent().slideDown();
+                    $(this).css("font-weight", "bold").css("color", "green");
+                    return false;
+                }
+            });
+
+
+
+            $(".content").slideDown();
+            $(".type").click(function () {
+                var s = $(this);
+                if ($(".content:visible").size() > 0) {
+                    $(".content:visible").slideUp(function () {
+                        s.next().slideDown();
+                    });
+                }
+                else s.next().slideDown();
+            });
+        });
+        function getUrlParas()//获取url参数，返回一个对象。参数名－值的键值对。
+        {
+            var v = window.location.href;
+            if (v.indexOf('?') == -1) return {};
+            v = v.substring(v.indexOf('?') + 1);
+            var pas = v.split('&');
+            if (pas.length == 0) return {};
+            var res = {};
+            for (var i = 0, a = pas.length; i < a; i++) {
+                if ($.trim(pas[i])) {
+                    var tmp = pas[i].split('=');
+                    if (tmp.length == 1) res[tmp[0]] = "";
+                    else if (tmp.length == 2) res[tmp[0]] = tmp[1];
+                }
+            }
+            return res;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table width="100%" height="64" border="0" cellpadding="0" cellspacing="0" class="admin_topbg">
+            <tr>
+                <%--<td width="61%" height="64"><img src="images/logo.gif" width="262" height="64"></td>--%>
+                <td width="100%" valign="top">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="74%" height="38" class="admin_txt">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: large; font-weight: bold;"><%=ConfigurationSettings.AppSettings["sitename"] %></span>
+                            </td>
+                            <td width="22%">
+                                <asp:ImageButton ID="ImageButton1" runat="server" Width="46px" Height="20px" BorderStyle="none"
+                                    ImageUrl="~/manage/images/out.gif" CausesValidation="False" OnClick="ImageButton1_Click" />
+                            </td>
+                            <td width="4%">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="19" colspan="3">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table width="100%">
+            <tr>
+                <td style="width: 175px;" valign="top">
+                    <h1 class="type">
+                        <a href="javascript:void(0)">首页</a></h1>
+                    <div class="content" style="margin: 0px 0px 0px 0px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <img src="/Manage/images/menu_topline.gif" width="182" height="5" />
+                                </td>
+                            </tr>
+                        </table>
+                        <ul class="MM">
+                            <li><a href="/Manage/Pratent.aspx">图片轮播</a></li>
+                            <%=(Session["Personnels"] != null && Session["Personnels"].ToString() == "cc") ? "<li><a href='/Manage/TravelTypeManager.aspx'>模块管理</a></li>" : ""%>
+                            <li><a href="/Manage/AreaManager.aspx">地区管理</a></li>
+                            <li><a href="/Manage/CityManager.aspx">城市管理</a></li>
+                        </ul>
+                    </div>
+                    <h1 class="type">
+                        <a href="javascript:void(0)">旅游信息管理</a></h1>
+                    <div class="content" style="margin: 0px 0px 0px 0px;">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <img src="/Manage/images/menu_topline.gif" alt="" width="182" height="5" />
+                                </td>
+                            </tr>
+                        </table>
+                        <ul class="MM">
+                            <li><a href="/Manage/TravelManager.aspx">线路管理</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td valign="top">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="17" valign="top" background="/Manage/images/mail_leftbg.gif">
+                                <img src="/Manage/images/left-top-right.gif" width="17" height="29" />
+                            </td>
+                            <td valign="top" background="/Manage/images/content-bg.gif">
+                                <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg"
+                                    id="table2">
+                                    <tr>
+                                        <td height="31">
+                                            <div class="titlebt" style="padding: 5px;">
+                                                <asp:ContentPlaceHolder ID="SmallTitle" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="16" valign="top" background="/Manage/images/mail_rightbg.gif">
+                                <img src="/Manage/images/nav-right-bg.gif" width="16" height="29" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="middle" background="/Manage/images/mail_leftbg.gif">
+                                &nbsp;
+                            </td>
+                            <td valign="top" bgcolor="#F7F8F9" style="height: 590px; padding: 10px 10px">
+                                <asp:ContentPlaceHolder ID="Body" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                            <td background="/Manage/images/mail_rightbg.gif">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="bottom" background="/Manage/images/mail_leftbg.gif">
+                                <img src="/Manage/images/buttom_left2.gif" width="17" height="17" />
+                            </td>
+                            <td background="/Manage/images/buttom_bgs.gif">
+                                <img src="/Manage/images/buttom_bgs.gif" width="17" height="17">
+                            </td>
+                            <td valign="bottom" background="/Manage/images/mail_rightbg.gif">
+                                <img src="/Manage/images/buttom_right2.gif" width="16" height="17" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

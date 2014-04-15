@@ -1,0 +1,35 @@
+﻿.dialog-container{position:absolute;padding:0px;left:0;top:0; margin:0px;z-index:1000;font-size:9pt;text-align:center;}
+.dialog-container table{margin-left:auto;margin-right:auto;width:300px;height:140px;border:solid 1px #ff6600;}
+.dialog-title{background-color:#ff9900;text-align:left;color:#ffffff;height:35px}
+.dialog-content{text-align:center;background-color:#ffffff;background-repeat:no-repeat;background-image: url(/img/com/11.jpg); background-position:left center;height:80px;border-top:solid 1px #ff9900;border-bottom:solid 1px #ff9900;padding:0 10px 0 50px;color:Red}
+.dialog-control{text-align:center;background-color:#ff9900;color:#ffffff;height:25px}
+.dialog-control a{background-color:#fc9;border-bottom:1px solid #963;cursor:pointer;text-align:center;color:#f60;}/*控制栏中的按键*/
+.dialog-control a:hover{background-color:White;}
+.dialog-waitImg{margin:0 5px 0 0;vertical-align:middle;}
+.dialog-loading{left:0;top:0;background-color:White;font-size:9pt;height:88px;width:280px;border:double 4px #339933;position:absolute;z-index:9999;}
+.dialog-divfull{z-index:888;left:0;top:0;border:solid 1px Gray;position:absolute;opacity:.5;filter:Alpha(Opacity=50);background-color:White;}
+.dialog-divmsg{background-color:#ff9900;z-index:889;padding:5px 5px 5px 5px;border:1px solid Gray;position:absolute;}
+.openform{background:#fff;line-height:24px;border:4px double White;text-align:left;position:absolute;display:none;z-index:999;padding:3px;}
+
+.dialog-popu-container{width:405px;height:200px;position:absolute;right:3px;bottom:0px;}
+.dialog-popu-iframe{border:none;position:absolute;width:405px;height:200px;}
+.dialog-popu-body{background-color:White;position:absolute;background:url('/Img/poup.jpg') no-repeat;width:405px;height:200px;}
+.dialog-popu-title{height:28px;line-height: 28px;text-align: left;overflow: hidden;padding-left:25px;}
+.dialog-popu-title div{margin-left:8px;height:29px;line-height: 29px;font-size:12px;font-weight:bold;overflow: hidden;width:300px;float:left;}
+.dialog-popu-btnClose{height:28px;width:20px;margin-right:5px;float:right;display:block;cursor:pointer;}
+.dialog-popu-content{padding:12px 15px 0 110px;clear:both;height:110px;overflow:hidden;}
+.dialog-popu-bottom{padding:4px 0 0 0;}
+.dialog-popu-btnOK{width:80px;height:23px;margin:0 0 0 190px;_margin:0 0 0 95px;+margin:0 0 0 95px;display:block;float:left;text-decoration:none;clear:left;}
+.dialog-popu-btnNO{width:80px;height:23px;margin:0 0 0 25px;_margin:0 0 0 25px;+margin:0 0 0 25px;display:block;float:left;text-decoration:none;}
+
+.sortColum{color:Blue;cursor:pointer;}
+.sortColum_hover{background:#ACDBF1;}
+
+/********************分页********************/
+.div_pagination {padding: 8px;margin-top:15px;text-align: center; font-size:12px; width:710px; float:left}
+.div_pagination a {border:1px solid #dee3e7 ; padding: 5px 10px; color: #b20000; margin-right:5px;text-decoration: none;}
+.div_pagination a:hover {border:1px solid #dddddd ; color: #c50a0a;  background-color: lightyellow}
+.pagination a:active {border:1px solid #dddddd ; color: #c50a0a;  background-color: lightyellow}
+.div_pagination span.current { padding:5px  10px;font-weight: bold;color: #fff; margin-right:5px;}
+.div_pagination span.disabled {border:1px solid #dee3e7 ; padding: 5px 10px;color: #929292; margin-right: 5px; }
+/*.div_pagination span.current {border:1px solid #b20000 ; padding:5px  10px;font-weight: bold;color: #fff; margin-right:5px;background-color: #b20000}*/

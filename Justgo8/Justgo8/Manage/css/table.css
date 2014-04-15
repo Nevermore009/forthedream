@@ -1,0 +1,46 @@
+
+.table1{
+	font-family: "Tahoma", Verdana, Arial, Helvetica, sans-serif;
+	font-size:  90%;
+	border-collapse: collapse;
+	border:1px solid #99bbe8;	
+	
+}
+
+/*----thead  tfoot--------------------------*/
+
+thead tr{
+	background: #eeeff1 url(/admin/images/grid3-hrow.gif) repeat-x;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+tr.odd{
+	background-color: #efefff;
+}
+
+thead th{
+	padding: 0.3em;
+	white-space: nowrap;
+	border-right:1px solid #d0d0d0;
+	border-bottom:1px solid #d0d0d0;
+}
+
+
+/*----tbody--------------------------*/
+.bd tr:hover{
+	background-color: #dfe8f6;
+}
+
+.bd td,.bd th
+{
+	padding: 0.1em;
+	border-bottom: 1px solid #fff;
+}
+
+/*----links--------------------------*/
+
+
+
+/*----others--------------------------*/
+

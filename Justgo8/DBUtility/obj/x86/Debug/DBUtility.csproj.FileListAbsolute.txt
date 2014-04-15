@@ -1,0 +1,7 @@
+E:\工作\qshb\qshb\DBUtility\bin\x86\Debug\DBUtility.dll
+E:\工作\qshb\qshb\DBUtility\bin\x86\Debug\DBUtility.pdb
+E:\工作\qshb\qshb\DBUtility\bin\x86\Debug\Common.dll
+E:\工作\qshb\qshb\DBUtility\bin\x86\Debug\Common.pdb
+E:\工作\qshb\qshb\DBUtility\obj\x86\Debug\DBUtility.csprojResolveAssemblyReference.cache
+E:\工作\qshb\qshb\DBUtility\obj\x86\Debug\DBUtility.dll
+E:\工作\qshb\qshb\DBUtility\obj\x86\Debug\DBUtility.pdb

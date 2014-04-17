@@ -470,7 +470,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -746,7 +746,7 @@
         <!--CONTENT STARTS-->
         <div id="content">
             <!--CONTENT LEFT STARTS-->
-            <div id="contentl">
+            <div id="contentl" style="display: none">
                 <div class="hot_sort">
                     <div class="hs_wrap">
                         <div class="hs_w710 clearfix">

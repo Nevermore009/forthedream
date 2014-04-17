@@ -47,7 +47,7 @@ namespace DBUtility
         /// </summary>
         /// <param name="sql">SQL语句</param>
         /// <returns>返回结果</returns>
-        public int GetNum(string sql)
+        public int GetNum(string sql, params SqlParameter[] pas)
         {
             int Results = 0;
             SqlConnection con = GetCon();
@@ -55,6 +55,13 @@ namespace DBUtility
             try
             {
                 con.Open();
+                if (pas != null)
+                {
+                    foreach (SqlParameter p in pas)
+                    {
+                        cmd.Parameters.Add(p);
+                    }
+                }
                 Results = cmd.ExecuteNonQuery();
             }
             catch (Exception err)
@@ -73,7 +80,7 @@ namespace DBUtility
         /// </summary>
         /// <param name="sql">SQL语句</param>
         /// <returns></returns>
-        public string RunSqlReturn(string sql)
+        public string RunSqlReturn(string sql, params  SqlParameter[] pas)
         {
             string strReturn = "";
             SqlConnection con = GetCon();
@@ -81,6 +88,13 @@ namespace DBUtility
             try
             {
                 con.Open();
+                if (pas != null)
+                {
+                    foreach (SqlParameter p in pas)
+                    {
+                        cmd.Parameters.Add(p);
+                    }
+                }
                 strReturn = cmd.ExecuteScalar().ToString();
             }
             catch (Exception err)

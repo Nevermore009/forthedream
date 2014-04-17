@@ -319,7 +319,7 @@
                                             <div class="seccat">
                                                 <asp:Repeater runat="server" ID="RepeaterHotArea">
                                                     <ItemTemplate>
-                                                        <a href='TravelDetail.aspx?areaid=<%#Eval("areaid") %>'><em>
+                                                        <a href='search.aspx?areaid=<%#Eval("areaid") %>'><em>
                                                             <%#Eval("areaname") %></em></a>
                                                     </ItemTemplate>
                                                 </asp:Repeater>

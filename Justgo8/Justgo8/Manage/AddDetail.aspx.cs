@@ -338,6 +338,7 @@ namespace Justgo8.Manage
                         {
                             Bll.BDestination.add(detailid, int.Parse(cityinfo.Rows[i]["areaid"].ToString()), int.Parse(cityinfo.Rows[i]["cityid"].ToString()));
                         }
+                        cityinfo.Rows.Clear();
                     }
                     catch (Exception x)
                     {
@@ -345,10 +346,11 @@ namespace Justgo8.Manage
                     }
                     try
                     {
-                        for (int i = 0; i < cityinfo.Rows.Count; i++)
+                        for (int i = 0; i < picdt.Rows.Count; i++)
                         {
                             Bll.BTravelPicture.add(detailid, picdt.Rows[i]["pic"].ToString());
                         }
+                        picdt.Rows.Clear();
                     }
                     catch (Exception x)
                     {

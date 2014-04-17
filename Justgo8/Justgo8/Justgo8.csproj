@@ -58,17 +58,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Bll.dll" />
-    <Content Include="bin\Bll.pdb" />
-    <Content Include="bin\Common.dll" />
-    <Content Include="bin\Common.pdb" />
-    <Content Include="bin\DBUtility.dll" />
-    <Content Include="bin\DBUtility.pdb" />
-    <Content Include="bin\DLL.dll" />
-    <Content Include="bin\DLL.pdb" />
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
     <Content Include="bin\Justgo8.dll" />
-    <Content Include="bin\Justgo8.pdb" />
     <Content Include="contactus.aspx" />
     <Content Include="css\15.css" />
     <Content Include="css\category.css" />

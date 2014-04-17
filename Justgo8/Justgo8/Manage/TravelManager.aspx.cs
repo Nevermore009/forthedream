@@ -15,25 +15,24 @@ namespace Justgo8.Manage
         {
             if (!IsPostBack)
             {
-                BindDetail(Bll.BTravelType.Inland);
+                BindTravelType();
             }
         }
-        protected void BindDetail(int traveltypeid)
+        protected void BindTravelType()
         {
             DataTable dt = new DataTable();
-            dt = Bll.BTravelDetail.TravelInfo(traveltypeid);
+            dt = Bll.BTravelType.TravelTypeInfo();
             if (dt.Rows.Count > 0)
             {
-                repeaterdestination.DataSource = dt;
-                repeaterdestination.DataBind();
+                repeatertraveltype.DataSource = dt;
+                repeatertraveltype.DataBind();
             }
             else
             {
-                repeaterdestination.DataSource = null;
-                repeaterdestination.DataBind();
-            }
+                repeatertraveltype.DataSource = null;
+                repeatertraveltype.DataBind();
+            }           
         }
-
 
         protected void RPlank_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -49,6 +48,18 @@ namespace Justgo8.Manage
                 {
                     ClientScript.RegisterStartupScript(GetType(), "", "alert('删除失败')", true);
                 }
+            }
+        }
+
+        protected void repeatertraveltype_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                DataRowView rowv = (DataRowView)e.Item.DataItem;
+                int typeid = Convert.ToInt32(rowv["traveltypeid"]);
+                Repeater rep2 = e.Item.FindControl("repeaterdetail") as Repeater;//找到里层的repeater对象
+                rep2.DataSource = Bll.BTravelDetail.TravelInfo(typeid);
+                rep2.DataBind();                
             }
         }
     }

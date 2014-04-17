@@ -22,7 +22,7 @@ namespace Justgo8
         protected void BindArea()
         {
             DataTable dt = new DataTable();
-            dt = Bll.BArea.AreaOfTravelType(Bll.BTravelType.Outland);
+            dt = Bll.BArea.AreaOfTravelType(Bll.BTravelType.Periphery);
             if (dt.Rows.Count > 0)
             {
                 RepeaterOutland.DataSource = dt;

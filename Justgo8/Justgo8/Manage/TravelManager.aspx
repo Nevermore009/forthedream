@@ -9,23 +9,32 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Body" runat="server">
     <a href="AddDetail.aspx" id="Area" style="font-weight: bold; color: Green;">添 加</a>
     <hr style="width: 100%;" color="#bbb" size="3" />
-    <div class="pro_list">
-        <ul class="pro_show" style="margin-top: 5px">
-            <asp:Repeater ID="repeaterdestination" runat="server" OnItemCommand="RPlank_ItemCommand">
-                <ItemTemplate>
-                    <li><a href="../detail.aspx?id=<%#Eval("id") %>" target="_blank">
-                        <img src="<%#Eval("pic") %>" height="100px" width="100px" title="" alt="" /></a>
-                        <br />
-                        <font style="font-weight: bold; font-size: 18px">
-                            <%#Eval("title") %></font>
-                        <br />
-                        <font style="font-weight: bold; font-size: 18px">
-                            <%#Eval("destination").ToString()==""?"":"目的地:"+Eval("destination").ToString()+"等" %></font><br />
-                        <a href='AddDetail.aspx?travelid=<%# Eval("id") %>'>修改</a>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%# Eval("id")%>'
-                            OnClientClick="javascript:return confirm('确认是否删除？')">删除</asp:LinkButton></li>
-                </ItemTemplate>
-            </asp:Repeater>
-        </ul>
-    </div>
+    <asp:Repeater ID="repeatertraveltype" runat="server" OnItemDataBound="repeatertraveltype_ItemDataBound">
+        <ItemTemplate>
+            <%# Eval("traveltypename") %>
+            <hr style="width: 100%;" color="#bbb" size="3" />
+            <div class="pro_list">
+                <ul class="pro_show" style="margin-top: 5px">
+                    <asp:Repeater ID="repeaterdetail" runat="server" OnItemCommand="RPlank_ItemCommand">
+                        <ItemTemplate>
+                            <li><a href="../detail.aspx?id=<%#Eval("id") %>" target="_blank">
+                                <img src="..<%#Eval("pic") %>" height="100px" width="100px" title="" alt="" /></a>
+                                <br />
+                                <font style="font-weight: bold; font-size: 18px">
+                                    <%#Eval("title") %></font>
+                                <br />
+                                <font style="font-weight: bold; font-size: 18px">
+                                    <%#Eval("destination").ToString()==""?"":"目的地:"+Eval("destination").ToString()+"等" %></font><br />
+                                <a href='AddDetail.aspx?travelid=<%# Eval("id") %>'>修改</a>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%# Eval("id")%>'
+                                    OnClientClick="javascript:return confirm('确认是否删除？')">删除</asp:LinkButton></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+                <div style="background-color: Green; clear:both;">
+                </div>
+            </div>
+            </asp:Panel>
+        </ItemTemplate>
+    </asp:Repeater>
 </asp:Content>

@@ -73,7 +73,7 @@
 .pro_list .sidebar_tit{ width:100%; float:left}
 .pro_list .pro_show{ float:left; width:100%}
 .pro_list .pro_show{ margin-left:10px; margin-top:20px}
-.pro_list .pro_show li{ float:left; width:168px; height:150px; margin-right:11px; text-align:center; font-size:12px; line-height:18px}
+.pro_list .pro_show li{ float:left; width:168px;  margin-right:11px; text-align:center; font-size:12px; line-height:18px}
 .pro_list .pro_show li img{ width:164px; height:112px; padding:2px; border:1px solid #d2d2d2}
 .pro_list .pro_show li a{ color:#524a3f}
 .pro_detail { line-height:36px; margin-top:15px}

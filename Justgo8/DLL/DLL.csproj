@@ -88,6 +88,10 @@
     <Compile Include="TravelType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{5126D418-87BB-4720-8E30-27C551049F66}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">
       <Project>{00442AF4-9494-4075-918E-725CE38F78FF}</Project>
       <Name>DBUtility</Name>

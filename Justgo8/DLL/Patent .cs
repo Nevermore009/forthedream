@@ -42,10 +42,10 @@ namespace DLL
        /// <param name="pic">图片</param>
        /// <param name="sort">排序</param>
        /// <returns></returns>
-       public int add(string name,string pic,string url,int sort)
+       public int add(string name,string pic,int detailid,int sort)
        {
            int res = 0;
-           string sql = " insert into [tb_Patent] ([name],[pic],[sort],[url],[dodate]) values ('" + name + "','" + pic + "'," + sort + ",'" + url + "',date()) ";
+           string sql = " insert into [tb_Patent] ([name],[pic],[sort],[detailid],[dodate]) values ('" + name + "','" + pic + "'," + sort + ",'" + detailid + "',date()) ";
            res = help.GetNum(sql);
            return res;
        }
@@ -58,10 +58,10 @@ namespace DLL
        /// <param name="sort">排序号</param>
        /// <param name="id">id</param>
        /// <returns></returns>
-       public int update(string name, string pic,string url, int sort,int id)
+       public int update(string name, string pic,int detailid, int sort,int id)
        {
            int res = 0;
-           string sql = "  update [tb_Patent] set [name]='" + name + "',[pic]='" + pic + "',[sort]=" + sort + ",[url]='" + url + "' where id=" + id + " ";
+           string sql = "  update [tb_Patent] set [name]='" + name + "',[pic]='" + pic + "',[sort]=" + sort + ",[detailid]='" + detailid + "' where id=" + id + " ";
            res = help.GetNum(sql);
            return res;
        }

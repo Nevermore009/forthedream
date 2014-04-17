@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using DBUtility;
 using System.Data;
+using Common;
+using System.Data.SqlClient;
 
 namespace DLL
 {
@@ -30,7 +32,7 @@ namespace DLL
         public DataTable DetailInfo(int id)
         {
             DataTable dt = new DataTable();
-            string sql = " select * from [tb_detail]  where [id]=" + id;
+            string sql = " select *,(select top 1 pic from tb_travelpicture where detailid=t1.id)as pic from [tb_detail] t1 where [id]=" + id;
             dt = help.SeeResults(sql);
             return dt;
         }
@@ -66,8 +68,29 @@ namespace DLL
         {
             int res = 0;
             string sql = string.Format(@"insert into [tb_detail] ([title],[description],[generalprice],[adultprice],[childprice],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid],[journeydays],[transportation])
-            values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}',{15},'{16}','{17}') select @@identity", title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, traveltypeid, journeydays, transportation);
-            res = int.Parse(help.RunSqlReturn(sql));
+            values (@title, @description, @generalprice, @adultprice, @childprice, @startdate, @enddate, @departuretime, @features, @billinclude, @billbeside, @servicestandard, @presentation, @journey, @contact, @traveltypeid, @journeydays, @transportation) select @@identity");
+            ErrorLog.AddErrorLog(sql);
+            SqlParameter[] pas = new SqlParameter[] { 
+                new SqlParameter("@title",title),
+                new SqlParameter("@description",description),
+                new SqlParameter("@generalprice",generalprice),
+                new SqlParameter("@adultprice",adultprice),
+                new SqlParameter("@childprice",childprice),
+                new SqlParameter("@startdate",startdate),
+                new SqlParameter("@enddate",enddate),
+                new SqlParameter("@departuretime",departuretime),
+                new SqlParameter("@features",features),
+                new SqlParameter("@billinclude",billinclude),
+                new SqlParameter("@billbeside",billbeside),
+                new SqlParameter("@servicestandard",servicestandard),
+                new SqlParameter("@presentation",presentation),
+                new SqlParameter("@journey",journey),
+                new SqlParameter("@contact",contact),
+                new SqlParameter("@traveltypeid",traveltypeid),                 
+                new SqlParameter("@journeydays",journeydays),
+                new SqlParameter("@transportation",transportation)
+            };
+            res = int.Parse(help.RunSqlReturn(sql,pas));
             return res;
         }
 
@@ -84,7 +107,28 @@ namespace DLL
             int res = 0;
             string sql = string.Format(" update [tb_detail] set [title]='{0}',[description]='{1}',[generalprice]='{2}',[adultprice]='{3}',[childprice]='{4}',[startdate]='{5}',[enddate]='{6}',[departuretime]='{7}',[features]='{8}',[billinclude]='{9}',[billbeside]='{10}',[servicestandard]='{11}',[presentation]='{12}',[journey]='{13}',[contact]='{14}',[journeydays]='{15}',[transportation]='{16}' where id={17}",
                  title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, journeydays, transportation, id);
-            res = help.GetNum(sql);
+            SqlParameter[] pas = new SqlParameter[] { 
+                new SqlParameter("@title",title),
+                new SqlParameter("@description",description),
+                new SqlParameter("@generalprice",generalprice),
+                new SqlParameter("@adultprice",adultprice),
+                new SqlParameter("@childprice",childprice),
+                new SqlParameter("@startdate",startdate),
+                new SqlParameter("@enddate",enddate),
+                new SqlParameter("@departuretime",departuretime),
+                new SqlParameter("@features",features),
+                new SqlParameter("@billinclude",billinclude),
+                new SqlParameter("@billbeside",billbeside),
+                new SqlParameter("@servicestandard",servicestandard),
+                new SqlParameter("@presentation",presentation),
+                new SqlParameter("@journey",journey),
+                new SqlParameter("@contact",contact),
+                new SqlParameter("@journeydays",journeydays),
+                new SqlParameter("@transportation",transportation),
+                new SqlParameter("@id",id)
+            };
+            ErrorLog.AddErrorLog(sql);
+            res = help.GetNum(sql, pas);
             return res;
         }
 

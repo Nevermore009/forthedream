@@ -415,6 +415,65 @@
                 </div>
             </div>
         </div>
+        <div id="periphery">
+            <div style="width: 185px; height: 30px; float: left; padding-top: 10px;">
+                <img src="images/index/periphery.png" alt="" width="185" height="30" /></div>
+            <div class="selectarea">
+                <asp:Repeater runat="server" ID="repeaterhotperiphery">
+                    <ItemTemplate>
+                        <a href="#" <%# Container.ItemIndex==0?"class='first'":"" %>>
+                            <%#Eval("areaname") %></a>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+            <div class="morearea">
+                <a href="#">更多&gt;&gt;</a></div>
+            <div style="width: 100%; float: left; border-top: #489ea9 solid 2px; border-bottom: #c4c4c4 solid 1px;
+                border-right: #c4c4c4 solid 1px; overflow: hidden;">
+                <div id="peripheryleft">
+                    <ul class="zz">
+                        <asp:Repeater runat="server" ID="repeaterperiphery">
+                            <ItemTemplate>
+                                <li><a href="#" target="_blank">
+                                    <%#Eval("areaname") %></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ul>
+                </div>
+                <div style="width: 815px; float: left;" id="peripherycontent">
+                    <div class="hot_sort">
+                        <div class="hs_wrap">
+                            <div class="hs_w710 clearfix">
+                                <div class="hs_con" style="width: 370px; margin-left: 15px;">
+                                    <div class="mb_10">
+                                        <ol>
+                                            <asp:Repeater ID="repeaterperipheryshow1" runat="server">
+                                                <ItemTemplate>
+                                                    <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
+                                                        title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
+                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                            </asp:Repeater>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="hs_con" style="width: 370px; margin-left: 30px;">
+                                    <div class="mb_10">
+                                        <ol>
+                                            <asp:Repeater ID="repeaterperipheryshow2" runat="server">
+                                                <ItemTemplate>
+                                                    <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
+                                                        title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
+                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                            </asp:Repeater>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
         <!--INLAND AREA STARTS-->
         <div id="inland">
             <div style="width: 185px; height: 30px; float: left; padding-top: 10px;">

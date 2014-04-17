@@ -40,6 +40,42 @@ namespace Justgo8 {
         protected global::System.Web.UI.WebControls.Repeater RepeaterWelcomeWord;
         
         /// <summary>
+        /// repeaterhotperiphery 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterhotperiphery;
+        
+        /// <summary>
+        /// repeaterperiphery 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterperiphery;
+        
+        /// <summary>
+        /// repeaterperipheryshow1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterperipheryshow1;
+        
+        /// <summary>
+        /// repeaterperipheryshow2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterperipheryshow2;
+        
+        /// <summary>
         /// RepeaterHotInland 控件。
         /// </summary>
         /// <remarks>

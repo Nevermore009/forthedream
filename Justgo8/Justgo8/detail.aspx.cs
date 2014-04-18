@@ -13,8 +13,6 @@ namespace Justgo8
 {
     public partial class detail : System.Web.UI.Page
     {
-        public string pic = "";
-        public string title = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(Request["id"]))
@@ -25,6 +23,7 @@ namespace Justgo8
             if (!IsPostBack)
             {
                 BindDetail();
+                BindPic();
             }
         }
 
@@ -35,8 +34,6 @@ namespace Justgo8
                 DataTable dt = Bll.BTravelDetail.DetailInfo(int.Parse(Request["id"]));
                 if (dt.Rows.Count > 0)
                 {
-                    pic = dt.Rows[0]["pic"].ToString();
-                    title = dt.Rows[0]["title"].ToString();
                     lbtitle.Text = dt.Rows[0]["title"].ToString();
                     lbtitle2.Text = dt.Rows[0]["title"].ToString();
                     lbadultprice.Text = dt.Rows[0]["adultprice"].ToString();
@@ -60,6 +57,28 @@ namespace Justgo8
             {
                 ErrorLog.AddErrorLog(ex.ToString());
                 MessageBox.ResponseScript(this.Page, "alert('获取数据失败');this.history.go(-1)");
+            }
+        }
+
+        protected void BindPic()
+        {
+            try
+            {
+                DataTable dt = Bll.BTravelPicture.PictureInfo(int.Parse(Request["id"]));
+                if (dt.Rows.Count > 0)
+                {
+                    repeaterdetailpic.DataSource = dt;
+                    repeaterdetailpic.DataBind();
+                }
+                else
+                {
+                    repeaterdetailpic.DataSource = null;
+                    repeaterdetailpic.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.AddErrorLog("图片获取失败:" + ex.ToString());
             }
         }
 

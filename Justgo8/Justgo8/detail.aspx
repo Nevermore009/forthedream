@@ -2,22 +2,16 @@
     CodeBehind="detail.aspx.cs" Inherits="Justgo8.detail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/line.css" />
     <link href="css/datepicker.css" rel="stylesheet" type="text/css" />
     <link href="css/WdatePicker.css" rel="stylesheet" type="text/css" />
-    <script src="js/WdatePicker.js" type="text/javascript"></script>
-    <script src="js/calendar.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/mF_games_tb.css" />
-    <script type="text/javascript" src="js/mF_games_tb.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="js/bw.js"></script>
-    <script src="js/lineshow.js" type="text/javascript"></script>
-    <script src="js/line.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/15.css" type="text/css" charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/m-front-icon.css" />
     <link rel="stylesheet" type="text/css" href="css/m-front-mess.css" />
     <link rel="stylesheet" type="text/css" href="css/m-front-invite.css" />
     <link type="text/css" rel="stylesheet" href="css/m-webim-lite.css" />
+    <link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .aa
         {
@@ -27,7 +21,80 @@
             _bottom: auto;
             _top: expression(eval(document.documentElement.scrollTop-185));
         }
+        .mF_games_tb_myFocusShow *
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+        .mF_games_tb_myFocusShow
+        {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            font: 12px/1.5 Verdana;
+            text-align: left;
+            background: #fff;
+            visibility: visible !important;
+        }
+        .mF_games_tb_myFocusShow .pic
+        {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .mF_games_tb_myFocusShow .txt li
+        {
+            width: 400px;
+            height: defaultpx !important;
+            overflow: hidden;
+        }
     </style>
+    <script type="text/javascript" src="js/myfocus-2.0.4.min.js"></script>
+    <%--<script src="js/lineshow.js" type="text/javascript"></script>--%>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($('#myFocusShow a').length > 0) {
+                $('#myFocusShow').myFocus({ //线路详情页：幻灯片
+                    pattern: 'mF_games_tb', //风格应用的名称
+                    time: 3, //切换时间间隔(秒)
+                    trigger: 'click', //触发切换模式:'click'(点击)/'mouseover'(悬停)
+                    width: 400, //设置图片区域宽度(像素)
+                    height: 300, //设置图片区域高度(像素)
+                    txtHeight: 'default', //文字层高度设置(像素),'default'为默认高度，0为隐藏
+                    loadIMGTimeout: 0 //图片的最长等待时间(Loading画面时间)(单位秒,0表示不等待直接播放)
+                });
+            }
+            var DT = $('#Details_nav').offset().top;
+            $('#Details_nav>li').click(function () {
+                var s = $('#Details_nav>li').index(this);
+                $(window).scrollTop($('.mainCon>.ui-tabs-panel:eq(' + s + ')').offset().top - 30);
+            });
+            $(window).scroll(function () {
+                var wt = $(window).scrollTop(), l = $('.mainCon>.ui-tabs-panel'), s = l.length - 1;
+                if (wt < DT || wt >= l.last().offset().top + l.last().height() + 30) {
+                    $('#Details_nav').removeClass('aa');
+                    $('#Details_nav>li:first').addClass('ui-tabs-selected').siblings().removeClass('ui-tabs-selected');
+                } else {
+                    $('#Details_nav').addClass('aa');
+                    for (var i = 0; i < s; i++) {
+                        if (wt >= parseInt(l.eq(i).offset().top - 30) && wt < parseInt(l.eq(i + 1).offset().top - 30)) {
+                            s = i;
+                            break;
+                        }
+                    }
+                    $('#Details_nav>li:eq(' + s + ')').addClass('ui-tabs-selected').siblings().removeClass('ui-tabs-selected');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/mF_games_tb.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="js/bw.js"></script>
+    <script src="js/WdatePicker.js" type="text/javascript"></script>
+    <script src="js/calendar.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--页头开始-->
@@ -43,39 +110,24 @@
                 <h1 class="title" id="attr">
                     <b>
                         <asp:Label runat="server" ID="lbtitle2">  </asp:Label>
-                    </b><i class="lineIco tuiJian" style="display: ">推荐</i> <i class="lineIco teJia"
-                        style="display: none">特价</i> <i class="lineIco reMai" style="display: ">热卖</i>
+                    </b><i class="lineIco tuiJian" style="display: none">推荐</i> <i class="lineIco teJia"
+                        style="display: none">特价</i> <i class="lineIco reMai" style="display: none">热卖</i>
                     <i class="lineIco xinPin" style="display: none">新品</i> <i class="lineIco tuanGou"
-                        style="display: ">团购</i>
+                        style="display: none">团购</i>
                 </h1>
                 <div class="baseView clearfix">
                     <div class="picShow">
                         <div class="sliderBox">
-                            <div class="mF_games_tb_wrap">
-                                <div id="myFocusShow" class=" mF_games_tb mF_games_tb_myFocusShow" style="height: 386px;">
-                                    <div class="pic">
-                                        <ul>
-                                            <li style="display: none; opacity: 1;"><a href="#" title="<%=title%>">
-                                                <img src="<%=pic %>" width="400" height="300" alt="<%=title%>" /></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="txt">
-                                        <ul>
-                                            <li style="bottom: 86px; display: none;"><a href="#" title="<%=title %>" target="_blank">
-                                                <%=title%></a><p>
-                                                </p>
-                                                <b></b></li>
-                                        </ul>
-                                    </div>
-                                    <div class="thumb" style="width: 368px; height: 86px; left: 16px;">
-                                        <ul style="width: 276px; left: 0px;">
-                                            <li class="" style="width: 92px;"><a>
-                                                <img src="<%=pic %>" style="height: 60px;" alt="" /></a><b></b></li></ul>
-                                    </div>
-                                    <div class="prev">
-                                        <a href="javascript:;">‹</a></div>
-                                    <div class="next">
-                                        <a href="javascript:;">›</a></div>
+                            <div id="myFocusShow" class=" mF_games_tb mF_games_tb_myFocusShow" style="height: 386px;">
+                                <div class="pic">
+                                    <ul>
+                                        <asp:Repeater runat="server" ID="repeaterdetailpic">
+                                            <ItemTemplate>
+                                                <li style="display: <%# Container.ItemIndex+1<1?"block":"none"%>; opacity: 1;"><a
+                                                    href="#">
+                                                    <img src="<%#Eval("pic") %>" width="400" height="300" alt="" title="" text="<%#Eval("remark") %>" /></a></li></ItemTemplate>
+                                        </asp:Repeater>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -103,8 +155,8 @@
                                     <label>
                                         满 意 度：</label><em>100%</em> <a href="javascript:void(0);" style="color: #C00;">[已有<em>0</em>人点评]</a></li>--%>
                             </ul>
-                            <div class="tuanIco sIco0">
-                                &nbsp;</div>
+                            <%--<div class="tuanIco sIco0">
+                                &nbsp;</div>--%>
                         </div>
                         <div class="choose clearfix">
                             <dl class="clearfix">
@@ -206,7 +258,7 @@
             </div>
             <div class="mainCon clearfix">
                 <ul class="ui-tabs-nav clearfix" id="Details_nav">
-                    <li><a href="javascript:;">具体行程</a></li>
+                    <li class="first ui-tabs-selected"><a href="javascript:;">具体行程</a></li>
                     <li><a href="javascript:;">费用说明</a></li>
                     <li><a href="javascript:;">服务标准</a></li>
                     <li><a href="javascript:;">友情提示</a></li>
@@ -278,23 +330,19 @@
     <!--主体结束-->
     <!--页脚开始-->
     <!--页脚结束-->
-    <input name="hidelineid" id="hidelineid" type="hidden" value="41">
+    <input name="hidelineid" id="hidelineid" type="hidden" value="41" />
     <div id="citypiclist" style="display: none">
     </div>
     <!--页脚脚本开始-->
     <div id="footerJs">
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/myfocus-2.0.4.min.js"></script>
-        <script type="text/javascript" src="js/common.js"></script>
+        <%--<script type="text/javascript" src="js/jquery.js"></script>--%>
         <script type="text/javascript" src="js/scrollshow.js"></script>
         <script type="text/javascript" src="js/jquery.vticker.js"></script>
         <script type="text/javascript" src="js/jquery.tinyscrollbar.min.js"></script>
         <script type="text/javascript" src="js/Calendar2.js"></script>
-        <script type="text/javascript" src="js/line.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/jquery.validate.check.js"></script>
         <script type="text/javascript" src="js/jquery.vticker(1).js"></script>
-        <script type="text/javascript" src="js/lineshow.js"></script>
         <script type="text/javascript">
             $(function () {
                 $('#optChange dd[defaultkey="线路关键词"]').click();
@@ -310,15 +358,7 @@
                 height: 44, //滚动内容的高度。
                 direction: 'up' //滚动的方向，默认为up向上，down则为向下滚动。
             });
-		</script>
+        </script>
     </div>
     <!--页脚脚本结束-->
-    <div id="backTop" class="backTop clearfix" style="display: block;">
-        <a title="返回顶部" href="javascript:;" rel="nofollow">&nbsp;</a></div>
-    <div id="qrCode" class="qrCode clearfix">
-        <a href="javascript:;" rel="nofollow">&nbsp;<div class="item">
-            &nbsp;</div>
-        </a>
-    </div>
-    <script type="text/javascript" src="js/m-webim-lite.js" charset="utf-8"></script>
 </asp:Content>

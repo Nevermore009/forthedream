@@ -27,9 +27,14 @@ namespace Bll
             return new DLL.TravelDetail().DetailInfo(id);
         }
 
-        public static DataTable TravelInfo(int travelTypeID, int num = int.MaxValue)
+        public static DataTable TravelInfo(int travelTypeID, int topnum = 0)
         {
-            return new DLL.TravelDetail().TravelInfo(travelTypeID, num);
+            return TravelInfo(travelTypeID, 0, topnum);
+        }
+
+        public static DataTable TravelInfo(int travelTypeID, int pageIndex, int pageSize)
+        {
+            return new DLL.TravelDetail().TravelInfo(travelTypeID, pageIndex, pageSize);
         }
 
         /// <summary>

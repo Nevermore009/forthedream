@@ -32,16 +32,18 @@ namespace DLL
         public DataTable DetailInfo(int id)
         {
             DataTable dt = new DataTable();
-            string sql = " select *,(select top 1 pic from tb_travelpicture where detailid=t1.id)as pic from [tb_detail] t1 where [id]=" + id;
+            string sql = " select * from [tb_detail] t1 where [id]=" + id;
             dt = help.SeeResults(sql);
             return dt;
         }
 
-
-        public DataTable TravelInfo(int traveltypeid, int num)
+        public DataTable TravelInfo(int traveltypeid, int pageIndex, int pageSize)
         {
             DataTable dt = new DataTable();
-            string sql = " select top " + num + " * from [V_travelinfo]  where [traveltypeid]=" + traveltypeid;
+            int start = pageIndex * pageSize + 1;
+            int end = (pageIndex + 1) * pageSize;
+            if (end == 0) end = int.MaxValue;
+            string sql = " select * from (select *,(row_number() over(order by hot desc,id desc)) as rowid from [V_travelinfo]  where [traveltypeid]=" + traveltypeid + ") as t1 where t1.rowid between " + start + " and " + end + "  ";
             dt = help.SeeResults(sql);
             return dt;
         }
@@ -90,7 +92,7 @@ namespace DLL
                 new SqlParameter("@journeydays",journeydays),
                 new SqlParameter("@transportation",transportation)
             };
-            res = int.Parse(help.RunSqlReturn(sql,pas));
+            res = int.Parse(help.RunSqlReturn(sql, pas));
             return res;
         }
 

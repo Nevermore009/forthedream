@@ -8,7 +8,7 @@
 .mF_games_tb .thumb ul li{position:relative;float:left;overflow:hidden;cursor:pointer;}
 .mF_games_tb .thumb ul li a{display:block;border:3px solid #FFF;border-radius: 3px;margin:10px 4px;}
 .mF_games_tb .thumb ul li img{position:relative;z-index:1;width:100%;height:100%;}
-.mF_games_tb .thumb ul li.current{background:url(img/mF_games_tb/ar.gif) center 5px no-repeat;}
+.mF_games_tb .thumb ul li.current{background:url(images/ar.gif) center 5px no-repeat;}
 .mF_games_tb .thumb ul li.current a{border-color:#D21E45;}
 .mF_games_tb .txt li{position:absolute;z-index:2;width:100%;height:32px;line-height:32px;overflow: hidden;display:none;}/*榛樿鏍囬楂樺害*/
 .mF_games_tb .txt li a{display:block;position:relative;z-index:1;color:#FFF;padding: 0 10px;font: bold 14px/32px "寰蒋闆呴粦","榛戜綋",Arial;text-decoration:none;}/*鏍囬鏍峰紡*/

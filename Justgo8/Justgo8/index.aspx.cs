@@ -22,6 +22,15 @@ namespace Justgo8
                 BindOutland();
                 BindHotPeriphery();
                 BindPeriphery();
+                BindInlandshow();
+                BindInlandshow1();
+                BindInlandshow2();
+                BindOutlandshow();
+                BindOutlandshow1();
+                BindOutlandshow2();
+                BindPeripheryshow();
+                BindPeripheryshow1();
+                BindPeripheryshow2();
             }
         }
 
@@ -83,9 +92,12 @@ namespace Justgo8
             }
         }
 
+        static int DisplayHotAreaCount = 10;
+        static int DisplayDetailCount = 10;
+
         protected void BindHotInland()
         {
-            RepeaterHotInland.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Inland, 8);
+            RepeaterHotInland.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Inland, DisplayHotAreaCount);
             RepeaterHotInland.DataBind();
         }
 
@@ -97,7 +109,7 @@ namespace Justgo8
 
         protected void BindHotOutland()
         {
-            RepeaterHotOutland.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Outland, 8);
+            RepeaterHotOutland.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Outland, DisplayHotAreaCount);
             RepeaterHotOutland.DataBind();
         }
 
@@ -109,7 +121,7 @@ namespace Justgo8
 
         protected void BindHotPeriphery()
         {
-            repeaterhotperiphery.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Periphery, 8);
+            repeaterhotperiphery.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Periphery, DisplayHotAreaCount);
             repeaterhotperiphery.DataBind();
         }
 
@@ -126,12 +138,12 @@ namespace Justgo8
         }
         protected void BindInlandshow1()
         {
-            repeaterinlandshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 10);
+            repeaterinlandshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 0, DisplayDetailCount);
             repeaterinlandshow1.DataBind();
         }
         protected void BindInlandshow2()
         {
-            repeaterinlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 10);
+            repeaterinlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland, 1, DisplayDetailCount);
             repeaterinlandshow2.DataBind();
         }
 
@@ -142,12 +154,12 @@ namespace Justgo8
         }
         protected void BindOutlandshow1()
         {
-            repeateroutlandshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 10);
+            repeateroutlandshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 0, DisplayDetailCount);
             repeateroutlandshow1.DataBind();
         }
         protected void BindOutlandshow2()
         {
-            repeateroutlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 10);
+            repeateroutlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 1, DisplayDetailCount);
             repeateroutlandshow2.DataBind();
         }
 
@@ -159,19 +171,19 @@ namespace Justgo8
 
         protected void BindPeripheryshow1()
         {
-            repeaterperipheryshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 10);
+            repeaterperipheryshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 0, DisplayDetailCount);
             repeaterperipheryshow1.DataBind();
         }
 
         protected void BindPeripheryshow2()
         {
-            repeaterperipheryshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 10);
+            repeaterperipheryshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 1, DisplayDetailCount);
             repeaterperipheryshow2.DataBind();
         }
 
         protected void BindCustomize()
         {
-            
+
         }
 
     }

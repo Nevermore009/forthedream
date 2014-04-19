@@ -107,8 +107,7 @@ namespace DLL
         public int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int journeydays, string transportation, int id)
         {
             int res = 0;
-            string sql = string.Format(" update [tb_detail] set [title]='{0}',[description]='{1}',[generalprice]='{2}',[adultprice]='{3}',[childprice]='{4}',[startdate]='{5}',[enddate]='{6}',[departuretime]='{7}',[features]='{8}',[billinclude]='{9}',[billbeside]='{10}',[servicestandard]='{11}',[presentation]='{12}',[journey]='{13}',[contact]='{14}',[journeydays]='{15}',[transportation]='{16}' where id={17}",
-                 title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, journeydays, transportation, id);
+            string sql = " update [tb_detail] set [title]=@title,[description]=@description,[generalprice]=@generalprice,[adultprice]=@adultprice,[childprice]=@childprice,[startdate]=@startdate,[enddate]=@enddate,[departuretime]=@departuretime,[features]=@features,[billinclude]=@billinclude,[billbeside]=@billbeside,[servicestandard]=@servicestandard,[presentation]=@presentation,[journey]=@journey,[contact]=@contact,[journeydays]=@journeydays,[transportation]=@transportation where id=@id";
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@title",title),
                 new SqlParameter("@description",description),

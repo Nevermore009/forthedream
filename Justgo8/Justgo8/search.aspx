@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IndexMaster.master" AutoEventWireup="true" CodeBehind="search.aspx.cs" Inherits="Justgo8.search" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/IndexMaster.master" AutoEventWireup="true"
+    CodeBehind="search.aspx.cs" Inherits="Justgo8.search" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <link href="css/search.css" rel="stylesheet" type="text/css" />
+    <link href="css/search.css" rel="stylesheet" type="text/css" />
     <link href="css/datepicker.css" rel="stylesheet" type="text/css" />
     <link href="css/WdatePicker.css" rel="stylesheet" type="text/css" />
     <script src="js/WdatePicker.js" type="text/javascript"></script>
@@ -186,12 +188,14 @@
             $("#tags li a").removeClass("cur"); //这里是删除没有市城市的省城市其中a标签的样式(对于没有市城市的省城市样式不是加在li上，而是加在a上)
             $("#tagContent").css("display", "none"); //#tagContent div 这里面包含市城市
             $("#destination_all").addClass("cur");
+            $("#c_area").val("");
         } //目的地省div条件删除之后
 
         function removeSelf_city(ele) {
             $(ele).css("display", "none");
             $("li:contains('" + $(ele).text() + "')").removeClass("no").siblings("[title=buxian]").addClass("no"); //让自己(市城市)拿掉样式，其对应的不限添加样式
             condition_destination_city = "all";
+            $("#c_city").val("");
 
         } //目的地市div条件删除之后
 
@@ -401,16 +405,19 @@
                 $(this).addClass("cur").siblings("li").removeClass("cur");
                 $("#date_all").removeClass("cur");
                 $("#condition_date").css("display", "").text($(this).text());
-            }); //日期的li
+                $("#c_journeydates").val($(this).attr("title"));
+            }); //行程天数的li
             $("#ul_price li").click(function () {
                 $(this).addClass("cur").siblings("li").removeClass("cur");
                 $("#price_all").removeClass("cur");
                 $("#condition_price").css("display", "").text($(this).text());
+                $("#c_adultprice").val($(this).attr("title"));
             }); //价格的li
             $("#ul_outCity li").click(function () {
                 $(this).addClass("cur").siblings("li").removeClass("cur");
                 $("#outCity_all").removeClass("cur");
                 $("#condition_outCity").css("display", "").text($(this).text()).attr("title", $(this).text());
+                $("#c_area").val($(this).attr("title"));
             }); //出发城市的li
             $("#tags li span").click(function (e) {
                 e.stopPropagation();
@@ -420,6 +427,7 @@
                 //$("#destination_all").removeClass("cur");
                 if ($(this).text() != "不限") {
                     $("#condition_destination_city").css("display", "").text($(this).text()).attr("title", $(this).attr("id"));
+                    $("#c_city").val($(this).attr("title"));
                 }
                 else {
                     $("#condition_destination_city").css("display", "none");
@@ -513,7 +521,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div id="main">
+    <div id="main">
         <div id="route">
             您当前所在位置：<a href="index.aspx">首页</a>&nbsp;->&nbsp;<a href="#" target="_parent"><font
                 color="#cd0007">出境旅游</font></a></div>
@@ -527,7 +535,7 @@
                             <a href="javascript:void(0);" class="cur" id="date_all" onclick="conditionAll_trigger('condition_date')">
                                 全部</a></div>
                         <ul class="dates" id="ul_dates">
-                            <li id="test1">1天</li>
+                            <li title='1'>1天</li>
                             <li>2天</li>
                             <li>3天</li>
                             <li>4天</li>
@@ -786,21 +794,28 @@
                         onfocus="this.style.imeMode='inactive'" value="" />--<input type="text" style="ime-mode: disabled;
                             border: 1px solid #C3C5C4; width: 130px;" readonly="readonly" id="endDate" name="startdate"
                             class="Wdate da" onclick="WdatePicker({minDate:'%y-%M-{%d+1}',maxDate:'{%y+2}-%M-%d'})"
-                            onfocus="this.style.imeMode='inactive'" value="" /><input id="submit_button" type="button"
-                                value="" class="searchlinebtn" onclick="submit_condition();" />
+                            onfocus="this.style.imeMode='inactive'" value="" /><%--<input id="submit_button" type="button"
+                                value="" class="searchlinebtn" onclick="submit_condition();" />--%>
+                    <asp:Button runat="server" CssClass="searchlinebtn" ID="btnsearch" OnClick="btnsearch_Click" />
                 </div>
                 <div class="condition">
                     <span class="names">当前条件：</span> <a href="javascript:void(0);" onclick="removeSelf(this,'date_all','ul_dates');"
                         id="condition_date" class="cond" style="display: none;"></a><a href="javascript:void(0);"
                             onclick="removeSelf(this,'price_all','ul_price');" id="condition_price" class="cond"
                             style="display: none;"></a><a href="javascript:void(0);" onclick="removeSelf_province(this);"
-                                id="condition_destination" class="cond" style="" title="2011111">港澳</a>
-                    <a href="javascript:void(0);" onclick="removeSelf_city(this);" id="condition_destination_city"
-                        class="cond" style="" title="201111102">澳门</a> <a href="javascript:void(0);" onclick="removeSelf(this,'product_all','ul_product');"
-                            id="condition_product" class="cond" style="display: none;"></a><a href="javascript:void(0);"
-                                onclick="removeSelf(this,'outCity_all','ul_outCity');" id="condition_outCity"
-                                class="cond" style="display: none;"></a><a href="javascript:void(0);" onclick="removeSelf_name(this);"
-                                    id="condition_names" class="cond" style="display: none;"></a>
+                                id="condition_destination" class="cond" style="" title="2011111" name="condition_destination">
+                                港澳</a> <a href="javascript:void(0);" onclick="removeSelf_city(this);" id="condition_destination_city"
+                                    class="cond" style="" title="201111102">澳门</a> <a href="javascript:void(0);" onclick="removeSelf(this,'product_all','ul_product');"
+                                        id="condition_product" class="cond" style="display: none;"></a>
+                    <a href="javascript:void(0);" onclick="removeSelf(this,'outCity_all','ul_outCity');"
+                        id="condition_outCity" class="cond" style="display: none;"></a><a href="javascript:void(0);"
+                            onclick="removeSelf_name(this);" id="condition_names" class="cond" style="display: none;">
+                        </a>
+                    <input type="text" id="c_journeydates" name="c_journeydates" style="display: none" />
+                    <input type="text" id="c_adultprice" name="c_adultprice" style="display: none" />
+                    <input type="text" id="c_area" name="c_area" style="display: none" />
+                    <input type="text" id="c_city" name="c_city" style="display: none" />
+                    <input type="text" id="c_type" name="c_type" style="display: none" />
                 </div>
             </div>
         </div>

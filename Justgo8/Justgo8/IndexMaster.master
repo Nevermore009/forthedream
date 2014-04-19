@@ -26,7 +26,6 @@
             });
         });
         function search() {
-            alert("2332");
             var keyword = document.getElementById("keyword").value;
             if (keyword) {
                 window.location.href = ("search.aspx?keyword=" + keyword);

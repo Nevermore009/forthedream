@@ -136,7 +136,7 @@ img{vertical-align:middle;}
 .qrCode{bottom: 10px;display: block;height: 50px;position: fixed;right: 10px;width: 50px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-54));z-index: 9000;}
 .qrCode a{background: url(../images/fixedtool.gif) no-repeat 0 -51px;display: block;height: 50px;line-height: 50px;position: relative;}
 .qrCode a:hover{background-position: right -51px;}
-.qrCode a .item{border: 1px solid #CCC;background: url(../images/qrcode.gif) no-repeat 50% 50% #FFF;border-radius: 3px;display: none;left: -325px;bottom: 0;padding: 10px;position: absolute;height: 300px;width: 300px;}
+.qrCode a .item{border: 1px solid #CCC;background: url(../images/qrcode.gif) no-repeat 50% 50% #FFF;border-radius: 3px;display: none;left: -235px;bottom: 0;padding: 10px;position: absolute;height: 210px;width: 210px;}
 
 /*客服在线*/
 .fixedService{background: #FFF;position: absolute;top: 236px;right: 10px;width: 103px;}

@@ -13,5 +13,10 @@ namespace Justgo8
         {
 
         }
+
+        protected void btnsearch_Click(object sender, EventArgs e)
+        {
+            string s = Request.Form["c_journeydates"];
+        }
     }
 }

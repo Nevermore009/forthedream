@@ -74,7 +74,7 @@ namespace DLL
         public int del(int id)
         {
             int res = 0;
-            string sql = " delete from [tb_travelPicture] where id=" + id;
+            string sql = " delete from [tb_travelPicture] where picid=" + id;
             res = help.GetNum(sql);
             return res;
         }

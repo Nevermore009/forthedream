@@ -71,7 +71,6 @@ namespace DLL
             int res = 0;
             string sql = string.Format(@"insert into [tb_detail] ([title],[description],[generalprice],[adultprice],[childprice],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid],[journeydays],[transportation])
             values (@title, @description, @generalprice, @adultprice, @childprice, @startdate, @enddate, @departuretime, @features, @billinclude, @billbeside, @servicestandard, @presentation, @journey, @contact, @traveltypeid, @journeydays, @transportation) select @@identity");
-            ErrorLog.AddErrorLog(sql);
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@title",title),
                 new SqlParameter("@description",description),
@@ -128,7 +127,6 @@ namespace DLL
                 new SqlParameter("@transportation",transportation),
                 new SqlParameter("@id",id)
             };
-            ErrorLog.AddErrorLog(sql);
             res = help.GetNum(sql, pas);
             return res;
         }

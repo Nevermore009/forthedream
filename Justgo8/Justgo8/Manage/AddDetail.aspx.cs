@@ -50,7 +50,9 @@ namespace Justgo8.Manage
                         {
                             MessageBox.ResponseScript(this.Page, "alert('没有找到相应的信息');window.location.href='TravelManager.aspx'");
                         }
+                        droptraveltype.Enabled = false;
                         BindDestination(Bll.BDestination.DestinationInfo(int.Parse(lbid.Text)));
+                        BindPic(Bll.BTravelPicture.PictureInfo(int.Parse(lbid.Text)));
                     }
                     catch (Exception ex)
                     {

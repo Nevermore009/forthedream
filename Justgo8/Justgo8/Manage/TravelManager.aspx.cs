@@ -39,7 +39,7 @@ namespace Justgo8.Manage
             if (e.CommandName.Equals("del"))
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                int res = Bll.BArea.del(id);
+                int res = Bll.BTravelDetail.del(id);
                 if (res == 1)
                 {
                     MessageBox.ResponseScript(this.Page, "alert('删除成功');window.location.href='TravelManager.aspx'");

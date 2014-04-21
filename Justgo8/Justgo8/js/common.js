@@ -1,27 +1,4 @@
 ﻿var votetype,rlogin=0,voteobj,votea=['cityxq','cityqg','travelstj','travels','visa'];
-$(document).ready(function () {  
-//    goToTop();
-//    qrCode();
-//    $('a').bind('focus', function () { if (this.blur) { this.blur() }; }); // 去除a标签点击时的外部虚线
-
-//    $('.userNavTit1').click(function () {
-//        $('.userNavText').hide();
-//        $('.userNavTit2').removeClass().addClass('userNavTit1');
-//        $(this).removeClass().addClass('userNavTit2');
-//        $(this).next().show();
-//    });
-
-//    $('#loginout').click(function () {
-//        $.get(webpath + 'sys/ajax/login.ashx', { act: "out" }, function () {
-//            checklogin(); getvote();
-//        });
-//    });
-//    $('#login').click(function () {
-//        rlogin = 2;
-//        ShowWindow('', 'alertlogin', webpath + 'alertlogin.aspx');
-//    });
-//    checklogin();    
-});
 
 function goToTop(){ //返回顶部
 	var html = '<div id="backTop" class="backTop clearfix" style="z-index;9999"><a title="返回顶部" href="javascript:;" rel="nofollow">&nbsp;</a></div>';

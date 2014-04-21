@@ -178,6 +178,10 @@
             $(ele).css("display", "none");
             $("#" + id_all + "").addClass("cur");
             $("#" + id_ul + " li").removeClass("cur");
+            if (id_all == 'product_all') {
+                $("#tags li").css("display", "")
+                $("#c_type").val("");
+            }
         } //各个div条件删除之后
 
         function removeSelf_province(ele) {
@@ -218,8 +222,11 @@
             if (state == 1) {
                 ele.parentNode.className = "selectTag";
                 $(ele).parent().siblings().children("a").removeClass("cur"); //拿掉省城市li下a的样式
-                for (i = 0; j = document.getElementById("tagContent" + i); i++) {//"tagContent" + i 是包含市城市的外面div
-                    j.style.display = "none";
+                var cityinfos = $("#tagContent .tagContent");
+                if (cityinfos) {
+                    for (i = 0; i < cityinfos.length; i++) {//"tagContent" + i 是包含市城市的外面div
+                        cityinfos[i].style.display = "none";
+                    }
                 }
                 $("#tagContent").css("display", "");
                 document.getElementById(showContent).style.display = "block";
@@ -233,6 +240,13 @@
             $("#destination_all").removeClass("cur");
             $("#condition_destination").css("display", "").text($(ele).text()).attr("title", $(ele).parent().attr("id"));
             $("#condition_destination_city").css("display", "none");
+            $("#c_area").val($(ele).parent().attr("id"));
+        }
+
+        function condition_product_all() {
+            conditionAll_trigger('condition_product');
+            $("#tags li").css("display", "")
+            $("#c_type").val("");
         }
 
         function goToLineView(id) {
@@ -390,17 +404,6 @@
         }
 
         $(function () {
-            if ("2011111" != "") {
-                $("a[title=2011111]").trigger("click");
-            }
-            setTimeout(function () {
-                if ("201111102" != "") {
-                    $("li[id=201111102]").trigger("click");
-                }
-            }, 400);
-            setTimeout(function () {
-                $("#submit_button").trigger("click");
-            }, 1000);
             $("#ul_dates li").click(function () {
                 $(this).addClass("cur").siblings("li").removeClass("cur");
                 $("#date_all").removeClass("cur");
@@ -426,17 +429,22 @@
                 $(this).addClass("no").siblings().removeClass("no");
                 //$("#destination_all").removeClass("cur");
                 if ($(this).text() != "不限") {
-                    $("#condition_destination_city").css("display", "").text($(this).text()).attr("title", $(this).attr("id"));
-                    $("#c_city").val($(this).attr("title"));
+                    $("#condition_destination_city").css("display", "").text($(this).text()).attr("title", $(this).attr("cityid"));
+                    $("#c_city").val($(this).attr("cityid"));
                 }
                 else {
                     $("#condition_destination_city").css("display", "none");
+                    $("#c_city").val("");
                 }
             }); //二级目的地的li
             $("#ul_product li").click(function () {
                 $(this).addClass("cur").siblings("li").removeClass("cur");
                 $("#product_all").removeClass("cur");
                 $("#condition_product").css("display", "").text($(this).text()).attr("title", $(this).attr("id"));
+                $("#c_type").val($(this).attr("title"));
+                var traveltypeid = $(this).attr("title");
+                $("#tags li[traveltype=" + traveltypeid + "]").css("display", "");
+                $("#tags li[traveltype!=" + traveltypeid + "]").css("display", "none");
             }); //产品类型的li
             //下面是各种排序图片的点击
             $("#namedown").click(function () {
@@ -517,6 +525,34 @@
                     $("#ul_1").empty().append(data.split("|")[0]);
                 });
             });
+
+            //加载已有条件
+            window.setTimeout(function () {
+                if ('<%=journeydates %>') {
+                    $("#ul_dates li[title=<%=journeydates %>]").trigger("click");
+                }
+                if ('<%=adultprice %>') {
+                    $("#ul_price li[title=<%=adultprice %>]").trigger("click");
+                }
+                if ('<%=traveltype %>') {
+                    $("#ul_product li[title=<%=traveltype %>]").trigger("click");
+                }
+                if ('<%=destinationarea %>') {
+                    $("#tags li[id=<%=destinationarea%>] a").trigger("click");
+                }
+                if ('<%=destinationcity %>') {
+                    $("#tagContent<%=destinationarea %> li[cityid=<%=destinationcity %>]").trigger("click");
+                }
+                if ('<%=titlekey %>') {
+                    $("#na").val('<%=titlekey %>');
+                }
+                if ('<%=startdate %>') {
+                    $("#startDate").val('<%=startdate %>');
+                }
+                if ('<%=enddate %>') {
+                    $("#endDate").val('<%=enddate %>');
+                }
+            }, 500);
         });
     </script>
 </asp:Content>
@@ -535,18 +571,12 @@
                             <a href="javascript:void(0);" class="cur" id="date_all" onclick="conditionAll_trigger('condition_date')">
                                 全部</a></div>
                         <ul class="dates" id="ul_dates">
-                            <li title='1'>1天</li>
-                            <li>2天</li>
-                            <li>3天</li>
-                            <li>4天</li>
-                            <li>5天</li>
-                            <li>6天</li>
-                            <li>7天</li>
-                            <li>8天</li>
-                            <li>9天</li>
-                            <li>10天</li>
-                            <li>11天</li>
-                            <li>12天</li>
+                            <asp:Repeater runat="server" ID="repeaterDates">
+                                <ItemTemplate>
+                                    <li title='<%#Eval("value") %>'>
+                                        <%#Eval("value")%>天</li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                 </div>
@@ -558,11 +588,30 @@
                             <a href="javascript:void(0);" class="cur" id="price_all" onclick="conditionAll_trigger('condition_price')">
                                 全部</a></div>
                         <ul class="dates" id="ul_price">
-                            <li>100-1000元</li>
-                            <li>1000-2000元</li>
-                            <li>2000-5000元</li>
-                            <li>5000-10000元</li>
-                            <li>10000元以上</li>
+                            <li title="0-300">300以下</li>
+                            <li title="0-600">300-600</li>
+                            <li title="600-1000">600-1000元</li>
+                            <li title="1000-2000">1000-2000元</li>
+                            <li title="2000-5000">2000-5000元</li>
+                            <li title="5000-10000">5000-10000元</li>
+                            <li title="10000-10000000">10000元以上</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <p class="boxname">
+                        产品类型：</p>
+                    <div class="rbox">
+                        <div class="notto">
+                            <a href="javascript:void(0);" class="cur" id="product_all" onclick="conditionAll_trigger('condition_product')">
+                                全部</a></div>
+                        <ul class="dates" id="ul_product">
+                            <asp:Repeater runat="server" ID="repeaterTravelType">
+                                <ItemTemplate>
+                                    <li title='<%#Eval("traveltypeid") %>'>
+                                        <%#Eval("travelTypename") %></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                 </div>
@@ -574,204 +623,31 @@
                             <a href="javascript:void(0);" class="cur" id="destination_all" onclick="conditionAll_trigger('condition_destination')">
                                 全部</a></div>
                         <ul id="tags">
-                            <li title="has" id="2011101" class=""><a id="a_tagContent0" title="2011101" href="javascript:void(0)"
-                                onclick="selectTag('tagContent0',this,1);">台湾</a></li>
-                            <li title="has" id="2011111" class="selectTag"><a id="a_tagContent1" title="2011111"
-                                href="javascript:void(0)" onclick="selectTag('tagContent1',this,1);">港澳</a></li>
-                            <li title="has" id="2011116" class=""><a id="a_tagContent2" title="2011116" href="javascript:void(0)"
-                                onclick="selectTag('tagContent2',this,1);">东南亚</a></li>
-                            <li title="has" id="2011121" class=""><a id="a_tagContent3" title="2011121" href="javascript:void(0)"
-                                onclick="selectTag('tagContent3',this,1);">韩国</a></li>
-                            <li title="has" id="2011126" class=""><a id="a_tagContent4" title="2011126" href="javascript:void(0)"
-                                onclick="selectTag('tagContent4',this,1);">日本</a></li>
-                            <li title="has" id="2011131" class=""><a id="a_tagContent5" title="2011131" href="javascript:void(0)"
-                                onclick="selectTag('tagContent5',this,1);">海岛</a></li>
-                            <li title="has" id="2011136" class=""><a id="a_tagContent6" title="2011136" href="javascript:void(0)"
-                                onclick="selectTag('tagContent6',this,1);">澳新</a></li>
-                            <li title="has" id="2011141" class=""><a id="a_tagContent7" title="2011141" href="javascript:void(0)"
-                                onclick="selectTag('tagContent7',this,1);">欧洲</a></li>
-                            <li title="has" id="2011146" class=""><a id="a_tagContent8" title="2011146" href="javascript:void(0)"
-                                onclick="selectTag('tagContent8',this,1);">美洲</a></li>
-                            <li title="has" id="2011151" class=""><a id="a_tagContent9" title="2011151" href="javascript:void(0)"
-                                onclick="selectTag('tagContent9',this,1);">非洲中东</a></li>
-                            <li title="has" id="2011156" class=""><a id="a_tagContent10" title="2011156" href="javascript:void(0)"
-                                onclick="selectTag('tagContent10',this,1);">南亚</a></li>
-                            <li title="has_no" id="2011161" class=""><a id="a_tagContent11" title="2011161" href="javascript:void(0)"
-                                onclick="selectTag('tagContent11',this,0);">游学</a></li>
+                            <asp:Repeater runat="server" ID="RepeaterArea">
+                                <ItemTemplate>
+                                    <li title="has" id="<%#Eval("areaid") %>" traveltype='<%#Eval("traveltypeid") %>'
+                                        class=""><a href="javascript:void(0)" onclick="selectTag('tagContent<%#Eval("areaid") %>',this,1);">
+                                            <%#Eval("areaname") %></a></li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                     <div id="tagContent" style="">
-                        <div id="tagContent0" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201110101">台北</li>
-                                <li id="201110102">高雄</li>
-                                <li id="201110103">日月潭</li>
-                                <li id="201110104">阿里山</li>
-                                <li id="201110105">台中</li>
-                                <li id="201110106">台南</li>
-                                <li id="201110107">花莲</li>
-                                <li id="201110108">台北故宫</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent1" class="tagContent" style="display: block;">
-                            <ul class="normal">
-                                <li class="" title="buxian">不限</li>
-                                <li id="201111102" class="no">澳门</li>
-                                <li id="201111103">海洋公园</li>
-                                <li id="201111104">香港迪士尼乐园</li>
-                                <li id="201111105">香港</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent2" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201111601">泰国</li>
-                                <li id="201111602">普吉</li>
-                                <li id="201111603">新加坡</li>
-                                <li id="201111604">民丹岛</li>
-                                <li id="201111605">马来西亚</li>
-                                <li id="201111606">沙巴</li>
-                                <li id="201111607">柬埔寨</li>
-                                <li id="201111608">越南</li>
-                                <li id="201111609">印度</li>
-                                <li id="201111610">尼泊尔</li>
-                                <li id="201111611">老挝</li>
-                                <li id="201111612">不丹</li>
-                                <li id="201111613">缅甸</li>
-                                <li id="201111614">清迈</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent3" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201112101">首尔</li>
-                                <li id="201112102">济州岛</li>
-                                <li id="201112103">釜山</li>
-                                <li id="201112104">江原道</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent4" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201112601">名古屋</li>
-                                <li id="201112602">箱银</li>
-                                <li id="201112603">北海道</li>
-                                <li id="201112604">冲绳</li>
-                                <li id="201112605">大阪</li>
-                                <li id="201112606">东京</li>
-                                <li id="201112607">京都</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent5" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201113101">马尔代夫</li>
-                                <li id="201113102">关岛</li>
-                                <li id="201113103">塞班</li>
-                                <li id="201113104">巴厘岛</li>
-                                <li id="201113105">苏梅</li>
-                                <li id="201113106">热浪岛</li>
-                                <li id="201113107">兰卡威</li>
-                                <li id="201113108">槟城</li>
-                                <li id="201113109">长滩</li>
-                                <li id="201113110">巴拉望</li>
-                                <li id="201113111">帕劳</li>
-                                <li id="201113112">岘港</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent6" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201113601">大溪地</li>
-                                <li id="201113603">新西兰</li>
-                                <li id="201113604">斐济</li>
-                                <li id="201113605">澳大利亚</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent7" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201114101">葡萄牙</li>
-                                <li id="201114102">爱尔兰</li>
-                                <li id="201114103">意大利</li>
-                                <li id="201114104">德国</li>
-                                <li id="201114105">希腊</li>
-                                <li id="201114106">英国</li>
-                                <li id="201114107">俄罗斯</li>
-                                <li id="201114108">奥地利</li>
-                                <li id="201114109">西班牙</li>
-                                <li id="201114110">荷兰</li>
-                                <li id="201114111">法国</li>
-                                <li id="201114112">瑞士</li>
-                                <li id="201114113">摩纳哥</li>
-                                <li id="201114114">匈牙利</li>
-                                <li id="201114115">比利时</li>
-                                <li id="201114116">捷克共和国</li>
-                                <li id="201114117">斯洛伐克</li>
-                                <li id="201114118">丹麦</li>
-                                <li id="201114119">瑞典</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent8" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201114601">美国东海岸</li>
-                                <li id="201114602">加拿大</li>
-                                <li id="201114603">智利</li>
-                                <li id="201114604">墨西哥</li>
-                                <li id="201114605">美国</li>
-                                <li id="201114606">巴西</li>
-                                <li id="201114607">美国西海岸</li>
-                                <li id="201114608">奥兰多</li>
-                                <li id="201114609">阿根廷</li>
-                                <li id="201114610">秘鲁</li>
-                                <li id="201114611">班夫国家公园</li>
-                                <li id="201114612">尼亚加拉大瀑布</li>
-                                <li id="201114613">夏威夷</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent9" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201115101">南非</li>
-                                <li id="201115102">土耳其</li>
-                                <li id="201115103">以色列</li>
-                                <li id="201115104">伊朗</li>
-                                <li id="201115105">毛里求斯</li>
-                                <li id="201115106">塞舌尔</li>
-                                <li id="201115107">迪拜</li>
-                                <li id="201115108">突尼斯</li>
-                                <li id="201115109">肯尼亚</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent10" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                                <li class="no" title="buxian">不限</li>
-                                <li id="201115601">尼泊尔</li>
-                                <li id="201115602">斯里兰卡</li>
-                                <li id="201115603">印度</li>
-                                <li id="201115604">不丹</li>
-                                <li id="201115605">老挝</li>
-                                <li id="201115606">缅甸</li>
-                            </ul>
-                        </div>
-                        <div id="tagContent11" class="tagContent" style="display: none;">
-                            <ul class="normal">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <p class="boxname">
-                        产品类型：</p>
-                    <div class="rbox">
-                        <div class="notto">
-                            <a href="javascript:void(0);" class="cur" id="product_all" onclick="conditionAll_trigger('condition_product')">
-                                全部</a></div>
-                        <ul class="dates" id="ul_product">
-                            <li id="201130300003">常规</li>
-                        </ul>
+                        <asp:Repeater runat="server" ID="RepeaterAreaInfo" OnItemDataBound="RepeaterAreaInfo_ItemDataBound">
+                            <ItemTemplate>
+                                <div id="tagContent<%#Eval("areaid") %>" class="tagContent" style="display: none;">
+                                    <ul class="normal">
+                                        <li class='no' title='buxian'>不限</li>
+                                        <asp:Repeater runat="server" ID="RepeaterCity">
+                                            <ItemTemplate>
+                                                <li cityid='<%#Eval("cityid") %>'>
+                                                    <%#Eval("cityname") %></li>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </ul>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
                 <div class="box">
@@ -782,17 +658,17 @@
                             <a href="javascript:void(0);" class="cur" id="outCity_all" onclick="conditionAll_trigger('condition_outCity')">
                                 全部</a></div>
                         <ul class="dates" id="ul_outCity">
-                            <li title="HK">长沙</li>
+                            <li title="长沙">长沙</li>
                         </ul>
                     </div>
                 </div>
                 <div class="proname">
-                    <span class="names">产品名称：</span><input type="text" class="na" id="na" />
+                    <span class="names">产品名称：</span><input type="text" class="na" id="na" name="txttitlekey" />
                     <span class="names names1">出发日期：</span><input type="text" style="ime-mode: disabled;
                         border: 1px solid #C3C5C4; width: 130px;" readonly="readonly" id="startDate"
-                        name="startdate" class="Wdate da" onclick="WdatePicker({minDate:'%y-%M-{%d+1}',maxDate:'{%y+2}-%M-%d'})"
+                        name="txtstartdate" class="Wdate da" onclick="WdatePicker({minDate:'%y-%M-{%d+1}',maxDate:'{%y+2}-%M-%d'})"
                         onfocus="this.style.imeMode='inactive'" value="" />--<input type="text" style="ime-mode: disabled;
-                            border: 1px solid #C3C5C4; width: 130px;" readonly="readonly" id="endDate" name="startdate"
+                            border: 1px solid #C3C5C4; width: 130px;" readonly="readonly" id="endDate" name="txtenddate"
                             class="Wdate da" onclick="WdatePicker({minDate:'%y-%M-{%d+1}',maxDate:'{%y+2}-%M-%d'})"
                             onfocus="this.style.imeMode='inactive'" value="" /><%--<input id="submit_button" type="button"
                                 value="" class="searchlinebtn" onclick="submit_condition();" />--%>
@@ -803,24 +679,24 @@
                         id="condition_date" class="cond" style="display: none;"></a><a href="javascript:void(0);"
                             onclick="removeSelf(this,'price_all','ul_price');" id="condition_price" class="cond"
                             style="display: none;"></a><a href="javascript:void(0);" onclick="removeSelf_province(this);"
-                                id="condition_destination" class="cond" style="" title="2011111" name="condition_destination">
-                                港澳</a> <a href="javascript:void(0);" onclick="removeSelf_city(this);" id="condition_destination_city"
-                                    class="cond" style="" title="201111102">澳门</a> <a href="javascript:void(0);" onclick="removeSelf(this,'product_all','ul_product');"
-                                        id="condition_product" class="cond" style="display: none;"></a>
-                    <a href="javascript:void(0);" onclick="removeSelf(this,'outCity_all','ul_outCity');"
-                        id="condition_outCity" class="cond" style="display: none;"></a><a href="javascript:void(0);"
-                            onclick="removeSelf_name(this);" id="condition_names" class="cond" style="display: none;">
-                        </a>
+                                id="condition_destination" class="cond" style="display: none;" title="" name="condition_destination">
+                            </a><a href="javascript:void(0);" onclick="removeSelf_city(this);" id="condition_destination_city"
+                                style="display: none;" class="cond" title=""></a><a href="javascript:void(0);" onclick="removeSelf(this,'product_all','ul_product');"
+                                    id="condition_product" class="cond" style="display: none;"></a><a href="javascript:void(0);"
+                                        onclick="removeSelf(this,'outCity_all','ul_outCity');" id="condition_outCity"
+                                        class="cond" style="display: none;"></a><a href="javascript:void(0);" onclick="removeSelf_name(this);"
+                                            id="condition_names" class="cond" style="display: none;">
+                    </a>
                     <input type="text" id="c_journeydates" name="c_journeydates" style="display: none" />
                     <input type="text" id="c_adultprice" name="c_adultprice" style="display: none" />
+                    <input type="text" id="c_type" name="c_type" style="display: none" />
                     <input type="text" id="c_area" name="c_area" style="display: none" />
                     <input type="text" id="c_city" name="c_city" style="display: none" />
-                    <input type="text" id="c_type" name="c_type" style="display: none" />
                 </div>
             </div>
         </div>
         <div class="filter">
-            <span style="color: #027438; padding-left: 5px;">排序方式：</span> <span class="name"
+            <%--<span style="color: #027438; padding-left: 5px;">排序方式：</span> <span class="name"
                 id="name">产品名称<em><img id="namedown" src="images/search/sequence-down1.png" style="cursor: pointer"
                     alt="" /></em><em><img id="nameup" src="images/search/sequence-up1.png" style="cursor: pointer"></em></span>
             <span class="price">价格<em><img id="pricedown" src="images/search/sequence-down1.png"
@@ -838,34 +714,39 @@
                         class="pgcon">
                         <a href="javascript:void(0);" onclick="goToPage(1)">1</a></div>
                     <span class="next"><a href="javascript:void(0);" onclick="goToPage(1)">下一页</a></span></div>
-            </div>
+            </div>--%>
             <div class="clear">
             </div>
         </div>
         <div class="filter_list" id="div_filter_list">
-            <ul id="ul_1">
-                <li style="border-bottom: none;">
-                    <div class="icon">
-                        <a href="http://www.cct.cn/bj/LineView.aspx?lineno=20113120636" target="_blank">
-                            <img src="images/search/linesearch_linedefaultimage.png" />
-                            <span class="topicon topicontj">特价 </span></a>
-                    </div>
-                    <div class="detail">
-                        <span><a href="http://www.cct.cn/bj/LineView.aspx?lineno=20113120636" target="_blank">
-                            【北京出发】*康辉港澳超值自由行*机票+四星/五星酒店</a></span>
-                        <p>
-                            行程天数：4天 最近出发班期：2014-4-10,2014-4-20 <a href="javascript:void(0);" onclick="getAllKaiban(20113120636);">
-                                全部班期</a></p>
-                        <span>途经城市：</span></div>
-                    <div class="brief_detail">
-                        <div>
-                            <span class="bold big">￥<span class="bigger">3200</span></span>起</div>
-                        <span>2014-4-10出发</span> <span><a class="viewroute" href="http://www.cct.cn/bj/LineView.aspx?lineno=20113120636"
-                            target="_blank"></a></span>
-                    </div>
-                    <div class="hr_5">
-                    </div>
-                </li>
+            <ul id="ul_1">c
+                <asp:Repeater runat="server" ID="repeaterdetail">
+                    <ItemTemplate>
+                        <li style="border-bottom: none;">
+                            <div class="icon">
+                                <a href="detail.aspx?id=<%#Eval("id") %>" target="_blank">
+                                    <img src="<%#Eval("pic") %>" alt="" />
+                                    <span class="topicon topicontj">特价</span></a>
+                            </div>
+                            <div class="detail">
+                                <span><a href="detail.aspx?id=<%#Eval("id") %>" target="_blank">
+                                    <%#Eval("title") %></a></span>
+                                <p>
+                                    行程天数：
+                                    <%#Eval("journeydays") %>天 出发班期：
+                                    <%#Eval("departuretime") %>
+                                </p>
+                            </div>
+                            <div class="brief_detail">
+                                <div>
+                                    <span class="bold big">￥<span class="bigger">
+                                        <%#Eval("adultprice") %></span></span>起</div>
+                            </div>
+                            <div class="hr_5">
+                            </div>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
             </ul>
         </div>
         <center>

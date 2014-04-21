@@ -54,7 +54,7 @@ ul.options li.curr a {color: #ffffff !important; }
 .filter .date {background-image: url("../images/search-rankb.png"); background-repeat:no-repeat;width: 79px;height:20px;line-height:20px;display:inline-block;text-align:center;}
 .filter_list p{word-wrap: break-word;}
 .bold{ font-weight:bold;}
-.big{ font-size:14px; color:#f60; margin-right:3px;}
+.big{ font-size:25px; color:#f60; margin-right:3px;}
 #main .content .options .proname input.searchlinebtn{border:none;background-image: url("../images/search/linesearch.png");background-position: left -232px; background-repeat: no-repeat; vertical-align:middle; height:23px; line-height:23px; margin:0px; padding:0px;}
 .filter_list .icon .topicon{ display:block; width:46px; height:46px;position:absolute; top:0px; left:0px; color:#fff;text-indent:-9999px;}
 .filter_list .icon .topiconcg{background:url("../images/search/index-topiconcg.png") no-repeat 0 0; }

@@ -560,7 +560,7 @@
     <div id="main">
         <div id="route">
             您当前所在位置：<a href="index.aspx">首页</a>&nbsp;->&nbsp;<a href="#" target="_parent"><font
-                color="#cd0007">出境旅游</font></a></div>
+                color="#cd0007">搜索</font></a></div>
         <div class="content">
             <div class="options" style="margin-bottom: 0px;">
                 <div class="box">
@@ -719,7 +719,7 @@
             </div>
         </div>
         <div class="filter_list" id="div_filter_list">
-            <ul id="ul_1">c
+            <ul id="ul_1">
                 <asp:Repeater runat="server" ID="repeaterdetail">
                     <ItemTemplate>
                         <li style="border-bottom: none;">

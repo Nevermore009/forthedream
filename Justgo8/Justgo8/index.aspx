@@ -312,14 +312,14 @@
                                     <div class="item">
                                         <span>
                                             <h3>
-                                                <a href="#">
+                                                <a href="search.aspx?traveltype=<%#Eval("traveltypeid") %>">
                                                     <%#Eval("traveltypename") %></a>
                                                 <img src="images/index/jiantou_03.gif" class="jiantou" alt="" />
                                             </h3>
                                             <div class="seccat">
                                                 <asp:Repeater runat="server" ID="RepeaterHotArea">
                                                     <ItemTemplate>
-                                                        <a href='search.aspx?areaid=<%#Eval("areaid") %>'><em>
+                                                        <a href='search.aspx?traveltype=<%#Eval("traveltypeid") %>&areaid=<%#Eval("areaid") %>'><em>
                                                             <%#Eval("areaname") %></em></a>
                                                     </ItemTemplate>
                                                 </asp:Repeater>
@@ -330,13 +330,13 @@
                                                 <asp:Repeater ID="RepeaterArea" runat="server" OnItemDataBound="RepeaterArea_ItemDataBound">
                                                     <ItemTemplate>
                                                         <dl>
-                                                            <dt><a href="#">
+                                                            <dt><a href="search.aspx?traveltype=<%#Eval("traveltypeid") %>&areid=<%#Eval("areaid") %>">
                                                                 <%#Eval("areaname") %></a> </dt>
                                                             <dd>
                                                                 <asp:Repeater ID="RepeaterCity" runat="server">
                                                                     <ItemTemplate>
                                                                         <%# Container.ItemIndex+1<=1?"":"<em>|</em>"%>
-                                                                        <em><a href="#">
+                                                                        <em><a href="search.aspx?areid=<%#Eval("areaid") %>&cityid=<%#Eval("cityid") %>">
                                                                             <%#Eval("cityname") %></a></em></ItemTemplate>
                                                                 </asp:Repeater>
                                                             </dd>
@@ -361,10 +361,9 @@
                                             <ul>
                                                 <li class="subItemli">
                                                     <h3 class="subItem-hd ">
-                                                        <a href="#">私人定制</a></h3>
+                                                        <a href="#"></a></h3>
                                                     <p class="subItem-cat">
-                                                        <a href="#">主题特色</a> <a href="#">城市印象</a> <a href="#">自驾探险</a> <a href="#">“慢”旅游</a>
-                                                        <a href="#">健康养生</a> <a href="#">美食购物</a> <a href="#">亲子家庭</a> <a href="#">浪漫甜蜜</a>
+                                                        
                                                     </p>
                                                 </li>
                                             </ul>
@@ -421,20 +420,20 @@
             <div class="selectarea">
                 <asp:Repeater runat="server" ID="repeaterhotperiphery">
                     <ItemTemplate>
-                        <a href="#" <%# Container.ItemIndex==0?"class='first'":"" %>>
+                        <a href="search.aspx?traveltype=<%=Bll.BTravelType.Periphery %>&areaid=<%#Eval("areaid") %>" <%# Container.ItemIndex==0?"class='first'":"" %>>
                             <%#Eval("areaname") %></a>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
             <div class="morearea">
-                <a href="#">更多&gt;&gt;</a></div>
+                <a href="search.aspx?traveltype=<%=Bll.BTravelType.Periphery %>">更多&gt;&gt;</a></div>
             <div style="width: 100%; float: left; border-top: #489ea9 solid 2px; border-bottom: #c4c4c4 solid 1px;
                 border-right: #c4c4c4 solid 1px; overflow: hidden;">
                 <div id="peripheryleft">
                     <ul class="zz">
                         <asp:Repeater runat="server" ID="repeaterperiphery">
                             <ItemTemplate>
-                                <li><a href="#" target="_blank">
+                                <li><a href="search.aspx?traveltype=<%=Bll.BTravelType.Periphery %>&areaid=<%#Eval("areaid") %>" target="_blank">
                                     <%#Eval("areaname") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -451,7 +450,7 @@
                                                 <ItemTemplate>
                                                     <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
                                                         title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
-                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                            【<%#Eval("description") %>】<%#Eval("title") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
                                             </asp:Repeater>
                                         </ol>
                                     </div>
@@ -463,7 +462,7 @@
                                                 <ItemTemplate>
                                                     <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
                                                         title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
-                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                            【<%#Eval("description") %>】<%#Eval("title") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
                                             </asp:Repeater>
                                         </ol>
                                     </div>
@@ -481,20 +480,20 @@
             <div class="selectarea">
                 <asp:Repeater runat="server" ID="RepeaterHotInland">
                     <ItemTemplate>
-                        <a href="#" <%# Container.ItemIndex==0?"class='first'":"" %>>
+                        <a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>&areaid=<%#Eval("areaid") %>" <%# Container.ItemIndex==0?"class='first'":"" %>>
                             <%#Eval("areaname") %></a>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
             <div class="morearea">
-                <a href="#">更多&gt;&gt;</a></div>
+                <a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>">更多&gt;&gt;</a></div>
             <div style="width: 100%; float: left; border-top: #489ea9 solid 2px; border-bottom: #c4c4c4 solid 1px;
                 border-right: #c4c4c4 solid 1px; overflow: hidden;">
                 <div id="inlandleft">
                     <ul class="gn">
                         <asp:Repeater runat="server" ID="RepeaterInland">
                             <ItemTemplate>
-                                <li><a href="#" target="_blank">
+                                <li><a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>&areaid=<%#Eval("areaid") %>" target="_blank">
                                     <%#Eval("areaname") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -511,7 +510,7 @@
                                                 <ItemTemplate>
                                                     <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
                                                         title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
-                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                            【<%#Eval("description") %>】<%#Eval("title") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
                                             </asp:Repeater>
                                         </ol>
                                     </div>
@@ -523,7 +522,7 @@
                                                 <ItemTemplate>
                                                     <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
                                                         title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
-                                                            <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                           【<%#Eval("description") %>】<%#Eval("title") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
                                             </asp:Repeater>
                                         </ol>
                                     </div>
@@ -614,20 +613,20 @@
             <div class="selectarea">
                 <asp:Repeater runat="server" ID="RepeaterHotOutland">
                     <ItemTemplate>
-                        <a href="#" target="_blank" <%# Container.ItemIndex==0?"class='first'":""%>>
+                        <a href="search.aspx?traveltype=<%=Bll.BTravelType.Outland %>&areaid=<%#Eval("areaid") %>" target="_blank" <%# Container.ItemIndex==0?"class='first'":""%>>
                             <%#Eval("areaname") %></a>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
             <div class="morearea">
-                <a href="#" style="font-family: 宋体">更多&gt;&gt;</a></div>
+                <a href="search.aspx?traveltype=<%=Bll.BTravelType.Outland %>" style="font-family: 宋体">更多&gt;&gt;</a></div>
             <div id="hidden" style="width: 100%; float: left; border-top: #438544 solid 2px;
                 border-bottom: #c4c4c4 solid 1px; border-right: #c4c4c4 solid 1px; overflow: hidden;">
                 <div id="outlandleft">
                     <ul class="cj">
                         <asp:Repeater runat="server" ID="RepeaterOutland">
                             <ItemTemplate>
-                                <li><a href="#" target="_blank">
+                                <li><a href="search.aspx?traveltype=<%=Bll.BTravelType.Outland %>&areaid=<%#Eval("areaid") %>" target="_blank">
                                     <%#Eval("areaname") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -645,7 +644,7 @@
                                                     <ItemTemplate>
                                                         <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
                                                             title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
-                                                                <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                                【<%#Eval("description") %>】<%#Eval("title") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
                                                 </asp:Repeater>
                                             </ol>
                                         </div>
@@ -657,7 +656,7 @@
                                                     <ItemTemplate>
                                                         <li class="hs_item"><a class="hs_name" style="width: 280px;" href='detail.aspx?id=<%#Eval("id") %>'
                                                             title='<%#Eval("title") %>' rel="nofollow"><span class="f_0053aa">
-                                                                <%#Eval("description") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
+                                                                【<%#Eval("description") %>】<%#Eval("title") %></span></a><em class="hs_p"><b><%#Eval("adultprice") %></b>元起</em></li></ItemTemplate>
                                                 </asp:Repeater>
                                             </ol>
                                         </div>

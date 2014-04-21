@@ -65,7 +65,7 @@
         </div>
         <div id="route">
             您当前所在位置：<a href="index.aspx">首页</a>&nbsp;->&nbsp;<a href="###" target="_parent"><font
-                color="#cd0007">出境旅游</font></a></div>
+                color="#cd0007">国内旅游</font></a></div>
         <div class="clear">
         </div>
         <div id="outland_bottom">
@@ -73,7 +73,7 @@
                 <div class="outland_bottomTop_left">
                     <img src="images/index/inland.png" width="200px" height="30px" alt="" /></div>
                 <div class="outland_bottomTop_right">
-                    <a href="#" target="_blank" class="more">更多>></a></div>
+                    <a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>" target="_blank" class="more">更多>></a></div>
             </div>
             <div class="clear">
             </div>
@@ -82,7 +82,7 @@
                     <ul class="outland_bottom_Left_ul1">
                         <asp:Repeater runat="server" ID="RepeaterInland">
                             <ItemTemplate>
-                                <li class="li_x"><a href="#" target="_blank">
+                                <li class="li_x"><a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>&areaid=<%#Eval("areaid") %>" target="_blank">
                                     <%#Eval("areaname") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>

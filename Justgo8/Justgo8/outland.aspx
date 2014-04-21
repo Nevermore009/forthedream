@@ -74,7 +74,7 @@
                     <img src="images/index/outland.png" width="200px" height="30px"
                         alt="" /></div>
                 <div class="outland_bottomTop_right">
-                    <a href="#" target="_blank" class="more">更多>></a></div>
+                    <a href="search.aspx?traveltype=<%=Bll.BTravelType.Periphery %>" target="_blank" class="more">更多>></a></div>
             </div>
             <div class="clear">
             </div>
@@ -83,7 +83,7 @@
                     <ul class="outland_bottom_Left_ul1">
                         <asp:Repeater runat="server" ID="RepeaterOutland">
                             <ItemTemplate>
-                                <li class="li_x"><a href="#" target="_blank">
+                                <li class="li_x"><a href="search.aspx?traveltype=<%=Bll.BTravelType.Outland %>&areaid=<%#Eval("areaid") %>" target="_blank">
                                     <%#Eval("areaname") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>

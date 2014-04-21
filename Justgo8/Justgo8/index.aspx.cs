@@ -103,7 +103,7 @@ namespace Justgo8
 
         protected void BindInland()
         {
-            RepeaterInland.DataSource = Bll.BArea.AreaOfTravelType(Bll.BTravelType.Inland);
+            RepeaterInland.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Inland, int.MaxValue);
             RepeaterInland.DataBind();
         }
 
@@ -115,7 +115,7 @@ namespace Justgo8
 
         protected void BindOutland()
         {
-            RepeaterOutland.DataSource = Bll.BArea.AreaOfTravelType(Bll.BTravelType.Outland);
+            RepeaterOutland.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Outland, int.MaxValue);
             RepeaterOutland.DataBind();
         }
 
@@ -127,7 +127,7 @@ namespace Justgo8
 
         protected void BindPeriphery()
         {
-            repeaterperiphery.DataSource = Bll.BArea.AreaOfTravelType(Bll.BTravelType.Periphery);
+            repeaterperiphery.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Periphery, int.MaxValue);
             repeaterperiphery.DataBind();
         }
 

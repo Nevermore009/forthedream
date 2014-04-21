@@ -28,38 +28,49 @@ namespace Justgo8
                 DataTable dt = Bll.BArea.AreaInfo();
                 BindArea(dt);
                 BindAreaInfo(dt);
+                bool needbind = false;
                 if (!string.IsNullOrEmpty(Request["journeydates"]))
                 {
                     journeydates = Request["journeydates"];
+                    needbind = true;
                 }
                 if (!string.IsNullOrEmpty(Request["adultprice"]))
                 {
                     adultprice = Request["adultprice"];
+                    needbind = true;
                 }
                 if (!string.IsNullOrEmpty(Request["traveltype"]))
                 {
                     traveltype = Request["traveltype"];
+                    needbind = true;
                 }
-                if (!string.IsNullOrEmpty(Request["destinationarea"]))
+                if (!string.IsNullOrEmpty(Request["areaid"]))
                 {
-                    destinationarea = Request["destinationarea"];
+                    destinationarea = Request["areaid"];
+                    needbind = true;
                 }
-                if (!string.IsNullOrEmpty(Request["destinationcity"]))
+                if (!string.IsNullOrEmpty(Request["cityid"]))
                 {
-                    destinationcity = Request["destinationcity"];
+                    destinationcity = Request["cityid"];
+                    needbind = true;
                 }
-                if (!string.IsNullOrEmpty(Request["titlekey"]))
+                if (!string.IsNullOrEmpty(Request["keyword"]))
                 {
-                    titlekey = Request["titlekey"];
+                    titlekey = Request["keyword"];
+                    needbind = true;
                 }
                 if (!string.IsNullOrEmpty(Request["journeydates"]))
                 {
                     journeydates = Request["journeydates"];
+                    needbind = true;
                 }
                 if (!string.IsNullOrEmpty(Request["journeydates"]))
                 {
                     journeydates = Request["journeydates"];
+                    needbind = true;
                 }
+                if (needbind)
+                    BindDetail();
             }
         }
 
@@ -142,8 +153,15 @@ namespace Justgo8
             MessageBox.Show(this.Page, "");
         }
 
-        protected void BindDetail(DataTable dt)
+        protected void BindDetail()
         {
+            string startprice = "", endprice = "";
+            if (!string.IsNullOrEmpty(adultprice))
+            {
+                startprice = adultprice.Split('-')[0];
+                endprice = adultprice.Split('-')[1];
+            }
+            DataTable dt = Bll.BTravelDetail.TravelInfoByCondition(journeydates, startprice, endprice, traveltype, destinationarea, destinationcity, titlekey, startdate, enddate, 0, 100, "", false);
             if (dt.Rows.Count > 0)
             {
                 repeaterdetail.DataSource = dt;
@@ -169,14 +187,7 @@ namespace Justgo8
                 titlekey = Request.Form["txttitlekey"];
                 startdate = Request.Form["txtstartdate"];
                 enddate = Request.Form["txtenddate"];
-                string startprice = "", endprice = "";
-                if (!string.IsNullOrEmpty(adultprice))
-                {
-                    startprice = adultprice.Split('-')[0];
-                    endprice = adultprice.Split('-')[1];
-                }
-                DataTable dt = Bll.BTravelDetail.TravelInfoByCondition(journeydates, startprice, endprice, traveltype, destinationarea, destinationcity, titlekey, startdate, enddate, 0, 100, "", false);
-                BindDetail(dt);
+                BindDetail();
             }
             catch (Exception ex)
             {

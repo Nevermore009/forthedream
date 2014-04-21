@@ -49,6 +49,89 @@ namespace DLL
         }
 
         /// <summary>
+        /// 按条件查询,不使用的条件请传入空字符串或null
+        /// </summary>
+        /// <param name="journeydates"></param>
+        /// <param name="adultprice"></param>
+        /// <param name="traveltype"></param>
+        /// <param name="destinationarea"></param>
+        /// <param name="destinationcity"></param>
+        /// <param name="titlekey"></param>
+        /// <param name="startdate"></param>
+        /// <param name="enddate"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public DataTable TravelInfoByCondition(string journeydates, string adultpricestart, string adultpriceend, string traveltype, string destinationarea, string destinationcity, string titlekey, string startdate, string enddate, int pageIndex, int pageSize, string orderbyname, bool asc)
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.Append(" select * from (select *,(row_number() over(");
+            if (!string.IsNullOrEmpty(orderbyname))
+            {
+                sql.Append(orderbyname);
+                sql.Append(asc ? "asc," : "desc,");
+            }
+            sql.Append("order by hot desc,id desc)) as rowid from V_TravelInfo t1 where 1=1 ");
+            if (!string.IsNullOrEmpty(journeydates))
+            {
+                sql.Append(" and journeydates=");
+                sql.Append(journeydates);
+            }
+            if (!string.IsNullOrEmpty(adultpricestart))
+            {
+                sql.Append(" and adultprice >= ");
+                sql.Append(adultpricestart);
+            }
+            if (!string.IsNullOrEmpty(adultpriceend))
+            {
+                sql.Append(" and adultprice <= ");
+                sql.Append(adultpriceend);
+            }
+            if (!string.IsNullOrEmpty(traveltype))
+            {
+                sql.Append(" and traveltypeid= ");
+                sql.Append(traveltype);
+            }
+
+            if (!string.IsNullOrEmpty(titlekey))
+            {
+                sql.Append(" and title like '%");
+                sql.Append(traveltype);
+                sql.Append("%'");
+            }
+            if (!string.IsNullOrEmpty(startdate))
+            {
+                sql.Append(" and startdate <='");
+                sql.Append(startdate);
+                sql.Append("' ");
+            }
+            if (!string.IsNullOrEmpty(enddate))
+            {
+                sql.Append(" and enddate <='");
+                sql.Append(enddate);
+                sql.Append("' ");
+            }
+            if (!string.IsNullOrEmpty(destinationarea))
+            {
+                sql.Append(" and exists(select * from tb_destination where areaid=");
+                sql.Append(destinationarea);
+                if (!string.IsNullOrEmpty(destinationcity))
+                {
+                    sql.Append(" and cityid=");
+                    sql.Append(destinationcity);
+                }
+                sql.Append(" and detailid=t1.id)");
+            }
+            int start = pageIndex * pageSize + 1;
+            int end = (pageIndex + 1) * pageSize;
+            if (end == 0) end = int.MaxValue;
+            sql.Append(") as t2 where t2.rowid between " + start + " and " + end);
+            ErrorLog.AddErrorLog(sql.ToString());
+            DataTable dt = help.SeeResults(sql.ToString());
+            return dt;
+        }
+
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="title">标题</param>

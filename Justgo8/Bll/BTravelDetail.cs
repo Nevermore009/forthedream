@@ -37,6 +37,11 @@ namespace Bll
             return new DLL.TravelDetail().TravelInfo(travelTypeID, pageIndex, pageSize);
         }
 
+        public static DataTable TravelInfoByCondition(string journeydates, string adultpricestart, string adultpriceend, string traveltype, string destinationarea, string destinationcity, string titlekey, string startdate, string enddate, int pageIndex, int pageSize, string orderbyname, bool asc)
+        {
+            return new DLL.TravelDetail().TravelInfoByCondition(journeydates, adultpricestart, adultpriceend, traveltype, destinationarea, destinationcity, titlekey, startdate, enddate, pageIndex, pageSize, orderbyname, asc);
+        }
+
         /// <summary>
         /// 添加
         /// </summary>

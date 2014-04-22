@@ -51,16 +51,16 @@ namespace DLL
         /// <summary>
         /// 按条件查询,不使用的条件请传入空字符串或null
         /// </summary>
-        /// <param name="journeydates"></param>
-        /// <param name="adultprice"></param>
-        /// <param name="traveltype"></param>
-        /// <param name="destinationarea"></param>
-        /// <param name="destinationcity"></param>
-        /// <param name="titlekey"></param>
-        /// <param name="startdate"></param>
-        /// <param name="enddate"></param>
-        /// <param name="pageIndex"></param>
-        /// <param name="pageSize"></param>
+        /// <param name="journeydates">行程天数</param>
+        /// <param name="adultprice">价格</param>
+        /// <param name="traveltype">线路类型</param>
+        /// <param name="destinationarea">目的地区</param>
+        /// <param name="destinationcity">目的城市</param>
+        /// <param name="titlekey">标题关键字</param>
+        /// <param name="startdate">开始日期</param>
+        /// <param name="enddate">结束日期</param>
+        /// <param name="pageIndex">页索引,从0开始</param>
+        /// <param name="pageSize">页大小,0即获取全部</param>
         /// <returns></returns>
         public DataTable TravelInfoByCondition(string journeydates, string adultpricestart, string adultpriceend, string traveltype, string destinationarea, string destinationcity, string titlekey, string startdate, string enddate, int pageIndex, int pageSize, string orderbyname, bool asc)
         {
@@ -129,6 +129,78 @@ namespace DLL
             ErrorLog.AddErrorLog(sql.ToString());
             DataTable dt = help.SeeResults(sql.ToString());
             return dt;
+        }
+
+        /// <summary>
+        /// 按条件查询记录数,不使用的条件请传入空字符串或null
+        /// </summary>
+        /// <param name="journeydates">行程天数</param>
+        /// <param name="adultprice">价格</param>
+        /// <param name="traveltype">线路类型</param>
+        /// <param name="destinationarea">目的地区</param>
+        /// <param name="destinationcity">目的城市</param>
+        /// <param name="titlekey">标题关键字</param>
+        /// <param name="startdate">开始日期</param>
+        /// <param name="enddate">结束日期</param>
+        /// <param name="pageIndex">页索引,从0开始</param>
+        /// <param name="pageSize">页大小,0即获取全部</param>
+        /// <returns></returns>
+        public int GetTravelInfoCountByCondition(string journeydates, string adultpricestart, string adultpriceend, string traveltype, string destinationarea, string destinationcity, string titlekey, string startdate, string enddate)
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.Append(" select count(*) from V_TravelInfo t1 where 1=1 ");
+            if (!string.IsNullOrEmpty(journeydates))
+            {
+                sql.Append(" and journeydates=");
+                sql.Append(journeydates);
+            }
+            if (!string.IsNullOrEmpty(adultpricestart))
+            {
+                sql.Append(" and adultprice >= ");
+                sql.Append(adultpricestart);
+            }
+            if (!string.IsNullOrEmpty(adultpriceend))
+            {
+                sql.Append(" and adultprice <= ");
+                sql.Append(adultpriceend);
+            }
+            if (!string.IsNullOrEmpty(traveltype))
+            {
+                sql.Append(" and traveltypeid= ");
+                sql.Append(traveltype);
+            }
+
+            if (!string.IsNullOrEmpty(titlekey))
+            {
+                sql.Append(" and title like '%");
+                sql.Append(traveltype);
+                sql.Append("%'");
+            }
+            if (!string.IsNullOrEmpty(startdate))
+            {
+                sql.Append(" and startdate <='");
+                sql.Append(startdate);
+                sql.Append("' ");
+            }
+            if (!string.IsNullOrEmpty(enddate))
+            {
+                sql.Append(" and enddate <='");
+                sql.Append(enddate);
+                sql.Append("' ");
+            }
+            if (!string.IsNullOrEmpty(destinationarea))
+            {
+                sql.Append(" and exists(select * from tb_destination where areaid=");
+                sql.Append(destinationarea);
+                if (!string.IsNullOrEmpty(destinationcity))
+                {
+                    sql.Append(" and cityid=");
+                    sql.Append(destinationcity);
+                }
+                sql.Append(" and detailid=t1.id)");
+            }
+            ErrorLog.AddErrorLog(sql.ToString());
+            return int.Parse(help.RunSqlReturn(sql.ToString()));
         }
 
         /// <summary>

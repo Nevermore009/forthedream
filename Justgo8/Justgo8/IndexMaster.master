@@ -91,8 +91,8 @@
                     出境旅游</a> </li>
                 <li><a class='<%=(pageName=="zyx.aspx"?"current":"") %>' id="zyx.aspx" href="zyx.aspx">
                     自由行</a> </li>
-                <li><a class='<%=(pageName=="Personal.aspx"?"current":"") %>' id="Personal.aspx"
-                    href="Personal.aspx">团队定制</a> </li>
+                <li><a class='<%=(pageName=="personal.aspx"?"current":"") %>' id="Personal.aspx"
+                    href="personal.aspx">团队定制</a> </li>
                 <li><a class='<%=(pageName=="vip.aspx"?"current":"") %>' id="vip.aspx" href="vip.aspx">
                     会员中心</a> </li>
             </ul>

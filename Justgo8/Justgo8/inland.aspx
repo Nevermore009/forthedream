@@ -64,7 +64,7 @@
         <div class="clear">
         </div>
         <div id="route">
-            您当前所在位置：<a href="index.aspx">首页</a>&nbsp;->&nbsp;<a href="###" target="_parent"><font
+            您当前所在位置：<a href="index.aspx">首页</a>&nbsp;->&nbsp;<a href="#" target="_parent"><font
                 color="#cd0007">国内旅游</font></a></div>
         <div class="clear">
         </div>
@@ -107,7 +107,7 @@
                                     <li><a href='detail.aspx?id=<%#Eval("id") %>' target="_blank"><span>
                                         <img src='<%#Eval("pic") %>' width="167px" height="105px" alt='<%#Eval("title") %>'
                                             title="<%#Eval("title") %>" /></span><span style="text-align: center;"><%#Eval("title") %>(<%#Eval("description") %>)</span><span
-                                                class="outland_bottom_Right_ul1_price">RMB <%#Eval("adultprice") %>元</span></a></li>
+                                                class="outland_bottom_Right_ul1_price">RMB<%#Eval("adultprice") %>元</span></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </ul>

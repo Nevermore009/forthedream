@@ -64,6 +64,7 @@
     <Content Include="css\15.css" />
     <Content Include="css\category.css" />
     <Content Include="css\common.css" />
+    <Content Include="css\control.css" />
     <Content Include="css\datepicker%281%29.css" />
     <Content Include="css\datepicker.css" />
     <Content Include="css\jquery-ui-1.10.3.custom.css" />
@@ -199,6 +200,7 @@
     <Content Include="js\scrollshow.js" />
     <Content Include="js\WdatePicker.js" />
     <Content Include="js\zh-cn.js" />
+    <Content Include="js\首页轮播.js" />
     <Content Include="login.aspx" />
     <Content Include="Manage\AddArea.aspx" />
     <Content Include="Manage\AddCity.aspx" />

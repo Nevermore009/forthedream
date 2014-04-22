@@ -42,6 +42,11 @@ namespace Bll
             return new DLL.TravelDetail().TravelInfoByCondition(journeydates, adultpricestart, adultpriceend, traveltype, destinationarea, destinationcity, titlekey, startdate, enddate, pageIndex, pageSize, orderbyname, asc);
         }
 
+        public static int GetTravelInfoCountByCondition(string journeydates, string adultpricestart, string adultpriceend, string traveltype, string destinationarea, string destinationcity, string titlekey, string startdate, string enddate)
+        {
+            return new DLL.TravelDetail().GetTravelInfoCountByCondition(journeydates, adultpricestart, adultpriceend, traveltype, destinationarea, destinationcity, titlekey, startdate, enddate);
+        }
+
         /// <summary>
         /// 添加
         /// </summary>

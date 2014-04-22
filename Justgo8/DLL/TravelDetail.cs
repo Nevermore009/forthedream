@@ -74,7 +74,7 @@ namespace DLL
             sql.Append("order by hot desc,id desc)) as rowid from V_TravelInfo t1 where 1=1 ");
             if (!string.IsNullOrEmpty(journeydates))
             {
-                sql.Append(" and journeydates=");
+                sql.Append(" and journeydays=");
                 sql.Append(journeydates);
             }
             if (!string.IsNullOrEmpty(adultpricestart))
@@ -151,7 +151,7 @@ namespace DLL
             sql.Append(" select count(*) from V_TravelInfo t1 where 1=1 ");
             if (!string.IsNullOrEmpty(journeydates))
             {
-                sql.Append(" and journeydates=");
+                sql.Append(" and journeydays=");
                 sql.Append(journeydates);
             }
             if (!string.IsNullOrEmpty(adultpricestart))

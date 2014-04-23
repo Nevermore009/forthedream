@@ -11,12 +11,7 @@
     <div id="container">
         <div id="welcome">
             <div id="welcomel">
-                <!--旅游线路分类 -->
-                <script type="text/javascript">
-                    function goToLineView(id) {
-                        window.open("search.aspx?de=" + id + "", target = "_blank");
-                    }
-                </script>
+                <!--旅游线路分类 -->                
                 <script type="text/javascript">
                     $(document).ready(function () {
                         $(".item:last").css("border-bottom", "1px solid #0B6130");

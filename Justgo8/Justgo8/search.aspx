@@ -247,11 +247,7 @@
             conditionAll_trigger('condition_product');
             $("#tags li").css("display", "")
             $("#c_type").val("");
-        }
-
-        function goToLineView(id) {
-            window.open("lineview.aspx?lineno=" + id + "", target = "_blank");
-        }
+        }        
 
         function submit_condition() {
             condition_name = $("#na").val();
@@ -398,11 +394,7 @@
                 goToPage(currentPage + 1);
             }
         }
-
-        function goToLineView(name) {
-            window.open("searchForDIY.aspx?keyWord=" + escape(name) + "");
-        }
-
+        
         $(function () {
             $("#ul_dates li").click(function () {
                 $(this).addClass("cur").siblings("li").removeClass("cur");
@@ -751,10 +743,14 @@
         </div>
         <center>
             <div id="center_p_Ex" style="display: inline-block;">
-                <span class="previous"><a href="javascript:void(0);" onclick="goToPage(1)">上一页</a></span><div
-                    class="pgcon">
+                <span class="previous"><a href="javascript:void(0);" onclick="goToPage(1)">第一页</a></span>
+                <span class="previous"><a href="javascript:void(0);" onclick="goToPage(1)">上一页</a></span>
+                <div class="pgcon">
                     <a href="javascript:void(0);" onclick="goToPage(1)">1</a></div>
-                <span class="next"><a href="javascript:void(0);" onclick="goToPage(1)">下一页</a></span></div>
+                <span class="next"><a href="javascript:void(0);" onclick="goToPage(1)">下一页</a></span>
+                <span class="next"><a href="javascript:void(0);" onclick="goToPage(1)">最后一页</a></span>
+                <input type="text" value="1" name="pageindex" style="display: none" />
+            </div>
         </center>
     </div>
 </asp:Content>

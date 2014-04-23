@@ -10,7 +10,7 @@ table,img { border:0px;}
 
 .more{ font-family:宋体; font-size:12px; padding-top:5px}
 /**public**/
-#outland{margin:0px; padding:0px; width:1000px; margin: 0 auto; margin-top:5px;   }
+#outland{ padding:0px; width:1000px; margin: 0 auto; margin-top:5px;   }
 #outland_contentTop{ margin:0px; padding:0px; width:1000px;   height:390px; margin-bottom:10px;}
 #outland_contentTop .outland_contentTop_left{ width:185px;  float:left;}
 #outland_contentTop .outland_contentTop_right{ width:810px; float:right;}

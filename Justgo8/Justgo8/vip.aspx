@@ -3,29 +3,39 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/control.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #content
+        {
+            margin: 0px auto;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="main" style="height: 400px; padding-top: 30px; font-size: 20px; color: Green;
-        padding-left: 100px;">
-        敬请期待...</div>
-    <div style="display:none">
-        <asp:GridView ID="grvorders" runat="server" CssClass="gridview" 
-            AutoGenerateColumns="False">
-            <Columns>
-                <asp:TemplateField HeaderText="序号">
-                    <EditItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField HeaderText="价格" />
-                <asp:BoundField HeaderText="成人数" />
-                <asp:BoundField HeaderText="儿童人数" />
-                <asp:HyperLinkField HeaderText="详情" />
-            </Columns>
-        
-        </asp:GridView>
+    <div id="content">
+        <asp:Panel runat="server" GroupingText="您的预订">
+            <center>
+                <asp:GridView ID="grvorders" runat="server" CssClass="gridview" AutoGenerateColumns="False"
+                    Width="90%">
+                    <Columns>
+                        <asp:TemplateField HeaderText="序号">
+                            <ItemTemplate>
+                                <%#Container.DataItemIndex+1 %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField HeaderText="成人价格" DataField="adultprice" />
+                        <asp:BoundField HeaderText="成人人数" DataField="adultnum" />
+                        <asp:BoundField HeaderText="儿童价格" DataField="childprice" />
+                        <asp:BoundField HeaderText="儿童人数" DataField="childnum" />
+                        <asp:BoundField HeaderText="预订时间" DataField="createtime" />
+                        <asp:HyperLinkField HeaderText="详情" DataTextField="detailid" DataNavigateUrlFormatString="detail.aspx?id={0}" />
+                    </Columns>
+                    <EmptyDataTemplate>
+                        <font style="color: Red; font-size: 14px;">暂无订单</font>
+                    </EmptyDataTemplate>
+                </asp:GridView>
+            </center>
+        </asp:Panel>
+        <br />
+        <br />
     </div>
 </asp:Content>

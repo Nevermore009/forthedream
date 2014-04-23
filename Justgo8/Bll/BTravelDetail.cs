@@ -83,9 +83,9 @@ namespace Bll
             return new DLL.TravelDetail().update(title, description, generalprice, adultprice, childprice, startdate, enddate, departuretime, features, billinclude, billbeside, servicestandard, presentation, journey, contact, journeydays, transportation, id);
         }
 
-        public static int ChangeState(int id, int state)
+        public static int ChangeHotState(int id,bool hot)
         {
-            return new DLL.TravelDetail().ChangeState(id, state);
+            return new DLL.TravelDetail().ChangeHotState(id, hot);
         }
 
         /// <summary>

@@ -25,10 +25,14 @@
                 return false;
             });
         });
-        function search() {
-            var keyword = document.getElementById("keyword").value;
+        function search(keyword) {
             if (keyword) {
                 window.location.href = ("search.aspx?keyword=" + keyword);
+            } else {
+                keyword = document.getElementById("keyword").value;
+                if (keyword) {
+                    window.location.href = ("search.aspx?keyword=" + keyword);
+                }
             }
         }
     </script>
@@ -52,19 +56,20 @@
         <div id="rolck-body">
             <div id="topleft">
                 <a href="index.aspx" target="_self">
-                    <img src="images/master/logo.png" style="padding-top: 5px;" alt="马上游" longdesc="index.aspx"></a></div>
+                    <img src="images/master/logo.png" style="padding-top: 5px;" alt="马上游" longdesc="index.aspx" /></a></div>
             <div id="topcenter">
                 <div class="searchbar">
                     <input id="keyword" class="keyword" type="text" />
-                    <input class="btn" style="width:100px" type="button" onclick="search();" value="搜索" />
+                    <input class="btn" style="width: 100px" type="button" onclick="search();" value="搜索" />
                 </div>
                 <div style="padding-top: 8px;" class="searchlink">
-                    <span style="color: #007434;">热门搜索:</span> <a href="javascript:void(0);" onclick="GoToSearchEx(&#39;美国&#39;)">
-                        美国</a> <a href="javascript:void(0);" onclick="GoToSearchEx(&#39;香港&#39;)">香港</a>
-                    <a href="javascript:void(0);" onclick="GoToSearchEx(&#39;韩国&#39;)">韩国</a> <a href="javascript:void(0);"
-                        onclick="GoToSearchEx(&#39;马尔代夫&#39;)">马尔代夫</a> <a href="javascript:void(0);" onclick="GoToSearchEx(&#39;海南&#39;)">
-                            海南</a> <a href="javascript:void(0);" onclick="GoToSearchEx(&#39;普吉岛&#39;)">普吉岛</a>
-                    <a href="javascript:void(0);" onclick="GoToSearchEx(&#39;欧洲&#39;)">欧洲</a>
+                    <span style="color: #007434;">热门搜索:</span> <a href="javascript:void(0);" onclick="search('凤凰')">
+                        凤凰</a> <a href="javascript:void(0);" onclick="search('张家界')">张家界</a> <a href="javascript:void(0);"
+                            onclick="search('桂林')">桂林</a> <a href="javascript:void(0);" onclick="search('衡山')">衡山</a>
+                    <a href="javascript:void(0);" onclick="search('武功山')">武功山</a> <a href="javascript:void(0);"
+                        onclick="search('海南')">海南</a> <a href="javascript:void(0);" onclick="search('厦门')">厦门</a>
+                    <a href="javascript:void(0);" onclick="search('韩国')">韩国</a> <a href="javascript:void(0);"
+                        onclick="search('泰国')">泰国</a>
                 </div>
             </div>
             <div id="topright">

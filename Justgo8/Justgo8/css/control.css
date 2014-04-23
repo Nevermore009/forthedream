@@ -5,7 +5,10 @@
 	font-size: small;
 	font-weight: normal;
 	border-style: solid;
-	border-bottom: solid 2px gray;
+	border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;
+	border-bottom: solid 1px gray;
 }
 .gridview th
 {

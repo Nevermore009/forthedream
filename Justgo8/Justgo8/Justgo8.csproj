@@ -832,6 +832,9 @@
     <Compile Include="Manage\CityManager.aspx.designer.cs">
       <DependentUpon>CityManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\HotHandler.ashx.cs">
+      <DependentUpon>HotHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -930,6 +933,7 @@
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
+    <Content Include="Manage\HotHandler.ashx" />
     <None Include="Manage\images\companyimg\Thumbs.db" />
     <None Include="Manage\images\Thumbs.db" />
     <None Include="Manage\images\vssver2.scc" />

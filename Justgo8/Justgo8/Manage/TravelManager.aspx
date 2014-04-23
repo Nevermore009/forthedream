@@ -2,6 +2,16 @@
     CodeBehind="TravelManager.aspx.cs" Inherits="Justgo8.Manage.TravelManager" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <script type="text/javascript">
+        function HotChange(cb, id) {
+            $.get("HotHandler.ashx?detailid=" + id + "&ishot=" + (cb.checked ? 1 : 0), function (data) {
+                if (data != "success") {
+                    alert("修改失败");
+                    cb.checked = !cb.checked;                    
+                }
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SmallTitle" runat="server">
     旅游线路管理
@@ -25,16 +35,17 @@
                                 <br />
                                 <font style="font-weight: bold; font-size: 18px">
                                     <%#Eval("destination").ToString()==""?"":"目的地:"+Eval("destination").ToString()+"等" %></font><br />
+                                Hot<input type="checkbox"  <%# bool.Parse(Eval("hot").ToString())?"checked='checked'":"" %>
+                                    onclick="HotChange(this,<%#Eval("id") %>)" />
                                 <a href='AddDetail.aspx?travelid=<%# Eval("id") %>'>修改</a>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%# Eval("id")%>'
                                     OnClientClick="javascript:return confirm('确认是否删除？')">删除</asp:LinkButton></li>
                         </ItemTemplate>
                     </asp:Repeater>
                 </ul>
-                <div style="background-color: Green; clear:both;">
+                <div style="background-color: Green; clear: both;">
                 </div>
             </div>
-            </asp:Panel>
         </ItemTemplate>
     </asp:Repeater>
 </asp:Content>

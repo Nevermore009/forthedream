@@ -25,6 +25,19 @@ namespace DLL
         }
 
         /// <summary>
+        /// 获取某用户的订单
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public DataTable GetOrders(string username)
+        {
+            DataTable dt = new DataTable();
+            string sql = "select * from [tb_orders] where t1.[username]='" + username+"'";
+            dt = help.SeeResults(sql);
+            return dt;
+        }
+
+        /// <summary>
         /// 添加
         /// </summary>
         public int add(int detailid, string  username,float generalprice,float adultprice,float childprice,int adultnum,int childnum)

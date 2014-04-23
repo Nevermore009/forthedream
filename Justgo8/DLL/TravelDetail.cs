@@ -286,10 +286,10 @@ namespace DLL
             return res;
         }
 
-        public int ChangeState(int id, int state)
+        public int ChangeHotState(int id, bool hot)
         {
             int res = 0;
-            string sql = " update [tb_detail] set [state]=" + state + " where id=" + id;
+            string sql = " update [tb_detail] set [hot]=" + (hot ? "1" : "0") + " where id=" + id;
             res = help.GetNum(sql);
             return res;
         }

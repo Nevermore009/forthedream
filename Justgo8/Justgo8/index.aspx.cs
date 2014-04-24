@@ -20,6 +20,8 @@ namespace Justgo8
                 BindInland();
                 BindHotOutland();
                 BindOutland();
+                BindHotZyx();
+                BindZyx();
                 BindHotPeriphery();
                 BindPeriphery();
                 BindInlandshow();
@@ -28,6 +30,8 @@ namespace Justgo8
                 BindOutlandshow();
                 BindOutlandshow1();
                 BindOutlandshow2();
+                BindZyxshow1();
+                BindZyxshow2();
                 BindPeripheryshow();
                 BindPeripheryshow1();
                 BindPeripheryshow2();
@@ -119,6 +123,18 @@ namespace Justgo8
             RepeaterOutland.DataBind();
         }
 
+        protected void BindHotZyx()
+        {
+            repeaterhotzyx.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Zyx, DisplayHotAreaCount);
+            repeaterhotzyx.DataBind();
+        }
+
+        protected void BindZyx()
+        {
+            repeaterzyx.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Zyx, int.MaxValue);
+            repeaterzyx.DataBind();
+        }
+
         protected void BindHotPeriphery()
         {
             repeaterhotperiphery.DataSource = Bll.BArea.HotArea(Bll.BTravelType.Periphery, DisplayHotAreaCount);
@@ -161,6 +177,17 @@ namespace Justgo8
         {
             repeateroutlandshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Outland, 1, DisplayDetailCount);
             repeateroutlandshow2.DataBind();
+        }
+
+        protected void BindZyxshow1()
+        {
+            repeaterzyxshow1.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Zyx, 0, DisplayDetailCount);
+            repeaterzyxshow1.DataBind();
+        }
+        protected void BindZyxshow2()
+        {
+            repeaterzyxshow2.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Zyx, 1, DisplayDetailCount);
+            repeaterzyxshow2.DataBind();
         }
 
         protected void BindPeripheryshow()

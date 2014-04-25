@@ -86,6 +86,7 @@
     <Compile Include="BOrders.cs" />
     <Compile Include="BPatent .cs" />
     <Compile Include="BProtocol.cs" />
+    <Compile Include="BRule.cs" />
     <Compile Include="BTravelDetail.cs" />
     <Compile Include="BTravelPicture.cs" />
     <Compile Include="BTravelType.cs" />

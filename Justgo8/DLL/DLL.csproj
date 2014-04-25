@@ -83,6 +83,7 @@
     <Compile Include="Patent .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol.cs" />
+    <Compile Include="Rule.cs" />
     <Compile Include="TravelDetail.cs" />
     <Compile Include="TravelPicture.cs" />
     <Compile Include="TravelType.cs" />

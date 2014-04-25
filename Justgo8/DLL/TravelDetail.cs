@@ -221,11 +221,11 @@ namespace DLL
         /// <param name="journey">行程安排</param>
         /// <param name="contact">预订流程</param>
         /// <returns></returns>
-        public int add(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int traveltypeid, int journeydays, string transportation)
+        public int add(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int traveltypeid, int journeydays, string transportation, int adultruleid, int childruleid)
         {
             int res = 0;
-            string sql = string.Format(@"insert into [tb_detail] ([title],[description],[generalprice],[adultprice],[childprice],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid],[journeydays],[transportation])
-            values (@title, @description, @generalprice, @adultprice, @childprice, @startdate, @enddate, @departuretime, @features, @billinclude, @billbeside, @servicestandard, @presentation, @journey, @contact, @traveltypeid, @journeydays, @transportation) select @@identity");
+            string sql = string.Format(@"insert into [tb_detail] ([title],[description],[generalprice],[adultprice],[childprice],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid],[journeydays],[transportation],[adultruleid],[childruleid])
+            values (@title, @description, @generalprice, @adultprice, @childprice, @startdate, @enddate, @departuretime, @features, @billinclude, @billbeside, @servicestandard, @presentation, @journey, @contact, @traveltypeid, @journeydays, @transportation,@adultruleid,@childruleid) select @@identity");
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@title",title),
                 new SqlParameter("@description",description),
@@ -244,7 +244,9 @@ namespace DLL
                 new SqlParameter("@contact",contact),
                 new SqlParameter("@traveltypeid",traveltypeid),                 
                 new SqlParameter("@journeydays",journeydays),
-                new SqlParameter("@transportation",transportation)
+                new SqlParameter("@transportation",transportation),                
+                new SqlParameter("@adultruleid",adultruleid),
+                new SqlParameter("@childruleid",childruleid),
             };
             res = int.Parse(help.RunSqlReturn(sql, pas));
             return res;
@@ -258,10 +260,10 @@ namespace DLL
         /// <param name="sort">排序号</param>
         /// <param name="id">id</param>
         /// <returns></returns>
-        public int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int journeydays, string transportation, int id)
+        public int update(string title, string description, float generalprice, float adultprice, float childprice, string startdate, string enddate, string departuretime, string features, string billinclude, string billbeside, string servicestandard, string presentation, string journey, string contact, int journeydays, string transportation, int adultruleid, int childruleid, int id)
         {
             int res = 0;
-            string sql = " update [tb_detail] set [title]=@title,[description]=@description,[generalprice]=@generalprice,[adultprice]=@adultprice,[childprice]=@childprice,[startdate]=@startdate,[enddate]=@enddate,[departuretime]=@departuretime,[features]=@features,[billinclude]=@billinclude,[billbeside]=@billbeside,[servicestandard]=@servicestandard,[presentation]=@presentation,[journey]=@journey,[contact]=@contact,[journeydays]=@journeydays,[transportation]=@transportation where id=@id";
+            string sql = " update [tb_detail] set [title]=@title,[description]=@description,[generalprice]=@generalprice,[adultprice]=@adultprice,[childprice]=@childprice,[startdate]=@startdate,[enddate]=@enddate,[departuretime]=@departuretime,[features]=@features,[billinclude]=@billinclude,[billbeside]=@billbeside,[servicestandard]=@servicestandard,[presentation]=@presentation,[journey]=@journey,[contact]=@contact,[journeydays]=@journeydays,[transportation]=@transportation,[adultruleid]=@adultruleid,[childruleid]=@childruleid where id=@id";
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@title",title),
                 new SqlParameter("@description",description),
@@ -280,6 +282,8 @@ namespace DLL
                 new SqlParameter("@contact",contact),
                 new SqlParameter("@journeydays",journeydays),
                 new SqlParameter("@transportation",transportation),
+                new SqlParameter("@adultruleid",adultruleid),
+                new SqlParameter("@childruleid",childruleid),
                 new SqlParameter("@id",id)
             };
             res = help.GetNum(sql, pas);

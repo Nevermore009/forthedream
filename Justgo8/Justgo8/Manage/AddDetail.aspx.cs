@@ -19,6 +19,8 @@ namespace Justgo8.Manage
             {
                 BindTravelType();
                 BindJourneydays();
+                BindRule(0, dropadultrule);
+                BindRule(1, dropchildrule);
                 if (!String.IsNullOrEmpty(Request["travelid"]))
                 {
                     try
@@ -145,6 +147,24 @@ namespace Justgo8.Manage
             }
         }
 
+        protected void BindRule(int ruletype, DropDownList drop)
+        {
+            DataTable dt = new DataTable();
+            dt = Bll.BRule.RuleInfo(ruletype);
+            if (dt.Rows.Count > 0)
+            {
+                drop.DataSource = dt.DefaultView;
+                drop.DataTextField = "content";
+                drop.DataValueField = "id";
+                drop.DataBind();
+            }
+            else
+            {
+                drop.DataSource = null;
+                drop.DataBind();
+            }
+        }
+
         protected void RPlank_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName.Equals("del"))
@@ -211,6 +231,16 @@ namespace Justgo8.Manage
                     dropcity.Items.Clear();
                 }
             }
+        }
+
+        protected void btnrefreshadultrule_Click(object sender, EventArgs e)
+        {
+            BindRule(0, dropadultrule);
+        }
+
+        protected void btnrefreshchildrule_Click(object sender, EventArgs e)
+        {
+            BindRule(1, dropchildrule);
         }
 
         protected void btnadddestination_Click(object sender, EventArgs e)
@@ -333,7 +363,7 @@ namespace Justgo8.Manage
             {
                 if (String.IsNullOrEmpty(lbid.Text))
                 {
-                    int detailid = Bll.BTravelDetail.add(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue), int.Parse(dropjourneydays.SelectedValue), txttransportation.Text);
+                    int detailid = Bll.BTravelDetail.add(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue), int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue));
                     try
                     {
                         for (int i = 0; i < cityinfo.Rows.Count; i++)
@@ -363,7 +393,7 @@ namespace Justgo8.Manage
                 }
                 else
                 {
-                    if (Bll.BTravelDetail.update(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(lbid.Text)) > 0)
+                    if (Bll.BTravelDetail.update(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue), int.Parse(lbid.Text)) > 0)
                     {
                         MessageBox.ResponseScript(this.Page, "alert('修改成功!');window.location.href='TravelManager.aspx'");
                     }

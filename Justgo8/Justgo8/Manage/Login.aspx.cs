@@ -48,7 +48,7 @@ namespace SSD.Manage
                     {
                         Session["Personnels"] = txtUserName.Text.Trim();
                         FormsAuthentication.SetAuthCookie(txtUserName.Text.Trim(), false);//匿名访问
-                        Response.Redirect("/Manage/Pratent.aspx");
+                        Response.Redirect("/Manage/Welcome.aspx");
                     }
                     else
                     {

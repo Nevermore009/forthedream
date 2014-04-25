@@ -102,6 +102,39 @@
                 </tr>
                 <tr>
                     <td style="text-align: right">
+                        成人界定:
+                    </td>
+                    <td colspan="5" style="text-align: left">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:DropDownList runat="server" ID="dropadultrule" Width="80%">
+                                </asp:DropDownList>
+                                <asp:Button runat="server" ID="btnrefreshadultrule" Width="100px" Height="24px" OnClick="btnrefreshadultrule_Click"
+                                    Text="刷新" />
+                                <a href="RuleManager.aspx?ruletype=1" target="_blank">新增</a>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <a href="RuleManager.aspx?ruletype=0">新增</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">
+                        儿童界定:
+                    </td>
+                    <td colspan="5" style="text-align: left">
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                <asp:DropDownList runat="server" ID="dropchildrule" Width="80%">
+                                </asp:DropDownList>
+                                <asp:Button runat="server" ID="btnrefreshchildrule" Width="100px" Height="24px" OnClick="btnrefreshchildrule_Click"
+                                    Text="刷新" />
+                                <a href="RuleManager.aspx?ruletype=1" target="_blank">新增</a>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">
                         出发日期(用于搜索)
                     </td>
                     <td colspan="5" style="text-align: left">
@@ -168,7 +201,7 @@
                     <td style="text-align: right;">
                         图片
                     </td>
-                    <td colspan="5" style="margin-top: 10px;text-align: right; border: 1px solid gray">
+                    <td colspan="5" style="margin-top: 10px; text-align: right; border: 1px solid gray">
                         <div style="text-align: left; padding-left: 30px;">
                             <asp:FileUpload ID="fileuploadpic" runat="server" Height="20px" Width="100px" />
                             <asp:Button runat="server" ID="btnaddpic" Text="上传" Height="28px" Width="100px" OnClick="btnaddpic_Click" />

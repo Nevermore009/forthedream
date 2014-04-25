@@ -184,6 +184,19 @@ function TravelType(id) {
     $("#addSourcePanel").fadeIn().attr("sid", showDialog("addSourcePanel", true, true));
 }
 
+//
+$(function () {
+    $("#Rule").click(function () {
+        //$("#addFrame").attr("src", "AddRule.aspx?ruletype="+$("#addFrame").attr("text"));
+        $("#addSourcePanel").fadeIn().attr("sid", showDialog("addSourcePanel", true, true));
+    });
+});
+
+function Rule(id) {
+    $("#addFrame").attr("src", "AddRule.aspx?ruleid=" + id);
+    $("#addSourcePanel").fadeIn().attr("sid", showDialog("addSourcePanel", true, true));
+}
+
 
 //型材
 $(function () {

@@ -206,6 +206,7 @@
     <Content Include="Manage\AddCity.aspx" />
     <Content Include="Manage\AddDetail.aspx" />
     <Content Include="Manage\AddPipe.aspx" />
+    <Content Include="Manage\AddRule.aspx" />
     <Content Include="Manage\AddTravelType.aspx" />
     <Content Include="Manage\AreaManager.aspx" />
     <Content Include="Manage\CheckCodeImg.aspx" />
@@ -702,6 +703,7 @@
     <Content Include="Manage\images\user-info.gif" />
     <Content Include="Manage\images\usercontrol.gif" />
     <Content Include="Manage\images\vie.gif" />
+    <Content Include="Manage\images\welcome.jpg" />
     <Content Include="Manage\images\wu.jpg" />
     <Content Include="Manage\images\X.gif" />
     <Content Include="Manage\images\yc.gif" />
@@ -712,8 +714,10 @@
     <Content Include="Manage\js\jquery\jquery.js" />
     <Content Include="Manage\Login.aspx" />
     <Content Include="Manage\Pratent.aspx" />
+    <Content Include="Manage\RuleManager.aspx" />
     <Content Include="Manage\TravelManager.aspx" />
     <Content Include="Manage\TravelTypeManager.aspx" />
+    <Content Include="Manage\Welcome.aspx" />
     <Content Include="My97DatePicker.htm" />
     <Content Include="outland.aspx" />
     <Content Include="periphery.aspx" />
@@ -804,6 +808,13 @@
     <Compile Include="Manage\AddPipe.aspx.designer.cs">
       <DependentUpon>AddPipe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\AddRule.aspx.cs">
+      <DependentUpon>AddRule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\AddRule.aspx.designer.cs">
+      <DependentUpon>AddRule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\AddTravelType.aspx.cs">
       <DependentUpon>AddTravelType.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -856,6 +867,13 @@
     <Compile Include="Manage\Pratent.aspx.designer.cs">
       <DependentUpon>Pratent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\RuleManager.aspx.cs">
+      <DependentUpon>RuleManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\RuleManager.aspx.designer.cs">
+      <DependentUpon>RuleManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\TravelManager.aspx.cs">
       <DependentUpon>TravelManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -869,6 +887,13 @@
     </Compile>
     <Compile Include="Manage\TravelTypeManager.aspx.designer.cs">
       <DependentUpon>TravelTypeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="outland.aspx.cs">
       <DependentUpon>outland.aspx</DependentUpon>
@@ -952,6 +977,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="2009\" />
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="ErrorLog\" />

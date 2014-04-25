@@ -67,6 +67,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <asp:ScriptManager runat="server" EnableScriptGlobalization="true">
+    </asp:ScriptManager>
     <div>
         <table width="100%" height="64" border="0" cellpadding="0" cellspacing="0" class="admin_topbg">
             <tr>
@@ -127,6 +129,8 @@
                             </tr>
                         </table>
                         <ul class="MM">
+                            <li><a href="/Manage/RuleManager.aspx?ruletype=0">成人规则管理</a></li>
+                            <li><a href="/Manage/RuleManager.aspx?ruletype=1">儿童规则管理</a></li>
                             <li><a href="/Manage/TravelManager.aspx">线路管理</a></li>
                         </ul>
                     </div>

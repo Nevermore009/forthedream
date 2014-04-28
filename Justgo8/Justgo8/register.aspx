@@ -121,7 +121,7 @@
                         <td style="text-align: left; font-size: 10px; line-height: 10px; padding-left: 0px;">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
                                 ControlToValidate="txtphone" ForeColor="Red" ValidationGroup="sss"></asp:RequiredFieldValidator>
-                            请正确填写,以便预订后能及时联系您
+                            正确填写以便预订后及时联系您
                         </td>
                     </tr>
                     <tr>

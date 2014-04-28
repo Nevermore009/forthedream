@@ -111,7 +111,7 @@ namespace Justgo8
                 }
                 else
                 {
-                    if (Bll.BOrders.add(int.Parse(Request["id"]), Session["username"].ToString(), float.Parse(lbgeneralprice.Text == "" ? "0" : lbgeneralprice.Text), float.Parse(lbadultprice.Text == "" ? "0" : lbadultprice.Text), float.Parse(lbchildprice.Text == "" ? "0" : lbchildprice.Text), int.Parse(txtadultnum.Text), int.Parse(txtchildnum.Text)) > 0)
+                    if (Bll.BOrders.add(int.Parse(Request["id"]), Session["username"].ToString(), float.Parse(lbgeneralprice.Text == "" ? "0" : lbgeneralprice.Text), float.Parse(lbadultprice.Text == "" ? "0" : lbadultprice.Text), float.Parse(lbchildprice.Text == "" ? "0" : lbchildprice.Text), int.Parse(txtadultnum.Text), int.Parse(txtchildnum.Text), departuretime) > 0)
                     {
                         try
                         {
@@ -126,7 +126,7 @@ namespace Justgo8
                             message.To.Add(new MailAddress("896412338@qq.com", "小雅"));
                             message.To.Add(new MailAddress("2773150840@qq.com", "小玲"));
                             message.BodyEncoding = System.Text.Encoding.UTF8;
-                            message.Body = string.Format("下单人:{0}<br />联系电话:{1}<br />线路名称:{2}<br />成人人数:{3},儿童人数:{4}<br />详情:<a href='http://www.justgo8.com/detail.aspx?id={5}'>http://www.justgo8.com/detail.aspx?id={5}</a>", Session["username"].ToString(), Session["phone"].ToString(), lbtitle.Text, txtadultnum.Text, txtchildnum.Text, Request["id"]);
+                            message.Body = string.Format("下单人:{0}<br />联系电话:{1}<br />线路名称:{2}<br />日期:{5},成人人数:{3},儿童人数:{4}<br />详情:<a href='http://www.justgo8.com/detail.aspx?id={5}'>http://www.justgo8.com/detail.aspx?id={5}</a>", Session["username"].ToString(), Session["phone"].ToString(), lbtitle.Text, txtadultnum.Text, txtchildnum.Text, Request["id"], departuretime.ToString("yyyy-MM-dd"));
                             message.IsBodyHtml = true;
                             message.Subject = "有人下订单了";
                             client.Send(message);
@@ -135,8 +135,9 @@ namespace Justgo8
                         {
                             ErrorLog.AddErrorLog("邮件发送失败:" + ex.ToString());
                         }
-
-                        MessageBox.ResponseScript(this.Page, "alert('预订成功');window.reload();");
+                        string msg = string.Format("alert('您已成功预订{3}日【{0}】,成人数:{1},儿童数:{2},您的联系电话是{4},稍后将会有工作人员与您联系,请保持电话畅通!');window.reload();", lbtitle.Text, txtadultnum.Text, txtchildnum.Text, departuretime.ToString("yyyy-MM-dd"), Session["phone"].ToString());
+                       // ErrorLog.AddErrorLog(msg);
+                        MessageBox.ResponseScript(this.Page, msg);
                     }
                     else
                     {

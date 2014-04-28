@@ -60,7 +60,7 @@
             <div id="topcenter">
                 <div class="searchbar">
                     <input id="keyword" class="keyword" type="text" />
-                    <input class="btn" style="width: 100px" type="button" onclick="search();" value="搜索" />
+                    <input class="btn" type="button" onclick="search();" value="搜索" />
                 </div>
                 <div style="padding-top: 8px;" class="searchlink">
                     <span style="color: #007434;">热门搜索:</span> <a href="javascript:search('凤凰');">凤凰</a>

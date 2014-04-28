@@ -199,6 +199,7 @@
     <Content Include="js\myfocus-2.0.4.min.js" />
     <Content Include="js\saved_resource.js" />
     <Content Include="js\scrollshow.js" />
+    <Content Include="js\tooltip.js" />
     <Content Include="js\WdatePicker.js" />
     <Content Include="js\zh-cn.js" />
     <Content Include="js\首页轮播.js" />

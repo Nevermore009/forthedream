@@ -40,10 +40,10 @@ namespace DLL
         /// <summary>
         /// 添加
         /// </summary>
-        public int add(int detailid, string  username,float generalprice,float adultprice,float childprice,int adultnum,int childnum)
+        public int add(int detailid, string username, float generalprice, float adultprice, float childprice, int adultnum, int childnum, DateTime departuretime)
         {
             int res = 0;
-            string sql = string.Format(@"insert into [tb_orders] ([detailid],[username],[generalprice],[adultprice],[childprice],[adultnum],[childnum])  values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}') ", detailid, username, generalprice, adultprice, childprice, adultnum, childnum);
+            string sql = string.Format(@"insert into [tb_orders] ([detailid],[username],[generalprice],[adultprice],[childprice],[adultnum],[childnum],[departuretime])  values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}') ", detailid, username, generalprice, adultprice, childprice, adultnum, childnum, departuretime.ToString("yyyy-MM-dd"));
             res = help.GetNum(sql);
             return res;
         }

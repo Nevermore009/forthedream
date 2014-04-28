@@ -31,9 +31,9 @@ namespace Bll
         /// <summary>
         /// 添加
         /// </summary>
-        public static int add(int detailid, string username, float generalprice, float adultprice, float childprice, int adultnum, int childnum)
+        public static int add(int detailid, string username, float generalprice, float adultprice, float childprice, int adultnum, int childnum, DateTime departuretime)
         {
-            return new DLL.Orders().add(detailid, username, generalprice, adultprice, childprice, adultnum, childnum);
+            return new DLL.Orders().add(detailid, username, generalprice, adultprice, childprice, adultnum, childnum, departuretime);
         }
 
         /// <summary>

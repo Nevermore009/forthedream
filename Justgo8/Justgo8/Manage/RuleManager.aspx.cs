@@ -30,7 +30,7 @@ namespace Justgo8.Manage
         public void BindRule(int ruletype)
         {
             DataTable dt = new DataTable();
-            dt = Bll.BRule.RuleInfo(ruletype);
+            dt = Bll.BRule.RulesOfType(ruletype);
             if (dt.Rows.Count > 0)
             {
                 RPlank.DataSource = dt;

@@ -111,10 +111,9 @@
                                 </asp:DropDownList>
                                 <asp:Button runat="server" ID="btnrefreshadultrule" Width="100px" Height="24px" OnClick="btnrefreshadultrule_Click"
                                     Text="刷新" />
-                                <a href="RuleManager.aspx?ruletype=1" target="_blank">新增</a>
+                                <a href="RuleManager.aspx?ruletype=0" target="_blank">新增</a>
                             </ContentTemplate>
                         </asp:UpdatePanel>
-                        <a href="RuleManager.aspx?ruletype=0">新增</a>
                     </td>
                 </tr>
                 <tr>

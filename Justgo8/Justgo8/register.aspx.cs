@@ -17,7 +17,7 @@ namespace Justgo8
             if (!IsPostBack)
             {
                 txtprotocol.Text = getprotocol();
-                //                txtusername.Text = "游客" + DateTime.Now.ToString("mmssfff") ;
+                //txtusername.Text = "游客" + DateTime.Now.ToString("mmssfff") ;
                 txtusername.Focus();
             }
         }

@@ -56,6 +56,11 @@
             text-align: right;
         }
     </style>
+    <script type="text/javascript">
+        function protocolagree(cb) {
+            $("#<%=btnregister.ClientID %>").attr("disabled", cb.checked ? "" : "disable");
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="main">
@@ -75,8 +80,8 @@
                             <asp:TextBox runat="server" ID="txtusername" CssClass="textbox"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ID="validate1" runat="server" ErrorMessage="*" ControlToValidate="txtusername" ForeColor="Red"
-                                ValidationGroup="sss"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="validate1" runat="server" ErrorMessage="*" ControlToValidate="txtusername"
+                                ForeColor="Red" ValidationGroup="sss"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -87,8 +92,8 @@
                             <asp:TextBox runat="server" ID="txtpassword" CssClass="textbox" TextMode="Password"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ID="validate2" runat="server" ErrorMessage="*" ControlToValidate="txtpassword" ForeColor="Red"
-                                ValidationGroup="sss"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="validate2" runat="server" ErrorMessage="*" ControlToValidate="txtpassword"
+                                ForeColor="Red" ValidationGroup="sss"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -96,13 +101,14 @@
                             确认密码:
                         </td>
                         <td>
-                            <asp:TextBox runat="server" ID="txtensure" CssClass="textbox"  TextMode="Password"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtensure" CssClass="textbox" TextMode="Password"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:RequiredFieldValidator ID="validate3" runat="server" ErrorMessage="*" ControlToValidate="txtensure" ForeColor="Red"
-                                ValidationGroup="sss"></asp:RequiredFieldValidator>
-                            <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="密码不一致" Operator="Equal"
-                                ControlToCompare="txtpassword" ControlToValidate="txtensure" ValidationGroup="sss" ForeColor="Red"></asp:CompareValidator>
+                            <asp:RequiredFieldValidator ID="validate3" runat="server" ErrorMessage="*" ControlToValidate="txtensure"
+                                ForeColor="Red" ValidationGroup="sss"></asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="密码不一致"
+                                Operator="Equal" ControlToCompare="txtpassword" ControlToValidate="txtensure"
+                                ValidationGroup="sss" ForeColor="Red"></asp:CompareValidator>
                         </td>
                     </tr>
                     <tr>
@@ -112,7 +118,10 @@
                         <td>
                             <asp:TextBox runat="server" ID="txtphone" CssClass="textbox"></asp:TextBox>
                         </td>
-                        <td>
+                        <td style="text-align: left; font-size: 10px; line-height: 10px; padding-left: 0px;">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
+                                ControlToValidate="txtphone" ForeColor="Red" ValidationGroup="sss"></asp:RequiredFieldValidator>
+                            请正确填写,以便预订后能及时联系您
                         </td>
                     </tr>
                     <tr>
@@ -134,8 +143,9 @@
                         </td>
                         <td>
                             <img src="Manage/CheckCodeImg.aspx" onclick="this.src='Manage/CheckCodeImg.aspx?id='+Math.random()"
-                                alt="验证码" style="border: 1px solid #ccc;width:60px;height:25px;"  /><asp:RequiredFieldValidator ID="validate4"
-                                    runat="server" ErrorMessage="*" ControlToValidate="txtcode" ValidationGroup="sss" ForeColor="Red"></asp:RequiredFieldValidator>
+                                alt="验证码" style="border: 1px solid #ccc; width: 60px; height: 25px;" /><asp:RequiredFieldValidator
+                                    ID="validate4" runat="server" ErrorMessage="*" ControlToValidate="txtcode" ValidationGroup="sss"
+                                    ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -152,9 +162,10 @@
                 </table>
             </div>
             <div id="rightcontent">
-                <font style="font-size: 20px; font-weight: bold">服务协议</font>
+                <font style="font-size: 20px; font-weight: bold">服务协议</font><br />
                 <asp:TextBox runat="server" ID="txtprotocol" TextMode="MultiLine" ReadOnly="true"
-                    CssClass="protocoltext" Rows="20" Text=""></asp:TextBox>
+                    CssClass="protocoltext" Rows="20" Text=""></asp:TextBox><br />
+                <input type="checkbox" checked="checked" onclick="protocolagree(this)" />我已阅读并接受《湖南中联国际旅行社服务协议》
             </div>
         </div>
     </div>

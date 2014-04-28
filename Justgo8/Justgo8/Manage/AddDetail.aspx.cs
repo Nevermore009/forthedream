@@ -47,6 +47,8 @@ namespace Justgo8.Manage
                             fckcontact.Value = dt.Rows[0]["contact"].ToString();
                             dropjourneydays.SelectedValue = dt.Rows[0]["journeydays"].ToString();
                             droptraveltype.SelectedValue = dt.Rows[0]["traveltypeid"].ToString();
+                            dropadultrule.SelectedValue = dt.Rows[0]["adultruleid"].ToString();
+                            dropchildrule.SelectedValue = dt.Rows[0]["childruleid"].ToString();
                         }
                         else
                         {
@@ -150,9 +152,16 @@ namespace Justgo8.Manage
         protected void BindRule(int ruletype, DropDownList drop)
         {
             DataTable dt = new DataTable();
-            dt = Bll.BRule.RuleInfo(ruletype);
+            dt = Bll.BRule.RulesOfType(ruletype);
             if (dt.Rows.Count > 0)
             {
+                foreach (DataRow r in dt.Rows)
+                {
+                    if (r["content"].ToString().Length > 50)
+                    {
+                        r["content"] = r["content"].ToString().Substring(0, 50)+"...";
+                    }
+                }
                 drop.DataSource = dt.DefaultView;
                 drop.DataTextField = "content";
                 drop.DataValueField = "id";
@@ -361,6 +370,16 @@ namespace Justgo8.Manage
         {
             try
             {
+                if (dropadultrule.SelectedIndex < 0)
+                {
+                    MessageBox.Show(this.Page, "请选择成人界定规则！");
+                    return;
+                }
+                if (dropchildrule.SelectedIndex < 0)
+                {
+                    MessageBox.Show(this.Page, "请选择儿童界定规则！");
+                    return;
+                }
                 if (String.IsNullOrEmpty(lbid.Text))
                 {
                     int detailid = Bll.BTravelDetail.add(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue), int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue));

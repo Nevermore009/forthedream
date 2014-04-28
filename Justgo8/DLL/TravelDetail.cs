@@ -126,7 +126,7 @@ namespace DLL
             int end = (pageIndex + 1) * pageSize;
             if (end == 0) end = int.MaxValue;
             sql.Append(") as t2 where t2.rowid between " + start + " and " + end);
-            ErrorLog.AddErrorLog(sql.ToString());
+            //ErrorLog.AddErrorLog(sql.ToString());
             DataTable dt = help.SeeResults(sql.ToString());
             return dt;
         }
@@ -199,7 +199,7 @@ namespace DLL
                 }
                 sql.Append(" and detailid=t1.id)");
             }
-            ErrorLog.AddErrorLog(sql.ToString());
+            //ErrorLog.AddErrorLog(sql.ToString());
             return int.Parse(help.RunSqlReturn(sql.ToString()));
         }
 

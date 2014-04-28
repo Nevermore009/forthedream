@@ -12,9 +12,18 @@ namespace Bll
         /// 查看
         /// </summary>
         /// <returns></returns>
-        public static DataTable RuleInfo(int ruletype)
+        public static DataTable RuleInfo(int id)
         {
-            return new DLL.Rule().RuleInfo(ruletype);
+            return new DLL.Rule().RuleInfo(id);
+        }
+
+        /// <summary>
+        /// 查看
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable RulesOfType(int ruletype)
+        {
+            return new DLL.Rule().RulesOfType(ruletype);
         }
 
         /// <summary>

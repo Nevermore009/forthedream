@@ -14,7 +14,18 @@ namespace DLL
         /// 查看
         /// </summary>
         /// <returns></returns>
-        public DataTable RuleInfo(int ruletype)
+        public DataTable RuleInfo(int id)
+        {
+            DataTable dt = new DataTable();
+            string sql = " select * from [tb_rule] where id=" + id;
+            return help.SeeResults(sql);
+        }
+
+        /// <summary>
+        /// 查看
+        /// </summary>
+        /// <returns></returns>
+        public DataTable RulesOfType(int ruletype)
         {
             DataTable dt = new DataTable();
             string sql = " select * from [tb_rule] where ruletype=" + ruletype;

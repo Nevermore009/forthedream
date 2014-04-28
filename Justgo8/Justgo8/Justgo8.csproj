@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2009\index.aspx" />
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
     <Content Include="bin\Justgo8.dll" />
     <Content Include="contactus.aspx" />
@@ -738,6 +739,13 @@
     <Content Include="zyx.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2009\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2009\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contactus.aspx.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -977,7 +985,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="2009\" />
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="ErrorLog\" />

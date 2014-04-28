@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Common;
 
 namespace Justgo8
 {
@@ -35,6 +36,7 @@ namespace Justgo8
                 BindPeripheryshow();
                 BindPeripheryshow1();
                 BindPeripheryshow2();
+                ErrorLog.AddErrorLog("访问记录:" + Request.UserHostAddress);
             }
         }
 

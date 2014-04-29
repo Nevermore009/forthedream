@@ -82,6 +82,7 @@
     <Compile Include="BAdmin.cs" />
     <Compile Include="BArea.cs" />
     <Compile Include="BCity.cs" />
+    <Compile Include="BComments.cs" />
     <Compile Include="BDestination.cs" />
     <Compile Include="BOrders.cs" />
     <Compile Include="BPatent .cs" />

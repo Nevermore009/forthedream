@@ -81,6 +81,7 @@
     <Compile Include="CryptionData.cs" />
     <Compile Include="ErrorLog.cs" />
     <Compile Include="FileUpLoad.cs" />
+    <Compile Include="HttpWebResponseUtility.cs" />
     <Compile Include="ImageEdit.cs" />
     <Compile Include="MessageBox.cs" />
     <Compile Include="NewSplitPage.cs" />

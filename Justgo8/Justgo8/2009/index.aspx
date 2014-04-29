@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>
-        <script type="text/javascript">
+        <%--<script type="text/javascript">
             var redirect_uri = "http://www.justgo8.com/2009/index.aspx";
             var access_token;
             var refresh_token;
@@ -204,7 +204,7 @@
                 }, comment_time);
             }
             $().ready(Init);
-        </script>
+        </script>--%>
     </title>
 </head>
 <body>

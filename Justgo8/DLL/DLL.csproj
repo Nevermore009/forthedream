@@ -78,12 +78,14 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="City.cs" />
+    <Compile Include="Comments.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Patent .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol.cs" />
     <Compile Include="Rule.cs" />
+    <Compile Include="Token.cs" />
     <Compile Include="TravelDetail.cs" />
     <Compile Include="TravelPicture.cs" />
     <Compile Include="TravelType.cs" />

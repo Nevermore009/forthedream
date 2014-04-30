@@ -80,6 +80,7 @@
     <Compile Include="City.cs" />
     <Compile Include="Comments.cs" />
     <Compile Include="Destination.cs" />
+    <Compile Include="Error.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Patent .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

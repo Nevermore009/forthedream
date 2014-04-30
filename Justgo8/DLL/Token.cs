@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DLL
 {
-   public class Token
+    public class Token
     {
         MsSqlHelper help = new MsSqlHelper();
 
@@ -16,10 +16,10 @@ namespace DLL
         /// 查看
         /// </summary>
         /// <returns></returns>
-        public DataTable Comments()
+        public DataTable GetTokens()
         {
             DataTable dt = new DataTable();
-            string sql = " select * from [tb_token] ";
+            string sql = " select * from [tb_token] where state=0 order by lasttokentime desc";
             return help.SeeResults(sql);
         }
 
@@ -27,29 +27,30 @@ namespace DLL
         /// 查看
         /// </summary>
         /// <returns></returns>
-        public DataTable CommentInfo(int id)
+        public DataTable TokenInfo(int id)
         {
             DataTable dt = new DataTable();
-            string sql = " select * from [tb_token] where id=" + id;
+            string sql = " select * from [tb_token] where state=0 and id=" + id;
             return help.SeeResults(sql);
         }
 
         /// <summary>
         /// 添加
         /// </summary>
-        public int add(string code,string client_id,string access_token,int expires_in,string refresh_token,string token_type)
+        public int add(string code, string client_id, string access_token, int expires_in, string refresh_token, string token_type, DateTime lastTokenTime)
         {
             int res = 0;
-            string sql =" insert into [tb_token] ([code],[client_id],[access_token],[expires_in],[refresh_token],[token_type]) values (@code,@client_id,@access_token,@expires_in,@refresh_token,@token_type)";
+            string sql = " insert into [tb_token] ([code],[client_id],[access_token],[expires_in],[refresh_token],[token_type],[lastTokenTime]) values (@code,@client_id,@access_token,@expires_in,@refresh_token,@token_type,@lastTokenTime)";
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@code",code),
                 new SqlParameter("@client_id",client_id),
                 new SqlParameter("@access_token",access_token),
                 new SqlParameter("@expires_in",expires_in),
                 new SqlParameter("@refresh_token",refresh_token),
-                new SqlParameter("@token_type",token_type)
+                new SqlParameter("@token_type",token_type),
+                new SqlParameter("@lastTokenTime",lastTokenTime)
             };
-            res = help.GetNum(sql);
+            res = help.GetNum(sql, pas);
             return res;
         }
 
@@ -59,7 +60,7 @@ namespace DLL
         public int update(string content, int id)
         {
             int res = 0;
-            string sql = "  update [tb_token] set [content]='" + content + "' where id=" + id + " ";
+            string sql = "  update [tb_token] set [content]='" + content + "' where id=" + id ;
             res = help.GetNum(sql);
             return res;
         }
@@ -72,7 +73,7 @@ namespace DLL
         public int del(int id)
         {
             int res = 0;
-            string sql = " delete from [tb_token] where id=" + id + " ";
+            string sql = " update [tb_token] set state=-1 where id=" + id + " ";
             res = help.GetNum(sql);
             return res;
         }

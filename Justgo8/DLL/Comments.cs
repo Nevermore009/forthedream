@@ -17,7 +17,6 @@ namespace DLL
         /// <returns></returns>
         public DataTable GetComments()
         {
-            DataTable dt = new DataTable();
             string sql = " select * from [tb_comments] ";
             return help.SeeResults(sql);
         }
@@ -28,8 +27,18 @@ namespace DLL
         /// <returns></returns>
         public DataTable CommentInfo(int id)
         {
-            DataTable dt = new DataTable();
             string sql = " select * from [tb_comments] where id=" + id;
+            return help.SeeResults(sql);
+        }
+
+        /// <summary>
+        /// 获取随机行
+        /// </summary>
+        /// <param name="rowcount"></param>
+        /// <returns></returns>
+        public DataTable GetRandomComment(int rowcount = 1)
+        {
+            string sql = " select top " + rowcount + " * from [tb_comments] order by newid()";
             return help.SeeResults(sql);
         }
 

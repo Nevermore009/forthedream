@@ -19,13 +19,17 @@ namespace Common
         /// <param name="msg"></param>
         public static void AddErrorLog(string msg)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(DateTime.Now.ToString() + "-" + HttpContext.Current.Session["Crm_PersonnelName"]);
-            sb.AppendLine(msg);
-            sb.AppendLine();
-            string fileName = GetFileName();
-            if (File.Exists(fileName)) File.SetAttributes(fileName, FileAttributes.Normal);
-            File.AppendAllText(GetFileName(), sb.ToString(), Encoding.UTF8);
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine(DateTime.Now.ToString() + "-" + HttpContext.Current.Session["Crm_PersonnelName"]);
+                sb.AppendLine(msg);
+                sb.AppendLine();
+                string fileName = GetFileName();
+                if (File.Exists(fileName)) File.SetAttributes(fileName, FileAttributes.Normal);
+                File.AppendAllText(GetFileName(), sb.ToString(), Encoding.UTF8);
+            }
+            catch { }
         }
         /// <summary>
         /// 添加错误日志
@@ -33,15 +37,19 @@ namespace Common
         /// <param name="ex">异常对象</param>
         public static void AddErrorLog(Exception ex)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(DateTime.Now.ToString() + "-" + HttpContext.Current.Session["Crm_PersonnelName"]);
-            sb.AppendLine(ex.Message);
-            sb.AppendLine(ex.StackTrace);
-            sb.AppendLine();
-            string fileName = GetFileName();
-            if (File.Exists(fileName))
-                File.SetAttributes(fileName, FileAttributes.Normal);
-            File.AppendAllText(GetFileName(), sb.ToString(), Encoding.UTF8);
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine(DateTime.Now.ToString() + "-" + HttpContext.Current.Session["Crm_PersonnelName"]);
+                sb.AppendLine(ex.Message);
+                sb.AppendLine(ex.StackTrace);
+                sb.AppendLine();
+                string fileName = GetFileName();
+                if (File.Exists(fileName))
+                    File.SetAttributes(fileName, FileAttributes.Normal);
+                File.AppendAllText(GetFileName(), sb.ToString(), Encoding.UTF8);
+            }
+            catch { }
         }
         private static string GetFileName()
         {

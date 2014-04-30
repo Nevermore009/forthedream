@@ -27,6 +27,16 @@ namespace Bll
         }
 
         /// <summary>
+        /// 获取随机行
+        /// </summary>
+        /// <param name="rowcount"></param>
+        /// <returns></returns>
+        public static DataTable GetRandomComment(int rowcount = 1)
+        {
+            return new DLL.Comments().GetRandomComment(rowcount);
+        }
+
+        /// <summary>
         /// 添加
         /// </summary>
         public static int add(string content)

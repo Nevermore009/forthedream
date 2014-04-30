@@ -283,7 +283,7 @@
 .show .info .choose .person .quan li{background: url(../images/linelabel.gif) no-repeat -78px -410px;float: left;margin-right: 5px;padding-left: 22px;}
 .show .info .choose .person .quan li.diyong{background-position: -78px -389px;}
 .show .info .choose .person .quan li span{background: url(../images/linelabel.gif) no-repeat right -431px;color: #FD7F19;display: inline-block;height: 20px;padding-right: 7px;}
-.show .info .choose .person .help{background: url(../images/linebg.gif) no-repeat right -691px;display: inline-block;height: 28px;padding: 0 17px;}
+.show .info .choose .person .help{ width: 14px; height: 20px; background: url(../images/linebg.gif) no-repeat right -691px;display:inline-block}
 .show .info .choose .person .tips{position: relative;width: 100%;z-index: 100;}
 .show .info .choose .person .tipsCon{background: #FFF8D9;border: 1px solid #FEBE8F;border-radius: 3px;box-shadow: 3px 3px 5px #CCC;display: none;height: auto;left: 0;padding: 6px 8px;position: absolute;top: 32px;width: 320px;z-index: 200;}
 .show .info .choose .person .tipsInner{height: auto;position: relative;text-align: left;width: 100%;}

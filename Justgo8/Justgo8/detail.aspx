@@ -183,18 +183,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="tips" style="z-index: 100">
-                                                    <i class="help">成人</i>
-                                                    <div class="tipsCon">
-                                                        <div class="tipsInner">
-                                                            <div class="tipsText">
-                                                                <p>
-                                                                    成人说明：</p>
-                                                            </div>
-                                                            <small>&nbsp;</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                成人<span class="help" title="<%=adultrule %>"></span>
                                             </td>
                                             <td id="c1_price" class="cPrice">
                                                 ¥<asp:Label runat="server" ID="lbadultprice" Text='<%#Eval("adultprice")%>'>
@@ -208,18 +197,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="tips" style="z-index: 99">
-                                                    <i class="help">儿童</i>
-                                                    <div class="tipsCon">
-                                                        <div class="tipsInner">
-                                                            <div class="tipsText">
-                                                                <p>
-                                                                    儿童说明：</p>
-                                                            </div>
-                                                            <small>&nbsp;</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                儿童<span class="help" title="<%=childrule %>"></span>
                                             </td>
                                             <td id="c2_price" class="cPrice">
                                                 ¥<asp:Label runat="server" ID="lbchildprice" Text='<%#Eval("childprice") %>'></asp:Label>

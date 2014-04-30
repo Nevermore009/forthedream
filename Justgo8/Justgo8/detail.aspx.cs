@@ -13,6 +13,8 @@ namespace Justgo8
 {
     public partial class detail : System.Web.UI.Page
     {
+        public string adultrule = "";
+        public string childrule = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(Request["id"]))
@@ -47,6 +49,10 @@ namespace Justgo8
                     divservicestandard.InnerHtml = dt.Rows[0]["servicestandard"].ToString();
                     divpresentation.InnerHtml = dt.Rows[0]["presentation"].ToString();
                     divcontact.InnerHtml = dt.Rows[0]["contact"].ToString();
+                    int adultruleid = int.Parse(dt.Rows[0]["adultruleid"].ToString());
+                    int childruleid = int.Parse(dt.Rows[0]["childruleid"].ToString());
+                    adultrule = GetRule(adultruleid);
+                    childrule = GetRule(childruleid);
                 }
                 else
                 {
@@ -79,6 +85,24 @@ namespace Justgo8
             catch (Exception ex)
             {
                 ErrorLog.AddErrorLog("图片获取失败:" + ex.ToString());
+            }
+        }
+
+        public string GetRule(int id)
+        {
+            try
+            {
+                DataTable dt = Bll.BRule.RuleInfo(id);
+                if (dt.Rows.Count > 0)
+                {
+                    return dt.Rows[0]["content"].ToString();
+                }
+                else
+                    return "";
+            }
+            catch
+            {
+                return "";
             }
         }
 

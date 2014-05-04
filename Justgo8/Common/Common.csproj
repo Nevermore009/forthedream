@@ -89,6 +89,7 @@
     <Compile Include="RandomCode.cs" />
     <Compile Include="RemoteFileManage.cs" />
     <Compile Include="SplitPage.cs" />
+    <Compile Include="SystemTimer.cs" />
     <Compile Include="Unity.cs" />
     <Compile Include="YoukuVideo.cs" />
   </ItemGroup>

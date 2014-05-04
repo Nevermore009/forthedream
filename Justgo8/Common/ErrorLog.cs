@@ -22,14 +22,15 @@ namespace Common
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine(DateTime.Now.ToString() + "-" + HttpContext.Current.Session["Crm_PersonnelName"]);
+                sb.AppendLine(DateTime.Now.ToString());
                 sb.AppendLine(msg);
                 sb.AppendLine();
                 string fileName = GetFileName();
                 if (File.Exists(fileName)) File.SetAttributes(fileName, FileAttributes.Normal);
                 File.AppendAllText(GetFileName(), sb.ToString(), Encoding.UTF8);
             }
-            catch { }
+            catch (Exception)
+            { }
         }
         /// <summary>
         /// 添加错误日志
@@ -40,7 +41,7 @@ namespace Common
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine(DateTime.Now.ToString() + "-" + HttpContext.Current.Session["Crm_PersonnelName"]);
+                sb.AppendLine(DateTime.Now.ToString());
                 sb.AppendLine(ex.Message);
                 sb.AppendLine(ex.StackTrace);
                 sb.AppendLine();
@@ -53,7 +54,7 @@ namespace Common
         }
         private static string GetFileName()
         {
-            return HttpContext.Current.Server.MapPath("/ErrorLog/") + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
+            return HttpRuntime.AppDomainAppPath + "\\ErrorLog\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
         }
     }
 }

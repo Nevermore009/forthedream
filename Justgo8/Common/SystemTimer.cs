@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Timers;
+using System.Threading;
 
 namespace Common
 {
@@ -24,20 +24,17 @@ namespace Common
             timer.Enabled = true;
         }
 
-        /// <summary> 
-        /// 在指定时间周期重复执行指定的表达式 
-        /// </summary> 
-        /// <param name="interval">事件之间经过的时间（以毫秒为单位）</param> 
-        /// <param name="action">要执行的表达式</param> 
-        public static Timer SetInterval(double interval, Action<ElapsedEventArgs, object> action, object state)
+        /// <summary>
+        /// 在指定时间周期重复执行指定的表达式
+        /// </summary>
+        /// <param name="action">要执行的动作的回调函数</param>
+        /// <param name="state">数据</param>
+        /// <param name="dueTime">在开始之前的延迟时间</param>
+        /// <param name="period">间隔时间</param>
+        /// <returns></returns>
+        public static Timer SetInterval(TimerCallback action, object state, int dueTime, int period)
         {
-            System.Timers.Timer timer = new System.Timers.Timer(interval);
-            timer.Elapsed += delegate(object sender, System.Timers.ElapsedEventArgs e)
-             {
-                 action(e,state);
-             };
-            timer.Enabled = true;
-            return timer;
+            return new System.Threading.Timer(action,state,dueTime,period);    
         }
     }
 }

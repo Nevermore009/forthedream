@@ -129,8 +129,8 @@
                             </tr>
                         </table>
                         <ul class="MM">
-                            <li><a href="/Manage/RuleManager.aspx?ruletype=0">成人规则管理</a></li>
-                            <li><a href="/Manage/RuleManager.aspx?ruletype=1">儿童规则管理</a></li>
+                            <li><a href="/Manage/RuleManager.aspx?ruletype=0">成人规则</a></li>
+                            <li><a href="/Manage/RuleManager.aspx?ruletype=1">儿童规则</a></li>
                             <li><a href="/Manage/TravelManager.aspx">线路管理</a></li>
                         </ul>
                     </div>

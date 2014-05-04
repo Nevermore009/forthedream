@@ -19,7 +19,7 @@ namespace DLL
         public DataTable OrderInfo(int orderid)
         {
             DataTable dt = new DataTable();
-            string sql = "select * from [tb_orders] where t1.[id]=" + orderid;
+            string sql = "select * from [tb_orders] where [id]=" + orderid;
             dt = help.SeeResults(sql);
             return dt;
         }
@@ -32,7 +32,7 @@ namespace DLL
         public DataTable GetOrders(string username)
         {
             DataTable dt = new DataTable();
-            string sql = "select * from [tb_orders] where t1.[username]='" + username+"'";
+            string sql = "select * from [tb_orders] where [username]='" + username+"'";
             dt = help.SeeResults(sql);
             return dt;
         }

@@ -11,6 +11,7 @@ using System.IO;
 using Common;
 using System.Threading;
 using Newtonsoft.Json.Linq;
+using System.Timers;
 
 namespace Justgo8._2009
 {
@@ -28,21 +29,23 @@ namespace Justgo8._2009
                 }
                 else
                 {
+                    string client_id = "", redirect_uri = "";
                     try
                     {
-                        string client_id = dt.Rows[0]["client_id"].ToString();
-                        string redirect_uri = dt.Rows[0]["redirect_uri"].ToString();
-                        Response.Redirect(string.Format("https://openapi.youku.com/v2/oauth2/authorize?client_id={0}&response_type=code&redirect_uri={1}&state={0}", client_id, redirect_uri));
+                        client_id = dt.Rows[0]["client_id"].ToString();
+                        redirect_uri = dt.Rows[0]["redirect_uri"].ToString();
                     }
                     catch (Exception ex)
                     {
                         ErrorLog.AddErrorLog(ex.ToString());
+                        return;
                     }
+                    Response.Redirect(string.Format("https://openapi.youku.com/v2/oauth2/authorize?client_id={0}&response_type=code&redirect_uri={1}&state={0}", client_id, redirect_uri));
                 }
             }
             else
             {
-                if(String.IsNullOrEmpty(Request["state"]))
+                if (String.IsNullOrEmpty(Request["state"]))
                 {
                     MessageBox.Show(this.Page, "回调数据不正确");
                     return;
@@ -62,6 +65,7 @@ namespace Justgo8._2009
                     client.Code = Request["code"];
                     client.Remark = dt.Rows[0]["remark"].ToString();
                     new Thread(new ParameterizedThreadStart(MainWork)).Start(client);
+                    ErrorLog.AddErrorLog("创建完成");
                 }
             }
         }
@@ -96,7 +100,7 @@ namespace Justgo8._2009
             try
             {
                 HttpWebResponse response = HttpWebResponseUtility.CreateGetHttpResponse(url, null, null, null);
-                return DataHandler(url,response, out result);
+                return DataHandler(url, response, out result);
             }
             catch (Exception ex)
             {
@@ -111,7 +115,7 @@ namespace Justgo8._2009
             try
             {
                 HttpWebResponse response = HttpWebResponseUtility.CreatePostHttpResponse(url, parameters, null, null, Encoding.UTF8, null);
-                return DataHandler(url,response, out result);
+                return DataHandler(url, response, out result);
             }
             catch (Exception e)
             {
@@ -121,7 +125,7 @@ namespace Justgo8._2009
             }
         }
 
-        protected bool DataHandler(string url,HttpWebResponse response, out string result)
+        protected bool DataHandler(string url, HttpWebResponse response, out string result)
         {
             result = "";
             if (response != null)
@@ -180,13 +184,15 @@ namespace Justgo8._2009
             }
         }
 
-        public void MainWork(object obj)
+        protected void MainWork(object obj)
         {
             try
             {
+                ErrorLog.AddErrorLog("评论进程已创建");
                 Client client = obj as Client;
                 if (client == null)
                 {
+                    ErrorLog.AddErrorLog("进程初始化数据为空,即将停止");
                     return;
                 }
                 else
@@ -219,10 +225,11 @@ namespace Justgo8._2009
                         }
                     }
                 }
-                System.Timers.Timer getvideotimer = SystemTimer.SetInterval(1800000, (e, state) =>
+                System.Threading.Timer getvideotimer = SystemTimer.SetInterval(state =>
                  {
                      try
                      {
+                         ErrorLog.AddErrorLog("正在获取视频");
                          Client c = state as Client;
                          if (c != null && c.Running)
                          {
@@ -242,11 +249,12 @@ namespace Justgo8._2009
                          ErrorLog.AddErrorLog(ex.ToString());
                          return;
                      }
-                 }, client);
-                System.Timers.Timer createcommenttimer = SystemTimer.SetInterval(60000, (e, state) =>
+                 }, client, 0, 1800000);
+                System.Threading.Timer createcommenttimer = SystemTimer.SetInterval(state =>
                 {
                     try
                     {
+                        ErrorLog.AddErrorLog("正在创建评论");
                         Client c = state as Client;
                         if (c != null && c.Running)
                         {
@@ -270,16 +278,19 @@ namespace Justgo8._2009
                         ErrorLog.AddErrorLog(ex.ToString());
                         return;
                     }
-                }, client);
+                }, client, 20000, 60000);
                 while (true)
                 {
                     if (!client.Running)
                     {
-                        getvideotimer.Stop();
-                        createcommenttimer.Stop();
+                        //getvideotimer.Change(Timeout.Infinite, Timeout.Infinite);
+                        getvideotimer.Dispose();
+                        //createcommenttimer.Change(Timeout.Infinite, Timeout.Infinite);
+                        createcommenttimer.Dispose();
                     }
                     else
                     {
+                        ErrorLog.AddErrorLog("网站在运行");
                         Thread.Sleep(60000);
                     }
                 }

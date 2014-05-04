@@ -39,10 +39,9 @@ namespace Bll
         /// <summary>
         /// 添加
         /// </summary>
-        public static int add(string content)
+        public static int add(string clientid, int commentid, string videoid, string content)
         {
-
-            return new DLL.Comments().add(content);
+            return new DLL.Comments().add(clientid, commentid, videoid, content);
         }
 
         /// <summary>

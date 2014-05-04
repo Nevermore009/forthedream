@@ -12,7 +12,7 @@ namespace Bll
         /// 查看
         /// </summary>
         /// <returns></returns>
-        public DataTable Tokens()
+        public static DataTable Tokens()
         {
             return new  DLL.Token().GetTokens();
         }
@@ -21,7 +21,7 @@ namespace Bll
         /// 查看
         /// </summary>
         /// <returns></returns>
-        public DataTable TokenInfo(int id)
+        public static DataTable TokenInfo(int id)
         {
             return new DLL.Token().TokenInfo(id);
         }
@@ -29,17 +29,17 @@ namespace Bll
         /// <summary>
         /// 添加
         /// </summary>
-        public int add(string code, string client_id, string access_token, int expires_in, string refresh_token, string token_type)
+        public static int add(string code, string client_id, string access_token, int expires_in, string refresh_token, string token_type)
         {
-            return new DLL.Token().add(code, client_id, access_token, expires_in, refresh_token, refresh_token, DateTime.Now);
+            return new DLL.Token().add(code, client_id, access_token, expires_in, refresh_token, token_type, DateTime.Now);
         }
 
         /// <summary>
         /// 修改
         /// </summary>
-        public int update(string content, int id)
+        public static int update(string client_id, string access_token, int expires_in, string new_refresh_token, string token_type, string old_refresh_token)
         {
-            return new DLL.Token().update(content, id);
+            return new DLL.Token().update(client_id, access_token, expires_in, new_refresh_token, token_type, DateTime.Now, old_refresh_token);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Bll
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int del(int id)
+        public static int del(int id)
         {
             return new DLL.Token().del(id);
         }

@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="BAccount.cs" />
     <Compile Include="BAdmin.cs" />
+    <Compile Include="BAppClient.cs" />
     <Compile Include="BArea.cs" />
     <Compile Include="BCity.cs" />
     <Compile Include="BComments.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="BTravelDetail.cs" />
     <Compile Include="BTravelPicture.cs" />
     <Compile Include="BTravelType.cs" />
+    <Compile Include="BVideoUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

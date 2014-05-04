@@ -40,7 +40,16 @@ namespace DLL
         public int add(string code, string client_id, string access_token, int expires_in, string refresh_token, string token_type, DateTime lastTokenTime)
         {
             int res = 0;
-            string sql = " insert into [tb_token] ([code],[client_id],[access_token],[expires_in],[refresh_token],[token_type],[lastTokenTime]) values (@code,@client_id,@access_token,@expires_in,@refresh_token,@token_type,@lastTokenTime)";
+            string sql = "select count(*) from [tb_token]  where code='" + code + "'";
+            int count = int.Parse(help.RunSqlReturn(sql));
+            if (count > 0)
+            {
+                sql = "update [tb_token] set [client_id]=@client_id,[access_token]=@access_token,[expires_in]=@expires_in,[refresh_token]=@refresh_token,[token_type]=@token_type,[lastTokenTime]=@lastTokenTime where [code]=@code";
+            }
+            else
+            {
+                sql = " insert into [tb_token] ([code],[client_id],[access_token],[expires_in],[refresh_token],[token_type],[lastTokenTime]) values (@code,@client_id,@access_token,@expires_in,@refresh_token,@token_type,@lastTokenTime)";
+            }
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@code",code),
                 new SqlParameter("@client_id",client_id),
@@ -48,7 +57,7 @@ namespace DLL
                 new SqlParameter("@expires_in",expires_in),
                 new SqlParameter("@refresh_token",refresh_token),
                 new SqlParameter("@token_type",token_type),
-                new SqlParameter("@lastTokenTime",lastTokenTime)
+                new SqlParameter("@lastTokenTime",lastTokenTime)  
             };
             res = help.GetNum(sql, pas);
             return res;
@@ -57,10 +66,19 @@ namespace DLL
         /// <summary>
         /// 修改
         /// </summary>
-        public int update(string content, int id)
+        public int update(string client_id, string access_token, int expires_in, string new_refresh_token, string token_type, DateTime lastTokenTime, string old_refresh_token)
         {
             int res = 0;
-            string sql = "  update [tb_token] set [content]='" + content + "' where id=" + id ;
+            string sql = "update [tb_token] set [client_id]=@client_id,[access_token]=@access_token,[expires_in]=@expires_in,[refresh_token]=@new_refresh_token,[token_type]=@token_type,[lastTokenTime]=@lastTokenTime where [refresh_token]=@old_refresh_token";
+            SqlParameter[] pas = new SqlParameter[] { 
+                new SqlParameter("@client_id",client_id),
+                new SqlParameter("@old_refresh_token",old_refresh_token),
+                new SqlParameter("@new_refresh_token",new_refresh_token),
+                new SqlParameter("@expires_in",expires_in),
+                new SqlParameter("@access_token",access_token),
+                new SqlParameter("@token_type",token_type),
+                new SqlParameter("@lastTokenTime",lastTokenTime)  
+            };
             res = help.GetNum(sql);
             return res;
         }

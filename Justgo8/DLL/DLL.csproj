@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Admin.cs" />
+    <Compile Include="AppClient.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Comments.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="TravelDetail.cs" />
     <Compile Include="TravelPicture.cs" />
     <Compile Include="TravelType.cs" />
+    <Compile Include="VideoUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

@@ -45,10 +45,10 @@ namespace DLL
         /// <summary>
         /// 添加
         /// </summary>
-        public int add(string content)
+        public int add(string clientid,int commentid, string videoid, string content)
         {
             int res = 0;
-            string sql = string.Format(" insert into [tb_comments] ([content]) values ('{0}')", content);
+            string sql = string.Format(" insert into [tb_comments] ([clientid],[commentid],[videoid],[content]) values ('{0}',{1},'{2}','{3}')", clientid, commentid, videoid, content);
             res = help.GetNum(sql);
             return res;
         }

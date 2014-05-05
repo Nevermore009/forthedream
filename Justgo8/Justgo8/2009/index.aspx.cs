@@ -102,9 +102,8 @@ namespace Justgo8._2009
                 HttpWebResponse response = HttpWebResponseUtility.CreateGetHttpResponse(url, null, null, null);
                 return DataHandler(url, response, out result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ErrorLog.AddErrorLog(ex.ToString());
                 result = "";
                 return false;
             }
@@ -151,6 +150,7 @@ namespace Justgo8._2009
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     result = responseString;
+                    Bll.BError.add(101, "application", "返回内容：" + responseString, "http://www.justgo8.com/2009/index.aspx");
                     return true;
                 }
                 else
@@ -170,7 +170,11 @@ namespace Justgo8._2009
                         }
                         catch (Exception ex)
                         {
-                            ErrorLog.AddErrorLog("记录错误失败：" + ex.ToString());
+                            try
+                            {
+                                Bll.BError.add(100, "application", "记录错误失败：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                            }
+                            catch { }
                             return false;
                         }
                     }
@@ -188,11 +192,9 @@ namespace Justgo8._2009
         {
             try
             {
-                ErrorLog.AddErrorLog("评论进程已创建");
                 Client client = obj as Client;
                 if (client == null)
                 {
-                    ErrorLog.AddErrorLog("进程初始化数据为空,即将停止");
                     return;
                 }
                 else
@@ -202,17 +204,17 @@ namespace Justgo8._2009
                 int getaccessresult = GetAccessToken(ref client);
                 if (getaccessresult == -1)
                 {
-                    ErrorLog.AddErrorLog("获取accesstoken失败");
+                    Bll.BError.add(100, "application", "accesstoken获取失败", "http://www.justgo8.com/2009/index.aspx");
                     return;
                 }
                 else if (getaccessresult != 0)
                 {
                     ErrorHandler(getaccessresult, ref client);
+                    return;
                 }
                 DataTable dt = Bll.BVideoUser.GetVideoUsers();
                 if (dt.Rows.Count <= 0)
                 {
-                    ErrorLog.AddErrorLog("没有需要评论的用户");
                     return;
                 }
                 else
@@ -229,13 +231,20 @@ namespace Justgo8._2009
                  {
                      try
                      {
-                         ErrorLog.AddErrorLog("正在获取视频");
                          Client c = state as Client;
                          if (c != null && c.Running)
                          {
+                             List<string> userlist = new List<string>();
                              foreach (KeyValuePair<string, string> k in c.UserVideo)
                              {
-                                 c.UserVideo[k.Key] = GetLastestVideo(client.Client_ID, k.Key);
+                                 userlist.Add(k.Key);
+                             }
+                             lock (c.UserVideo)
+                             {
+                                 foreach (string u in userlist)
+                                 {
+                                     c.UserVideo[u] = GetLastestVideo(c.Client_ID, u);
+                                 }
                              }
                          }
                          else
@@ -246,7 +255,11 @@ namespace Justgo8._2009
                      }
                      catch (Exception ex)
                      {
-                         ErrorLog.AddErrorLog(ex.ToString());
+                         try
+                         {
+                             Bll.BError.add(100, "application", "获取视频出错：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                         }
+                         catch { }
                          return;
                      }
                  }, client, 0, 1800000);
@@ -254,17 +267,20 @@ namespace Justgo8._2009
                 {
                     try
                     {
-                        ErrorLog.AddErrorLog("正在创建评论");
                         Client c = state as Client;
                         if (c != null && c.Running)
                         {
                             string content = GetComment();
-                            foreach (KeyValuePair<string, string> k in c.UserVideo)
+                            lock (c.UserVideo)
                             {
-                                if (!String.IsNullOrEmpty(k.Value))
+                                foreach (KeyValuePair<string, string> k in c.UserVideo)
                                 {
-                                    int errorcode = CreateComment(c.Client_ID, c.Access_token, k.Value, content, "", "");
-                                    ErrorHandler(errorcode, ref client);
+                                    if (!String.IsNullOrEmpty(k.Value))
+                                    {
+                                        int errorcode = CreateComment(c.Client_ID, c.Access_token, k.Value, content, "", "");
+                                        if (errorcode != 0)
+                                            ErrorHandler(errorcode, ref c);
+                                    }
                                 }
                             }
                         }
@@ -275,7 +291,11 @@ namespace Justgo8._2009
                     }
                     catch (Exception ex)
                     {
-                        ErrorLog.AddErrorLog(ex.ToString());
+                        try
+                        {
+                            Bll.BError.add(100, "application", "创建评论出错：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                        }
+                        catch { }
                         return;
                     }
                 }, client, 20000, 60000);
@@ -290,14 +310,17 @@ namespace Justgo8._2009
                     }
                     else
                     {
-                        ErrorLog.AddErrorLog("网站在运行");
                         Thread.Sleep(60000);
                     }
                 }
             }
             catch (Exception ex)
             {
-                ErrorLog.AddErrorLog(ex.ToString());
+                try
+                {
+                    Bll.BError.add(100, "application", "评论遇到错误：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                }
+                catch { }
             }
         }
 
@@ -330,16 +353,13 @@ namespace Justgo8._2009
                 try
                 {
                     JObject obj = JObject.Parse(result);
-                    int id = int.Parse(obj["id"].ToString());
-                    if (Bll.BComments.add(client_id, id, video_id, content) <= 0)
-                    {
-                        ErrorLog.AddErrorLog("添加评论失败");
-                    }
+                    string commentid=obj["id"].ToString();
+                    Bll.BCommentRecord.add(client_id, commentid, video_id, content);
                     return 0;
                 }
-                catch (Exception ex)
+                catch (Exception　ex)
                 {
-                    ErrorLog.AddErrorLog(ex.ToString());
+                    Bll.BError.add(100, "application", "记录评论失败：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
                     return -1;
                 }
             }
@@ -365,7 +385,8 @@ namespace Justgo8._2009
                 if (Get(url, out result))
                 {
                     JObject obj = JObject.Parse(result);
-                    return obj["id"].ToString();
+                    JArray videos = JArray.Parse(obj["videos"].ToString());
+                    return videos[0]["id"].ToString();
                 }
                 else
                 {
@@ -374,7 +395,11 @@ namespace Justgo8._2009
             }
             catch (Exception ex)
             {
-                ErrorLog.AddErrorLog(ex.ToString());
+                try
+                {
+                    Bll.BError.add(100, "application", "获取视频失败：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                }
+                catch { }
                 return "";
             }
         }
@@ -400,10 +425,7 @@ namespace Justgo8._2009
                 client.Expires_in = expires_in;
                 client.Refresh_token = refresh_token;
                 client.Token_type = token_type;
-                if (Bll.BToken.add(client.Code, client.Client_ID, access_token, int.Parse(expires_in), refresh_token, token_type) <= 0)
-                {
-                    ErrorLog.AddErrorLog("添加token失败");
-                }
+                Bll.BToken.add(client.Code, client.Client_ID, access_token, int.Parse(expires_in), refresh_token, token_type);
                 return 0;
             }
             else
@@ -453,7 +475,6 @@ namespace Justgo8._2009
 
         protected void ErrorHandler(int errorcode, ref Client client)
         {
-            ErrorLog.AddErrorLog("错误:" + errorcode);
             switch (errorcode)
             {
                 case 130030051:  //More than 300 characters (utf8)
@@ -465,6 +486,8 @@ namespace Justgo8._2009
                 case 130030054:  //The video don't allow comments
                     break;
                 case 130030055:  //Not paying customers can't comment on charges video
+                    break;
+                case 130030056: //Need captcha
                     break;
                 case 130030102:  //No data
                     break;

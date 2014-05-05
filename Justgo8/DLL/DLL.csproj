@@ -79,6 +79,7 @@
     <Compile Include="AppClient.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="City.cs" />
+    <Compile Include="CommentRecord.cs" />
     <Compile Include="Comments.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="Error.cs" />

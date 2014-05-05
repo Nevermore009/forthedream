@@ -38,29 +38,13 @@ namespace DLL
         /// <returns></returns>
         public DataTable GetRandomComment(int rowcount = 1)
         {
-            string sql = " select top " + rowcount + " * from [tb_comments] order by newid()";
+            string sql = " select top " + rowcount + " [content] from [tb_comments] order by newid()";
             return help.SeeResults(sql);
         }
 
         /// <summary>
-        /// 添加
+        /// 修改
         /// </summary>
-        public int add(string clientid,int commentid, string videoid, string content)
-        {
-            int res = 0;
-            string sql = string.Format(" insert into [tb_comments] ([clientid],[commentid],[videoid],[content]) values ('{0}',{1},'{2}','{3}')", clientid, commentid, videoid, content);
-            res = help.GetNum(sql);
-            return res;
-        }
-
-        /// <summary>
-        /// 修改专利
-        /// </summary>
-        /// <param name="name">专利名称</param>
-        /// <param name="pic">图片</param>
-        /// <param name="sort">排序号</param>
-        /// <param name="id">id</param>
-        /// <returns></returns>
         public int update(string content, int id)
         {
             int res = 0;

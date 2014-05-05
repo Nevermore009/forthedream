@@ -25,7 +25,7 @@ namespace Bll
         {
             return new DLL.Comments().CommentInfo(id);
         }
-
+        
         /// <summary>
         /// 获取随机行
         /// </summary>
@@ -37,11 +37,13 @@ namespace Bll
         }
 
         /// <summary>
-        /// 添加
+        /// 删除
         /// </summary>
-        public static int add(string clientid, int commentid, string videoid, string content)
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int del(int id)
         {
-            return new DLL.Comments().add(clientid, commentid, videoid, content);
+            return new DLL.Comments().del(id);
         }
 
         /// <summary>
@@ -57,14 +59,5 @@ namespace Bll
             return new DLL.Comments().update(content, id);
         }
 
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public static int del(int id)
-        {
-            return new DLL.Comments().del(id);
-        }
     }
 }

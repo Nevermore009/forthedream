@@ -83,6 +83,7 @@
     <Compile Include="BAppClient.cs" />
     <Compile Include="BArea.cs" />
     <Compile Include="BCity.cs" />
+    <Compile Include="BCommentRecord.cs" />
     <Compile Include="BComments.cs" />
     <Compile Include="BDestination.cs" />
     <Compile Include="BError.cs" />

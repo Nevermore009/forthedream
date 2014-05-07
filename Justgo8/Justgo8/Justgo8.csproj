@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2009\index.aspx" />
+    <Content Include="2009\PrivateMsg.aspx" />
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
     <Content Include="bin\Justgo8.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
@@ -751,6 +752,13 @@
     </Compile>
     <Compile Include="2009\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2009\PrivateMsg.aspx.cs">
+      <DependentUpon>PrivateMsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2009\PrivateMsg.aspx.designer.cs">
+      <DependentUpon>PrivateMsg.aspx</DependentUpon>
     </Compile>
     <Compile Include="contactus.aspx.cs">
       <DependentUpon>contactus.aspx</DependentUpon>

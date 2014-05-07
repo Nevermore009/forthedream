@@ -82,6 +82,7 @@
     <Compile Include="CommentRecord.cs" />
     <Compile Include="Comments.cs" />
     <Compile Include="Destination.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Orders.cs" />
     <Compile Include="Patent .cs" />

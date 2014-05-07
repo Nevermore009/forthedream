@@ -20,7 +20,7 @@ namespace Justgo8._2009
         protected void Page_Load(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(Request["code"]))
-            {
+            {    
                 DataTable dt = GetAppClient("");
                 if (dt.Rows.Count <= 0)
                 {
@@ -116,9 +116,8 @@ namespace Justgo8._2009
                 HttpWebResponse response = HttpWebResponseUtility.CreatePostHttpResponse(url, parameters, null, null, Encoding.UTF8, null);
                 return DataHandler(url, response, out result);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                ErrorLog.AddErrorLog(e.ToString());
                 result = "";
                 return false;
             }

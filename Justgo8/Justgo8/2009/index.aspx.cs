@@ -298,15 +298,15 @@ namespace Justgo8._2009
                         catch { }
                         return;
                     }
-                }, client, 20000, 60000);
+                }, client, 20000, 545000);
                 while (true)
                 {
                     if (!client.Running)
                     {
-                        //getvideotimer.Change(Timeout.Infinite, Timeout.Infinite);
                         getvideotimer.Dispose();
-                        //createcommenttimer.Change(Timeout.Infinite, Timeout.Infinite);
                         createcommenttimer.Dispose();
+                        Bll.BError.add(100, "application", "未知原因停止", "http://www.justgo8.com/2009/index.aspx");
+                        return;
                     }
                     else
                     {
@@ -353,11 +353,11 @@ namespace Justgo8._2009
                 try
                 {
                     JObject obj = JObject.Parse(result);
-                    string commentid=obj["id"].ToString();
+                    string commentid = obj["id"].ToString();
                     Bll.BCommentRecord.add(client_id, commentid, video_id, content);
                     return 0;
                 }
-                catch (Exception　ex)
+                catch (Exception ex)
                 {
                     Bll.BError.add(100, "application", "记录评论失败：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
                     return -1;

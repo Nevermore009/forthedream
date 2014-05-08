@@ -47,7 +47,7 @@ namespace Justgo8._2009
         {
             try
             {
-                HttpWebResponse response = HttpWebResponseUtility.CreateGetHttpResponse(url, null, null, null);
+                HttpWebResponse response = HttpHelper.CreateGetHttpResponse(url, null, null, null);
                 return DataHandler(url, response, out result);
             }
             catch (Exception)
@@ -61,7 +61,7 @@ namespace Justgo8._2009
         {
             try
             {
-                HttpWebResponse response = HttpWebResponseUtility.CreatePostHttpResponse(url, parameters, null, null, Encoding.UTF8, null);
+                HttpWebResponse response = HttpHelper.CreatePostHttpResponse(url, parameters, null, null, Encoding.UTF8, null);
                 return DataHandler(url, response, out result);
             }
             catch (Exception)

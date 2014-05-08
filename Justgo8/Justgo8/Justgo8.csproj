@@ -87,6 +87,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\WdatePicker.css" />
     <Content Include="detail.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="images\ar.gif" />
     <Content Include="images\index\b.png" />
     <Content Include="images\index\bg_line_t2.png" />
@@ -760,6 +761,8 @@
     <Compile Include="2009\PrivateMsg.aspx.designer.cs">
       <DependentUpon>PrivateMsg.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\CommentWork.cs" />
+    <Compile Include="App_Code\Client.cs" />
     <Compile Include="contactus.aspx.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -773,6 +776,9 @@
     </Compile>
     <Compile Include="detail.aspx.designer.cs">
       <DependentUpon>detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -999,7 +1005,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="ErrorLog\" />
     <Folder Include="Upload\" />

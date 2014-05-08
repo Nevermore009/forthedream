@@ -6,13 +6,14 @@ using System.Net;
 using System.Net.Security;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using Newtonsoft.Json.Linq;
 
 namespace Common
 {
     /// <summary>
     /// 有关HTTP请求的辅助类
     /// </summary>
-    public class HttpWebResponseUtility
+    public class HttpHelper
     {
         private static readonly string DefaultUserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)";
         /// <summary>
@@ -143,6 +144,80 @@ namespace Common
             {
                 ErrorLog.AddErrorLog(e.ToString());
                 return null;
+            }
+        }
+
+
+        public static bool Get(string url, out string result)
+        {
+            try
+            {
+                HttpWebResponse response = CreateGetHttpResponse(url, null, null, null);
+                return DataHandler(url, response, out result);
+            }
+            catch (Exception)
+            {
+                result = "";
+                return false;
+            }
+        }
+
+        public static bool Post(string url, IDictionary<string, string> parameters, out string result)
+        {
+            try
+            {
+                HttpWebResponse response = CreatePostHttpResponse(url, parameters, null, null, Encoding.UTF8, null);
+                return DataHandler(url, response, out result);
+            }
+            catch (Exception)
+            {
+                result = "";
+                return false;
+            }
+        }
+
+        private static bool DataHandler(string url, HttpWebResponse response, out string result)
+        {
+            result = "";
+            if (response != null)
+            {
+                string responseString = "";
+                Stream dataStream = null;
+                StreamReader reader = null;
+                try
+                {
+                    dataStream = response.GetResponseStream();
+                    reader = new StreamReader(dataStream);
+                    responseString = reader.ReadToEnd();
+                    dataStream.Close();
+                }
+                catch { }
+                finally
+                {
+                    if (dataStream != null)
+                        dataStream.Close();
+                    if (reader != null)
+                        reader.Close();
+                }
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    result = responseString;
+                    return true;
+                }
+                else
+                {
+                    if (!String.IsNullOrEmpty(responseString))
+                    {
+                        result = responseString;
+                        return false;
+                    }
+                    else
+                        return false;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 

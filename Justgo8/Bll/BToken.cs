@@ -51,5 +51,15 @@ namespace Bll
         {
             return new DLL.Token().del(id);
         }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int del(string access_token)
+        {
+            return new DLL.Token().del(access_token);
+        }
     }
 }

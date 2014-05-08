@@ -95,5 +95,17 @@ namespace DLL
             res = help.GetNum(sql);
             return res;
         }
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int del(string access_token)
+        {
+            int res = 0;
+            string sql = " update [tb_token] set state=-1 where access_token='" + access_token + "' ";
+            res = help.GetNum(sql);
+            return res;
+        }
     }
 }

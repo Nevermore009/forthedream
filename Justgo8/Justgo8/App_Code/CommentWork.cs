@@ -13,14 +13,8 @@ namespace Justgo8.App_Code
     {
         public static void StartWork(Client client)
         {
-            new Thread(new ParameterizedThreadStart(MainWork)).Start(client);
-        }
-
-        protected static void MainWork(object obj)
-        {
             try
             {
-                Client client = obj as Client;
                 if (client == null)
                 {
                     return;
@@ -32,13 +26,14 @@ namespace Justgo8.App_Code
                 string result = null;
                 if (!GetAccessToken(ref client, out result))
                 {
-                    //Bll.BError.add(100, "application", "accesstoken获取失败", "http://www.justgo8.com/2009/index.aspx");                  
+                    Bll.BError.add(100, "application", "accesstoken获取失败", "http://www.justgo8.com/2009/index.aspx");
                     ErrorHandler(result, ref client);
                     return;
                 }
                 DataTable dt = Bll.BVideoUser.GetVideoUsers();
                 if (dt.Rows.Count <= 0)
                 {
+                    Bll.BError.add(100, "application", "没有视频用户", "http://www.justgo8.com/2009/index.aspx");
                     return;
                 }
                 else
@@ -51,94 +46,9 @@ namespace Justgo8.App_Code
                         }
                     }
                 }
-                System.Threading.Timer getvideotimer = SystemTimer.SetInterval(state =>
-                {
-                    try
-                    {
-                        Client c = state as Client;
-                        if (c != null && c.Running)
-                        {
-                            List<string> userlist = new List<string>();
-                            foreach (KeyValuePair<string, string> k in c.UserVideo)
-                            {
-                                userlist.Add(k.Key);
-                            }
-                            lock (c.UserVideo)
-                            {
-                                foreach (string u in userlist)
-                                {
-                                    c.UserVideo[u] = GetLastestVideo(c.Client_ID, u);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            c.Running = false;
-                            return;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        try
-                        {
-                            Bll.BError.add(100, "application", "获取视频出错：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
-                        }
-                        catch { }
-                        return;
-                    }
-                }, client, 0, 1800000);
-                System.Threading.Timer createcommenttimer = SystemTimer.SetInterval(state =>
-                {
-                    try
-                    {
-                        Client c = state as Client;
-                        if (c != null && c.Running)
-                        {
-                            string content = GetComment();
-                            lock (c.UserVideo)
-                            {
-                                foreach (KeyValuePair<string, string> k in c.UserVideo)
-                                {
-                                    if (!String.IsNullOrEmpty(k.Value))
-                                    {
-                                        string resultstring = null;
-                                        CreateComment(c.Client_ID, c.Access_token, k.Value, content, "", "", out resultstring);
-                                        ErrorHandler(result, ref c);
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            c.Running = false;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        try
-                        {
-                            Bll.BError.add(100, "application", "创建评论出错：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
-                        }
-                        catch { }
-                        return;
-                    }
-                }, client, 20000, 545000);
-                while (true)
-                {
-                    if (!client.Running)
-                    {
-                        getvideotimer.Dispose();
-                        createcommenttimer.Dispose();
-                        Bll.BError.add(100, "application", "未知原因停止", "http://www.justgo8.com/2009/index.aspx");
-                        return;
-                    }
-                    else
-                    {
-                        Thread.Sleep(60000);
-                    }
-                }
+                new Thread(new ParameterizedThreadStart(ContinueWork)).Start(client);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 try
                 {
@@ -146,6 +56,120 @@ namespace Justgo8.App_Code
                 }
                 catch { }
             }
+        }
+
+        public static void ContinueWork(object clientobject)
+        {
+            new Thread(new ParameterizedThreadStart((obj) =>
+            {
+                try
+                {
+                    string result = null;
+                    Client client = obj as Client;
+                    if (client == null)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        client.Running = true;
+                    }
+                    System.Threading.Timer getvideotimer = SystemTimer.SetInterval(state =>
+                    {
+                        try
+                        {
+                            Client c = state as Client;
+                            if (c != null && c.Running)
+                            {
+                                List<string> userlist = new List<string>();
+                                foreach (KeyValuePair<string, string> k in c.UserVideo)
+                                {
+                                    userlist.Add(k.Key);
+                                }
+                                lock (c.UserVideo)
+                                {
+                                    foreach (string u in userlist)
+                                    {
+                                        c.UserVideo[u] = GetLastestVideo(c.Client_ID, u);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                c.Running = false;
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            try
+                            {
+                                Bll.BError.add(100, "application", "获取视频出错：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                            }
+                            catch { }
+                            return;
+                        }
+                    }, client, 0, 1800000);
+                    System.Threading.Timer createcommenttimer = SystemTimer.SetInterval(state =>
+                    {
+                        try
+                        {
+                            Client c = state as Client;
+                            if (c != null && c.Running)
+                            {
+                                string content = GetComment();
+                                lock (c.UserVideo)
+                                {
+                                    foreach (KeyValuePair<string, string> k in c.UserVideo)
+                                    {
+                                        if (!String.IsNullOrEmpty(k.Value))
+                                        {
+                                            string resultstring = null;
+                                            CreateComment(c.Client_ID, c.Access_token, k.Value, content, "", "", out resultstring);
+                                            ErrorHandler(result, ref c);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                c.Running = false;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            try
+                            {
+                                Bll.BError.add(100, "application", "创建评论出错：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                            }
+                            catch { }
+                            return;
+                        }
+                    }, client, 20000, 545000);
+                    while (true)
+                    {
+                        if (!client.Running)
+                        {
+                            getvideotimer.Dispose();
+                            createcommenttimer.Dispose();
+                            Bll.BError.add(100, "application", "未知原因停止", "http://www.justgo8.com/2009/index.aspx");
+                            return;
+                        }
+                        else
+                        {
+                            Thread.Sleep(60000);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        Bll.BError.add(100, "application", "评论遇到错误：" + ex.ToString(), "http://www.justgo8.com/2009/index.aspx");
+                    }
+                    catch { }
+                }
+            })).Start(clientobject);
         }
 
         /// <summary>

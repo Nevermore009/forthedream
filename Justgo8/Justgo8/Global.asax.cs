@@ -15,16 +15,18 @@ namespace Justgo8
         protected void Application_Start(object sender, EventArgs e)
         {
             DataTable dt = Bll.BToken.Tokens();
+            Bll.BError.add(100, "application", "已重新启动" + dt.Rows.Count + "个线程", "http://www.justgo8.com/2009/index.aspx");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 Client client = new Client();
                 client.Client_ID = dt.Rows[i]["client_id"].ToString();
-                client.Client_secret = dt.Rows[i]["client_secret"].ToString();
-                client.Redirect_uri = dt.Rows[i]["redirect_uri"].ToString();
+                DataTable clientdt = CommentWork.GetAppClient(client.Client_ID);
+                client.Client_secret = clientdt.Rows[0]["client_secret"].ToString();
+                client.Redirect_uri = clientdt.Rows[0]["redirect_uri"].ToString();
                 client.Code = dt.Rows[i]["code"].ToString();
-                client.Remark = dt.Rows[i]["remark"].ToString();
-                CommentWork.StartWork(client);
-            }
+                client.Remark = clientdt.Rows[0]["remark"].ToString();
+                CommentWork.ContinueWork(client);
+            }            
         }
 
         protected void Session_Start(object sender, EventArgs e)

@@ -100,6 +100,7 @@
                         <asp:TextBox ID="txtadultprice" runat="server" CssClass="textbox"></asp:TextBox><asp:RequiredFieldValidator
                             ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtadultprice"
                             SetFocusOnError="true" ValidationGroup="sss"></asp:RequiredFieldValidator>
+                        <asp:CheckBox runat="server" ID="cbfixed" Text="价格固定" Checked="true" />
                     </td>
                     <td style="text-align: right">
                         儿童价
@@ -108,7 +109,6 @@
                         <asp:TextBox ID="txtchildprice" runat="server" CssClass="textbox"></asp:TextBox><asp:RequiredFieldValidator
                             ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ControlToValidate="txtchildprice"
                             SetFocusOnError="true" ValidationGroup="sss"></asp:RequiredFieldValidator>
-                        <asp:CheckBox runat="server" ID="cbfixed" Text="价格固定" Checked="true" />
                     </td>
                 </tr>
                 <tr>

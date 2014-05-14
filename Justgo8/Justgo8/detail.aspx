@@ -137,8 +137,8 @@
                             <ul class="clearfix">
                                 <li>
                                     <label>
-                                        门市价格：</label><em class="price del">¥<asp:Label runat="server" ID="lbgeneralprice"
-                                            Text='<%#Eval("generalprice")%>'></asp:Label></em></li>
+                                        门市价格：</label><em class="price del">¥<asp:Label runat="server" ID="lbgeneralprice">
+                                            </asp:Label></em></li>
                                 <li>
                                     <label>
                                         出发城市：</label>长沙</li>
@@ -186,8 +186,7 @@
                                                 成人<span class="help" title="<%=adultrule %>"></span>
                                             </td>
                                             <td id="c1_price" class="cPrice">
-                                                ¥<asp:Label runat="server" ID="lbadultprice" Text='<%#Eval("adultprice")%>'>
-                                                </asp:Label>
+                                                ¥<asp:Label runat="server" ID="lbadultprice"></asp:Label>
                                             </td>
                                             <td>
                                                 <asp:TextBox runat="server" ID="txtadultnum" Style="height: 25px; border: 1px solid #ccc"
@@ -200,7 +199,7 @@
                                                 儿童<span class="help" title="<%=childrule %>"></span>
                                             </td>
                                             <td id="c2_price" class="cPrice">
-                                                ¥<asp:Label runat="server" ID="lbchildprice" Text='<%#Eval("childprice") %>'></asp:Label>
+                                                ¥<asp:Label runat="server" ID="lbchildprice"></asp:Label>
                                             </td>
                                             <td>
                                                 <asp:TextBox runat="server" ID="txtchildnum" Style="height: 25px; border: 1px solid #ccc"

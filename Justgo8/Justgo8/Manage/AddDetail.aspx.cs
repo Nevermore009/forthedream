@@ -29,12 +29,14 @@ namespace Justgo8.Manage
                         DataTable dt = Bll.BTravelDetail.DetailInfo(int.Parse(Request["travelid"]));
                         if (dt.Rows.Count > 0)
                         {
+                            txtserialno.Text = dt.Rows[0]["serialno"].ToString();
                             txttitle.Text = dt.Rows[0]["title"].ToString();
                             txtdescription.Text = dt.Rows[0]["description"].ToString();
                             txttransportation.Text = dt.Rows[0]["transportation"].ToString();
                             txtgeneralprice.Text = dt.Rows[0]["generalprice"].ToString();
                             txtadultprice.Text = dt.Rows[0]["adultprice"].ToString();
                             txtchildprice.Text = dt.Rows[0]["childprice"].ToString();
+                            cbfixed.Checked = bool.Parse(dt.Rows[0]["isfixed"].ToString());
                             txtstartdate.Text = dt.Rows[0]["startdate"].ToString();
                             txtenddate.Text = dt.Rows[0]["enddate"].ToString();
                             txttraveldate.Text = dt.Rows[0]["departuretime"].ToString();
@@ -159,7 +161,7 @@ namespace Justgo8.Manage
                 {
                     if (r["content"].ToString().Length > 50)
                     {
-                        r["content"] = r["content"].ToString().Substring(0, 50)+"...";
+                        r["content"] = r["content"].ToString().Substring(0, 50) + "...";
                     }
                 }
                 drop.DataSource = dt.DefaultView;
@@ -382,7 +384,7 @@ namespace Justgo8.Manage
                 }
                 if (String.IsNullOrEmpty(lbid.Text))
                 {
-                    int detailid = Bll.BTravelDetail.add(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue), int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue));
+                    int detailid = Bll.BTravelDetail.add(txtserialno.Text, txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), cbfixed.Checked, txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(droptraveltype.SelectedValue), int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue));
                     try
                     {
                         for (int i = 0; i < cityinfo.Rows.Count; i++)
@@ -412,7 +414,7 @@ namespace Justgo8.Manage
                 }
                 else
                 {
-                    if (Bll.BTravelDetail.update(txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue), int.Parse(lbid.Text)) > 0)
+                    if (Bll.BTravelDetail.update(txtserialno.Text, txttitle.Text, txtdescription.Text, float.Parse(txtgeneralprice.Text), float.Parse(txtadultprice.Text), float.Parse(txtchildprice.Text), cbfixed.Checked, txtstartdate.Text, txtenddate.Text, txttraveldate.Text, fckfeature.Value, fckbillinclude.Value, fckbillbeside.Value, fckservicestandard.Value, fckpresentation.Value, fckjourney.Value, fckcontact.Value, int.Parse(dropjourneydays.SelectedValue), txttransportation.Text, int.Parse(dropadultrule.SelectedValue), int.Parse(dropchildrule.SelectedValue), int.Parse(lbid.Text)) > 0)
                     {
                         MessageBox.ResponseScript(this.Page, "alert('修改成功!');window.location.href='TravelManager.aspx'");
                     }

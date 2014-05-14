@@ -38,8 +38,9 @@ namespace Justgo8
                 {
                     lbtitle.Text = dt.Rows[0]["title"].ToString();
                     lbtitle2.Text = dt.Rows[0]["title"].ToString();
-                    lbadultprice.Text = dt.Rows[0]["adultprice"].ToString();
-                    lbchildprice.Text = dt.Rows[0]["childprice"].ToString();
+                    bool isfixed = bool.Parse(dt.Rows[0]["isfixed"].ToString());
+                    lbadultprice.Text = dt.Rows[0]["adultprice"].ToString() + (isfixed ? "" : "起");
+                    lbchildprice.Text = dt.Rows[0]["childprice"].ToString() + (isfixed ? "" : "起");
                     lbgeneralprice.Text = dt.Rows[0]["generalprice"].ToString();
                     lbdeparturetime.Text = dt.Rows[0]["departuretime"].ToString();
                     divfeatures.InnerHtml = dt.Rows[0]["features"].ToString();
@@ -160,7 +161,7 @@ namespace Justgo8
                             ErrorLog.AddErrorLog("邮件发送失败:" + ex.ToString());
                         }
                         string msg = string.Format("alert('您已成功预订{3}日【{0}】,成人数:{1},儿童数:{2},您的联系电话是{4},稍后将会有工作人员与您联系,请保持电话畅通!');window.reload();", lbtitle.Text, txtadultnum.Text, txtchildnum.Text, departuretime.ToString("yyyy-MM-dd"), Session["phone"].ToString());
-                       // ErrorLog.AddErrorLog(msg);
+                        // ErrorLog.AddErrorLog(msg);
                         MessageBox.ResponseScript(this.Page, msg);
                     }
                     else

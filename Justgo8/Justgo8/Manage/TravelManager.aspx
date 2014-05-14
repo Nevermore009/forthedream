@@ -7,7 +7,7 @@
             $.get("HotHandler.ashx?detailid=" + id + "&ishot=" + (cb.checked ? 1 : 0), function (data) {
                 if (data != "success") {
                     alert("修改失败");
-                    cb.checked = !cb.checked;                    
+                    cb.checked = !cb.checked;
                 }
             });
         }
@@ -21,6 +21,7 @@
     <hr style="width: 100%;" color="#bbb" size="3" />
     <asp:Repeater ID="repeatertraveltype" runat="server" OnItemDataBound="repeatertraveltype_ItemDataBound">
         <ItemTemplate>
+            <br />
             <%# Eval("traveltypename") %>
             <hr style="width: 100%;" color="#bbb" size="3" />
             <div class="pro_list">
@@ -30,12 +31,14 @@
                             <li><a href="../detail.aspx?id=<%#Eval("id") %>" target="_blank">
                                 <img src="..<%#Eval("pic") %>" height="100px" width="100px" title="" alt="" /></a>
                                 <br />
-                                <font style="font-weight: bold; font-size: 18px">
-                                    <%#Eval("title") %></font>
+                                编号:<font style="font-weight: bold; font-size: 18px"><%#Eval("serialno").ToString()==""?"暂无" : Eval("serialno").ToString()%></font>
                                 <br />
                                 <font style="font-weight: bold; font-size: 18px">
-                                    <%#Eval("destination").ToString()==""?"":"目的地:"+Eval("destination").ToString()+"等" %></font><br />
-                                Hot<input type="checkbox"  <%# bool.Parse(Eval("hot").ToString())?"checked='checked'":"" %>
+                                    <%#Eval("title").ToString().Trim().Length > 8 ? Eval("title").ToString().Trim().Substring(0, 7) + "..." : Eval("title").ToString().Trim()%></font>
+                                <br />
+                                目的地: <font style="font-weight: bold; font-size: 18px">
+                                    <%#Eval("destination").ToString()==""?"暂无":Eval("destination").ToString()+"等" %></font><br />
+                                Hot<input type="checkbox" <%# bool.Parse(Eval("hot").ToString())?"checked='checked'":"" %>
                                     onclick="HotChange(this,<%#Eval("id") %>)" />
                                 <a href='AddDetail.aspx?travelid=<%# Eval("id") %>'>修改</a>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CommandName="del" CommandArgument='<%# Eval("id")%>'

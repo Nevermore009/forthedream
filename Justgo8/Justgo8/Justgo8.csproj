@@ -733,7 +733,6 @@
     <Content Include="personal.aspx" />
     <Content Include="register.aspx" />
     <Content Include="search.aspx" />
-    <Content Include="test.aspx" />
     <Content Include="vip.aspx" />
     <Content Include="visasearch.aspx" />
     <Content Include="Web.config">
@@ -959,13 +958,6 @@
     </Compile>
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="vip.aspx.cs">
       <DependentUpon>vip.aspx</DependentUpon>

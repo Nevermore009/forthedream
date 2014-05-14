@@ -38,6 +38,16 @@
             <table class="basicinfo">
                 <tr>
                     <td style="text-align: right">
+                        线路编号
+                    </td>
+                    <td style="text-align: left" colspan="5">
+                        <asp:TextBox runat="server" ID="txtserialno" CssClass="textbox" Width="60%"></asp:TextBox><asp:RequiredFieldValidator
+                            ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ControlToValidate="txtserialno"
+                            SetFocusOnError="true" ValidationGroup="sss"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">
                         标题
                     </td>
                     <td colspan="3" style="text-align: left">
@@ -98,6 +108,7 @@
                         <asp:TextBox ID="txtchildprice" runat="server" CssClass="textbox"></asp:TextBox><asp:RequiredFieldValidator
                             ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ControlToValidate="txtchildprice"
                             SetFocusOnError="true" ValidationGroup="sss"></asp:RequiredFieldValidator>
+                        <asp:CheckBox runat="server" ID="cbfixed" Text="价格固定" Checked="true" />
                     </td>
                 </tr>
                 <tr>

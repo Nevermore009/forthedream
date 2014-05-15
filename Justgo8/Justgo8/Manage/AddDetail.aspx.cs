@@ -174,6 +174,7 @@ namespace Justgo8.Manage
                 drop.DataSource = null;
                 drop.DataBind();
             }
+            drop.Items.Insert(0, new ListItem("不区分", "0"));
         }
 
         protected void RPlank_ItemCommand(object source, RepeaterCommandEventArgs e)

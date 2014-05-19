@@ -225,7 +225,7 @@ namespace DLL
         {
             int res = 0;
             string sql = string.Format(@"insert into [tb_detail] ([serialno],[title],[description],[generalprice],[adultprice],[childprice],[isfixed],[startdate],[enddate],[departuretime],[features],[billinclude],[billbeside],[servicestandard],[presentation],[journey],[contact],[traveltypeid],[journeydays],[transportation],[adultruleid],[childruleid])
-            values (@serialno,@title, @description, @generalprice, @adultprice, @childprice, @startdate, @enddate, @departuretime, @features, @billinclude, @billbeside, @servicestandard, @presentation, @journey, @contact, @traveltypeid, @journeydays, @transportation,@adultruleid,@childruleid) select @@identity");
+            values (@serialno,@title, @description, @generalprice, @adultprice, @childprice,@isfixed, @startdate, @enddate, @departuretime, @features, @billinclude, @billbeside, @servicestandard, @presentation, @journey, @contact, @traveltypeid, @journeydays, @transportation,@adultruleid,@childruleid) select @@identity");
             SqlParameter[] pas = new SqlParameter[] { 
                 new SqlParameter("@serialno",serialno),
                 new SqlParameter("@title",title),

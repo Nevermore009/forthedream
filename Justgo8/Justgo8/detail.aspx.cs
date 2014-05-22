@@ -41,6 +41,8 @@ namespace Justgo8
                     bool isfixed = bool.Parse(dt.Rows[0]["isfixed"].ToString());
                     lbadultprice.Text = dt.Rows[0]["adultprice"].ToString() + (isfixed ? "" : "起");
                     lbchildprice.Text = dt.Rows[0]["childprice"].ToString() + (isfixed ? "" : "起");
+                    if (dt.Rows[0]["childprice"].ToString() == "0")
+                        childtr.Visible = false;
                     lbgeneralprice.Text = dt.Rows[0]["generalprice"].ToString();
                     lbdeparturetime.Text = dt.Rows[0]["departuretime"].ToString();
                     divfeatures.InnerHtml = dt.Rows[0]["features"].ToString();

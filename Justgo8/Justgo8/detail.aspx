@@ -194,7 +194,7 @@
                                                         ErrorMessage="*" ValidationGroup="sss" ControlToValidate="txtadultnum"></asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr runat="server" id="childtr">
                                             <td>
                                                 儿童<span class="help" title="<%=childrule %>"></span>
                                             </td>
@@ -203,7 +203,7 @@
                                             </td>
                                             <td>
                                                 <asp:TextBox runat="server" ID="txtchildnum" Style="height: 25px; border: 1px solid #ccc"
-                                                    Text="1"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                                    Text="0"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                                                         ErrorMessage="*" ValidationGroup="sss" ControlToValidate="txtchildnum"></asp:RequiredFieldValidator>
                                             </td>
                                         </tr>

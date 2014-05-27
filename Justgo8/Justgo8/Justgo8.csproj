@@ -65,6 +65,7 @@
     <Content Include="2009\index.aspx" />
     <Content Include="2009\PrivateMsg.aspx" />
     <Content Include="520.html" />
+    <Content Include="a3qtI8RARw7WHmasqkQ4YOnVabnakpSHe22yb2A9_w--.html" />
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
     <Content Include="bin\Justgo8.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
@@ -90,6 +91,7 @@
     <Content Include="detail.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\ar.gif" />
+    <Content Include="images\circular_providers_sprite.png" />
     <Content Include="images\index\b.png" />
     <Content Include="images\index\bg_line_t2.png" />
     <Content Include="images\index\bg_line_t3.png" />
@@ -734,6 +736,7 @@
     <Content Include="personal.aspx" />
     <Content Include="register.aspx" />
     <Content Include="search.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="vip.aspx" />
     <Content Include="visasearch.aspx" />
     <Content Include="Web.config">
@@ -762,6 +765,15 @@
     <Compile Include="2009\PrivateMsg.aspx.designer.cs">
       <DependentUpon>PrivateMsg.aspx</DependentUpon>
     </Compile>
+    <Compile Include="API\Google\GoogleOAuth.ashx.cs">
+      <DependentUpon>GoogleOAuth.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Google\GoogleOAuth.cs" />
+    <Compile Include="API\Yahoo\OAuthBase.cs" />
+    <Compile Include="API\Yahoo\Yahoo.ashx.cs">
+      <DependentUpon>Yahoo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Yahoo\YahooOAuth.cs" />
     <Compile Include="App_Code\CommentWork.cs" />
     <Compile Include="App_Code\Client.cs" />
     <Compile Include="contactus.aspx.cs">
@@ -960,6 +972,13 @@
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="vip.aspx.cs">
       <DependentUpon>vip.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -984,6 +1003,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IndexMaster.master" />
+    <Content Include="API\Yahoo\Yahoo.ashx" />
+    <Content Include="API\Google\GoogleOAuth.ashx" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

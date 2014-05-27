@@ -91,7 +91,6 @@
     <Content Include="detail.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\ar.gif" />
-    <Content Include="images\circular_providers_sprite.png" />
     <Content Include="images\index\b.png" />
     <Content Include="images\index\bg_line_t2.png" />
     <Content Include="images\index\bg_line_t3.png" />
@@ -167,6 +166,7 @@
     <Content Include="images\outland\outland_bottomTop_title.png" />
     <Content Include="images\outland\outland_bottom_Left_li_bg.gif" />
     <Content Include="images\qrcode.gif" />
+    <Content Include="images\quicklog.png" />
     <Content Include="images\search\datePicker.gif" />
     <Content Include="images\search\img.gif" />
     <Content Include="images\search\img_close.gif" />

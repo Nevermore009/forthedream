@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>马上游</title>
+    <title>湖南中联国际旅行社</title>
     <link rel="shortcut icon" href="images/master/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -56,7 +56,7 @@
         <div id="rolck-body">
             <div id="topleft">
                 <a href="index.aspx" target="_self">
-                    <img src="images/master/logo.png" style="padding-top: 5px;" alt="马上游" longdesc="index.aspx" /></a></div>
+                    <img src="images/master/logo.png" style="padding-top: 5px;" alt="湖南中联国际旅行社" longdesc="index.aspx" /></a></div>
             <div id="topcenter">
                 <div class="searchbar">
                     <input id="keyword" class="keyword" type="text" />

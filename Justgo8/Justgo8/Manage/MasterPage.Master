@@ -77,7 +77,7 @@
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="74%" height="38" class="admin_txt">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: large; font-weight: bold;"><%=ConfigurationSettings.AppSettings["sitename"] %></span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: large; font-weight: bold;"><%=ConfigurationManager.AppSettings["sitename"]%></span>
                             </td>
                             <td width="22%">
                                 <asp:ImageButton ID="ImageButton1" runat="server" Width="46px" Height="20px" BorderStyle="none"

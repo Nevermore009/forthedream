@@ -59,7 +59,7 @@ namespace Justgo8
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new Exception("没有检测到数据");
                 }
             }
             catch (Exception ex)

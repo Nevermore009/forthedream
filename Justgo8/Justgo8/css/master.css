@@ -101,9 +101,9 @@ div#rolck-top { height: 31px; width: 100%; background-image: url(../images/maste
 
 
 #rolck-body { height:120px; width:1000px; margin: 0 auto; }
-#rolck-body #topleft { width:255px;  float:left; margin:15px 0 0 5px; }
-#rolck-body #topcenter { width:504px;   float:left; margin:37px 0 0 0; padding-left:45px; }
-#rolck-body #topright { float:left; padding-left:85px; padding-top:12px; }
+#rolck-body #topleft { width:370px; height:100px; float:left; margin:15px 0 0 5px; }
+#rolck-body #topcenter { width:400px;   float:left; margin:37px 0 0 20px; padding-left:15px; }
+#rolck-body #topright { float:left; padding-left:50px; padding-top:12px; }
 #rolck-body #topright .search #die #contactimg{ width:105px;height:105px;  }
 #rolck-body #topright ul { }
 #rolck-body #topright ul li { }
@@ -152,10 +152,10 @@ div#rolck-top { height: 31px; width: 100%; background-image: url(../images/maste
 .email{text-align:center;margin-bottom:10px;}
 .imglink{text-align:center;}
 .imglink img{margin-left:5px;border:0px;margin-right:5px;margin-top:5px;}
-.searchbar{    width: 544px;    height: 30px;   line-height: 30px;  overflow:hidden;  font-size: 14px;vertical-align: middle;background:url(../images/master/searchbar.jpg) no-repeat 0 0;}
+.searchbar{    width: 400px;    height: 30px;   line-height: 30px;  overflow:hidden;  font-size: 14px;vertical-align: middle;background:url(../images/master/searchbar.jpg) no-repeat 0 0;}
 .searchbar input{ margin: 0; padding:0;   float: left;}
-.searchbar .keyword{   width: 439px;  border:none;vertical-align: middle; padding:3px 2px 2px 5px;height:26px; line-height:26px; background:none; font-weight:normal; font-size:12px;}
-.searchbar .btn{ width:76px;     height: 30px;cursor:pointer; background:none; font-size:12px; color:#fff; padding-left:25px;}
+.searchbar .keyword{   width: 288px;  border:none;vertical-align: middle; padding:3px 2px 2px 5px;height:26px; line-height:26px; background:none; font-weight:normal; font-size:12px;}
+.searchbar .btn{ width:98px;     height: 30px;cursor:pointer; background:none; font-size:12px; color:#fff; padding-left:25px;}
 .searchlink a{  letter-spacing: 2px; color:#8d8d8d;}
 .clear { height:0; overflow:hidden; clear:both;}
 /*QQ悬浮*/

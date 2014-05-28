@@ -99,7 +99,7 @@ namespace Justgo8
         }
 
         static int DisplayHotAreaCount = 10;
-        static int DisplayDetailCount = 10;
+        static int DisplayDetailCount = 13;
 
         protected void BindHotInland()
         {
@@ -194,7 +194,7 @@ namespace Justgo8
 
         protected void BindPeripheryshow()
         {
-            repeaterperipheryshow.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 10);
+            repeaterperipheryshow.DataSource = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 13);
             repeaterperipheryshow.DataBind();
         }
 

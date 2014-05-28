@@ -765,10 +765,15 @@
     <Compile Include="2009\PrivateMsg.aspx.designer.cs">
       <DependentUpon>PrivateMsg.aspx</DependentUpon>
     </Compile>
-    <Compile Include="API\Google\GoogleOAuth.ashx.cs">
-      <DependentUpon>GoogleOAuth.ashx</DependentUpon>
+    <Compile Include="API\Facebook\Facebook.ashx.cs">
+      <DependentUpon>Facebook.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Facebook\FacebookOAuth.cs" />
+    <Compile Include="API\Google\Google.ashx.cs">
+      <DependentUpon>Google.ashx</DependentUpon>
     </Compile>
     <Compile Include="API\Google\GoogleOAuth.cs" />
+    <Compile Include="API\HttpHelper.cs" />
     <Compile Include="API\Yahoo\OAuthBase.cs" />
     <Compile Include="API\Yahoo\Yahoo.ashx.cs">
       <DependentUpon>Yahoo.ashx</DependentUpon>
@@ -1004,7 +1009,8 @@
   <ItemGroup>
     <Content Include="IndexMaster.master" />
     <Content Include="API\Yahoo\Yahoo.ashx" />
-    <Content Include="API\Google\GoogleOAuth.ashx" />
+    <Content Include="API\Google\Google.ashx" />
+    <Content Include="API\Facebook\Facebook.ashx" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Manage\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

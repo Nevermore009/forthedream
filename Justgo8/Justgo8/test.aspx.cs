@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Justgo8.API.Yahoo;
+using Common;
 
 namespace Justgo8
 {
@@ -12,10 +12,7 @@ namespace Justgo8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-               
-            }
+            
         }
     }
 }

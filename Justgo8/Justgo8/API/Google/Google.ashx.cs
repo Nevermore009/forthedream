@@ -8,7 +8,7 @@ namespace Justgo8.API.Google
     /// <summary>
     /// GoogleOAuth1 的摘要说明
     /// </summary>
-    public class GoogleOAuth1 : IHttpHandler
+    public class Google : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)

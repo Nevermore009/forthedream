@@ -8,9 +8,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <a href="API/Yahoo/Yahoo.ashx" style="height: 37px; width: 37px; display: inline-block;
+        <a href="API/Facebook/Facebook.ashx" style="height: 37px; width: 37px; display: inline-block;
             background-image: url(images/quicklog.png); background-position: 37px 0px;">
-        </a><a href="API/Google/GoogleOAuth.ashx" style="height: 37px; width: 37px; display: inline-block;
+        </a><a href="API/Google/Google.ashx" style="height: 37px; width: 37px; display: inline-block;
             background-image: url(images/quicklog.png); background-position: 37px -37px;">
         </a><a href="API/Yahoo/Yahoo.ashx" style="height: 37px; width: 37px; display: inline-block;
             background-image: url(images/quicklog.png); background-position: 37px -111px;">

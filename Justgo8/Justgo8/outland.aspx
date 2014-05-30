@@ -100,7 +100,7 @@
                                 <ItemTemplate>
                                     <li><a href='detail.aspx?id=<%#Eval("id") %>' target="_blank"><span>
                                         <img src='<%#Eval("pic") %>' width="167px" height="105px" alt='<%#Eval("title") %>'
-                                            title="<%#Eval("title") %>" /></span><span style="text-align: center;"><%#Eval("title") %>(<%#Eval("description") %>)</span><span
+                                            title="<%#Eval("title") %>" /></span><span style="text-align: center;" title="<%#Eval("title") %>"><%#Eval("title").ToString().Length >= 10 ? (Eval("title").ToString().Substring(0, 8)+"...") : Eval("title").ToString()%>(<%#Eval("description") %>)</span><span
                                                 class="outland_bottom_Right_ul1_price">RMB<%#Eval("adultprice") %>元</span></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>

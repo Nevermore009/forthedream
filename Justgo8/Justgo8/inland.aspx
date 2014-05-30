@@ -73,7 +73,8 @@
                 <div class="outland_bottomTop_left">
                     <img src="images/index/inland.png" width="200px" height="30px" alt="" /></div>
                 <div class="outland_bottomTop_right">
-                    <a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>" target="_blank" class="more">更多>></a></div>
+                    <a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>" target="_blank" class="more">
+                        更多>></a></div>
             </div>
             <div class="clear">
             </div>
@@ -82,7 +83,8 @@
                     <ul class="outland_bottom_Left_ul1">
                         <asp:Repeater runat="server" ID="RepeaterInland">
                             <ItemTemplate>
-                                <li class="li_x"><a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>&areaid=<%#Eval("areaid") %>" target="_blank">
+                                <li class="li_x"><a href="search.aspx?traveltype=<%=Bll.BTravelType.Inland %>&areaid=<%#Eval("areaid") %>"
+                                    target="_blank">
                                     <%#Eval("areaname") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -106,7 +108,7 @@
                                 <ItemTemplate>
                                     <li><a href='detail.aspx?id=<%#Eval("id") %>' target="_blank"><span>
                                         <img src='<%#Eval("pic") %>' width="167px" height="105px" alt='<%#Eval("title") %>'
-                                            title="<%#Eval("title") %>" /></span><span style="text-align: center;"><%#Eval("title") %>(<%#Eval("description") %>)</span><span
+                                            title="<%#Eval("title") %>" /></span><span style="text-align: center;" title="<%#Eval("title") %>"><%#Eval("title").ToString().Length >= 10 ? (Eval("title").ToString().Substring(0, 8)+"...") : Eval("title").ToString()%>(<%#Eval("description") %>)</span><span
                                                 class="outland_bottom_Right_ul1_price">RMB<%#Eval("adultprice") %>元</span></a></li>
                                 </ItemTemplate>
                             </asp:Repeater>

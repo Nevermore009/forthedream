@@ -38,7 +38,7 @@ namespace Justgo8
         protected void BindPeripheryshow()
         {
             DataTable dt = new DataTable();
-            dt = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 30);
+            dt = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Periphery, 16);
             if (dt.Rows.Count > 0)
             {
                 repeateritem.DataSource = dt;

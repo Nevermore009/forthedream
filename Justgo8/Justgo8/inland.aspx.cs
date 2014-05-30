@@ -37,7 +37,7 @@ namespace Justgo8
         protected void BindInlandshow()
         {
             DataTable dt = new DataTable();
-            dt = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland,30);
+            dt = Bll.BTravelDetail.TravelInfo(Bll.BTravelType.Inland,16);
             if (dt.Rows.Count > 0)
             {
                 repeateritem.DataSource = dt;

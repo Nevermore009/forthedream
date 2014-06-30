@@ -96,7 +96,7 @@ namespace DLL
             if (!string.IsNullOrEmpty(titlekey))
             {
                 sql.Append(" and title like '%");
-                sql.Append(traveltype);
+                sql.Append(titlekey);
                 sql.Append("%'");
             }
             if (!string.IsNullOrEmpty(startdate))

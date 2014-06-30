@@ -16,8 +16,8 @@ namespace Justgo8.API.Yahoo
         private string urlOAuthGetRequestToken = "https://api.login.yahoo.com/oauth/v2/get_request_token";
         //private string urlOAuthAuthorizeToken = "https://api.login.yahoo.com/oauth/v2/request_auth";
         private string urlOAuthGetAccessToken = "https://api.login.yahoo.com/oauth/v2/get_token";
-        private string consumerKey = "dj0yJmk9bzhoYW5yUzlWS3dPJmQ9WVdrOVRWTm5aVXhFTlRRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kOA--";
-        private string consumerSecret = "8892776018e532c26b59fa692e7e50e7b7d28838";
+        private string consumerKey = "dj0yJmk9cUJLMTVyRmE0TzlrJmQ9WVdrOWIwdGtlVTVsTkdzbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1iYg--";
+        private string consumerSecret = "2af86a8489d0802189fd53bd02e9ac2fc408f716";
         private string OauthTokenSecret = string.Empty;
         private string OauthToken = string.Empty;
         private string OauthYahooGuid = string.Empty;

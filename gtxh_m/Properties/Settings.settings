@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="gtxh_m.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="gtxh_m_com_gtxh_news_News" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://news.gtxh.com/Service/News.asmx</Value>
+    </Setting>
+    <Setting Name="gtxh_m_com_gtxh_ivtest_User" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://iv.gtxh.com/WebService/User.asmx</Value>
+    </Setting>
+    <Setting Name="gtxh_m_com_gtxh_api_ResourceSupply" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.gtxh.com/Service/ResourceSupply.asmx</Value>
+    </Setting>
+    <Setting Name="gtxh_m_com_gtxh_market_MarketAppService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://market.gtxh.com/AppService/MarketAppService.asmx</Value>
+    </Setting>
+    <Setting Name="gtxh_m_com_gtxh_fxs_Article" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://fxs.gtxh.com/WebService/Article.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

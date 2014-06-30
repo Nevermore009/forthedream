@@ -1,0 +1,84 @@
+﻿@model List<gtxh_m.Models.ReportArticle>
+@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "分析报告";
+    ViewBag.BackButton = false;
+    ViewBag.PCurl = "http://fxs.gtxh.com";
+    ViewBag.BackUrl = "javascript:history.go(-1)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="header-line1"></div>
+<!-----主要内容  开始----->
+<main class="main2">
+  <section class="report_list">  
+        @if (Model != null && Model.Count > 0)
+        {
+            <div id="opinionlist">
+            @foreach (gtxh_m.Models.ReportArticle item in Model)
+            {
+                <ul>  
+                     <li class="report_font"><a href="@item.Url" class="articletitle"><b> @item.ArticleTitle</b></a><br />
+                     <a href="@item.Url" class="articledescription">@item.Description</a></li>
+                    <li class="report_img sZoom"><a href="@item.ImagePath" class="articletitle">
+                    <img src="@item.ImagePath" alt="@item.ArticleTitle" /></a></li></ul> 
+            }
+            </div>
+    
+          <div class="loading_more" id="getmore">点击加载更多 &gt;&gt;</div>
+        }
+        else
+        {
+              <center>@ViewBag.Msg </center>
+        }
+  </section>
+</main>
+<!-----主要内容  结束----->
+<script type="text/javascript">
+    var index = 2;  //分析师索引从1开始
+    $().ready(function () {
+        $("#getmore").click(function () {
+            $(this).html("加载中...");
+            $(this).attr("disabled", "disabled")
+            $.ajax({
+                type: "POST",
+                url: "Report/GetData",
+                data: { pageIndex: index },
+                success: function (data) {
+                    var morebutton = $("#getmore");
+                    var jsondata = JSON.parse(data);
+                    if (jsondata.resultCode >= 0) {
+                        index++;
+                        for (var i = 0; i < jsondata.data.length; i++) {
+                            var imgurl = jsondata.data[i].ImagePath;
+                            if (!imgurl) {
+                                imgurl = "http://m.gtxh.com/Content/images/tp.jpg";
+                            }
+                            var description = jsondata.data[i].Description;
+                            if (description.length > 40) {
+                                description = description.substr(0, 37)+"......";
+                            }
+                            $("#opinionlist").append("<ul><li class='report_font'><a href='" + jsondata.data[i].Url + "' class='articletitle'><b> " + jsondata.data[i].ArticleTitle + "</b></a><br /><a href='" + jsondata.data[i].Url + "' class='articledescription'>" + description + "</a></li><li class='report_img sZoom'><a href='" + jsondata.data[i].ImagePath + "' class='articletitle'><img src='" + imgurl + "' alt='" + jsondata.data[i].ArticleTitle + "' /></a></li></ul>");
+                        }
+                        if (jsondata.resultCode == 1001) {
+                            morebutton.html("没有更多了!");
+                        }
+                        else {
+                            morebutton.html("加载更多>>");
+                            morebutton.removeAttr("disabled");
+                        }
+                    }
+                    else {
+                        morebutton.html("加载失败!");
+                        morebutton.removeAttr("disabled");
+                    }
+                },
+                error: function (XmlHttpRequest, textStatus, errorThrown) {
+                    var morebutton = $("#getmore");
+                    morebutton.html("加载失败!");
+                    morebutton.removeAttr("disabled");
+                }
+            });
+        });
+
+    });
+</script>

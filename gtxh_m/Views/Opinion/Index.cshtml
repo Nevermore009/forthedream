@@ -1,0 +1,72 @@
+﻿@model List<gtxh_m.Models.GtxhOpinion>
+@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "钢为观点";
+    ViewBag.BackButton = false;
+    ViewBag.PCurl = "http://news.gtxh.com";
+    ViewBag.BackUrl = "javascript:history.go(-1)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="header-line1"></div>
+<!-----主要内容  开始----->
+<main class="main2">
+<section class="point_list">
+    @if (Model != null && Model.Count > 0)
+    {
+        <ul id="opinionlist">
+            @foreach (gtxh_m.Models.GtxhOpinion item in Model)
+            {
+               <li><a href="@item.Url">@item.NewsTitle</a></li>    
+            }
+        </ul>
+        <div class="loading_more" id="getmore">点击加载更多 &gt;&gt;</div>
+    }
+    else
+    {
+         <center>@ViewBag.Msg </center>
+    }
+    <div id="msg"></div>
+</section>
+</main>
+<!-----主要内容  结束----->
+<script type="text/javascript">
+    var index = 1;
+    $().ready(function () {
+        $("#getmore").click(function () {
+            $(this).html("加载中...");
+            $(this).attr("disabled", "disabled")
+            $.ajax({
+                type: "POST",
+                url: "Opinion/GetData",
+                data: { pageIndex: index },
+                success: function (data) {
+                    var morebutton = $("#getmore");
+                    var jsondata = JSON.parse(data);
+                    if (jsondata.resultCode >= 0) {
+                        index++;
+                        for (var i = 0; i < jsondata.data.length; i++) {
+                            $("#opinionlist").append("<li><a href='" + jsondata.data[i].Url + "'>" + jsondata.data[i].NewsTitle + "</a></li>");
+                        }
+                        if (jsondata.resultCode == 1001) {
+                            morebutton.html("没有更多了!");
+                        }
+                        else {
+                            morebutton.html("加载更多");
+                            morebutton.removeAttr("disabled");
+                        }
+                    }
+                    else {
+                        morebutton.html("加载失败!");
+                        morebutton.removeAttr("disabled");
+                    }
+                },
+                error: function (XmlHttpRequest, textStatus, errorThrown) {
+                    var morebutton = $("#getmore");
+                    morebutton.html("加载失败!");
+                    morebutton.removeAttr("disabled");
+                }
+            });
+        });
+
+    });
+</script>

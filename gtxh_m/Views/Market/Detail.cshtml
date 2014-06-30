@@ -1,0 +1,53 @@
+﻿@model gtxh_m.com.gtxh.market.ResourceModel
+@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "资源详情";
+    ViewBag.PCurl = "http://market.gtxh.com";
+    ViewBag.BackUrl = "javascript:history.go(-1)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="header-line1"></div>
+<!-----主要内容  开始----->
+<main class="main1">
+ <section class="detail_main">
+    <form method="post">
+    @if (@Model != null)
+    {
+         <div class="detail_message">
+                品名：@Model.NsortName <br />
+                规格：@Model.Spec <br />
+                材质：@Model.Materials <br />
+                厂家：@Model.CangKu <br />
+                交货地：@Model.Yieldly <br />
+                重量：@Model.Weight 吨（理计重量）<br />
+                价格：@Model.Price 元<br />
+                联系卖家：
+                @if (@Model.Tel400 != null && @Model.Tel400 != "")
+                { <a href="tel://400-848-1112,@Model.Tel400')" class="phone">400-848-1112 转分机 @Model.Tel400</a>
+                }
+                else
+                {
+                <span class="errormsg">暂未开通400电话</span>
+                }
+                </div>
+        <div class="purchase">
+            <div class="purchase_tit">我要采购：</div>
+          <input name="txtweight" type="text" id="" class="input-text" placeholder="请输入重量(吨),不低于1吨" value="@TempData["weight"]"/>
+          <input name="txtprice" type="text" id="" class="input-text" placeholder="请输入已谈妥价格" value="@TempData["price"]"/>
+       <br />
+        <div class="errormsg"> @TempData["msg"] <input id="resourceid" name="rid" value="@Model.ResourceId" /></div>
+        <div class="div-btn clear purchase_btn">
+             <div class="btn_orange"> <input type="submit" value="提交订单" /> </div>
+         </div>
+          </div>
+        
+    }
+    else
+    { 
+        <center> 暂无数据</center>
+    }
+    </form>
+</section>
+
+</main>
+<!-----主要内容  结束----->

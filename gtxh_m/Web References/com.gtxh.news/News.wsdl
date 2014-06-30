@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetHotNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHotNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHotNewsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIndexNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIndexNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIndexNewsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYanjiuNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYanjiuNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYanjiuNewsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGangWeiNews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGangWeiNewsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGangWeiNewsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetHotNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHotNews" />
+  </wsdl:message>
+  <wsdl:message name="GetHotNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHotNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIndexNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIndexNews" />
+  </wsdl:message>
+  <wsdl:message name="GetIndexNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIndexNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYanjiuNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYanjiuNews" />
+  </wsdl:message>
+  <wsdl:message name="GetYanjiuNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYanjiuNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGangWeiNewsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGangWeiNews" />
+  </wsdl:message>
+  <wsdl:message name="GetGangWeiNewsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGangWeiNewsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NewsSoap">
+    <wsdl:operation name="GetHotNews">
+      <wsdl:input message="tns:GetHotNewsSoapIn" />
+      <wsdl:output message="tns:GetHotNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">平台首页数据</wsdl:documentation>
+      <wsdl:input message="tns:GetIndexNewsSoapIn" />
+      <wsdl:output message="tns:GetIndexNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYanjiuNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">研究中心</wsdl:documentation>
+      <wsdl:input message="tns:GetYanjiuNewsSoapIn" />
+      <wsdl:output message="tns:GetYanjiuNewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGangWeiNews">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">钢为观点</wsdl:documentation>
+      <wsdl:input message="tns:GetGangWeiNewsSoapIn" />
+      <wsdl:output message="tns:GetGangWeiNewsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NewsSoap" type="tns:NewsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHotNews">
+      <soap:operation soapAction="http://tempuri.org/GetHotNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexNews">
+      <soap:operation soapAction="http://tempuri.org/GetIndexNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYanjiuNews">
+      <soap:operation soapAction="http://tempuri.org/GetYanjiuNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGangWeiNews">
+      <soap:operation soapAction="http://tempuri.org/GetGangWeiNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NewsSoap12" type="tns:NewsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHotNews">
+      <soap12:operation soapAction="http://tempuri.org/GetHotNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexNews">
+      <soap12:operation soapAction="http://tempuri.org/GetIndexNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYanjiuNews">
+      <soap12:operation soapAction="http://tempuri.org/GetYanjiuNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGangWeiNews">
+      <soap12:operation soapAction="http://tempuri.org/GetGangWeiNews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="News">
+    <wsdl:port name="NewsSoap" binding="tns:NewsSoap">
+      <soap:address location="http://news.gtxh.com/Service/News.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NewsSoap12" binding="tns:NewsSoap12">
+      <soap12:address location="http://news.gtxh.com/Service/News.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

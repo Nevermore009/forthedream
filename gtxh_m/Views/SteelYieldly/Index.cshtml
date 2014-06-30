@@ -1,0 +1,37 @@
+﻿@model List<gtxh_m.Models.Yieldly>
+@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "钢厂直销";
+    ViewBag.BackButton = false;
+    ViewBag.PCurl = "http://market.gtxh.com/SteelYieldly.aspx";
+    ViewBag.BackUrl = "javascript:history.go(-1)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="header-line2"></div>
+<!-----主要内容  开始----->
+<main class="main1">
+  @if (Model != null && Model.Count > 0)
+  { 
+       <section class="app-tab">  
+       <div class="div_tab">     
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              @for (int i = 0; i < Model.Count / 5 + (Model.Count % 5 == 0 ? 0 : 1); i++)
+              {
+                  <tr>
+                  @for (int j = 0; i * 5 + j < Model.Count & j < 5; j++)
+                  {
+                      <td><a href="/SteelYieldly/detail?yieldly=@Model[i * 5 + j].YieldlyName"><img src="@Model[i * 5 + j].LogoUrl" alt="" class="sZoom" />
+                    <p>@Model[i * 5 + j].YieldlyName</p></a></td>
+                  }
+                </tr>
+              }
+          </table>         
+        </div>         
+        </section>
+  }
+  else
+  {
+        <center>@ViewBag.Msg </center> 
+  } 
+</main>
+<!-----主要内容  结束----->

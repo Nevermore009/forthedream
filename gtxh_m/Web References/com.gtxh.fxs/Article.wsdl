@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetTopArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopArticleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArticleListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleList_Free">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArticleList_FreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArticleList_FreeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="logininfoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="articleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPayResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayArticle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="logininfoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="articleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayArticleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PayArticleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTopArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopArticle" />
+  </wsdl:message>
+  <wsdl:message name="GetTopArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArticleList" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArticleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleList_FreeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArticleList_Free" />
+  </wsdl:message>
+  <wsdl:message name="GetArticleList_FreeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArticleList_FreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPaySoapIn">
+    <wsdl:part name="parameters" element="tns:IsPay" />
+  </wsdl:message>
+  <wsdl:message name="IsPaySoapOut">
+    <wsdl:part name="parameters" element="tns:IsPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="PayArticleSoapIn">
+    <wsdl:part name="parameters" element="tns:PayArticle" />
+  </wsdl:message>
+  <wsdl:message name="PayArticleSoapOut">
+    <wsdl:part name="parameters" element="tns:PayArticleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ArticleSoap">
+    <wsdl:operation name="GetTopArticle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询分析师系统已发布的前几条文章（文章编号、文章标题、描述、图片、详情链接）</wsdl:documentation>
+      <wsdl:input message="tns:GetTopArticleSoapIn" />
+      <wsdl:output message="tns:GetTopArticleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询分析师系统已发布的文章（app调用）</wsdl:documentation>
+      <wsdl:input message="tns:GetArticleListSoapIn" />
+      <wsdl:output message="tns:GetArticleListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleList_Free">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询分析师系统已发布的免费文章（微信平台调用）</wsdl:documentation>
+      <wsdl:input message="tns:GetArticleList_FreeSoapIn" />
+      <wsdl:output message="tns:GetArticleList_FreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPay">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断是否需要付费支付</wsdl:documentation>
+      <wsdl:input message="tns:IsPaySoapIn" />
+      <wsdl:output message="tns:IsPaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PayArticle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">支付文章</wsdl:documentation>
+      <wsdl:input message="tns:PayArticleSoapIn" />
+      <wsdl:output message="tns:PayArticleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArticleSoap" type="tns:ArticleSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopArticle">
+      <soap:operation soapAction="http://tempuri.org/GetTopArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleList">
+      <soap:operation soapAction="http://tempuri.org/GetArticleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleList_Free">
+      <soap:operation soapAction="http://tempuri.org/GetArticleList_Free" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPay">
+      <soap:operation soapAction="http://tempuri.org/IsPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayArticle">
+      <soap:operation soapAction="http://tempuri.org/PayArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ArticleSoap12" type="tns:ArticleSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopArticle">
+      <soap12:operation soapAction="http://tempuri.org/GetTopArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleList">
+      <soap12:operation soapAction="http://tempuri.org/GetArticleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleList_Free">
+      <soap12:operation soapAction="http://tempuri.org/GetArticleList_Free" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPay">
+      <soap12:operation soapAction="http://tempuri.org/IsPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayArticle">
+      <soap12:operation soapAction="http://tempuri.org/PayArticle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Article">
+    <wsdl:port name="ArticleSoap" binding="tns:ArticleSoap">
+      <soap:address location="http://fxs.gtxh.com/WebService/Article.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ArticleSoap12" binding="tns:ArticleSoap12">
+      <soap12:address location="http://fxs.gtxh.com/WebService/Article.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

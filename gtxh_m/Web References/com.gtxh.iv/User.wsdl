@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobilePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sorts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegNewUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobilePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegNewUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegNewUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegNewUser_app">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobilePhone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegNewUser_appResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegNewUser_appResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsmbExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobilePhone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsmbExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsmbExistResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProvinceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sorts" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldMobile" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMobileListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMobileListResult" type="tns:ArrayOfUserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LoginInforID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMobileListByTags_Analysts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tags" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeginIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndIndex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMobilePhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="counts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileListByTags_AnalystsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMobileListByTags_AnalystsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="counts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileListByTags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tags" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeginIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="counts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileListByTagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMobileListByTagsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="counts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginInfoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserLevelResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_App">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_AppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Login_AppResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loginID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePassWordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePwdByPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobilePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePwdByPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangePwdByPhoneResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserImfor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u" type="tns:UserImfor" />
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserImfor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LoginInfoID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompaneyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sorts" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsVal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QIBValue" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChangeUserImforResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeUserImforResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPubImfor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loginInfoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPubImforResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPubImforResult" type="tns:UserImfor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBalanceResult" type="tns:UserBalance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserBalance">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UsefulMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FreezeMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="RealMoney" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterByWJWMId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterByWJWMIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterByWJWMIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegNewUser_Wechat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobilePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegNewUser_WechatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegNewUser_WechatResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOpenid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="openid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOpenidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOpenidResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_Wechat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="openid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login_WechatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Login_WechatResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSetOpenid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Openid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSetOpenidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSetOpenidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOpenid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Openid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOpenidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteOpenidResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegNewUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegNewUser" />
+  </wsdl:message>
+  <wsdl:message name="RegNewUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegNewUser_appSoapIn">
+    <wsdl:part name="parameters" element="tns:RegNewUser_app" />
+  </wsdl:message>
+  <wsdl:message name="RegNewUser_appSoapOut">
+    <wsdl:part name="parameters" element="tns:RegNewUser_appResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsmbExistSoapIn">
+    <wsdl:part name="parameters" element="tns:IsmbExist" />
+  </wsdl:message>
+  <wsdl:message name="IsmbExistSoapOut">
+    <wsdl:part name="parameters" element="tns:IsmbExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMobileList" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMobileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileListByTags_AnalystsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMobileListByTags_Analysts" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileListByTags_AnalystsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMobileListByTags_AnalystsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileListByTagsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMobileListByTags" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileListByTagsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMobileListByTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserLevel" />
+  </wsdl:message>
+  <wsdl:message name="GetUserLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Login_AppSoapIn">
+    <wsdl:part name="parameters" element="tns:Login_App" />
+  </wsdl:message>
+  <wsdl:message name="Login_AppSoapOut">
+    <wsdl:part name="parameters" element="tns:Login_AppResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePassWordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassWord" />
+  </wsdl:message>
+  <wsdl:message name="ChangePassWordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePassWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePwdByPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePwdByPhone" />
+  </wsdl:message>
+  <wsdl:message name="ChangePwdByPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePwdByPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserImforSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeUserImfor" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserImforSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeUserImforResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPubImforSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPubImfor" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPubImforSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPubImforResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterByWJWMIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterByWJWMId" />
+  </wsdl:message>
+  <wsdl:message name="RegisterByWJWMIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterByWJWMIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegNewUser_WechatSoapIn">
+    <wsdl:part name="parameters" element="tns:RegNewUser_Wechat" />
+  </wsdl:message>
+  <wsdl:message name="RegNewUser_WechatSoapOut">
+    <wsdl:part name="parameters" element="tns:RegNewUser_WechatResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOpenidSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOpenid" />
+  </wsdl:message>
+  <wsdl:message name="AddOpenidSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOpenidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Login_WechatSoapIn">
+    <wsdl:part name="parameters" element="tns:Login_Wechat" />
+  </wsdl:message>
+  <wsdl:message name="Login_WechatSoapOut">
+    <wsdl:part name="parameters" element="tns:Login_WechatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSetOpenidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSetOpenid" />
+  </wsdl:message>
+  <wsdl:message name="IsSetOpenidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSetOpenidResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOpenidSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOpenid" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOpenidSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOpenidResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserSoap">
+    <wsdl:operation name="Register">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册新用户，成功返回注册的lid，0为注册失败</wsdl:documentation>
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册新用户，成功返回注册的lid，0为注册失败，-1为已经注册过</wsdl:documentation>
+      <wsdl:input message="tns:RegNewUserSoapIn" />
+      <wsdl:output message="tns:RegNewUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser_app">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">APP注册新用户，成功返回注册的lid，0为注册失败，-1为已经注册过</wsdl:documentation>
+      <wsdl:input message="tns:RegNewUser_appSoapIn" />
+      <wsdl:output message="tns:RegNewUser_appSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsmbExist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判断手机号码是否可以注册，不能注册返回 lid，能注册返回 0</wsdl:documentation>
+      <wsdl:input message="tns:IsmbExistSoapIn" />
+      <wsdl:output message="tns:IsmbExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询20个不存在的手机号码，返回手机号码集合</wsdl:documentation>
+      <wsdl:input message="tns:GetMobileListSoapIn" />
+      <wsdl:output message="tns:GetMobileListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileListByTags_Analysts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据主营产品标签查询对应手机号码（分析师），strMobilePhone格式如：'13077318950','13873168168'</wsdl:documentation>
+      <wsdl:input message="tns:GetMobileListByTags_AnalystsSoapIn" />
+      <wsdl:output message="tns:GetMobileListByTags_AnalystsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileListByTags">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据主营产品标签查询对应手机号码</wsdl:documentation>
+      <wsdl:input message="tns:GetMobileListByTagsSoapIn" />
+      <wsdl:output message="tns:GetMobileListByTagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLevel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户星级级别（数字越大越高级）</wsdl:documentation>
+      <wsdl:input message="tns:GetUserLevelSoapIn" />
+      <wsdl:output message="tns:GetUserLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据手机号码和密码登录帐户</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_App">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(APP登录)根据手机号码和密码登录帐户:-1不存在用户信息；-2密码错误；-3登录失败；-4key值错误；-5手机号码为空；-6非认证用户；-7账号已被锁定，且尚未解锁；-8app添加奖励记录失败;-9iv奖励失败；-10;该账号已被冻结；登录成功返回LoginInfoID</wsdl:documentation>
+      <wsdl:input message="tns:Login_AppSoapIn" />
+      <wsdl:output message="tns:Login_AppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassWord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改密码</wsdl:documentation>
+      <wsdl:input message="tns:ChangePassWordSoapIn" />
+      <wsdl:output message="tns:ChangePassWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePwdByPhone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过手机号码修改密码,返回结果：修改成功返回LoginInfoID，修改失败返回-1，IP受限返回-2</wsdl:documentation>
+      <wsdl:input message="tns:ChangePwdByPhoneSoapIn" />
+      <wsdl:output message="tns:ChangePwdByPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserImfor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改个人信息</wsdl:documentation>
+      <wsdl:input message="tns:ChangeUserImforSoapIn" />
+      <wsdl:output message="tns:ChangeUserImforSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPubImfor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取个人信息</wsdl:documentation>
+      <wsdl:input message="tns:GetUserPubImforSoapIn" />
+      <wsdl:output message="tns:GetUserPubImforSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取个人资金</wsdl:documentation>
+      <wsdl:input message="tns:GetBalanceSoapIn" />
+      <wsdl:output message="tns:GetBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterByWJWMId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据五金网用户ID从五金网获取数据完成注册,成功返回LoginInfoID</wsdl:documentation>
+      <wsdl:input message="tns:RegisterByWJWMIdSoapIn" />
+      <wsdl:output message="tns:RegisterByWJWMIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser_Wechat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">微信平台注册新用户，成功返回注册的lid，0为注册失败，-1为已经注册过</wsdl:documentation>
+      <wsdl:input message="tns:RegNewUser_WechatSoapIn" />
+      <wsdl:output message="tns:RegNewUser_WechatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOpenid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(微信登录)根据手机号码和密码登录帐户，修改Openid:-1不存在用户信息；-2密码错误；-3登录失败；-4key值错误；-5手机号码为空；-6非认证用户；-7账号已被锁定，且尚未解锁；-10;该账号已被冻结；登录成功返回LoginInfoID</wsdl:documentation>
+      <wsdl:input message="tns:AddOpenidSoapIn" />
+      <wsdl:output message="tns:AddOpenidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login_Wechat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(微信登录)根据Openid登录帐户:-1key值错误；-2微信openid为空；-3Openid未绑定；-4系统错误；-6非认证用户；-7账号已被锁定，且尚未解锁；-10;该账号已被冻结；登录成功返回LoginInfoID</wsdl:documentation>
+      <wsdl:input message="tns:Login_WechatSoapIn" />
+      <wsdl:output message="tns:Login_WechatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSetOpenid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(查询是否已绑定微信平台：true已绑定，false未绑定</wsdl:documentation>
+      <wsdl:input message="tns:IsSetOpenidSoapIn" />
+      <wsdl:output message="tns:IsSetOpenidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOpenid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(取消微信绑定，清空Openid：成功返回&gt;=0，失败返回-1，key值错误返回-2 ,系统错误返回-3</wsdl:documentation>
+      <wsdl:input message="tns:DeleteOpenidSoapIn" />
+      <wsdl:output message="tns:DeleteOpenidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserSoap" type="tns:UserSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser">
+      <soap:operation soapAction="http://tempuri.org/RegNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser_app">
+      <soap:operation soapAction="http://tempuri.org/RegNewUser_app" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsmbExist">
+      <soap:operation soapAction="http://tempuri.org/IsmbExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileList">
+      <soap:operation soapAction="http://tempuri.org/GetMobileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileListByTags_Analysts">
+      <soap:operation soapAction="http://tempuri.org/GetMobileListByTags_Analysts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileListByTags">
+      <soap:operation soapAction="http://tempuri.org/GetMobileListByTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLevel">
+      <soap:operation soapAction="http://tempuri.org/GetUserLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_App">
+      <soap:operation soapAction="http://tempuri.org/Login_App" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassWord">
+      <soap:operation soapAction="http://tempuri.org/ChangePassWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePwdByPhone">
+      <soap:operation soapAction="http://tempuri.org/ChangePwdByPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserImfor">
+      <soap:operation soapAction="http://tempuri.org/ChangeUserImfor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPubImfor">
+      <soap:operation soapAction="http://tempuri.org/GetUserPubImfor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://tempuri.org/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterByWJWMId">
+      <soap:operation soapAction="http://tempuri.org/RegisterByWJWMId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser_Wechat">
+      <soap:operation soapAction="http://tempuri.org/RegNewUser_Wechat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOpenid">
+      <soap:operation soapAction="http://tempuri.org/AddOpenid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_Wechat">
+      <soap:operation soapAction="http://tempuri.org/Login_Wechat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSetOpenid">
+      <soap:operation soapAction="http://tempuri.org/IsSetOpenid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOpenid">
+      <soap:operation soapAction="http://tempuri.org/DeleteOpenid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserSoap12" type="tns:UserSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser">
+      <soap12:operation soapAction="http://tempuri.org/RegNewUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser_app">
+      <soap12:operation soapAction="http://tempuri.org/RegNewUser_app" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsmbExist">
+      <soap12:operation soapAction="http://tempuri.org/IsmbExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileList">
+      <soap12:operation soapAction="http://tempuri.org/GetMobileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileListByTags_Analysts">
+      <soap12:operation soapAction="http://tempuri.org/GetMobileListByTags_Analysts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileListByTags">
+      <soap12:operation soapAction="http://tempuri.org/GetMobileListByTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLevel">
+      <soap12:operation soapAction="http://tempuri.org/GetUserLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_App">
+      <soap12:operation soapAction="http://tempuri.org/Login_App" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassWord">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePwdByPhone">
+      <soap12:operation soapAction="http://tempuri.org/ChangePwdByPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserImfor">
+      <soap12:operation soapAction="http://tempuri.org/ChangeUserImfor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPubImfor">
+      <soap12:operation soapAction="http://tempuri.org/GetUserPubImfor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap12:operation soapAction="http://tempuri.org/GetBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterByWJWMId">
+      <soap12:operation soapAction="http://tempuri.org/RegisterByWJWMId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegNewUser_Wechat">
+      <soap12:operation soapAction="http://tempuri.org/RegNewUser_Wechat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOpenid">
+      <soap12:operation soapAction="http://tempuri.org/AddOpenid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login_Wechat">
+      <soap12:operation soapAction="http://tempuri.org/Login_Wechat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSetOpenid">
+      <soap12:operation soapAction="http://tempuri.org/IsSetOpenid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOpenid">
+      <soap12:operation soapAction="http://tempuri.org/DeleteOpenid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="User">
+    <wsdl:port name="UserSoap" binding="tns:UserSoap">
+      <soap:address location="http://iv.gtxh.com/WebService/User.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserSoap12" binding="tns:UserSoap12">
+      <soap12:address location="http://iv.gtxh.com/WebService/User.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

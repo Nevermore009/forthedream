@@ -1,0 +1,181 @@
+﻿@model List<gtxh_m.Models.Resource>
+@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "钢铁超市";
+    ViewBag.Province = "true";
+    ViewBag.PCurl = "http://market.gtxh.com";
+    ViewBag.BackButton = false;
+    //ViewBag.BackUrl = "javascript:history.go(-1)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.RightTop = "market";
+}
+<script src="http://pub.gtxh.com/js/twolinkage.js" type="text/javascript"></script>
+<div class="header-line1">
+</div>
+<!-----主要内容  开始----->
+<main class="main2">
+  <section class="app-market-select">
+    <ul>
+      <li class="select_list01">
+        <select name="" id="sort_list" onchange="conditionchanged(this)">
+        <option value="0">选择大类</option>
+        </select>
+      </li>
+      <li class="select_list02">
+        <select name="" id="nsort_list" onchange="conditionchanged()">
+        <option value="0">选择品名</option>
+        </select>
+      </li>
+      <li class="select_list03">
+        <input  type="text" id="txtspec" class="input-text" placeholder="输入规格" />
+        <input type="button" class="btn_search" value="搜索" onclick="conditionchanged(this,true)" />
+      </li>
+    </ul>
+    <div class="market_num" id="searchresult">一共准备了<span>@ViewBag.Count</span>条资源</div>
+  </section>
+  <section class="market_list" >   
+  
+      @if (Model != null && Model.Count > 0)
+      {        
+          <ul class="list_tit">
+              <li class="list01">品名</li>
+              <li class="list02">规格</li>
+              <li class="list03">材质</li>
+              <li class="list04">价格</li>
+              <li class="list05">操作</li>
+          </ul> 
+          <div id="resourcelist">
+          @for (int i = 0; i < Model.Count; i++)
+          {
+              if (i % 2 == 0)
+              {
+                    <ul class="market_list_con" onclick='viewDetail(this)'>
+                      <li class="list01">@Model[i].NSortName</li>
+                      <li class="list02">@Model[i].Spec</li>
+                      <li class="list03">@Model[i].Materils</li>
+                      <li class="list04">@Model[i].Price</li>
+                      <li class="list05"><a href="/Market/Detail/@Model[i].ID">下单</a></li>
+                     </ul>
+              }
+              else
+              {
+                    <ul class="market_list_con double" onclick="viewDetail(this)">
+                      <li class="list01">@Model[i].NSortName</li>
+                      <li class="list02">@Model[i].Spec</li>
+                      <li class="list03">@Model[i].Materils</li>
+                      <li class="list04">@Model[i].Price</li>
+                      <li class="list05"><a href="/Market/Detail/@Model[i].ID">下单</a></li>
+                    </ul> 
+              }
+          }
+          </div>   
+        <div class="loading_more" id="getmore">点击加载更多 &gt;&gt;</div>
+      }   
+  </section>
+</main>
+<!-----主要内容  结束----->
+<script src="../../Scripts/market.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var index = 2;
+    var specvalue = "";
+    $().ready(function () {
+        getSortAndNSort($("#sort_list"), $("#nsort_list"));
+        getProvinceAndCity($("#province_list"));
+
+        $("#getmore").click(function () {
+            if ($(this).attr("disabled") == "disabled")
+                return;
+            $(this).html("加载中...");
+            $(this).attr("disabled", "disabled")
+            var sortid = $("#sort_list").children('option:selected').val();
+            var nsortid = $("#nsort_list").children('option:selected').val();
+            var provinceid = $("#province_list").children('option:selected').val();
+            getResourceList(sortid, nsortid, specvalue, provinceid, "", index, function (data) {
+                var morebutton = $("#getmore");
+                var jsondata = JSON.parse(data);
+                if (jsondata.resultCode >= 0) {
+                    index++;
+                    setData(jsondata.total, jsondata.data, true);
+                    if (jsondata.resultCode == 1001) {
+                        morebutton.html("没有更多了!");
+                    }
+                    else {
+                        morebutton.html("加载更多>>");
+                        morebutton.removeAttr("disabled");
+                    }
+                }
+                else {
+                    morebutton.html("加载失败!");
+                    morebutton.removeAttr("disabled");
+                }
+            }, function (XmlHttpRequest, textStatus, errorThrown) {
+                var morebutton = $("#getmore");
+                morebutton.html("加载失败!");
+                morebutton.removeAttr("disabled");
+            });
+        });
+
+        // window.setTimeout("conditionchanged()", 1000) ;
+    });
+
+    function viewDetail(obj) {
+        var url = $(obj).find("a").attr("href");
+        window.location.href = url;
+    }
+
+    function conditionchanged(obj, needspec) {
+        var sortid = $("#sort_list").children('option:selected').val();
+        var nsortid = $("#nsort_list").children('option:selected').val();
+        if ($(obj) && $(obj).attr("id")=="sort_list") {
+            nsortid = 0;
+        }
+        var provinceid = $("#province_list").children('option:selected').val();
+        if (needspec) {
+            specvalue = $("#txtspec").val();
+        }
+        else {
+            $("#txtspec").val("")
+            specvalue = "";
+        }
+        $("#searchresult").html("加载中...");
+        //alert(sortid + " " + nsortid + " " + provinceid + " ");
+        getResourceList(sortid, nsortid, specvalue, provinceid, "", 1, function (data) {
+            var jsondata = JSON.parse(data);
+            if (jsondata.total || jsondata.total == 0) {
+                $("#searchresult").html("一共准备了<span>" + (jsondata.total ? jsondata.total : 0) + "</span>条资源");
+            }
+            else {
+                $("#searchresult").html("<span>数据加载失败</span>");
+            }
+            setData(jsondata.total, jsondata.data, false);
+            var morebutton = $("#getmore");
+            morebutton.html("加载更多>>");
+            morebutton.removeAttr("disabled");
+            index = 2;
+        }, function (XmlHttpRequest, textStatus, errorThrown) {
+            $("#searchresult").html("<span>数据加载失败</span>");
+        });
+    }
+
+    function setData(total, data, isappend) {
+        var html = "";
+        var classname = $("#resourcelist ul").eq(-2).attr('class');
+        var lastclassname = $("#resourcelist ul:last").attr('class');
+        var name = "";
+        for (var i = 0; i < data.length; i++) {
+            if (i % 2 == 0) {
+                name = classname;
+            }
+            else {
+                name = lastclassname;
+            }
+            html += "<ul class='" + name + "'  onclick='viewDetail(this)'><li class='list01'>" + data[i].NSortName + "</a></li><li class='list02'>" + data[i].Spec + "</a></li><li class='list03'>" + data[i].Materils + "</li><li class='list04'>" + data[i].Price + "</li><li class='list05'><a href='/Market/Detail/" + data[i].ID + "'>下单</a></li></ul></a>";
+        }
+        if (isappend) {
+            $("#resourcelist").append(html);
+        }
+        else {
+            $("#resourcelist").html(html);
+        }
+    }
+</script>

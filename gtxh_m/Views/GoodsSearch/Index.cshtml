@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "帮我找货";
+    ViewBag.PCurl = "http://www.gtxh.com";
+    ViewBag.BackButton = false;
+    ViewBag.BackUrl = "javascript:history.go(-1)";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+ <div class="header-line2"></div>
+<!-----主要内容  开始----->
+<main class="main1">
+<form method="post">
+<section class="help">
+<textarea name="searchinfo" cols="" rows="6" style="width:100%"  placeholder="请填写采购需求和联系电话，余下的就交给我们吧......">@ViewBag.searchinfo</textarea>
+  <div class="errormsg"> @ViewData["msg"]</div>
+</section>
+<section class="div-btn clear help_btn">
+    <div class="btn_orange"> <input id="btnsubmit" type="submit" value="帮我找货" /> </div>
+  </section>
+  </form>
+</main>
+<!-----主要内容  结束----->

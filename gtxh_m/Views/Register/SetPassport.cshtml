@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "设置密码";
+    ViewBag.PCurl = "http://iv.gtxh.com";
+    ViewBag.BackUrl = "/Register/Index/" + TempData["openid"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="header-line2"></div>
+<!-----主要内容  开始----->
+<main class="main1">
+<form method="post">
+  <section class="app-login">
+    <div class="login-input">
+      <input  type="text" id="txtpwd" class="input-text"   placeholder="登录密码：请设置您的登录密码"/>
+    </div>
+    <div class="login-input">
+      <input name="txtensure" type="text" id="txtensure" class="input-text" placeholder="密码确认：请再次输入登录密码"/>
+    </div>
+    <div class="errormsg" id="errormsg">@ViewBag.Msg</div>
+  </section>
+  <section class="div-btn clear login_btn">
+    <div class="btn_orange"> <input type="submit" value="完成注册" id="btnfinish" /> </div>
+  </section>
+  </form>
+</main>
+<!-----主要内容  结束----->
+<script type="text/javascript">
+    $().ready(function () {
+        $("#btnfinish").click(function () {
+            if (!$("#txtpwd").val()) {
+                $("#txtpwd").focus();
+                return false;
+            }
+
+            if (!$("#txtensure").val()) {
+                $("#txtensure").focus();
+                return false;
+            }
+
+            if ($("#txtpwd").val() != $("#txtensure").val()) {
+                $("#errormsg").text("两次输入的密码不一致！");
+                return false;
+            }
+
+            return true;
+        });
+    });
+
+</script>

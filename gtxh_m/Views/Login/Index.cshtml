@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "中国钢铁现货网 - 国内钢材的网上集散地";
+    ViewBag.ContentTitle = "绑定账号";
+    ViewBag.RightTop = "login";
+    ViewBag.PCurl = "http://iv.gtxh.com";
+    ViewBag.BackButton = false;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <div class="header-line2"></div>
+<!-----主要内容  开始----->
+<main class="main1">
+<form method="post">
+  <section class="app-login">
+    <div class="login-input">
+      <input name="phone" type="text" value="@ViewBag.Phone" id="txtphone" class="input-text" placeholder="请输入您在钢铁现货网的手机号码"/>
+    </div>
+    <div class="login-input">
+      <input name="passport" type="password" value="@ViewBag.Passport" id="txtpassport" class="input-text" placeholder="请输入您在钢铁现货网的登录密码"/>
+    </div>
+    <div class="errormsg"> @ViewData["msg"]</div>
+  </section>
+  <section class="div-btn clear login_btn">
+    <div class="btn_orange"> <input type="submit" value="登录并绑定微信" /> </div>
+  </section>
+  </form>
+</main>
+<!-----主要内容  结束----->
+</div> 

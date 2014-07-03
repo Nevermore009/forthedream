@@ -32,6 +32,12 @@ namespace DLL
             return help.SeeResults(sql);
         }
 
+        public DataTable GetAccountByOpenId(string openid)
+        {
+            string sql = " select * from [tb_account] where openid='" + openid + "'";
+            return help.SeeResults(sql);
+        }
+
         /// <summary>
         /// 添加
         /// </summary>
@@ -77,6 +83,18 @@ namespace DLL
             int res = 0;
             string sql = " delete from [tb_account] where username=" + username + " ";
             res = help.GetNum(sql);
+            return res;
+        }
+
+        public int AddQQAccount(string username, string pwd, string phone, string email,string openid)
+        {
+            int res = 0;
+            string sql = "select count(*) from [tb_account] where username='" + username + "'";
+            if (int.Parse(help.RunSqlReturn(sql)) <= 0)
+            {
+                sql = " insert into [tb_account] ([username],[password],[phone],[email],[openid]) values ('" + username + "','" + pwd + "','" + phone + "','" + email + "','" + openid + "') ";
+                res = help.GetNum(sql);
+            }
             return res;
         }
     }

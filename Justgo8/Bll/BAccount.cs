@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Bll
 {
-   public class BAccount
+    public class BAccount
     {
         public static int Validate(string username, string pwd)
         {
@@ -28,7 +28,7 @@ namespace Bll
         /// <returns></returns>
         public static int add(string username, string pwd, string phone, string email)
         {
-            pwd=Advanced_Encryption_Standard.AES.Encrypt(pwd);
+            pwd = Advanced_Encryption_Standard.AES.Encrypt(pwd);
             return new DLL.Account().add(username, pwd, phone, email);
         }
 
@@ -53,6 +53,16 @@ namespace Bll
         public static int del(string username)
         {
             return new DLL.Account().del(username);
+        }
+
+        public static DataTable GetAccountByOpenId(string openid)
+        {
+            return new DLL.Account().GetAccountByOpenId(openid);
+        }
+
+        public static int AddQQAccount(string username, string pwd, string phone, string email,string openid)
+        {
+            return new DLL.Account().AddQQAccount(username, pwd, phone, email, openid);
         }
     }
 }

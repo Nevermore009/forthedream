@@ -46,7 +46,28 @@ namespace Common
                 request.CookieContainer = new CookieContainer();
                 request.CookieContainer.Add(cookies);
             }
-            return request.GetResponse() as HttpWebResponse;
+
+            try
+            {
+                return request.GetResponse() as HttpWebResponse;
+            }
+            catch (WebException e)
+            {
+                if (e.Status == WebExceptionStatus.ProtocolError)
+                {
+                    return e.Response as HttpWebResponse;
+                }
+                else
+                {
+                    ErrorLog.AddErrorLog(e.ToString());
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                ErrorLog.AddErrorLog(e.ToString());
+                return null;
+            }
         }
         /// <summary>
         /// 创建POST方式的HTTP请求

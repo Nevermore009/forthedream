@@ -45,7 +45,7 @@ namespace DLL
        public int add(string name,string pic,int detailid,int sort)
        {
            int res = 0;
-           string sql = " insert into [tb_Patent] ([name],[pic],[sort],[detailid],[dodate]) values ('" + name + "','" + pic + "'," + sort + ",'" + detailid + "',date()) ";
+           string sql = " insert into [tb_Patent] ([name],[pic],[sort],[detailid]) values ('" + name + "','" + pic + "'," + sort + ",'" + detailid + "') ";
            res = help.GetNum(sql);
            return res;
        }

@@ -177,7 +177,7 @@
                         <p class="submitButton">
                             <asp:Button runat="server" ID="btnsubmit" Text="" CssClass="LoginButton" ValidationGroup="sss"
                                 OnClick="btnsubmit_Click" />
-                                <a href="/API/QQ/QQ.ashx" ><img src="images/Connect_logo_3.png" alt="使用QQ登录" /></a>
+                                <%--<a href="/API/QQ/QQ.ashx" ><img src="images/Connect_logo_3.png" alt="使用QQ登录" /></a>--%>
                             <a href='register.aspx<%=String.IsNullOrEmpty(Request["returnurl"])?"":("?returnurl="+Request["returnurl"]) %>' class="green">免费注册</a></p>
                     </div>
                 </div>

@@ -750,6 +750,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="wx\MenuCreate.aspx" />
     <Content Include="zyx.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -1003,6 +1004,15 @@
     <Compile Include="visasearch.aspx.designer.cs">
       <DependentUpon>visasearch.aspx</DependentUpon>
     </Compile>
+    <Compile Include="wx\GtxhMessageContext.cs" />
+    <Compile Include="wx\GtxhMessageHandler.cs" />
+    <Compile Include="wx\MenuCreate.aspx.cs">
+      <DependentUpon>MenuCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wx\MenuCreate.aspx.designer.cs">
+      <DependentUpon>MenuCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="zyx.aspx.cs">
       <DependentUpon>zyx.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1037,11 +1047,18 @@
       <Project>{5126D418-87BB-4720-8E30-27C551049F66}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Senparc.Weixin.MP\Senparc.Weixin.MP.csproj">
+      <Project>{69E1CC5E-AAD9-44D3-BFD3-2ACBC6F972CD}</Project>
+      <Name>Senparc.Weixin.MP</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ErrorLog\" />
     <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

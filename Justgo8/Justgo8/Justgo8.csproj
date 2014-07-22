@@ -152,6 +152,7 @@
     <Content Include="images\login\login_questionmark.png" />
     <Content Include="images\login\login_tab_bg.png" />
     <Content Include="images\master\400.jpg" />
+    <Content Include="images\master\400.png" />
     <Content Include="images\master\background.png" />
     <Content Include="images\master\favicon.ico" />
     <Content Include="images\master\float_bg.gif" />

@@ -1014,6 +1014,9 @@
     <Compile Include="wx\MenuCreate.aspx.designer.cs">
       <DependentUpon>MenuCreate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="wx\Message.ashx.cs">
+      <DependentUpon>Message.ashx</DependentUpon>
+    </Compile>
     <Compile Include="zyx.aspx.cs">
       <DependentUpon>zyx.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1038,6 +1041,7 @@
     <None Include="Manage\js\com\vssver2.scc" />
     <None Include="Manage\js\jquery\vssver2.scc" />
     <Content Include="Manage\MasterPage.Master" />
+    <Content Include="wx\Message.ashx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bll\Bll.csproj">

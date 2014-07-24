@@ -17,11 +17,11 @@ namespace Justgo8.wx
         {
             if (context.Request.HttpMethod == "GET")
             {
-
+                Verify(context, context.Request["signature"], context.Request["timestamp"], context.Request["nonce"], context.Request["echostr"]);
             }
             else
             {
- 
+                MessageHandle(context, context.Request["signature"], context.Request["timestamp"], context.Request["nonce"], context.Request["echostr"]);
             }
         }
 

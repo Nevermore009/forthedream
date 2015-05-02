@@ -19,7 +19,7 @@ namespace DLL
         public DataTable DetailInfo()
         {
             DataTable dt = new DataTable();
-            string sql = " select id,title,description,serialno from [tb_detail] order by id desc";
+            string sql = " select id,title,description,serialno from [tb_detail] where [state]=0 order by id desc";
             dt = help.SeeResults(sql);
             return dt;
         }
@@ -32,7 +32,7 @@ namespace DLL
         public DataTable DetailInfo(int id)
         {
             DataTable dt = new DataTable();
-            string sql = " select * from [tb_detail] t1 where [id]=" + id;
+            string sql = " select * from [tb_detail] t1 where  [state]=0 and [id]=" + id;
             dt = help.SeeResults(sql);
             return dt;
         }
@@ -310,7 +310,7 @@ namespace DLL
         public int del(int id)
         {
             int res = 0;
-            string sql = " delete from [tb_detail] where id=" + id + " ";
+            string sql = " update  from [tb_detail] set [state]=1 where id=" + id + " ";
             res = help.GetNum(sql);
             return res;
         }

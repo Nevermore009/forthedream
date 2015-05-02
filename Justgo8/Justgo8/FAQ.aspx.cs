@@ -8,14 +8,33 @@ using System.Web.UI.WebControls;
 
 namespace Justgo8
 {
-    public partial class IndexMaster : System.Web.UI.MasterPage
+    public partial class FAQ1 : System.Web.UI.Page
     {
         private DataTable data = null;
-        public string pageName = "index.aspx";
+        public string title = string.Empty;
+        public string content = string.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            pageName = Request.FilePath.Substring(Request.FilePath.LastIndexOf("/") + 1); ;
-            BindQuestions();
+            if (!IsPostBack)
+            {
+                BindQuestions();
+                BindContent(Request["id"]);
+            }
+        }
+
+        protected void BindContent(string strid)
+        {
+            int id;
+            if (int.TryParse(strid, out id))
+            {
+                DataTable dt = Bll.BQuestion.GetQuestionByID(id);
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    title = dt.Rows[0]["title"].ToString();
+                    content = dt.Rows[0]["answer"].ToString();
+                }
+            }
         }
 
         protected void BindQuestions()

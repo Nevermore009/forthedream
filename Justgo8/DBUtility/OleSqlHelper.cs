@@ -12,7 +12,7 @@ namespace DBUtility
 {
     public class OleSqlHelper
     {
-        public static string ConnectionStr = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", HttpContext.Current.Request.PhysicalApplicationPath + ConfigurationSettings.AppSettings["mainconn"]);
+        public static string ConnectionStr = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0}", HttpContext.Current.Request.PhysicalApplicationPath + ConfigurationManager.AppSettings["mainconn"]);
 
         /// <summary>
         /// 实例化数据连接字符串

@@ -11,7 +11,7 @@ namespace Justgo8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Redirect("www.justgo8.com");
         }
     }
 }

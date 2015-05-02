@@ -94,7 +94,8 @@
                 <script type="text/javascript">
                     $(".allsort").hoverForIE6({
                         current: "allsorthover", delay: 200
-                    }); $(".allsort .item").hoverForIE6({ delay: 150
+                    }); $(".allsort .item").hoverForIE6({
+                        delay: 150
                     });
                 </script>
             </div>

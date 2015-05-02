@@ -222,7 +222,6 @@ namespace Common
                 //}
                 //return Convert.ToDateTime(AddYear +"-"+ AddMonth + "-"+ AddDay);
 			}
-			return Convert.ToDateTime("1900-1-1");
 		}
 	}
 }

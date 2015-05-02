@@ -4,8 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>湖南中联国际旅行社</title>
-    <link rel="shortcut icon" href="images/master/favicon.ico" />
+    <title>湖南中联国际旅行社-马上游，旅行必备，你身边的旅行社</title>
+    <meta name="Keywords" content="长沙旅行社，湖南旅行社，湖南中联国旅，长沙中联国旅，湖南中联国际旅行社，长沙中联国际旅行社，中联国旅,马上游，马上游旅行社，自由行，国内旅游，出境旅游,凤凰游" />
+    <meta name="Description" content="长沙旅行社，湖南旅行社，湖南中联国旅，长沙中联国旅，湖南中联国际旅行社，长沙中联国际旅行社，中联国旅,马上游，马上游旅行社，自由行，国内旅游，出境旅游,凤凰游" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/master.css" rel="stylesheet" type="text/css" />
@@ -54,168 +55,144 @@
 </head>
 <body onkeydown="enterHandler(window.event);">
     <form id="form1" runat="server">
-    <div id="top">
-        <div id="rolck-top">
-            <div style="margin: 0 auto; width: 1000px;">
-                <ul>
-                    <li id="hello">您好！欢迎您来到湖南中联国际旅行社！</li>
-                    <li id="in"><a href="/Manage/Login.aspx" target="_blank">后台登录 </a></li>
-                    <li id="login">
-                        <%=(Session["username"] == null ? "<a href='login.aspx'>登录</a> " : "<a href='vip.aspx'>" + Session["username"].ToString() + "</a> ")%>|
+        <div id="top">
+            <div id="rolck-top">
+                <div style="margin: 0 auto; width: 1000px;">
+                    <ul>
+                        <li id="hello">您好！欢迎您来到湖南中联国际旅行社！</li>
+                        <li id="in"><a href="/Manage/Login.aspx" target="_blank">后台登录 </a></li>
+                        <li id="login">
+                            <%=(Session["username"] == null ? "<a href='login.aspx'>登录</a> " : "<a href='vip.aspx'>" + Session["username"].ToString() + "</a> ")%>|
                         <a href="register.aspx">注册</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="rolck-body">
-            <div id="topleft">
-                <a href="index.aspx" target="_self">
-                    <img src="images/master/logo.png" style="padding-top: 5px; width: 370px; height: 100px;"
-                        alt="湖南中联国际旅行社" longdesc="index.aspx" /></a></div>
-            <div id="topcenter">
-                <div class="searchbar">
-                    <input id="keyword" class="keyword" type="text" />
-                    <input class="btn" type="button" onclick="search();" value="搜索" />
-                </div>
-                <div style="padding-top: 8px;" class="searchlink">
-                    <span style="color: #007434;">热门搜索:</span> <a href="javascript:search('凤凰');">凤凰</a>
-                    <a href="javascript:search('张家界');">张家界</a> <a href="javascript:search('桂林');">桂林</a>
-                    <a href="javascript:search('衡山');">衡山</a> <a href="javascript:search('武功山');">武功山</a>
-                    <a href="javascript:search('海南');">海南</a> <a href="javascript:search('厦门');">厦门</a>
-                    <a href="javascript:search('韩国');">韩国</a> <a href="javascript:search('泰国');">泰国</a>
+                    </ul>
                 </div>
             </div>
-            <div id="topright">
-                <div class="search">
-                    <div class="phone400" id="die">
-                        <img id="contactimg" src="images/master/400.png" alt="服务热线" />
+            <div id="rolck-body">
+                <div id="topleft">
+                    <a href="index.aspx" target="_self">
+                        <img src="images/master/logo.png" style="padding-top: 5px; width: 370px; height: 100px;"
+                            alt="湖南中联国际旅行社" longdesc="index.aspx" /></a>
+                </div>
+                <div id="topcenter">
+                    <div class="searchbar">
+                        <input id="keyword" class="keyword" type="text" />
+                        <input class="btn" type="button" onclick="search();" value="搜索" />
+                    </div>
+                    <div style="padding-top: 8px;" class="searchlink">
+                        <span style="color: #007434;">热门搜索:</span> <a href="javascript:search('凤凰');">凤凰</a>
+                        <a href="javascript:search('张家界');">张家界</a> <a href="javascript:search('桂林');">桂林</a>
+                        <a href="javascript:search('衡山');">衡山</a> <a href="javascript:search('武功山');">武功山</a>
+                        <a href="javascript:search('海南');">海南</a> <a href="javascript:search('厦门');">厦门</a>
+                        <a href="javascript:search('韩国');">韩国</a> <a href="javascript:search('泰国');">泰国</a>
+                    </div>
+                </div>
+                <div id="topright">
+                    <div class="search">
+                        <div class="phone400" id="die">
+                            <img id="contactimg" src="images/master/400.png" alt="服务热线" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="menubox">
-            <div class="leftnav">
+            <div class="menubox">
+                <div class="leftnav">
+                </div>
+                <div class="rightnav">
+                </div>
+                <ul>
+                    <li><a class='<%=(pageName=="index.aspx"?"current":"") %>' id="index.aspx" href="index.aspx">首页</a> </li>
+                    <li><a class='<%=(pageName=="periphery.aspx"?"current":"") %>' id="A1" href="periphery.aspx">周边旅游</a> </li>
+                    <li><a class='<%=(pageName=="inland.aspx"?"current":"") %>' id="inland.aspx" href="inland.aspx">国内旅游</a> </li>
+                    <li><a class='<%=(pageName=="outland.aspx"?"current":"") %>' id="outland.aspx" href="outland.aspx">出境旅游</a> </li>
+                    <li><a class='<%=(pageName=="zyx.aspx"?"current":"") %>' id="zyx.aspx" href="zyx.aspx">自由行</a> </li>
+                    <li><a class='<%=(pageName=="personal.aspx"?"current":"") %>' id="Personal.aspx"
+                        href="personal.aspx">团队定制</a> </li>
+                    <li><a class='<%=(pageName=="vip.aspx"?"current":"") %>' id="vip.aspx" href="vip.aspx">会员中心</a> </li>
+                </ul>
             </div>
-            <div class="rightnav">
-            </div>
-            <ul>
-                <li><a class='<%=(pageName=="index.aspx"?"current":"") %>' id="index.aspx" href="index.aspx">
-                    首页</a> </li>
-                <li><a class='<%=(pageName=="periphery.aspx"?"current":"") %>' id="A1" href="periphery.aspx">
-                    周边旅游</a> </li>
-                <li><a class='<%=(pageName=="inland.aspx"?"current":"") %>' id="inland.aspx" href="inland.aspx">
-                    国内旅游</a> </li>
-                <li><a class='<%=(pageName=="outland.aspx"?"current":"") %>' id="outland.aspx" href="outland.aspx">
-                    出境旅游</a> </li>
-                <li><a class='<%=(pageName=="zyx.aspx"?"current":"") %>' id="zyx.aspx" href="zyx.aspx">
-                    自由行</a> </li>
-                <li><a class='<%=(pageName=="personal.aspx"?"current":"") %>' id="Personal.aspx"
-                    href="personal.aspx">团队定制</a> </li>
-                <li><a class='<%=(pageName=="vip.aspx"?"current":"") %>' id="vip.aspx" href="vip.aspx">
-                    会员中心</a> </li>
-            </ul>
         </div>
-    </div>
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-    <center>
-        <hr style="width: 1000px;" color="#bbb" size="3" />
-    </center>
-    <div id="bottomnav">
-        <ul class="bottomblock">
-            <li class="firstli">预订常见问题</li>
-            <li><a href="#" title="单房差是什么？">单房差是什么？</a></li>
-            <li><a href="#" title="双飞、双卧都是什么意思？">双飞、双卧都是什么意思？</a></li>
-            <li><a href="#" title="纯玩是什么意思？">纯玩是什么意思？</a></li>
-        </ul>
-        <ul class="bottomblock">
-            <li class="firstli">付款和发票</li>
-            <li><a href="#" title="签约可以刷卡吗？">签约可以刷卡吗？</a></li>
-            <li><a href="#" title="付款方式有哪些？">付款方式有哪些？</a></li>
-            <li><a href="#" title="怎么网上支付？">怎么网上支付？</a></li>
-            <li><a href="#" title="如何获取发票？">如何获取发票？</a></li>
-        </ul>
-        <ul class="bottomblock">
-            <li class="firstli">签署旅游合同</li>
-            <li><a href="#" title="什么是抵用卷？">什么是抵用卷？</a></li>
-            <li><a href="#" title="门市地址在哪里？">门市地址在哪里？</a></li>
-            <li><a href="#" title="能传真合同吗？">能传真合同吗？</a></li>
-            <li><a href="#" title="可以不签合同吗？">可以不签合同吗？</a></li>
-        </ul>
-        <ul class="bottomblock">
-            <li class="firstli">旅游预订优惠政策</li>
-            <li><a href="#" title="有旅游合同范本下载吗？">有旅游合同范本下载吗？</a></li>
-            <li><a href="#" title="抵用卷使用帮助">抵用卷使用帮助</a></li>
-            <li><a href="#" title="什么是纸用卷？">什么是纸用卷？</a></li>
-            <li><a href="#" title="如何获得旅游卷？">如何获得旅游卷？</a></li>
-        </ul>
-        <ul>
-            <li class="firstli">其他事项</li>
-            <li><a href="#" title="签证相关问题解答">签证相关问题解答</a></li>
-            <li><a href="#" title="旅游保险问题解答">旅游保险问题解答</a></li>
-            <li><a href="#" title="退款问题解答">退款问题解答</a></li>
-            <li><a href="#" title="旅途中的问题">旅途中的问题</a></li>
-        </ul>
-    </div>
-    <div id="footer">
         <div>
-            <a href="#">企业邮箱</a>|<a href="#" target="_blank">关于我们</a>|<a href="#"
-                target="_blank">旅游资质与荣誉</a>|<a href="#" target="_blank">联系我们</a>
-            |<a href="#" target="_blank">预定须知</a>|<a href="#" target="_blank">用户协议</a> |<a href="#">人才招聘</a>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
-    </div>
-    <div id="imglinks">
-        <p class="banquan">
-            湖南中联国际旅行社有限公司马上游营业部<br />
-            <b>电话:</b>0731-82496626 <b>传真:</b>0731-82496019<br />
-            <b>地址</b>:湖南省长沙市芙蓉区八一路10号天佑大厦<b> 邮箱</b>:<a href="mailto:justgo8@aliyun.com">justgo8@aliyun.com</a><br />
-            <a href="http://www.miibeian.gov.cn/" target="_blank"><b>湘ICP备14004055号</b></a>
-        </p>
         <center>
-            <%-- <script type="text/javascript">                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1000329228'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1000329228%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>--%>
+            <hr style="width: 1000px;" color="#bbb" size="3" />
         </center>
-    </div>
-    <div id="online_qq_layer">
-        <div id="online_qq_tab">
-            <a id="floatShow" style="display: none;" href="javascript:void(0);">收缩</a> <a id="floatHide"
-                style="display: block;" href="javascript:void(0);">展开</a>
+        <div id="bottomnav">
+            <asp:Repeater runat="server" ID="rpgroup" OnItemDataBound="rpgroup_ItemDataBound">
+                <ItemTemplate>
+                    <asp:HiddenField ID="lbgroupid" runat="server" Value='<%#Eval("groupid") %>' />
+                    <ul class="bottomblock">
+                        <li class="firstli"><%#Eval("groupname") %></li>
+                        <asp:Repeater runat="server" ID="rpitem">
+                            <ItemTemplate>
+                                <li><a href="FAQ.aspx?id=<%#Eval("id") %>" title="<%#Eval("title") %>"><%#Eval("title") %></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ul>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
-        <div id="onlineService" style="display: block;">
-            <div class="onlineMenu">
-                <h3 class="tQQ">
-                    QQ在线客服</h3>
-                <ul>
-                    <li class="tli zixun">在线咨询</li>
-                    <li><a href="tencent://message/?uin=2773150840">
-                        <img border="0" src="images/index/qq.gif" alt="点击这里给我发消息" /></a></li>
-                    <li class="last"><a href="tencent://message/?uin=896412338">
-                        <img border="0" src="images/index/qq.gif" alt="点击这里给我发消息" /></a></li>
-                </ul>
+        <div id="footer">
+           <%-- <div>
+                <a href="#">企业邮箱</a>|<a href="#" target="_blank">关于我们</a>|<a href="#"
+                    target="_blank">旅游资质与荣誉</a>|<a href="#" target="_blank">联系我们</a>
+                |<a href="#" target="_blank">预定须知</a>|<a href="#" target="_blank">用户协议</a> |<a href="#">人才招聘</a>
+            </div>--%>
+        </div>
+        <div id="imglinks">
+            <p class="banquan">
+                湖南中联国际旅行社有限公司马上游营业部<br />
+                <b>电话:</b>0731-82496626 <b>传真:</b>0731-82496019<br />
+                <b>地址</b>:湖南省长沙市芙蓉区八一路10号天佑大厦<b> 邮箱</b>:<a href="mailto:justgo8@aliyun.com">justgo8@aliyun.com</a><br />
+                <b>技术支持</b>:ftd314159@163.com
+                <br />
+                <a href="http://www.miibeian.gov.cn/" target="_blank"><b>湘ICP备14004055号</b></a>
+            </p>
+            <center>
+                <%-- <script type="text/javascript">                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1000329228'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1000329228%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>--%>
+            </center>
+        </div>
+        <div id="online_qq_layer">
+            <div id="online_qq_tab">
+                <a id="floatShow" style="display: none;" href="javascript:void(0);">收缩</a> <a id="floatHide"
+                    style="display: block;" href="javascript:void(0);">展开</a>
             </div>
-            <div class="onlineMenu">
-                <h3 class="tele">
-                    QQ在线客服</h3>
-                <ul>
-                    <li class="tli phone">0731-82496626</li>
-                </ul>
-            </div>
-            <div class="btmbg">
+            <div id="onlineService" style="display: block;">
+                <div class="onlineMenu">
+                    <h3 class="tQQ">QQ在线客服</h3>
+                    <ul>
+                        <li class="tli zixun">在线咨询</li>
+                        <li><a href="tencent://message/?uin=2096797795">
+                            <img border="0" src="images/index/qq.gif" alt="点击这里给我发消息" /></a></li>
+                        <li class="last"><a href="tencent://message/?uin=3033467992">
+                            <img border="0" src="images/index/qq.gif" alt="点击这里给我发消息" /></a></li>
+                    </ul>
+                </div>
+                <div class="onlineMenu">
+                    <h3 class="tele">QQ在线客服</h3>
+                    <ul>
+                        <li class="tli phone">0731-82496019</li>
+                    </ul>
+                </div>
+                <div class="btmbg">
+                </div>
             </div>
         </div>
-    </div>
     </form>
     <div id="backTop" class="backTop clearfix" style="display: block;">
-        <a title="返回顶部" href="javascript:goToTop();" rel="nofollow">&nbsp;</a></div>
+        <a title="返回顶部" href="javascript:goToTop();" rel="nofollow">&nbsp;</a>
+    </div>
     <div id="qrCode" class="qrCode clearfix">
         <a href="javascript:qrCode();" rel="nofollow">&nbsp;<div class="item">
-            &nbsp;</div>
+            &nbsp;
+            </div>
         </a>
     </div>
     <script type="text/javascript">
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0fbc060089878dd344430c57de651371' type='text/javascript'%3E%3C/script%3E"));
-</script>
+    </script>
 
 </body>
 </html>

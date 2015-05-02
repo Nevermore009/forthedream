@@ -76,11 +76,8 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Admin.cs" />
-    <Compile Include="AppClient.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="City.cs" />
-    <Compile Include="CommentRecord.cs" />
-    <Compile Include="Comments.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Error.cs" />
@@ -88,12 +85,11 @@
     <Compile Include="Patent .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol.cs" />
+    <Compile Include="Question.cs" />
     <Compile Include="Rule.cs" />
-    <Compile Include="Token.cs" />
     <Compile Include="TravelDetail.cs" />
     <Compile Include="TravelPicture.cs" />
     <Compile Include="TravelType.cs" />
-    <Compile Include="VideoUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
